@@ -307,7 +307,7 @@ const About: React.FC = () => {
         </Row>
       </section>
 
-      {/* CSS הועבר ל-About.css */}
+      
     </Container>
     </>
   );
