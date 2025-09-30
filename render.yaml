@@ -46,7 +46,7 @@ services:
       - key: PORT
         value: 10000
       - key: MONGODB_URI
-        value: mongodb+srv://vipshipping:SecurePass123@vip-shipping.xxxxx.mongodb.net/vip_shipping
+        value: mongodb+srv://arlet:0528747305mm@cluster0.mongodb.net/dudu_move?retryWrites=true&w=majority
       - key: JWT_SECRET
         generateValue: true
       - key: BCRYPT_ROUNDS
