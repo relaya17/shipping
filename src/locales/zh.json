@@ -1,0 +1,62 @@
+{
+    "nav": {
+        "home": "首页",
+        "about": "关于我们",
+        "services": "服务",
+        "contact": "联系我们",
+        "getQuote": "获取报价"
+    },
+    "hero": {
+        "title": "VIP国际货运",
+        "subtitle": "高端全球物流解决方案",
+        "description": "您值得信赖的国际货运和物流合作伙伴。我们凭借15年以上的专业经验，在120多个国家提供卓越服务。",
+        "ctaMain": "立即获取报价",
+        "ctaSecondary": "了解更多",
+        "features": {
+            "worldwide": "全球覆盖",
+            "tracking": "实时跟踪",
+            "support": "24/7支持"
+        }
+    },
+    "stats": {
+        "experience": "15年以上经验",
+        "countries": "服务120多个国家",
+        "shipments": "50,000多次成功运输",
+        "satisfaction": "99.8%客户满意度"
+    },
+    "services": {
+        "title": "我们的服务",
+        "subtitle": "满足您所有需求的全面运输解决方案",
+        "ocean": {
+            "title": "海运",
+            "description": "为全球大宗货物提供经济高效的解决方案"
+        },
+        "air": {
+            "title": "空运",
+            "description": "为紧急交付提供快速可靠的航空运输"
+        },
+        "express": {
+            "title": "快递服务",
+            "description": "为关键货物提供当日或次日交付"
+        },
+        "customs": {
+            "title": "清关服务",
+            "description": "专业处理所有海关文件和程序"
+        }
+    },
+    "testimonials": {
+        "title": "客户评价",
+        "subtitle": "受到全球企业的信赖"
+    },
+    "cta": {
+        "title": "准备好全球运输了吗？",
+        "subtitle": "加入数千名信任VIP国际货运的满意客户",
+        "button": "立即开始运输"
+    },
+    "footer": {
+        "description": "VIP国际货运 - 您的全球物流解决方案高端合作伙伴。",
+        "quickLinks": "快速链接",
+        "contact": "联系信息",
+        "followUs": "关注我们"
+    }
+}

@@ -1,0 +1,21 @@
+# 🌍 VIP International Shipping - Environment Configuration
+
+# Database
+MONGODB_URI=mongodb://localhost:27017/vip_shipping
+MONGODB_ATLAS_URI=mongodb+srv://username:password@cluster.mongodb.net/vip_shipping
+
+# Security
+JWT_SECRET=your-jwt-secret-key
+BCRYPT_ROUNDS=12
+
+# Email
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-password
+
+# APIs
+GOOGLE_MAPS_API_KEY=your-google-maps-key
+OPENAI_API_KEY=your-openai-key
+
+# URLs
+FRONTEND_URL=http://localhost:3000
+API_URL=http://localhost:5000

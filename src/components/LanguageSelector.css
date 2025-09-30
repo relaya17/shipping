@@ -1,0 +1,12 @@
+/* Language Selector Styles */
+.language-selector-toggle {
+  background: rgba(0, 123, 255, 0.1) !important;
+}
+
+.language-selector-menu {
+  min-width: 200px;
+}
+
+.language-flag {
+  font-size: 1.2em;
+}

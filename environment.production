@@ -1,0 +1,4 @@
+# WebSocket Configuration for Production
+VITE_WS_URL=wss://archtrack.onrender.com
+VITE_API_URL=https://archtrack.onrender.com/api
+NODE_ENV=production

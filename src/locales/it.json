@@ -1,0 +1,62 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "Chi Siamo",
+        "services": "Servizi",
+        "contact": "Contatti",
+        "getQuote": "Preventivo"
+    },
+    "hero": {
+        "title": "VIP Spedizioni Internazionali",
+        "subtitle": "Soluzioni Logistiche Globali Premium",
+        "description": "Il vostro partner di fiducia per spedizioni internazionali e logistica. Offriamo eccellenza in oltre 120 paesi con oltre 15 anni di esperienza.",
+        "ctaMain": "Preventivo Istantaneo",
+        "ctaSecondary": "Scopri di Più",
+        "features": {
+            "worldwide": "Copertura Mondiale",
+            "tracking": "Tracciamento in Tempo Reale",
+            "support": "Supporto 24/7"
+        }
+    },
+    "stats": {
+        "experience": "15+ Anni di Esperienza",
+        "countries": "120+ Paesi Serviti",
+        "shipments": "50,000+ Spedizioni di Successo",
+        "satisfaction": "99.8% Soddisfazione Cliente"
+    },
+    "services": {
+        "title": "I Nostri Servizi",
+        "subtitle": "Soluzioni di spedizione complete per tutte le vostre esigenze",
+        "ocean": {
+            "title": "Trasporto Marittimo",
+            "description": "Soluzioni economiche per grandi spedizioni in tutto il mondo"
+        },
+        "air": {
+            "title": "Trasporto Aereo",
+            "description": "Trasporto aereo veloce e affidabile per consegne urgenti"
+        },
+        "express": {
+            "title": "Consegna Express",
+            "description": "Consegna in giornata o il giorno successivo per spedizioni critiche"
+        },
+        "customs": {
+            "title": "Sdoganamento",
+            "description": "Gestione esperta di tutta la documentazione e le procedure doganali"
+        }
+    },
+    "testimonials": {
+        "title": "Cosa Dicono i Nostri Clienti",
+        "subtitle": "Apprezzato da aziende in tutto il mondo"
+    },
+    "cta": {
+        "title": "Pronti a Spedire Globalmente?",
+        "subtitle": "Unitevi a migliaia di clienti soddisfatti che si fidano di VIP Spedizioni Internazionali",
+        "button": "Inizia a Spedire Oggi"
+    },
+    "footer": {
+        "description": "VIP Spedizioni Internazionali - Il vostro partner premium per soluzioni logistiche globali.",
+        "quickLinks": "Link Rapidi",
+        "contact": "Informazioni di Contatto",
+        "followUs": "Seguici"
+    }
+}

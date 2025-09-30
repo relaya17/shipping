@@ -1,0 +1,62 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "contact": "Contact",
+        "getQuote": "Get Quote"
+    },
+    "hero": {
+        "title": "VIP International Shipping",
+        "subtitle": "Premium Global Logistics Solutions",
+        "description": "Your trusted partner for international shipping and logistics. We deliver excellence across 120+ countries with 15+ years of expertise.",
+        "ctaMain": "Get Instant Quote",
+        "ctaSecondary": "Learn More",
+        "features": {
+            "worldwide": "Worldwide Coverage",
+            "tracking": "Real-time Tracking",
+            "support": "24/7 Support"
+        }
+    },
+    "stats": {
+        "experience": "15+ Years Experience",
+        "countries": "120+ Countries Served",
+        "shipments": "50,000+ Successful Shipments",
+        "satisfaction": "99.8% Customer Satisfaction"
+    },
+    "services": {
+        "title": "Our Services",
+        "subtitle": "Comprehensive shipping solutions for all your needs",
+        "ocean": {
+            "title": "Ocean Freight",
+            "description": "Cost-effective solutions for large shipments worldwide"
+        },
+        "air": {
+            "title": "Air Freight",
+            "description": "Fast and reliable air transportation for urgent deliveries"
+        },
+        "express": {
+            "title": "Express Delivery",
+            "description": "Same-day and next-day delivery for critical shipments"
+        },
+        "customs": {
+            "title": "Customs Clearance",
+            "description": "Expert handling of all customs documentation and procedures"
+        }
+    },
+    "testimonials": {
+        "title": "What Our Clients Say",
+        "subtitle": "Trusted by businesses worldwide"
+    },
+    "cta": {
+        "title": "Ready to Ship Globally?",
+        "subtitle": "Join thousands of satisfied customers who trust VIP International Shipping",
+        "button": "Start Shipping Today"
+    },
+    "footer": {
+        "description": "VIP International Shipping - Your premium partner for global logistics solutions.",
+        "quickLinks": "Quick Links",
+        "contact": "Contact Info",
+        "followUs": "Follow Us"
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "about": "Acerca de",
+        "services": "Servicios",
+        "contact": "Contacto",
+        "getQuote": "Cotizar"
+    },
+    "hero": {
+        "title": "VIP Envíos Internacionales",
+        "subtitle": "Soluciones Logísticas Globales Premium",
+        "description": "Su socio de confianza para envíos internacionales y logística. Ofrecemos excelencia en más de 120 países con más de 15 años de experiencia.",
+        "ctaMain": "Cotización Instantánea",
+        "ctaSecondary": "Saber Más",
+        "features": {
+            "worldwide": "Cobertura Mundial",
+            "tracking": "Seguimiento en Tiempo Real",
+            "support": "Soporte 24/7"
+        }
+    },
+    "stats": {
+        "experience": "15+ Años de Experiencia",
+        "countries": "120+ Países Atendidos",
+        "shipments": "50,000+ Envíos Exitosos",
+        "satisfaction": "99.8% Satisfacción del Cliente"
+    },
+    "services": {
+        "title": "Nuestros Servicios",
+        "subtitle": "Soluciones de envío integrales para todas sus necesidades",
+        "ocean": {
+            "title": "Carga Marítima",
+            "description": "Soluciones rentables para grandes envíos a nivel mundial"
+        },
+        "air": {
+            "title": "Carga Aérea",
+            "description": "Transporte aéreo rápido y confiable para entregas urgentes"
+        },
+        "express": {
+            "title": "Entrega Express",
+            "description": "Entrega el mismo día o al día siguiente para envíos críticos"
+        },
+        "customs": {
+            "title": "Despacho Aduanero",
+            "description": "Manejo experto de toda la documentación y procedimientos aduaneros"
+        }
+    },
+    "testimonials": {
+        "title": "Lo Que Dicen Nuestros Clientes",
+        "subtitle": "Confiado por empresas en todo el mundo"
+    },
+    "cta": {
+        "title": "¿Listo para Enviar Globalmente?",
+        "subtitle": "Únase a miles de clientes satisfechos que confían en VIP Envíos Internacionales",
+        "button": "Comience a Enviar Hoy"
+    },
+    "footer": {
+        "description": "VIP Envíos Internacionales - Su socio premium para soluciones logísticas globales.",
+        "quickLinks": "Enlaces Rápidos",
+        "contact": "Información de Contacto",
+        "followUs": "Síguenos"
+    }
+}
