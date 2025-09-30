@@ -46,9 +46,7 @@ services:
       - key: PORT
         value: 10000
       - key: MONGODB_URI
-        fromDatabase:
-          name: vip-shipping-db
-          property: connectionString
+        value: mongodb+srv://vipshipping:SecurePass123@vip-shipping.xxxxx.mongodb.net/vip_shipping
       - key: JWT_SECRET
         generateValue: true
       - key: BCRYPT_ROUNDS

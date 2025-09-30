@@ -1,4 +1,28 @@
-# WebSocket Configuration for Production
-VITE_WS_URL=wss://archtrack.onrender.com
-VITE_API_URL=https://archtrack.onrender.com/api
+# MongoDB Atlas Production Environment
+# העתק את הקובץ הזה ל-.env.production והחלף את הערכים
+
+# MongoDB Atlas Connection
+MONGODB_URI=mongodb+srv://vipshipping:SecurePass123@vip-shipping.xxxxx.mongodb.net/vip_shipping
+
+# JWT Secret (צור מפתח חזק)
+JWT_SECRET=your-super-secret-jwt-key-256-bits-long-here
+
+# Server Configuration
 NODE_ENV=production
+PORT=10000
+
+# CORS Configuration
+CORS_ORIGIN=https://vip-shipping-frontend.onrender.com
+
+# Security
+BCRYPT_ROUNDS=12
+
+# Email Configuration
+EMAIL_FROM=VIP International Shipping <noreply@vipshipping.com>
+
+# Rate Limiting
+RATE_LIMIT_WINDOW_MS=900000
+RATE_LIMIT_MAX_REQUESTS=100
+
+# Frontend API URL
+VITE_API_URL=https://vip-shipping-api.onrender.com

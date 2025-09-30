@@ -37,11 +37,46 @@
 - **Push Notifications** - התראות
 - **Responsive Design** - עיצוב מותאם
 
+## 🗄️ הגדרת MongoDB Atlas
+
+### 🚀 הקמה מהירה עם MongoDB Atlas
+
+1. **צור חשבון MongoDB Atlas:**
+   - לך ל-[MongoDB Atlas](https://www.mongodb.com/atlas)
+   - הירשם לחשבון חינמי
+   - צור פרויקט חדש: "VIP Shipping"
+
+2. **צור Cluster חינמי:**
+   - לחץ "Build a Database"
+   - בחר "FREE" tier
+   - בחר אזור קרוב אליך
+   - שם Cluster: `VIP-Shipping`
+
+3. **הגדר גישה למסד נתונים:**
+   - לך ל-"Database Access"
+   - Add Database User
+   - Username: `vipshipping`
+   - Password: `SecurePass123!` (או שלך)
+   - Database User Privileges: "Read and write to any database"
+
+4. **הגדר גישה לרשת:**
+   - לך ל-"Network Access"
+   - Add IP Address
+   - בחר "Allow access from anywhere" (0.0.0.0/0)
+
+5. **קבל Connection String:**
+   - לך ל-"Database" → "Connect"
+   - בחר "Connect your application"
+   - העתק את ה-connection string
+   - החלף `<password>` עם הסיסמה שלך
+   - החלף `<dbname>` עם `vip_shipping`
+
 ## 🚀 הפעלה מהירה
 
 ### דרישות מקדימות
 - Node.js 18+ 
 - PNPM 8+
+- MongoDB Atlas account
 
 ### התקנה
 
