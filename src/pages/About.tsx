@@ -11,6 +11,7 @@ import {
   CheckCircle
 } from 'react-bootstrap-icons';
 import { trackPageView } from '../utils/analytics';
+import './About.css';
 
 const About: React.FC = () => {
   useEffect(() => {
@@ -306,72 +307,7 @@ const About: React.FC = () => {
         </Row>
       </section>
 
-      {/* CSS מתקדם */}
-      <style>{`
-      .hover-lift {
-        transition: all 0.3s ease;
-      }
-      .hover-lift:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
-      }
-      
-      .counter-animation {
-        transition: all 0.3s ease;
-      }
-      .counter-animation:hover {
-        transform: scale(1.1);
-      }
-      
-      .timeline-container {
-        position: relative;
-      }
-      .timeline-item:before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 100%;
-        width: 2px;
-        height: 30px;
-        background: linear-gradient(to bottom, #007bff, #e9ecef);
-        transform: translateX(-50%);
-        z-index: 1;
-      }
-      .timeline-item:last-child:before {
-        display: none;
-      }
-      
-      .bg-gradient-primary {
-        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-      }
-      
-      @media (max-width: 768px) {
-        .timeline-item:before {
-          left: 10px;
-          transform: none;
-        }
-        .display-4 {
-          font-size: 2.5rem;
-        }
-      }
-      
-      /* אנימציות מתקדמות */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      .timeline-item {
-        animation: fadeInUp 0.6s ease forwards;
-        animation-delay: calc(var(--item-index, 0) * 0.1s);
-      }
-      `}</style>
+      {/* CSS הועבר ל-About.css */}
     </Container>
     </>
   );
