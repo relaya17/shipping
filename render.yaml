@@ -39,7 +39,7 @@ services:
     name: vip-shipping-api
     env: node
     buildCommand: pnpm install
-    startCommand: node server/app.js
+    startCommand: node server/simple-app.js
     envVars:
       - key: NODE_ENV
         value: production
@@ -48,6 +48,8 @@ services:
       - key: MONGODB_URI
         value: mongodb+srv://arlet:0528747305mm@cluster0.mongodb.net/dudu_move?retryWrites=true&w=majority
       - key: JWT_SECRET
+        generateValue: true
+      - key: SESSION_SECRET
         generateValue: true
       - key: BCRYPT_ROUNDS
         value: 12
