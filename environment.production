@@ -2,8 +2,8 @@
 # העתק את הקובץ הזה ל-.env.production והחלף את הערכים
 
 # MongoDB Atlas Connection
-# עודכן לפי ה-URI ששלחת
-MONGODB_URI=mongodb+srv://arlet:0528747305mm@cluster0.mongodb.net/dudu_move?retryWrites=true&w=majority
+# עודכן ל-vip_shipping
+MONGODB_URI=mongodb+srv://arlet:0528747305mm@cluster0.mongodb.net/vip_shipping?retryWrites=true&w=majority
 
 # JWT Secret (צור מפתח חזק)
 JWT_SECRET=your-super-secret-jwt-key-256-bits-long-here
