@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "home": "בית",
+    "about": "אודותינו",
+    "services": "שירותים",
+    "quote": "קבל הצעה",
+    "contact": "צור קשר",
+    "tracking": "עקוב אחר משלוח",
+    "login": "התחבר",
+    "signup": "הרשם"
+  },
+  "hero": {
+    "title": "שירותי הובלה בינלאומיים מקצועיים",
+    "subtitle": "פתרונות הובלה גלובליים עם המלצות מופעלות בינה מלאכותית",
+    "cta_primary": "קבל הצעת מחיר חינם",
+    "cta_secondary": "למד עוד"
+  },
+  "services": {
+    "household": "הובלת בית",
+    "commercial": "הובלה מסחרית",
+    "vehicle": "הובלת רכב",
+    "artwork": "הובלת יצירות אמנות",
+    "piano": "הובלת פסנתר",
+    "insurance": "ביטוח הובלה",
+    "packing": "אריזה מקצועית",
+    "storage": "פתרונות אחסון",
+    "interstate": "הובלה בין מדינות",
+    "worldwide": "הובלה עולמית",
+    "moving_services": "שירותי הובלה",
+    "international": "הובלה בינלאומית"
+  },
+  "cta": {
+    "get_quote": "קבל הצעת מחיר AI",
+    "free_consult": "ייעוץ חינם",
+    "call_now": "התקשר עכשיו",
+    "email_us": "שלח לנו מייל"
+  },
+  "about": {
+    "title": "אודות VIP International Shipping",
+    "description": "חברת הובלות בינלאומית מובילה עם עשרות שנות ניסיון"
+  },
+  "footer": {
+    "company_name": "VIP International Shipping",
+    "description": "שירותי הובלה והעברה בינלאומיים מקצועיים ברחבי העולם",
+    "quick_links": "קישורים מהירים",
+    "services": "השירותים שלנו",
+    "legal": "משפטי ומדיניות",
+    "copyright": "כל הזכויות שמורות"
+  },
+  "notifications": {
+    "title": "התראות",
+    "mark_all_read": "סמן הכל כנקרא",
+    "no_notifications": "אין התראות",
+    "shipment_started": "המשלוח התחיל!",
+    "price_update": "עדכון מחירים",
+    "customs_inspection": "בדיקת מכס"
+  },
+  "common": {
+    "loading": "טוען...",
+    "error": "שגיאה",
+    "success": "הצלחה",
+    "cancel": "בטל",
+    "back": "דלג לתוכן הראשי",
+    "confirm": "אשר",
+    "submit": "שלח",
+    "save": "שמור",
+    "delete": "מחק",
+    "edit": "ערוך",
+    "view": "הצג",
+    "back": "חזור",
+    "next": "הבא",
+    "previous": "הקודם",
+    "search": "חפש",
+    "filter": "סנן",
+    "sort": "מיין"
+  },
+  "forms": {
+    "name": "שם מלא",
+    "email": "כתובת אימייל",
+    "phone": "מספר טלפון",
+    "message": "הודעה",
+    "subject": "נושא",
+    "from_location": "מיקום מוצא",
+    "to_location": "יעד המשלוח",
+    "moving_date": "תאריך מעבר",
+    "service_type": "סוג שירות",
+    "urgency": "רמת דחיפות",
+    "budget": "טווח תקציב",
+    "required": "שדה חובה",
+    "optional": "אופציונלי",
+    "weight": "משקל משוער (ק\"ג)",
+    "length": "אורך",
+    "width": "רוחב",
+    "height": "גובה"
+  },
+  "tracking": {
+    "title": "עקוב אחר המשלוח שלך",
+    "tracking_number": "מספר מעקב",
+    "track": "עקוב",
+    "current_status": "סטטוס נוכחי",
+    "estimated_delivery": "מסירה משוערת",
+    "location": "מיקום נוכחי",
+    "progress": "התקדמות",
+    "timeline": "ציר זמן משלוח"
+  },
+  "ai": {
+    "recommendations": "המלצות AI",
+    "price_prediction": "חיזוי מחירים AI",
+    "smart_suggestions": "הצעות חכמות",
+    "powered_by_ai": "מופעל באמצעות AI",
+    "analyzing": "מנתח את הצרכים שלך...",
+    "calculating": "מחשב...",
+    "factors": "גורמים משפיעים"
+  },
+  "volume": {
+    "title": "מחשבון נפח AR",
+    "new_badge": "חדש!",
+    "use_camera": "השתמש במצלמה לחישוב אוטומטי",
+    "manual_entry": "הזנה ידנית",
+    "start_scan": "התחל סריקה",
+    "scanning": "סורק חפצים באמצעות AI...",
+    "ar_not_supported": "המצלמה אינה זמינה במכשיר זה",
+    "switch_to_camera": "עבור למצלמה",
+    "switch_to_manual": "עבור להזנה ידנית",
+    "calculation_complete": "החישוב הושלם!",
+    "total_volume": "נפח כולל (מ\"ק)",
+    "estimated_weight": "משקל משוער (ק\"ג)",
+    "recommended_container": "קונטיינר מומלץ",
+    "estimated_price": "מחיר משוער",
+    "scanned_items": "פריטים שנסרקו",
+    "calculate": "חשב נפח"
+  }
+}
+
+

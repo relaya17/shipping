@@ -1,0 +1,108 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "quote": "Get Quote",
+    "contact": "Contact",
+    "tracking": "Track Shipment",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "hero": {
+    "title": "Professional International Shipping",
+    "subtitle": "Global moving solutions with AI-powered recommendations",
+    "cta_primary": "Get Free Quote",
+    "cta_secondary": "Learn More"
+  },
+  "services": {
+    "household": "Household Moving",
+    "commercial": "Commercial Moving",
+    "vehicle": "Vehicle Shipping",
+    "artwork": "Fine Art Shipping",
+    "piano": "Piano Moving",
+    "insurance": "Moving Insurance",
+    "packing": "Professional Packing",
+    "storage": "Storage Solutions"
+  },
+  "cta": {
+    "get_quote": "Get AI Quote",
+    "free_consult": "Free Consultation",
+    "call_now": "Call Now",
+    "email_us": "Email Us"
+  },
+  "about": {
+    "title": "About VIP International Shipping",
+    "description": "Leading international moving company with decades of experience"
+  },
+  "footer": {
+    "company_name": "VIP International Shipping",
+    "description": "Professional international moving and shipping services worldwide",
+    "quick_links": "Quick Links",
+    "services": "Our Services",
+    "legal": "Legal & Policies",
+    "copyright": "All rights reserved"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "mark_all_read": "Mark All as Read",
+    "no_notifications": "No notifications",
+    "shipment_started": "Shipment Started!",
+    "price_update": "Price Update",
+    "customs_inspection": "Customs Inspection"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "back": "Skip to main content",
+    "confirm": "Confirm",
+    "submit": "Submit",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort"
+  },
+  "forms": {
+    "name": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "message": "Message",
+    "subject": "Subject",
+    "from_location": "From Location",
+    "to_location": "To Location",
+    "moving_date": "Moving Date",
+    "service_type": "Service Type",
+    "urgency": "Urgency Level",
+    "budget": "Budget Range",
+    "required": "Required",
+    "optional": "Optional"
+  },
+  "tracking": {
+    "title": "Track Your Shipment",
+    "tracking_number": "Tracking Number",
+    "track": "Track",
+    "current_status": "Current Status",
+    "estimated_delivery": "Estimated Delivery",
+    "location": "Current Location",
+    "progress": "Progress",
+    "timeline": "Shipment Timeline"
+  },
+  "ai": {
+    "recommendations": "AI Recommendations",
+    "price_prediction": "AI Price Prediction",
+    "smart_suggestions": "Smart Suggestions",
+    "powered_by_ai": "Powered by AI",
+    "analyzing": "Analyzing your needs...",
+    "calculating": "Calculating..."
+  }
+}
+
+

@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "about": "معلومات عنا",
+    "services": "الخدمات",
+    "quote": "احصل على عرض أسعار",
+    "contact": "اتصل بنا",
+    "tracking": "تتبع الشحنة",
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب"
+  },
+  "hero": {
+    "title": "الشحن الدولي المهني",
+    "subtitle": "حلول النقل العالمية مع توصيات مدعومة بالذكاء الاصطناعي",
+    "cta_primary": "احصل على عرض أسعار مجاني",
+    "cta_secondary": "اعرف المزيد"
+  },
+  "services": {
+    "household": "نقل المنزل",
+    "commercial": "النقل التجاري",
+    "vehicle": "شحن المركبات",
+    "artwork": "شحن الأعمال الفنية",
+    "piano": "نقل البيانو",
+    "insurance": "تأمين النقل",
+    "packing": "التعبئة المهنية",
+    "storage": "حلول التخزين"
+  },
+  "cta": {
+    "get_quote": "احصل على عرض أسعار AI",
+    "free_consult": "استشارة مجانية",
+    "call_now": "اتصل الآن",
+    "email_us": "راسلنا"
+  },
+  "about": {
+    "title": "معلومات عن VIP International Shipping",
+    "description": "شركة رائدة في النقل الدولي مع عقود من الخبرة"
+  },
+  "footer": {
+    "company_name": "VIP International Shipping",
+    "description": "خدمات النقل والشحن الدولية المهنية في جميع أنحاء العالم",
+    "quick_links": "روابط سريعة",
+    "services": "خدماتنا",
+    "legal": "القانونية والسياسات",
+    "copyright": "جميع الحقوق محفوظة"
+  },
+  "common": {
+    "loading": "جارٍ التحميل...",
+    "error": "خطأ",
+    "success": "نجح",
+    "cancel": "إلغاء",
+    "confirm": "تأكيد",
+    "submit": "إرسال",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تحرير",
+    "view": "عرض",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب"
+  },
+  "forms": {
+    "name": "الاسم الكامل",
+    "email": "عنوان البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "message": "رسالة",
+    "subject": "الموضوع",
+    "from_location": "مكان المغادرة",
+    "to_location": "مكان الوصول",
+    "moving_date": "تاريخ النقل",
+    "service_type": "نوع الخدمة",
+    "urgency": "مستوى الإلحاح",
+    "budget": "نطاق الميزانية",
+    "required": "مطلوب",
+    "optional": "اختياري"
+  },
+  "tracking": {
+    "title": "تتبع شحنتك",
+    "tracking_number": "رقم التتبع",
+    "track": "تتبع",
+    "current_status": "الحالة الحالية",
+    "estimated_delivery": "التسليم المقدر",
+    "location": "الموقع الحالي",
+    "progress": "التقدم",
+    "timeline": "جدول زمني للشحنة"
+  },
+  "ai": {
+    "recommendations": "توصيات الذكاء الاصطناعي",
+    "price_prediction": "توقع الأسعار بالذكاء الاصطناعي",
+    "smart_suggestions": "اقتراحات ذكية",
+    "powered_by_ai": "مدعوم بالذكاء الاصطناعي",
+    "analyzing": "جارٍ تحليل احتياجاتك...",
+    "calculating": "جارٍ الحساب..."
+  }
+}

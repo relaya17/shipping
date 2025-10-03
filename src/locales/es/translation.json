@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "quote": "Obtener Presupuesto",
+    "contact": "Contacto",
+    "tracking": "Rastrear Envío",
+    "login": "Iniciar Sesión",
+    "signup": "Registrarse"
+  },
+  "hero": {
+    "title": "Envíos Internacionales Profesionales",
+    "subtitle": "Soluciones globales de mudanzas con recomendaciones impulsadas por IA",
+    "cta_primary": "Obtener Presupuesto Gratis",
+    "cta_secondary": "Saber Más"
+  },
+  "services": {
+    "household": "Mudanza Residencial",
+    "commercial": "Mudanza Comercial",
+    "vehicle": "Envío de Vehículos",
+    "artwork": "Envío de Obras de Arte",
+    "piano": "Mudanza de Pianos",
+    "insurance": "Seguro de Mudanza",
+    "packing": "Empaque Profesional",
+    "storage": "Soluciones de Almacenamiento"
+  },
+  "cta": {
+    "get_quote": "Obtener Presupuesto AI",
+    "free_consult": "Consulta Gratuita",
+    "call_now": "Llamar Ahora",
+    "email_us": "Enviar Correo"
+  },
+  "about": {
+    "title": "Acerca de VIP International Shipping",
+    "description": "Empresa líder en mudanzas internacionales con décadas de experiencia"
+  },
+  "footer": {
+    "company_name": "VIP International Shipping",
+    "description": "Servicios profesionales de mudanza y envío internacional en todo el mundo",
+    "quick_links": "Enlaces Rápidos",
+    "services": "Nuestros Servicios",
+    "legal": "Legal y Políticas",
+    "copyright": "Todos los derechos reservados"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "submit": "Enviar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar"
+  },
+  "forms": {
+    "name": "Nombre Completo",
+    "email": "Dirección de Correo",
+    "phone": "Número de Teléfono",
+    "message": "Mensaje",
+    "subject": "Asunto",
+    "from_location": "Ubicación de Origen",
+    "to_location": "Ubicación de Destino",
+    "moving_date": "Fecha de Mudanza",
+    "service_type": "Tipo de Servicio",
+    "urgency": "Nivel de Urgencia",
+    "budget": "Rango de Presupuesto",
+    "required": "Requerido",
+    "optional": "Opcional"
+  },
+  "tracking": {
+    "title": "Rastrear Tu Envío",
+    "tracking_number": "Número de Rastreo",
+    "track": "Rastrear",
+    "current_status": "Estado Actual",
+    "estimated_delivery": "Entrega Estimada",
+    "location": "Ubicación Actual",
+    "progress": "Progreso",
+    "timeline": "Cronograma de Envío"
+  },
+  "ai": {
+    "recommendations": "Recomendaciones AI",
+    "price_prediction": "Predicción de Precios AI",
+    "smart_suggestions": "Sugerencias Inteligentes",
+    "powered_by_ai": "Impulsado por IA",
+    "analyzing": "Analizando tus necesidades...",
+    "calculating": "Calculando..."
+  }
+}
