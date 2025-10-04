@@ -34,11 +34,11 @@ services:
       - key: VITE_API_URL
         value: https://vip-shipping-api.onrender.com
 
-  # Backend API Service - Full MongoDB Support
+  # Backend API Service - MongoDB Atlas
   - type: web
     name: vip-shipping-api
     env: node
-    buildCommand: pnpm install
+    buildCommand: pnpm install --frozen-lockfile
     startCommand: node server/app.js
     envVars:
       - key: NODE_ENV
@@ -46,9 +46,7 @@ services:
       - key: PORT
         value: 10000
       - key: MONGODB_URI
-        fromDatabase:
-          name: vip-shipping-db
-          property: connectionString
+        sync: false  # הגדר ידנית ב-Render Dashboard עם ה-URI מ-Atlas
       - key: JWT_SECRET
         generateValue: true
       - key: BCRYPT_ROUNDS
@@ -61,9 +59,3 @@ services:
         value: 900000
       - key: RATE_LIMIT_MAX_REQUESTS
         value: 100
-
-# Database Service - MongoDB
-databases:
-  - name: vip-shipping-db
-    databaseName: vip_shipping
-    user: vipshipping
