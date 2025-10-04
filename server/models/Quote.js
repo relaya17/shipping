@@ -253,7 +253,7 @@ const quoteSchema = new mongoose.Schema({
 });
 
 // אינדקסים לביצועים
-quoteSchema.index({ 'quoteInfo.quoteNumber': 1 }, { unique: true });
+// הערה: quoteNumber כבר מוגדר כ-unique בסכמה, לכן לא צריך אינדקס נוסף
 quoteSchema.index({ 'customer.userId': 1, createdAt: -1 });
 quoteSchema.index({ 'customer.contactInfo.email': 1 });
 quoteSchema.index({ 'quoteInfo.status': 1, 'validity.expirationDate': 1 });

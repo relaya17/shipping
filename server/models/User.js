@@ -156,7 +156,7 @@ const userSchema = new mongoose.Schema({
 });
 
 // אינדקסים לביצועים מהירים
-userSchema.index({ 'personalInfo.email': 1 }, { unique: true });
+// הערה: email כבר מוגדר כ-unique בסכמה, לכן לא צריך אינדקס נוסף
 userSchema.index({ 'authentication.lastPasswordChange': 1 });
 userSchema.index({ 'analytics.lastLogin': -1 });
 userSchema.index({ 'address.coordinates': '2dsphere' }); // לחיפוש גיאוגרפי

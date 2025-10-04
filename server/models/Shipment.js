@@ -294,7 +294,7 @@ const shipmentSchema = new mongoose.Schema({
 });
 
 // אינדקסים מתקדמים
-shipmentSchema.index({ 'shipmentInfo.trackingNumber': 1 }, { unique: true });
+// הערה: trackingNumber כבר מוגדר כ-unique בסכמה, לכן לא צריך אינדקס נוסף
 shipmentSchema.index({ 'customer.userId': 1, 'timeline.requestedPickupDate': -1 });
 shipmentSchema.index({ 'addresses.origin.coordinates': '2dsphere' });
 shipmentSchema.index({ 'addresses.destination.coordinates': '2dsphere' });
