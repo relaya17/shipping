@@ -1,3 +1,5 @@
+require('dotenv').config(); // טעינת משתני סביבה
+
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -43,20 +45,7 @@ class VIPShippingApp {
   setupMiddleware() {
     // אבטחה בסיסית עם Helmet
     this.app.use(helmet({
-      contentSecurityPolicy: {
-        directives: {
-          defaultSrc: ["'self'"],
-          styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://cdn.jsdelivr.net"],
-          scriptSrc: ["'self'", "'unsafe-inline'", "https://www.google-analytics.com"],
-          fontSrc: ["'self'", "https://fonts.gstatic.com"],
-          imgSrc: ["'self'", "data:", "https:", "blob:"],
-          connectSrc: ["'self'", "https://api.vipshipping.com"],
-          mediaSrc: ["'self'"],
-          objectSrc: ["'none'"],
-          baseUri: ["'self'"],
-          frameAncestors: ["'none'"]
-        }
-      },
+      contentSecurityPolicy: false, // Disable CSP temporarily to debug 403 issues
       crossOriginEmbedderPolicy: false // עבור תמיכה ב-AR
     }));
 
@@ -68,19 +57,32 @@ class VIPShippingApp {
           'http://localhost:3000',
           'http://localhost:5173',
           'http://localhost:3639',
+          'https://vip-shipping-frontend.onrender.com', // Frontend הרשמי מ-render.yaml
           'https://vip-shipping.onrender.com',
+          'https://shipping-3y46.onrender.com',
           'https://vipshipping.com',
           'https://www.vipshipping.com'
         ];
+
+        // הוספת CORS_ORIGIN מהסביבה אם קיים
+        if (process.env.CORS_ORIGIN && !allowedOrigins.includes(process.env.CORS_ORIGIN)) {
+          allowedOrigins.push(process.env.CORS_ORIGIN);
+        }
         
         // בפיתוח - אפשר הכל
         if (this.environment === 'development' && !origin) {
           return callback(null, true);
         }
         
-        if (allowedOrigins.includes(origin) || !origin) {
+        // תמיד אפשר בקשות ללא origin (static files)
+        if (!origin) {
+          return callback(null, true);
+        }
+        
+        if (allowedOrigins.includes(origin)) {
           callback(null, true);
         } else {
+          console.warn(colors.yellow(`⚠️ CORS חסום עבור origin: ${origin}`));
           callback(new Error('לא מורשה על ידי CORS policy'));
         }
       },
@@ -92,15 +94,15 @@ class VIPShippingApp {
 
     this.app.use(cors(corsOptions));
 
-    // Rate limiting מתקדם
+    // Rate limiting מתקדם - עדכון לגרסה 7
     const limiter = rateLimit({
       windowMs: 15 * 60 * 1000, // 15 דקות
-      max: 100, // מקסימום 100 בקשות לכל IP
+      limit: 100, // שינוי מ-max ל-limit בגרסה 7
       message: {
         error: 'יותר מדי בקשות, נסה שוב מאוחר יותר',
         retryAfter: '15 minutes'
       },
-      standardHeaders: true,
+      standardHeaders: 'draft-7', // עדכון לstandard headers החדש
       legacyHeaders: false,
       // Rate limit מיוחד לכל endpoint
       keyGenerator: (req) => {
@@ -108,10 +110,10 @@ class VIPShippingApp {
       }
     });
 
-    // Rate limiting חמור יותר לAPI sensitive
+    // Rate limiting חמור יותר לAPI sensitive - עדכון לגרסה 7
     const strictLimiter = rateLimit({
       windowMs: 15 * 60 * 1000,
-      max: 10, // רק 10 בקשות ל-login/register
+      limit: 10, // שינוי מ-max ל-limit בגרסה 7
       message: { error: 'יותר מדי ניסיונות התחברות' }
     });
 
@@ -150,11 +152,23 @@ class VIPShippingApp {
     }));
     this.app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-    // Static files
-    this.app.use(express.static(path.join(__dirname, '../dist')));
-
-    // הגדרת headers נוספים
+    // Debug middleware to see what's happening
     this.app.use((req, res, next) => {
+      console.log(`${req.method} ${req.path} - User-Agent: ${req.get('User-Agent')}`);
+      next();
+    });
+
+    // Static files with explicit configuration
+    this.app.use(express.static(path.join(__dirname, '../dist'), {
+      index: false, // Don't automatically serve index.html
+      dotfiles: 'ignore', // Ignore dotfiles
+      etag: false, // Disable etag
+      lastModified: false, // Disable lastModified
+      maxAge: '1d' // Cache for 1 day
+    }));
+
+    // הגדרת headers נוספים (רק ל-API routes)
+    this.app.use('/api', (req, res, next) => {
       res.setHeader('X-Powered-By', 'VIP International Shipping');
       res.setHeader('X-API-Version', '1.0.0');
       res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
@@ -207,7 +221,9 @@ class VIPShippingApp {
 
     // Serve React app לכל route שלא נמצא
     this.app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../dist/index.html'));
+      const indexPath = path.join(__dirname, '../dist/index.html');
+      console.log('Serving index.html from:', indexPath);
+      res.sendFile(indexPath);
     });
   }
 
