@@ -32,10 +32,8 @@ class DatabaseManager {
         heartbeatFrequencyMS: 10000,
         retryWrites: true,
         retryReads: true,
-        tls: process.env.NODE_ENV === 'production', // שימוש ב-TLS רק בפרודקשן
+        // הסרת tls - ה-connection string כבר כולל את ההגדרה
         autoIndex: true, // מאפשר יצירת אינדקסים בעת הפעלה
-        // הסרת bufferCommands - לא נדרש ב-Mongoose 8
-        // bufferMaxEntries הוסר ב-Mongoose 6+ ולא נתמך ב-8
       };
 
       const connectionString = this.getConnectionString();
