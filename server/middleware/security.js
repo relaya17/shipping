@@ -6,26 +6,27 @@ const validator = require('express-validator');
  * Middleware אבטחה מתקדם לVIP International Shipping
  */
 
-// Rate Limiting מתקדם
-const createRateLimit = (windowMs, max, message, skipSuccessfulRequests = false) => {
+// Rate Limiting מתקדם - עדכון לגרסה 7 של express-rate-limit
+const createRateLimit = (windowMs, limit, message, skipSuccessfulRequests = false) => {
   return rateLimit({
     windowMs,
-    max,
-    message: {
-      success: false,
-      error: message,
-      retryAfter: Math.ceil(windowMs / 1000 / 60) + ' minutes'
-    },
-    standardHeaders: true,
-    legacyHeaders: false,
+    limit, // שם הפרמטר החדש בגרסה 7 (לא max)
+    message: message, // הודעה פשוטה - לא אובייקט מורכב
+    standardHeaders: 'draft-7', // RateLimit-* headers
+    legacyHeaders: false, // X-RateLimit-* headers מושבתים
     skipSuccessfulRequests,
+    // handler מותאם אישית במקום message object מורכב
+    handler: (req, res) => {
+      res.status(429).json({
+        success: false,
+        error: message,
+        retryAfter: Math.ceil(windowMs / 1000 / 60) + ' minutes'
+      });
+    },
     keyGenerator: (req) => {
       // שילוב IP עם User-Agent לזיהוי מדויק יותר
-      return req.ip + ':' + req.get('User-Agent')?.slice(0, 50);
+      return req.ip + ':' + (req.get('User-Agent') || 'unknown').slice(0, 50);
     },
-    onLimitReached: (req, res, options) => {
-      console.warn(`Rate limit reached for IP: ${req.ip}, Route: ${req.path}`);
-    }
   });
 };
 

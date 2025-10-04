@@ -67,10 +67,25 @@ class DatabaseManager {
   }
 
   getConnectionString() {
+    // בדיקה אם יש MONGODB_URI מוגדר (Render/Atlas/Production)
+    if (process.env.MONGODB_URI) {
+      console.log(colors.cyan('🔗 משתמש ב-MONGODB_URI מהסביבה'));
+      return process.env.MONGODB_URI;
+    }
+    
+    if (process.env.MONGODB_ATLAS_URI) {
+      console.log(colors.cyan('🔗 משתמש ב-MONGODB_ATLAS_URI מהסביבה'));
+      return process.env.MONGODB_ATLAS_URI;
+    }
+
+    // אם אין, בודק את הסביבה
     const env = process.env.NODE_ENV || 'development';
+    console.log(colors.yellow(`🌍 סביבה: ${env}`));
+    
     switch (env) {
       case 'production':
-        return process.env.MONGODB_URI || process.env.MONGODB_ATLAS_URI;
+        console.warn(colors.red('⚠️ אזהרה: אין MONGODB_URI בפרודקשן! משתמש ב-localhost'));
+        return 'mongodb://localhost:27017/vip_shipping_prod';
       case 'test':
         return process.env.MONGODB_TEST_URI || 'mongodb://localhost:27017/vip_shipping_test';
       default:
