@@ -18,13 +18,13 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'he',
+  lng: 'en',
   fallbackLng: 'en',
   interpolation: { escapeValue: false },
 });
 
-// הגדרת כיוון ברירת המחדל ל-RTL לעברית
-document.documentElement.setAttribute('dir', 'rtl');
+// הגדרת כיוון ברירת המחדל ל-LTR לאנגלית
+document.documentElement.setAttribute('dir', 'ltr');
 
 // האזנה לשינוי שפה והגדרת כיוון בהתאם
 i18n.on('languageChanged', (lng) => {
