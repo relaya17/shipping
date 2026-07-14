@@ -118,7 +118,7 @@ const preventInjection = (req, res, next) => {
         if (hasSQL || hasNoSQL) {
           return res.status(400).json({
             success: false,
-            error: 'Invalid input detected',
+            error: 'קלט לא תקין זוהה',
             code: 'INVALID_INPUT'
           });
         }
@@ -268,7 +268,7 @@ module.exports = {
     if (!errors.isEmpty()) {
       return res.status(400).json({
         success: false,
-        error: 'Invalid data',
+        error: 'נתונים לא תקינים',
         details: errors.array().map(err => ({
           field: err.param,
           message: err.msg,

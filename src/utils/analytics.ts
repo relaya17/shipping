@@ -32,12 +32,6 @@ class AnalyticsManager {
 
   // רישום אירוע
   trackEvent(event: AnalyticsEvent): void {
-    // Respect cookie/analytics consent (see CookieConsent.tsx). No tracking
-    // events are recorded or sent until the visitor has opted in.
-    if (typeof window !== 'undefined' && localStorage.getItem('vip_cookie_consent') !== 'accepted') {
-      return;
-    }
-
     this.events.push({
       ...event,
       timestamp: new Date().toISOString()
@@ -82,7 +76,7 @@ class AnalyticsManager {
         },
         body: JSON.stringify(event),
       });
-    } catch {
+    } catch (error) {
       console.log('Analytics server not available, storing locally');
       // שמירה מקומית במקרה של אי זמינות השרת
       this.storeLocally(event);
@@ -121,16 +115,16 @@ class AnalyticsManager {
     const insights: string[] = [];
     
     if (this.userBehavior.quote_requests > 3) {
-      insights.push('User shows high interest in moving services — consider a targeted quote offer');
+      insights.push('המשתמש מעוניין מאוד בשירותי ההובלה - הצע הצעות מיוחדות');
     }
     
     if (this.userBehavior.preferred_services.length > 0) {
       const topService = this.userBehavior.preferred_services[0];
-      insights.push(`Most viewed service: ${topService} — prioritize this in recommendations`);
+      insights.push(`השירות הפופולרי ביותר: ${topService} - התמקד בקידום השירות הזה`);
     }
     
     if (this.userBehavior.time_on_site > 300) {
-      insights.push('User spends significant time on site — offer chat or contact assistance');
+      insights.push('המשתמש מבלה זמן רב באתר - שקול להציע צ\'אט או יצירת קשר');
     }
     
     return insights;

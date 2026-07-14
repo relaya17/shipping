@@ -1,349 +1,144 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { RootState } from '../redux/store';
-import { clearCart } from '../redux/cartSlice';
-import { useAuth } from '../hooks/useAuth';
-import api from '../service/api';
+// src/components/CheckOutPage.tsx
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { RootState } from '../redux/store'; // הייבוא של הסטור
+import { clearCart } from '../redux/cartSlice'; // אקשן לנקות את העגלה
 
-type InvoiceAmounts = {
-  subtotal: number;
-  taxAmount: number;
-  totalAmount: number;
-  currency: string;
-};
-
-type Invoice = {
-  _id: string;
-  invoiceNumber: string;
-  status: string;
-  amounts: InvoiceAmounts;
-  tax?: {
-    country?: string;
-    state?: string;
-    rate?: number;
-    jurisdiction?: string;
-    notes?: string;
-  };
-  customer?: { name?: string; email?: string };
-  lineItems?: Array<{ description: string; quantity: number; unitPrice: number; total: number }>;
-};
-
-const US_STATES = [
-  'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
-  'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC',
-  'SD','TN','TX','UT','VT','VA','WA','WV','WI','WY','DC'
-];
-
-/** Secure Stripe Checkout — no card data on this site (PCI). */
 const CheckoutPage: React.FC = () => {
-  const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [searchParams] = useSearchParams();
-  const { isAuthenticated, user } = useAuth();
 
-  const cartItems = useSelector((state: RootState) => state.cart.items);
-  const totalPrice = useSelector((state: RootState) => state.cart.totalPrice);
-  const customerName = useSelector((state: RootState) => state.cart.customerName);
-
-  const invoiceIdParam = searchParams.get('invoiceId') || '';
-  const statusParam = searchParams.get('status') || '';
-
-  const [invoiceId, setInvoiceId] = useState(invoiceIdParam);
-  const [invoice, setInvoice] = useState<Invoice | null>(null);
-  const [invoices, setInvoices] = useState<Invoice[]>([]);
-  const [country, setCountry] = useState('US');
-  const [stateCode, setStateCode] = useState('CA');
-  const [line1, setLine1] = useState('');
-  const [city, setCity] = useState('');
-  const [postalCode, setPostalCode] = useState('');
+  const [cardNumber, setCardNumber] = useState('');
+  const [expiryDate, setExpiryDate] = useState('');
+  const [cvv, setCvv] = useState('');
   const [error, setError] = useState('');
-  const [info, setInfo] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [stripeConfigured, setStripeConfigured] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const loadConfig = useCallback(async () => {
-    try {
-      const { data } = await api.get<{ success: boolean; stripeConfigured: boolean }>('/billing/config');
-      setStripeConfigured(Boolean(data.stripeConfigured));
-    } catch {
-      setStripeConfigured(false);
+ // src/components/CheckOutPage.tsx
+const customerName = useSelector((state: RootState) => state.cart.customerName);
+const customerPhone = useSelector((state: RootState) => state.cart.customerPhone);
+const cartItems = useSelector((state: RootState) => state.cart.items);
+const totalPrice = useSelector((state: RootState) => state.cart.totalPrice);
+
+  useEffect(() => {
+    if (!customerName || !customerPhone) {
+      navigate('/CheckoutPage'); // אם אין פרטי לקוח, מנתב חזרה לדף הקודם
     }
-  }, []);
+  }, [navigate, customerName, customerPhone]);
 
-  const loadInvoice = useCallback(async (id: string) => {
-    const { data } = await api.get<{ success: boolean; invoice: Invoice }>(`/billing/${id}`);
-    setInvoice(data.invoice);
-    if (data.invoice.tax?.country) setCountry(data.invoice.tax.country);
-    if (data.invoice.tax?.state) setStateCode(data.invoice.tax.state);
-  }, []);
-
-  const loadMyInvoices = useCallback(async () => {
-    const { data } = await api.get<{ success: boolean; invoices: Invoice[] }>('/billing');
-    const unpaid = (data.invoices || []).filter((inv) => inv.status !== 'paid' && inv.status !== 'void');
-    setInvoices(unpaid);
-    if (!invoiceId && unpaid[0]) setInvoiceId(unpaid[0]._id);
-  }, [invoiceId]);
-
-  useEffect(() => {
-    loadConfig();
-  }, [loadConfig]);
-
-  useEffect(() => {
-    if (statusParam === 'success') {
-      setInfo(t('checkout.payment_success'));
-      dispatch(clearCart());
-    } else if (statusParam === 'cancel') {
-      setError(t('checkout.payment_cancel'));
-    }
-  }, [statusParam, dispatch, t]);
-
-  useEffect(() => {
-    if (!isAuthenticated) return;
-    (async () => {
-      try {
-        setLoading(true);
-        setError('');
-        if (invoiceIdParam) {
-          setInvoiceId(invoiceIdParam);
-          await loadInvoice(invoiceIdParam);
-        } else {
-          await loadMyInvoices();
-        }
-      } catch {
-        setError(t('checkout.load_error'));
-      } finally {
-        setLoading(false);
-      }
-    })();
-  }, [isAuthenticated, invoiceIdParam, loadInvoice, loadMyInvoices, t]);
-
-  useEffect(() => {
-    if (!invoiceId || !isAuthenticated || invoiceIdParam) return;
-    (async () => {
-      try {
-        await loadInvoice(invoiceId);
-      } catch {
-        setError(t('checkout.load_error'));
-      }
-    })();
-  }, [invoiceId, isAuthenticated, invoiceIdParam, loadInvoice, t]);
-
-  const applyTax = async () => {
-    if (!invoiceId) return;
-    setLoading(true);
-    setError('');
-    try {
-      const { data } = await api.post<{ success: boolean; invoice: Invoice }>(`/billing/${invoiceId}/tax`, {
-        country,
-        state: country === 'US' ? stateCode : undefined,
-        line1,
-        city,
-        postalCode
-      });
-      setInvoice(data.invoice);
-      setInfo(t('checkout.tax_updated'));
-    } catch {
-      setError(t('checkout.tax_failed'));
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const payWithStripe = async () => {
-    if (!invoiceId) {
-      setError(t('checkout.select_invoice'));
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(''); // איפוס השגיאה
+  
+    // בדיקת שדות חובה
+    if (!cardNumber || !expiryDate || !cvv) {
+      setError('כל השדות של כרטיס האשראי חייבים להיות מלאים');
       return;
     }
-    setLoading(true);
-    setError('');
+  
+    // בדיקת תוקף כרטיס
+    const expiryParts = expiryDate.split('/');
+    const expiryMonth = parseInt(expiryParts[0], 10);
+    const expiryYear = parseInt(expiryParts[1], 10);
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth() + 1;
+    const currentYear = currentDate.getFullYear() % 100;
+  
+    if (expiryYear < currentYear || (expiryYear === currentYear && expiryMonth < currentMonth)) {
+      setError('תוקף הכרטיס פג');
+      return;
+    }
+  
+    setIsSubmitting(true);
+  
     try {
-      const taxRes = await api.post<{ success: boolean; invoice: Invoice }>(`/billing/${invoiceId}/tax`, {
-        country,
-        state: country === 'US' ? stateCode : undefined,
-        line1,
-        city,
-        postalCode
-      });
-      setInvoice(taxRes.data.invoice);
-
-      const { data } = await api.post<{ success: boolean; checkoutUrl: string }>(`/billing/${invoiceId}/checkout`);
-      if (!data.checkoutUrl) {
-        setError(t('checkout.no_checkout_url'));
-        return;
-      }
-      window.location.href = data.checkoutUrl;
-    } catch (err: unknown) {
-      const axiosErr = err as { response?: { data?: { error?: string } } };
-      setError(axiosErr.response?.data?.error || t('checkout.checkout_failed'));
+      // שמירה של פרטי כרטיס האשראי ב-localStorage
+      localStorage.setItem('creditCardInfo', JSON.stringify({ cardNumber, expiryDate, cvv }));
+  
+      // שמירה של ההזמנה והעגלה ב-localStorage (אפשרות לשימוש בעת הצורך)
+      localStorage.setItem('orderDetails', JSON.stringify({ cartItems, totalPrice }));
+  
+      // שליחה של פעולה לנקות את העגלה
+      dispatch(clearCart());
+  
+      alert('ההזמנה הושלמה בהצלחה!');
+      navigate('/thank-you');
+    } catch (error) {
+      setError('אירעה שגיאה בתהליך התשלום, אנא נסה שנית.');
     } finally {
-      setLoading(false);
+      setIsSubmitting(false);
     }
   };
-
-  const downloadPdf = async () => {
-    if (!invoiceId) return;
-    try {
-      const response = await api.get<Blob>(`/billing/${invoiceId}/pdf`, { responseType: 'blob' });
-      const url = window.URL.createObjectURL(new Blob([response.data], { type: 'application/pdf' }));
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${invoice?.invoiceNumber || 'invoice'}.pdf`;
-      a.click();
-      window.URL.revokeObjectURL(url);
-    } catch {
-      setError(t('checkout.pdf_failed'));
-    }
-  };
-
-  if (!isAuthenticated) {
-    return (
-      <main id="main-content" className="container py-5">
-        <div className="alert alert-warning" role="alert">
-          {t('checkout.login_required')}
-          <div className="mt-3">
-            <button type="button" className="btn btn-primary" onClick={() => navigate('/')}>
-              {t('checkout.go_home')}
-            </button>
-          </div>
-        </div>
-      </main>
-    );
-  }
-
+  
   return (
-    <main id="main-content" className="container py-5" style={{ maxWidth: 720 }}>
-      <h1 className="mb-4">{t('checkout.title')}</h1>
-      <p className="text-muted">{t('checkout.subtitle')}</p>
+    <div className="container d-flex justify-content-center align-items-center vh-100">
+      <div className="card shadow-lg p-4 w-100" style={{ maxWidth: '600px' }} dir="rtl">
+        <h2 className="text-center mb-4 font-weight-bold" style={{ color: 'rgba(119, 117, 10, 0.8)', fontSize: '2rem' }}>
+          דף תשלום בכרטיס אשראי
+        </h2>
 
-      {user && (
-        <div className="alert alert-light border">
-          {t('checkout.signed_in_as')} {user.firstName} {user.lastName} ({user.email})
-        </div>
-      )}
+        {error && <div className="alert alert-danger">{error}</div>}
 
-      {error && <div className="alert alert-danger" role="alert">{error}</div>}
-      {info && <div className="alert alert-success" role="status">{info}</div>}
-
-      {!stripeConfigured && <div className="alert alert-warning">{t('checkout.stripe_missing')}</div>}
-
-      {cartItems?.length > 0 && (
-        <div className="alert alert-info">
-          {t('checkout.cart_note')} ({cartItems.length} items, {totalPrice}
-          {customerName ? `, ${customerName}` : ''})
-        </div>
-      )}
-
-      <div className="mb-3">
-        <label className="form-label" htmlFor="invoiceSelect">{t('checkout.invoice_label')}</label>
-        {invoices.length > 0 ? (
-          <select
-            id="invoiceSelect"
-            className="form-select"
-            value={invoiceId}
-            onChange={(e) => setInvoiceId(e.target.value)}
-          >
-            {invoices.map((inv) => (
-              <option key={inv._id} value={inv._id}>
-                {inv.invoiceNumber} — {inv.amounts.totalAmount} {inv.amounts.currency} ({inv.status})
-              </option>
-            ))}
-          </select>
-        ) : (
-          <input
-            id="invoiceSelect"
-            className="form-control"
-            placeholder={t('checkout.invoice_placeholder')}
-            value={invoiceId}
-            onChange={(e) => setInvoiceId(e.target.value)}
-          />
+        {customerName && customerPhone && (
+          <div className="alert alert-info mb-4">
+            <h4>פרטי הלקוח:</h4>
+            <p><strong>שם:</strong> {customerName}</p>
+            <p><strong>טלפון:</strong> {customerPhone}</p>
+          </div>
         )}
-      </div>
 
-      {invoice && (
-        <div className="card mb-4 shadow-sm">
-          <div className="card-body">
-            <h2 className="h5 card-title">{invoice.invoiceNumber}</h2>
-            <p className="mb-1">{t('checkout.status')}: <strong>{invoice.status}</strong></p>
-            <p className="mb-1">
-              {t('checkout.customer')}: {invoice.customer?.name} ({invoice.customer?.email})
-            </p>
-            <ul className="mb-2">
-              {(invoice.lineItems || []).map((item, idx) => (
-                <li key={`${item.description}-${idx}`}>
-                  {item.description} — {item.total} {invoice.amounts.currency}
-                </li>
-              ))}
-            </ul>
-            <p className="mb-0">{t('checkout.subtotal')}: {invoice.amounts.subtotal} {invoice.amounts.currency}</p>
-            <p className="mb-0">
-              {t('checkout.tax')} ({invoice.tax?.jurisdiction || '—'}
-              {invoice.tax?.rate != null ? ` @ ${(invoice.tax.rate * 100).toFixed(2)}%` : ''}):{' '}
-              {invoice.amounts.taxAmount} {invoice.amounts.currency}
-            </p>
-            <p className="fw-bold fs-5 mt-2">
-              {t('checkout.amount_due')}: {invoice.amounts.totalAmount} {invoice.amounts.currency}
-            </p>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="cardNumber" className="form-label">מספר כרטיס אשראי</label>
+            <input
+              type="text"
+              className="form-control"
+              id="cardNumber"
+              placeholder="הכנס את מספר כרטיס האשראי"
+              value={cardNumber}
+              onChange={(e) => setCardNumber(e.target.value)}
+              required
+              pattern="[\d| ]{16,22}"
+              maxLength={19}
+            />
           </div>
-        </div>
-      )}
 
-      <div className="card mb-4">
-        <div className="card-body">
-          <h2 className="h5 card-title">{t('checkout.billing_address')}</h2>
-          <div className="row g-3">
-            <div className="col-md-6">
-              <label className="form-label" htmlFor="country">{t('checkout.country')}</label>
-              <select id="country" className="form-select" value={country} onChange={(e) => setCountry(e.target.value)}>
-                <option value="US">{t('checkout.united_states')}</option>
-                <option value="IL">{t('checkout.israel')}</option>
-              </select>
-            </div>
-            {country === 'US' && (
-              <div className="col-md-6">
-                <label className="form-label" htmlFor="state">{t('checkout.state')}</label>
-                <select id="state" className="form-select" value={stateCode} onChange={(e) => setStateCode(e.target.value)}>
-                  {US_STATES.map((st) => (
-                    <option key={st} value={st}>{st}</option>
-                  ))}
-                </select>
-              </div>
-            )}
-            <div className="col-12">
-              <label className="form-label" htmlFor="line1">{t('checkout.street')}</label>
-              <input id="line1" className="form-control" value={line1} onChange={(e) => setLine1(e.target.value)} />
-            </div>
-            <div className="col-md-6">
-              <label className="form-label" htmlFor="city">{t('checkout.city')}</label>
-              <input id="city" className="form-control" value={city} onChange={(e) => setCity(e.target.value)} />
-            </div>
-            <div className="col-md-6">
-              <label className="form-label" htmlFor="postal">{t('checkout.postal')}</label>
-              <input id="postal" className="form-control" value={postalCode} onChange={(e) => setPostalCode(e.target.value)} />
-            </div>
+          <div className="mb-3">
+            <label htmlFor="expiryDate" className="form-label">תוקף (MM/YY)</label>
+            <input
+              type="text"
+              className="form-control"
+              id="expiryDate"
+              placeholder="הכנס את תוקף הכרטיס (MM/YY)"
+              value={expiryDate}
+              onChange={(e) => setExpiryDate(e.target.value)}
+              required
+              pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$"
+            />
           </div>
-          <button type="button" className="btn btn-outline-secondary mt-3" onClick={applyTax} disabled={loading || !invoiceId}>
-            {t('checkout.recalc_tax')}
+
+          <div className="mb-3">
+            <label htmlFor="cvv" className="form-label">CVV</label>
+            <input
+              type="text"
+              className="form-control"
+              id="cvv"
+              placeholder="הכנס את קוד ה-CVV"
+              value={cvv}
+              onChange={(e) => setCvv(e.target.value)}
+              required
+              maxLength={3}
+            />
+          </div>
+
+          <button type="submit" className="btn btn-success w-100" disabled={isSubmitting}>
+            {isSubmitting ? 'בבקשה המתן...' : 'השלם הזמנה'}
           </button>
-        </div>
+        </form>
       </div>
-
-      <div className="d-grid gap-2">
-        <button
-          type="button"
-          className="btn btn-success btn-lg"
-          onClick={payWithStripe}
-          disabled={loading || !invoiceId || invoice?.status === 'paid' || !stripeConfigured}
-        >
-          {loading ? t('checkout.redirecting') : t('checkout.pay_stripe')}
-        </button>
-        <button type="button" className="btn btn-outline-primary" onClick={downloadPdf} disabled={!invoiceId}>
-          {t('checkout.download_pdf')}
-        </button>
-      </div>
-    </main>
+    </div>
   );
 };
 

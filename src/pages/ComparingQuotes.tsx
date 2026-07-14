@@ -1,14 +1,10 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { setComparison } from '../redux/comparingQuotesSlice';
-import { Button, Container, Form } from 'react-bootstrap';
-import LinkButton from '../components/LinkButton';
-import { ROUTES } from '../routs/routes';
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setComparison } from "../redux/comparingQuotesSlice";
+import { Button, Form } from "react-bootstrap";
 
 const ComparingQuotes = () => {
-  const { t } = useTranslation();
-  const [comparison, setComparisonValue] = useState<string>('');
+  const [comparison, setComparisonValue] = useState<string>("");
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
@@ -16,28 +12,22 @@ const ComparingQuotes = () => {
   };
 
   return (
-    <main id="main-content">
-      <Container className="my-5">
-        <h1 className="mb-3">{t('pages.stubs.comparing.title')}</h1>
-        <p className="lead text-muted mb-4">{t('pages.stubs.comparing.body')}</p>
-        <Form className="mb-4">
-          <Form.Group controlId="formComparison" className="mb-3">
-            <Form.Label>{t('forms.message')}</Form.Label>
-            <Form.Control
-              type="text"
-              value={comparison}
-              onChange={(e) => setComparisonValue(e.target.value)}
-            />
-          </Form.Group>
-          <Button variant="primary" onClick={handleSubmit} className="me-2">
-            {t('common.submit')}
-          </Button>
-          <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="outline-primary">
-            {t('cta.get_quote')}
-          </LinkButton>
-        </Form>
-      </Container>
-    </main>
+    <div className="container mt-4">
+      <h2>Comparing Quotes</h2>
+      <Form>
+        <Form.Group controlId="formComparison">
+          <Form.Label>Enter your comparison details</Form.Label>
+          <Form.Control
+            type="text"
+            value={comparison}
+            onChange={(e) => setComparisonValue(e.target.value)}
+          />
+        </Form.Group>
+        <Button variant="primary" onClick={handleSubmit}>
+          Submit Comparison
+        </Button>
+      </Form>
+    </div>
   );
 };
 

@@ -5,18 +5,8 @@ interface LanguageState {
   language: string;  // שדה בודד של השפה
 }
 
-function readStoredLanguage(): string {
-  try {
-    const saved = localStorage.getItem('vip-lang');
-    if (saved) return saved.split('-')[0];
-  } catch {
-    /* ignore */
-  }
-  return 'en';
-}
-
 const initialState: LanguageState = {
-  language: readStoredLanguage(),
+  language: 'en', // ברירת מחדל באנגלית
 };
 
 const languageSlice = createSlice({

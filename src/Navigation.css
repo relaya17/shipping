@@ -215,9 +215,12 @@
   }
 
   .language-toggle {
-    min-height: 40px !important;
-    height: auto !important;
-    width: auto !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .language-menu .flag {
+    width: 25px !important;
   }
 
   .language-menu {
@@ -230,39 +233,30 @@
   }
 }
 
-/* Language selector — beside hamburger */
+/* Language selector styling */
 .language-toggle {
-  border-radius: 999px !important;
-  width: auto !important;
-  min-width: 3.25rem !important;
-  height: auto !important;
-  min-height: 2.5rem !important;
-  padding: 0.35rem 0.75rem !important;
-  display: inline-flex !important;
+  border-radius: 50% !important;
+  width: 45px !important;
+  height: 45px !important;
+  padding: 0 !important;
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 0.35rem !important;
-  background-color: #fff !important;
-  border: 1px solid #0d6efd !important;
+  background-color: transparent !important;
+  border: 2px solid #0d6efd !important;
   color: #0d6efd !important;
-  font-size: 0.85rem !important;
+  font-size: 1.1rem !important;
   font-weight: 600 !important;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
-  box-shadow: none !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
 }
 
-.language-toggle::after {
-  margin-left: 0.35rem;
-}
-
-.language-toggle:hover,
-.language-toggle:focus,
-.language-toggle.show {
+.language-toggle:hover {
   background-color: #0d6efd !important;
   border-color: #0d6efd !important;
-  color: #fff !important;
-  transform: none !important;
-  box-shadow: none !important;
+  color: white !important;
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3) !important;
 }
 
 .language-menu {
