@@ -13,12 +13,11 @@ const Home: React.FC = () => {
 
   return (
     <>
-      {/* Skip link לנגישות */}
       <a href="#main-content" className="skip-link">
-        {t('common.back')}
+        {t('common.skip_to_content')}
       </a>
       
-      <div className="image-background" role="banner" aria-label="תמונת רקע של שירותי הובלה בינלאומיים">
+      <div className="image-background" role="banner" aria-label={t('hero.title')}>
      {/* <video autoPlay loop muted>
         <source
           src="https://res.cloudinary.com/YOUR_CLOUD_NAME/video/upload/YOUR_VIDEO.mp4"
@@ -36,7 +35,7 @@ const Home: React.FC = () => {
           <Col xs={12} md={10} lg={8} xl={7} className="d-flex justify-content-center">
             <Card className="text-center text-white bg-transparent border-0 w-100" role="main" style={{ maxWidth: '600px' }}>
               <Card.Body>
-                <h1>🌍 VIP International Shipping</h1>
+                <h1>{t('footer.company_name')}</h1>
                 <p className="lead fw-bold">{t('hero.title')}</p>
                 <p className="mb-3">{t('hero.subtitle')}</p>
                 <div className="d-flex gap-2 justify-content-center flex-wrap mt-2">
@@ -45,7 +44,7 @@ const Home: React.FC = () => {
                     aria-label={t('cta.get_quote')}
                     onClick={() => window.location.href = '/free-moving-quote'}
                   >
-                    💼 {t('cta.free_consult')}
+                    {t('cta.free_consult')}
                   </Button>
                   <Button
                     variant="outline-light"
@@ -63,7 +62,7 @@ const Home: React.FC = () => {
 
       </div>
       
-      {/* תכונות AI מתקדמות */}
+      {/* Advanced features */}
       <Container className="mt-5">
         <Row>
           <Col lg={8} className="mb-4">

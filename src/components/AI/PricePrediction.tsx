@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Form, Button, Alert, ProgressBar, Badge } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { Calculator, GraphUp, Cpu, CheckCircle } from 'react-bootstrap-icons';
@@ -10,7 +10,7 @@ interface PredictionData {
   urgency: string;
 }
 
-interface PricePrediction {
+interface PricePredictionResult {
   estimatedPrice: number;
   confidence: number;
   factors: Array<{
@@ -26,113 +26,117 @@ interface PricePrediction {
 }
 
 const PricePrediction: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [formData, setFormData] = useState<PredictionData>({
     location: '',
     weight: 0,
     serviceType: 'household',
     urgency: 'standard'
   });
-  
-  const [prediction, setPrediction] = useState<PricePrediction | null>(null);
+
+  const [prediction, setPrediction] = useState<PricePredictionResult | null>(null);
   const [isCalculating, setIsCalculating] = useState(false);
 
-  // Advanced AI price prediction
-  const calculateAIPrediction = (data: PredictionData): PricePrediction => {
-    // AI algorithm for price prediction
+  // Recalculate translated labels when language changes
+  useEffect(() => {
+    if (prediction && formData.location) {
+      setPrediction(calculateAIPrediction(formData));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [i18n.language]);
+
+  const calculateAIPrediction = (data: PredictionData): PricePredictionResult => {
     const basePrice = 1000;
     let finalPrice = basePrice;
-    const factors = [];
+    const factors: PricePredictionResult['factors'] = [];
 
-    // Calculate by destination
     const locationMultipliers: Record<string, number> = {
-      'europe': 1.2,
-      'asia': 1.8,
-      'australia': 2.2,
-      'africa': 1.9,
+      europe: 1.2,
+      asia: 1.8,
+      australia: 2.2,
+      africa: 1.9,
       'south-america': 2.0
     };
 
-    const locationKey = Object.keys(locationMultipliers).find(key => 
+    const locationKey = Object.keys(locationMultipliers).find((key) =>
       data.location.toLowerCase().includes(key)
     );
-    
+
     if (locationKey) {
       const multiplier = locationMultipliers[locationKey];
       finalPrice *= multiplier;
       factors.push({
-        name: 'Geographic Destination',
+        name: t('prediction.factor_geo'),
         impact: (multiplier - 1) * 100,
-        description: `Location ${data.location} affects the price`
+        description: t('prediction.factor_geo_desc', { location: data.location })
       });
     }
 
-    // Calculate by weight
     if (data.weight > 500) {
       const weightFactor = 1 + (data.weight - 500) / 1000;
       finalPrice *= weightFactor;
       factors.push({
-        name: 'Shipment Weight',
+        name: t('prediction.factor_weight'),
         impact: (weightFactor - 1) * 100,
-        description: `Weight of ${data.weight} kg requires special handling`
+        description: t('prediction.factor_weight_desc', { weight: data.weight })
       });
     }
 
-    // Calculate by service type
     const serviceMultipliers: Record<string, number> = {
-      'household': 1.0,
-      'commercial': 1.3,
-      'vehicle': 1.5,
-      'artwork': 1.8,
-      'piano': 2.0
+      household: 1.0,
+      commercial: 1.3,
+      vehicle: 1.5,
+      artwork: 1.8,
+      piano: 2.0
     };
 
     const serviceMultiplier = serviceMultipliers[data.serviceType] || 1.0;
     finalPrice *= serviceMultiplier;
-    
+
     if (serviceMultiplier !== 1.0) {
       factors.push({
-        name: 'Service Type',
+        name: t('prediction.factor_service'),
         impact: (serviceMultiplier - 1) * 100,
-        description: `Service ${data.serviceType} requires special handling`
+        description: t('prediction.factor_service_desc', {
+          service: t(`services.${data.serviceType}`)
+        })
       });
     }
 
-    // Calculate by urgency
     const urgencyMultipliers: Record<string, number> = {
-      'standard': 1.0,
-      'express': 1.4,
-      'urgent': 1.8
+      standard: 1.0,
+      express: 1.4,
+      urgent: 1.8
     };
 
     const urgencyMultiplier = urgencyMultipliers[data.urgency] || 1.0;
     finalPrice *= urgencyMultiplier;
-    
+
     if (urgencyMultiplier !== 1.0) {
       factors.push({
-        name: 'Urgency Level',
+        name: t('prediction.factor_urgency'),
         impact: (urgencyMultiplier - 1) * 100,
-        description: `Service ${data.urgency} available for an additional fee`
+        description: t('prediction.factor_urgency_desc', {
+          urgency: t(`prediction.urgency_${data.urgency}`)
+        })
       });
     }
 
-    // Calculate confidence level
-    const confidence = Math.min(95, 70 + (factors.length * 5));
+    const confidence = Math.min(95, 70 + factors.length * 5);
 
-    // Saving alternatives
     const alternatives = [
       {
-        option: 'Standard service instead of express',
+        option: t('prediction.alt_standard'),
         price: finalPrice * 0.8,
         savings: finalPrice * 0.2
       },
       {
-        option: 'Group with other shipments',
+        option: t('prediction.alt_group'),
         price: finalPrice * 0.85,
         savings: finalPrice * 0.15
       },
       {
-        option: 'Self-packing',
+        option: t('prediction.alt_self_pack'),
         price: finalPrice * 0.9,
         savings: finalPrice * 0.1
       }
@@ -148,13 +152,12 @@ const PricePrediction: React.FC = () => {
 
   const handleCalculate = async () => {
     if (!formData.location) {
-      alert('Please enter a destination');
+      alert(t('prediction.enter_destination'));
       return;
     }
 
     setIsCalculating(true);
-    
-    // Simulation of AI calculation
+
     setTimeout(() => {
       const result = calculateAIPrediction(formData);
       setPrediction(result);
@@ -174,37 +177,39 @@ const PricePrediction: React.FC = () => {
         <h5 className="mb-0">
           <Cpu className="me-2" />
           {t('ai.price_prediction')}
-          <Badge bg="warning" className="ms-2">Beta</Badge>
+          <Badge bg="warning" className="ms-2">
+            {t('prediction.beta')}
+          </Badge>
         </h5>
         <small>{t('ai.analyzing')}</small>
       </Card.Header>
-      
+
       <Card.Body>
         <Form>
-            <Form.Group className="mb-3">
+          <Form.Group className="mb-3">
             <Form.Label>{t('forms.to_location')}</Form.Label>
             <Form.Select
               value={formData.location}
-              onChange={(e) => setFormData({...formData, location: e.target.value})}
-              aria-label="Select shipping destination"
+              onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+              aria-label={t('forms.to_location')}
             >
-              <option value="">בחר יעד...</option>
-              <option value="europe">אירופה</option>
-              <option value="asia">אסיה</option>
-              <option value="australia">אוסטרליה</option>
-              <option value="africa">אפריקה</option>
-              <option value="south-america">דרום אמריקה</option>
+              <option value="">{t('prediction.select_destination')}</option>
+              <option value="europe">{t('prediction.europe')}</option>
+              <option value="asia">{t('prediction.asia')}</option>
+              <option value="australia">{t('prediction.australia')}</option>
+              <option value="africa">{t('prediction.africa')}</option>
+              <option value="south-america">{t('prediction.south_america')}</option>
             </Form.Select>
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>{t('forms.weight')}</Form.Label>
+            <Form.Label>{t('prediction.weight')}</Form.Label>
             <Form.Range
               min={50}
               max={2000}
               value={formData.weight}
-              onChange={(e) => setFormData({...formData, weight: parseInt(e.target.value)})}
-              aria-label="Select shipment weight"
+              onChange={(e) => setFormData({ ...formData, weight: parseInt(e.target.value) })}
+              aria-label={t('prediction.weight')}
             />
             <div className="d-flex justify-content-between text-muted small">
               <span>50 kg</span>
@@ -217,8 +222,8 @@ const PricePrediction: React.FC = () => {
             <Form.Label>{t('forms.service_type')}</Form.Label>
             <Form.Select
               value={formData.serviceType}
-              onChange={(e) => setFormData({...formData, serviceType: e.target.value})}
-              aria-label="Select service type"
+              onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
+              aria-label={t('forms.service_type')}
             >
               <option value="household">{t('services.household')}</option>
               <option value="commercial">{t('services.commercial')}</option>
@@ -232,12 +237,12 @@ const PricePrediction: React.FC = () => {
             <Form.Label>{t('forms.urgency')}</Form.Label>
             <Form.Select
               value={formData.urgency}
-              onChange={(e) => setFormData({...formData, urgency: e.target.value})}
-              aria-label="Select urgency level"
+              onChange={(e) => setFormData({ ...formData, urgency: e.target.value })}
+              aria-label={t('forms.urgency')}
             >
-              <option value="standard">רגיל (14-28 ימים)</option>
-              <option value="express">מהיר (7-14 ימים)</option>
-              <option value="urgent">דחוף (3-7 ימים)</option>
+              <option value="standard">{t('prediction.urgency_standard')}</option>
+              <option value="express">{t('prediction.urgency_express')}</option>
+              <option value="urgent">{t('prediction.urgency_urgent')}</option>
             </Form.Select>
           </Form.Group>
 
@@ -266,9 +271,7 @@ const PricePrediction: React.FC = () => {
         {isCalculating && (
           <div className="text-center mb-3">
             <ProgressBar animated now={100} className="mb-2" />
-            <small className="text-muted">
-              {t('ai.analyzing')}
-            </small>
+            <small className="text-muted">{t('ai.analyzing')}</small>
           </div>
         )}
 
@@ -280,20 +283,18 @@ const PricePrediction: React.FC = () => {
                 {t('ai.price_prediction')}
               </h6>
               <Badge bg={getConfidenceColor(prediction.confidence)}>
-                {prediction.confidence}% דיוק
+                {t('prediction.accuracy', { percent: prediction.confidence })}
               </Badge>
             </div>
 
             <div className="text-center mb-3">
-              <h3 className="text-success mb-1">
-                ${prediction.estimatedPrice.toLocaleString()}
-              </h3>
-              <small className="text-muted">מחיר כולל משוער</small>
+              <h3 className="text-success mb-1">${prediction.estimatedPrice.toLocaleString()}</h3>
+              <small className="text-muted">{t('prediction.estimated_total')}</small>
             </div>
 
             {prediction.factors.length > 0 && (
               <div className="mb-3">
-                <h6>{t('ai.factors')}:</h6>
+                <h6>{t('prediction.price_factors')}</h6>
                 {prediction.factors.map((factor, index) => (
                   <div key={index} className="d-flex justify-content-between align-items-center py-1">
                     <div>
@@ -302,7 +303,8 @@ const PricePrediction: React.FC = () => {
                       <small className="text-muted">{factor.description}</small>
                     </div>
                     <Badge bg={factor.impact > 0 ? 'warning' : 'success'}>
-                      {factor.impact > 0 ? '+' : ''}{factor.impact.toFixed(1)}%
+                      {factor.impact > 0 ? '+' : ''}
+                      {factor.impact.toFixed(1)}%
                     </Badge>
                   </div>
                 ))}
@@ -318,11 +320,9 @@ const PricePrediction: React.FC = () => {
                 <div key={index} className="d-flex justify-content-between align-items-center py-1">
                   <small>{alt.option}</small>
                   <div>
-                    <span className="text-success fw-bold me-2">
-                      ${alt.price.toLocaleString()}
-                    </span>
+                    <span className="text-success fw-bold me-2">${alt.price.toLocaleString()}</span>
                     <Badge bg="success">
-                      חסוך ${alt.savings.toLocaleString()}
+                      {t('prediction.save', { amount: Math.round(alt.savings).toLocaleString() })}
                     </Badge>
                   </div>
                 </div>

@@ -76,7 +76,7 @@ class AnalyticsManager {
         },
         body: JSON.stringify(event),
       });
-    } catch (error) {
+    } catch {
       console.log('Analytics server not available, storing locally');
       // שמירה מקומית במקרה של אי זמינות השרת
       this.storeLocally(event);
@@ -115,16 +115,16 @@ class AnalyticsManager {
     const insights: string[] = [];
     
     if (this.userBehavior.quote_requests > 3) {
-      insights.push('המשתמש מעוניין מאוד בשירותי ההובלה - הצע הצעות מיוחדות');
+      insights.push('User shows high interest in moving services — consider a targeted quote offer');
     }
     
     if (this.userBehavior.preferred_services.length > 0) {
       const topService = this.userBehavior.preferred_services[0];
-      insights.push(`השירות הפופולרי ביותר: ${topService} - התמקד בקידום השירות הזה`);
+      insights.push(`Most viewed service: ${topService} — prioritize this in recommendations`);
     }
     
     if (this.userBehavior.time_on_site > 300) {
-      insights.push('המשתמש מבלה זמן רב באתר - שקול להציע צ\'אט או יצירת קשר');
+      insights.push('User spends significant time on site — offer chat or contact assistance');
     }
     
     return insights;

@@ -1,11 +1,15 @@
 require('dotenv').config(); // טעינת משתני סביבה
 
+const { validateEnv } = require('./config/env');
+validateEnv(); // כישלון ברור בעליה אם חסרים משתני סביבה חובה, במקום קריסה שקטה באמצע בקשה
+
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const compression = require('compression');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const fs = require('fs');
 const colors = require('colors');
@@ -14,9 +18,12 @@ const colors = require('colors');
 const { connect: connectDB, healthCheck } = require('./config/database');
 
 // ייבוא routes
+const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const shipmentRoutes = require('./routes/shipmentRoutes');
 const quoteRoutes = require('./routes/quoteRoutes');
+const billingRoutes = require('./routes/billingRoutes');
+const webhookRoutes = require('./routes/webhookRoutes');
 const analyticsRoutes = require('./routes/analyticsRoutes');
 const aiRoutes = require('./routes/aiRoutes');
 
@@ -45,8 +52,22 @@ class VIPShippingApp {
   setupMiddleware() {
     // אבטחה בסיסית עם Helmet
     this.app.use(helmet({
-      contentSecurityPolicy: false, // Disable CSP temporarily to debug 403 issues
-      crossOriginEmbedderPolicy: false // עבור תמיכה ב-AR
+      contentSecurityPolicy: this.environment === 'production' ? {
+        useDefaults: true,
+        directives: {
+          defaultSrc: ["'self'"],
+          scriptSrc: ["'self'", 'https://cdn.jsdelivr.net', 'https://js.stripe.com'],
+          styleSrc: ["'self'", "'unsafe-inline'", 'https://cdn.jsdelivr.net'],
+          imgSrc: ["'self'", 'data:', 'https:', 'blob:'],
+          connectSrc: ["'self'", 'https://api.stripe.com', 'https://*.stripe.com'],
+          frameSrc: ["'self'", 'https://js.stripe.com', 'https://hooks.stripe.com', 'https://www.openstreetmap.org'],
+          fontSrc: ["'self'", 'https://cdn.jsdelivr.net', 'data:'],
+          objectSrc: ["'none'"],
+          baseUri: ["'self'"],
+          formAction: ["'self'", 'https://checkout.stripe.com']
+        }
+      } : false,
+      crossOriginEmbedderPolicy: false
     }));
 
     // CORS מתקדם
@@ -83,7 +104,7 @@ class VIPShippingApp {
           callback(null, true);
         } else {
           console.warn(colors.yellow(`⚠️ CORS חסום עבור origin: ${origin}`));
-          callback(new Error('לא מורשה על ידי CORS policy'));
+          callback(new Error('Not allowed by CORS policy'));
         }
       },
       credentials: true,
@@ -93,13 +114,14 @@ class VIPShippingApp {
     };
 
     this.app.use(cors(corsOptions));
+    this.app.use(cookieParser());
 
     // Rate limiting מתקדם - עדכון לגרסה 7
     const limiter = rateLimit({
       windowMs: 15 * 60 * 1000, // 15 דקות
       limit: 100, // שינוי מ-max ל-limit בגרסה 7
       message: {
-        error: 'יותר מדי בקשות, נסה שוב מאוחר יותר',
+        error: 'Too many requests, please try again later',
         retryAfter: '15 minutes'
       },
       standardHeaders: 'draft-7', // עדכון לstandard headers החדש
@@ -114,7 +136,7 @@ class VIPShippingApp {
     const strictLimiter = rateLimit({
       windowMs: 15 * 60 * 1000,
       limit: 10, // שינוי מ-max ל-limit בגרסה 7
-      message: { error: 'יותר מדי ניסיונות התחברות' }
+      message: { error: 'Too many login attempts' }
     });
 
     this.app.use('/api/', limiter);
@@ -208,9 +230,12 @@ class VIPShippingApp {
     });
 
     // API routes
+    this.app.use('/api/auth', authRoutes);
     this.app.use('/api/users', userRoutes);
     this.app.use('/api/shipments', shipmentRoutes);
     this.app.use('/api/quotes', quoteRoutes);
+    this.app.use('/api/billing', billingRoutes);
+    this.app.use('/api/webhooks', webhookRoutes);
     this.app.use('/api/analytics', analyticsRoutes);
     this.app.use('/api/ai', aiRoutes);
 
@@ -235,7 +260,7 @@ class VIPShippingApp {
     this.app.use('*', (req, res) => {
       res.status(404).json({
         success: false,
-        message: 'נתיב לא נמצא',
+        message: 'Route not found',
         path: req.originalUrl,
         method: req.method,
         timestamp: new Date().toISOString()
@@ -265,6 +290,9 @@ class VIPShippingApp {
     try {
       // חיבור למסד נתונים
       await connectDB();
+
+      const stripeService = require('./services/stripeService');
+      stripeService.warnIfMissing();
       
       // הפעלת השרת
       const server = this.app.listen(this.port, () => {

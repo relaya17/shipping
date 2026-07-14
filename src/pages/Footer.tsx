@@ -104,19 +104,19 @@ const Footer: React.FC = () => {
               <li className="mb-2">
                 <Link to={ROUTES.PRIVACY_POLICY} className="text-light text-decoration-none hover-underline">
                   <ShieldCheck size={14} className="me-1" />
-                  Privacy Policy
+                  {t('footer.privacy')}
                 </Link>
               </li>
               <li className="mb-2">
                 <Link to={ROUTES.TERMS_OF_SERVICE} className="text-light text-decoration-none hover-underline">
                   <FileText size={14} className="me-1" />
-                  Terms of Service
+                  {t('footer.terms')}
                 </Link>
               </li>
               <li className="mb-2">
                 <Link to={ROUTES.ACCESSIBILITY} className="text-light text-decoration-none hover-underline">
                   <UniversalAccess size={14} className="me-1" />
-                  Accessibility
+                  {t('footer.accessibility')}
                 </Link>
               </li>
             </ul>

@@ -7,7 +7,8 @@
     "contact": "צור קשר",
     "tracking": "עקוב אחר משלוח",
     "login": "התחבר",
-    "signup": "הרשם"
+    "signup": "הרשם",
+    "language": "שפה"
   },
   "hero": {
     "title": "שירותי הובלה בינלאומיים מקצועיים",
@@ -45,7 +46,10 @@
     "quick_links": "קישורים מהירים",
     "services": "השירותים שלנו",
     "legal": "משפטי ומדיניות",
-    "copyright": "כל הזכויות שמורות"
+    "copyright": "כל הזכויות שמורות",
+    "privacy": "מדיניות פרטיות",
+    "terms": "תנאי שימוש",
+    "accessibility": "נגישות"
   },
   "notifications": {
     "title": "התראות",
@@ -60,7 +64,6 @@
     "error": "שגיאה",
     "success": "הצלחה",
     "cancel": "בטל",
-    "back": "דלג לתוכן הראשי",
     "confirm": "אשר",
     "submit": "שלח",
     "save": "שמור",
@@ -72,7 +75,12 @@
     "previous": "הקודם",
     "search": "חפש",
     "filter": "סנן",
-    "sort": "מיין"
+    "sort": "מיין",
+    "skip_to_content": "דלג לתוכן הראשי",
+    "go_home": "לדף הבית",
+    "go_back": "חזור",
+    "required": "חובה",
+    "optional": "אופציונלי"
   },
   "forms": {
     "name": "שם מלא",
@@ -88,6 +96,8 @@
     "budget": "טווח תקציב",
     "required": "שדה חובה",
     "optional": "אופציונלי",
+    "question": "השאלה שלך",
+    "send": "שלח הודעה",
     "weight": "משקל משוער (ק\"ג)",
     "length": "אורך",
     "width": "רוחב",
@@ -101,7 +111,16 @@
     "estimated_delivery": "מסירה משוערת",
     "location": "מיקום נוכחי",
     "progress": "התקדמות",
-    "timeline": "ציר זמן משלוח"
+    "timeline": "ציר זמן משלוח",
+    "live_gps": "מעקב GPS בזמן אמת",
+    "not_found": "מספר המעקב לא נמצא. הזינו מספר VIP תקין.",
+    "enter_number": "נא להזין מספר מעקב",
+    "locating": "מאתר GPS של המשלוח...",
+    "open_map": "פתח מפה מלאה",
+    "route": "מסלול",
+    "milestones": "אבני דרך",
+    "auto_refresh": "רענון אוטומטי כל 15 שניות",
+    "gps_pending": "קואורדינטות GPS עדיין לא זמינות למשלוח זה."
   },
   "ai": {
     "recommendations": "המלצות AI",
@@ -110,7 +129,91 @@
     "powered_by_ai": "מופעל באמצעות AI",
     "analyzing": "מנתח את הצרכים שלך...",
     "calculating": "מחשב...",
-    "factors": "גורמים משפיעים"
+    "open_assistant": "פתח את עוזר ההובלה AI",
+    "welcome": "שלום! אני מומחה ההובלות של VIP.\n\nאני יכול לכתוב הצעות מחיר, לעקוב אחרי GPS בזמן אמת, ולייעץ לגבי חוקי הובלה בארה״ב (FMCSA) בכל 50 המדינות.\n\nנסו: \"הצעת מחיר ממיאמי לאוסטין\" או \"עקוב VIP1234567890\"",
+    "factors": "גורמים משפיעים",
+    "help": "עזרת AI"
+  },
+  "checkout": {
+    "title": "Secure Payment",
+    "subtitle": "Card details are never stored on this site. Payment is processed by Stripe Checkout (PCI compliant).",
+    "login_required": "Please sign in to pay an invoice securely.",
+    "go_home": "Back to homepage",
+    "signed_in_as": "Signed in as",
+    "stripe_missing": "Stripe is not configured on the server (STRIPE_SECRET_KEY). You can still recalculate tax and download PDF.",
+    "cart_note": "Cart items are shown for reference. Phase 2 payment is invoice-based after quote acceptance — not manual card entry.",
+    "invoice_label": "Invoice to pay",
+    "invoice_placeholder": "Paste invoice ID",
+    "status": "Status",
+    "customer": "Customer",
+    "subtotal": "Subtotal",
+    "tax": "Tax",
+    "amount_due": "Amount due",
+    "billing_address": "Tax billing address",
+    "country": "Country",
+    "state": "US state",
+    "street": "Street",
+    "city": "City",
+    "postal": "Postal code",
+    "recalc_tax": "Recalculate tax",
+    "pay_stripe": "Pay with Stripe",
+    "redirecting": "Redirecting to Stripe...",
+    "download_pdf": "Download invoice PDF",
+    "payment_success": "Payment received. Your invoice will update automatically.",
+    "payment_cancel": "Payment was cancelled. You can try again.",
+    "load_error": "Could not load invoices. Sign in again or confirm an open invoice exists.",
+    "tax_updated": "Tax updated for destination address",
+    "tax_failed": "Tax update failed",
+    "select_invoice": "Select an invoice to pay",
+    "no_checkout_url": "No Stripe checkout URL received",
+    "checkout_failed": "Checkout creation failed",
+    "pdf_failed": "PDF download failed",
+    "united_states": "United States",
+    "israel": "Israel"
+  },
+  "thankyou": {
+    "title": "Thank you!",
+    "subtitle": "Your request was submitted successfully",
+    "whats_next": "What happens next?",
+    "step1": "Our team will contact you within 24 hours",
+    "step2": "You will receive a detailed, personalized quote",
+    "step3": "We will help with any questions you have",
+    "appreciation": "We appreciate your trust in VIP International Shipping. Our team is ready to deliver excellent service.",
+    "download": "Download details"
+  },
+  "errors": {
+    "not_found_title": "Page not found",
+    "not_found_body": "Sorry, the page you requested does not exist or has moved.",
+    "image_alt": "404 error — page not found"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to help with your international move",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Hours",
+    "support_247": "24/7 support in English and Hebrew",
+    "fill_all": "Please fill in all required fields",
+    "thanks": "Thank you for contacting us, {{name}}",
+    "send_error": "Error sending the form",
+    "network_error": "A network error occurred while sending your message",
+    "form_title": "Send us a message"
+  },
+  "accessibility": {
+    "commitment_badges_note": "We are actively working toward WCAG 2.1 AA. The badges below describe our goal and progress — not a completed third-party certification.",
+    "goal_wcag": "Working toward WCAG 2.1 AA",
+    "goal_ada": "ADA accessibility program",
+    "goal_508": "Section 508 alignment in progress"
+  },
+  "auth": {
+    "login_failed": "Login failed",
+    "register_failed": "Registration failed",
+    "session_invalid": "Session invalid"
+  },
+  "admin": {
+    "unauthorized": "Admin access required",
+    "title": "Admin dashboard"
   },
   "volume": {
     "title": "מחשבון נפח AR",
@@ -128,8 +231,1001 @@
     "recommended_container": "קונטיינר מומלץ",
     "estimated_price": "מחיר משוער",
     "scanned_items": "פריטים שנסרקו",
-    "calculate": "חשב נפח"
+    "calculate": "חשב נפח",
+    "fill_dimensions": "Please fill in all dimensions",
+    "container_20": "20ft Container",
+    "container_10": "10ft Container",
+    "custom_item": "Custom Item",
+    "sofa": "Sofa",
+    "dining_table": "Dining Table",
+    "wardrobe": "Wardrobe",
+    "accuracy": "{{percent}}% accuracy"
+  },
+  "pages": {
+    "about": {
+      "journeyTitle": "המסע שלנו",
+      "journeySubtitle": "ציר זמן של צמיחה וחדשנות",
+      "storyTitle": "הסיפור שלנו",
+      "storyP1": "VIP International Shipping נוסדה כדי לספק הובלה בינלאומית במקצועיות גבוהה ובטיפול אישי. אנו משלבים צוותי לוגיסטיקה מנוסים עם טכנולוגיית מעקב מודרנית.",
+      "storyP2": "לאורך השנים בנינו רשת שותפים אמינה ומערכות לנראות בזמן אמת, תיאום מכס ומסירה אמינה מדלת לדלת.",
+      "storyP3": "כיום אנו משרתים בגאווה לקוחות ברחבי העולם עם שיעורי השלמה גבוהים ותמיכה ייעודית.",
+      "whyTitle": "למה לבחור בנו",
+      "teamTitle": "צוות ההנהלה",
+      "ctaTitle": "מוכנים להובלה בינלאומית חלקה יותר?",
+      "ctaBody": "הצטרפו לאלפי לקוחות שסומכים על VIP International Shipping. קבלו הצעת מחיר מותאמת תוך דקות.",
+      "stats": {
+        "experience": "שנות ניסיון",
+        "countries": "מדינות שבהן פעלנו",
+        "shipments": "משלוחים מוצלחים",
+        "satisfaction": "שביעות רצון לקוחות"
+      },
+      "features": [
+        {
+          "title": "אמינות מוכחת",
+          "description": "רישוי Federal Maritime Commission ויותר מ־15 שנות ניסיון בהובלה בינלאומית"
+        },
+        {
+          "title": "כיסוי גלובלי",
+          "description": "שירות בכל היבשות עם שותפים מקומיים אמינים בכל אזור"
+        },
+        {
+          "title": "שירות מקצה לקצה",
+          "description": "מאיסוף מהדלת ועד המסירה הסופית — אנחנו מטפלים בכל פרט"
+        },
+        {
+          "title": "ליווי אישי",
+          "description": "כל לקוח מקבל רכז ייעודי לאורך כל ההובלה"
+        }
+      ],
+      "timeline": [
+        {
+          "year": "2009",
+          "event": "הקמת החברה",
+          "milestone": "התחלה"
+        },
+        {
+          "year": "2012",
+          "event": "התרחבות לאירופה — 10,000 משלוחים",
+          "milestone": "צמיחה"
+        },
+        {
+          "year": "2016",
+          "event": "פתיחת מסדרונות לאסיה ולאמריקות",
+          "milestone": "הרחבה"
+        },
+        {
+          "year": "2020",
+          "event": "טרנספורמציה דיגיטלית מלאה + בינה מלאכותית",
+          "milestone": "חדשנות"
+        },
+        {
+          "year": "2023",
+          "event": "השקת כלי AR ולמידת מכונה",
+          "milestone": "מנהיגות"
+        },
+        {
+          "year": "2025",
+          "event": "פלטפורמת שילוח חכמה מתקדמת",
+          "milestone": "עתיד"
+        }
+      ],
+      "team": [
+        {
+          "name": "Danny Cohen",
+          "position": "מנכ״ל ומייסד",
+          "experience": "20 שנים",
+          "specialty": "לוגיסטיקה בינלאומית"
+        },
+        {
+          "name": "Sarah Levy",
+          "position": "מנהלת תפעול",
+          "experience": "12 שנים",
+          "specialty": "לוגיסטיקה ותכנון"
+        },
+        {
+          "name": "Michal Abraham",
+          "position": "ראש הצלחת לקוחות",
+          "experience": "8 שנים",
+          "specialty": "תמיכת לקוחות"
+        }
+      ]
+    },
+    "packing": {
+      "title": "אריזה מקצועית",
+      "subtitle": "אריזה מקצועית שעוזרת לחפצים שלכם להגיע בבטחה",
+      "badge1": "יותר מ־20 שנות ניסיון",
+      "badge2": "0% נזקים עם אריזה מקצועית",
+      "priceLabel": "מחיר",
+      "durationLabel": "משך",
+      "includesLabel": "כולל:",
+      "chooseService": "בחרו שירות זה",
+      "materialsTitle": "חומרי אריזה מקצועיים",
+      "tipsTitle": "טיפים לאריזה עצמית",
+      "ctaTitle": "מוכנים לאריזה מקצועית?",
+      "ctaBody": "חסכו זמן ואנרגיה עם שירות האריזה המקצועי שלנו",
+      "services": [
+        {
+          "title": "אריזה מלאה",
+          "description": "אנחנו אורזים הכל — מהספל הקטן ביותר ועד רהיט גדול",
+          "price": "$15–25 לקרטון",
+          "duration": "1–2 ימים",
+          "includes": [
+            "כל חומרי האריזה",
+            "סימון מפורט",
+            "רשימת מלאי",
+            "כיסוי במהלך האריזה"
+          ]
+        },
+        {
+          "title": "אריזת פריטים שבירים",
+          "description": "אריזה מתמחה לחפצים עדינים ויקרי ערך",
+          "price": "$25–40 לפריט",
+          "duration": "2–4 שעות לפריט",
+          "includes": [
+            "חומרי הגנה ייעודיים",
+            "אריזה כפולה",
+            "סימון \"שביר\"",
+            "ביטוח מוגבר"
+          ]
+        },
+        {
+          "title": "אריזה חלקית",
+          "description": "אתם אורזים את הבסיס; אנחנו מטפלים בפריטים מורכבים וכבדים",
+          "price": "$200–400 ליום",
+          "duration": "4–8 שעות",
+          "includes": [
+            "חומרי אריזה מקצועיים",
+            "הדרכת מומחים",
+            "עזרה בפריטים כבדים",
+            "ייעוץ אריזה"
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "name": "קרטונים מחוזקים",
+          "description": "מידות 1–6, עמידים ואיכותיים"
+        },
+        {
+          "name": "ניילון בועות",
+          "description": "לפריטים שבירים ורגישים"
+        },
+        {
+          "name": "נייר אריזה",
+          "description": "לפריטים יומיומיים ומילוי חללים"
+        },
+        {
+          "name": "ניילון נצמד",
+          "description": "הגנה מלחות ואבק"
+        },
+        {
+          "name": "ספוג אריזה",
+          "description": "לפריטים עדינים במיוחד"
+        },
+        {
+          "name": "סרט הדבקה",
+          "description": "איטום חזק ועמיד לקרטונים"
+        },
+        {
+          "name": "תוויות ומדבקות",
+          "description": "סימון ברור וקריא"
+        },
+        {
+          "name": "שקיות אריזה",
+          "description": "לפריטים קטנים ועדינים"
+        }
+      ],
+      "tips": [
+        "התחילו בחדרים שבהם אתם משתמשים הכי פחות",
+        "ארוז פריט כבד אחד עם כמה קלים באותו קרטון",
+        "מלאו חללים ריקים בנייר או בבגדים רכים",
+        "הניחו פריטים כבדים בתחתית הקרטון",
+        "אל תעמיסו יתר על המידה — עד 15–20 ק״ג לקרטון",
+        "צלמו פריטים יקרי ערך לפני האריזה",
+        "שמרו רשימה של תכולת כל קרטון",
+        "ארוז בגדים בשקיות ואקום לחיסכון במקום"
+      ]
+    },
+    "movingServices": {
+      "title": "שירותי הובלה",
+      "subtitle": "מגוון רחב של שירותי הובלה מקצועיים המותאמים לכל צורך",
+      "badge1": "יותר מ־20 שירותים",
+      "badge2": "כיסוי עולמי",
+      "popular": "פופולרי",
+      "fromPrice": "החל מ־",
+      "additionalTitle": "שירותים נוספים",
+      "ctaTitle": "מתעניינים בשירותים שלנו?",
+      "services": [
+        {
+          "title": "אריזה מקצועית",
+          "description": "אריזה מקצועית עם חומרים באיכות גבוהה",
+          "features": [
+            "חומרי אריזה מקצועיים",
+            "אריזת פריטים שבירים",
+            "סימון מפורט",
+            "ביטוח כלול"
+          ],
+          "price": "החל מ־$200"
+        },
+        {
+          "title": "הובלה יבשתית",
+          "description": "הובלה יבשתית מהירה ובטוחה לכל יעד",
+          "features": [
+            "משאיות מאובזרות",
+            "מעקב GPS",
+            "ביטוח מלא",
+            "צוות מקצועי"
+          ],
+          "price": "החל מ־$500"
+        },
+        {
+          "title": "הובלה בינלאומית",
+          "description": "הובלה ברחבי העולם עם שותפים אמינים",
+          "features": [
+            "כל היבשות",
+            "טיפול במכס",
+            "מעקב בזמן אמת",
+            "ביטוח בינלאומי"
+          ],
+          "price": "החל מ־$1,200"
+        },
+        {
+          "title": "ביטוח ואבטחה",
+          "description": "כיסוי מקיף וטיפול מאובטח",
+          "features": [
+            "ביטוח מלא",
+            "מתקנים מאובטחים",
+            "ניטור 24/7",
+            "טיפול מהיר בתביעות"
+          ],
+          "price": "3% מהערך"
+        },
+        {
+          "title": "שירותי התקנה",
+          "description": "פירוק והרכבה של רהיטים ומכשירי חשמל",
+          "features": [
+            "פירוק מקצועי",
+            "התקנה ביעד",
+            "כלים מקצועיים",
+            "אחריות על העבודה"
+          ],
+          "price": "החל מ־$150"
+        },
+        {
+          "title": "אחסון זמני",
+          "description": "פתרונות אחסון גמישים ומאובטחים",
+          "features": [
+            "מתקנים מאובטחים",
+            "בקרת אקלים",
+            "גישה 24/7",
+            "תעריפים גמישים"
+          ],
+          "price": "החל מ־$50 לחודש"
+        }
+      ],
+      "additional": [
+        "מסמכי מכס",
+        "ביטוח פרימיום",
+        "איסוף ממיקום מרוחק",
+        "הובלת פריטי יוקרה",
+        "ייעוץ לוגיסטי",
+        "אחסון לטווח ארוך",
+        "ניקיון לאחר מעבר",
+        "העברת חיות מחמד"
+      ]
+    },
+    "movingTips": {
+      "title": "טיפים להובלה בינלאומית",
+      "subtitle": "כל מה שצריך לדעת להובלה בינלאומית מוצלחת וחלקה",
+      "allCategories": "הכל",
+      "importanceHigh": "חשוב מאוד",
+      "importanceMedium": "חשוב",
+      "importanceLow": "מומלץ",
+      "timeframe": "מתי לבצע:",
+      "tips": [
+        {
+          "category": "תכנון",
+          "title": "התחילו לתכנן מוקדם",
+          "content": "התחילו לתכנן את המעבר לפחות 8 שבועות לפני המועד. כך תוכלו לקבל הצעות מחיר טובות יותר ולהתכונן כראוי.",
+          "importance": "high",
+          "timeFrame": "8 שבועות לפני"
+        },
+        {
+          "category": "אריזה",
+          "title": "ארזו באופן מקצועי",
+          "content": "השתמשו בחומרי אריזה איכותיים. עטפו פריטים שבירים בניילון בועות ומלאו חללים בקרטון או בנייר אריזה.",
+          "importance": "high",
+          "timeFrame": "4 שבועות לפני"
+        },
+        {
+          "category": "מסמכים",
+          "title": "מלאי ומסמכים",
+          "content": "הכינו רשימת מלאי מפורטת של כל הפריטים, צלמו חפצי ערך לביטוח ושמרו עותקים של מסמכים חשובים.",
+          "importance": "high",
+          "timeFrame": "6 שבועות לפני"
+        },
+        {
+          "category": "ביטוח",
+          "title": "ביטוח מקיף",
+          "content": "השקיעו בביטוח שילוח מקיף. הוא מכסה נזק או אובדן של פריטים יקרי ערך במהלך ההובלה.",
+          "importance": "high",
+          "timeFrame": "שבועיים לפני"
+        },
+        {
+          "category": "תכנון",
+          "title": "למדו על המדינה החדשה",
+          "content": "הכירו את כללי המכס, האקלים והתרבות המקומית. זה יעזור להתכונן טוב יותר לחיים החדשים.",
+          "importance": "medium",
+          "timeFrame": "12 שבועות לפני"
+        },
+        {
+          "category": "אריזה",
+          "title": "סמנו קרטונים בבירור",
+          "content": "כתבו על כל קרטון את התכולה ואת החדר ביעד. השתמשו בצבעים שונים לחדרים שונים.",
+          "importance": "medium",
+          "timeFrame": "3 שבועות לפני"
+        },
+        {
+          "category": "מסמכים",
+          "title": "שמרו מסמכים חשובים איתכם",
+          "content": "דרכון, ויזה, מסמכים רפואיים ופיננסיים — שמרו אותם בתיק נפרד שנוסע איתכם, לא במשלוח.",
+          "importance": "high",
+          "timeFrame": "ביום המעבר"
+        },
+        {
+          "category": "תכנון",
+          "title": "תכננו את הימים הראשונים",
+          "content": "הכינו תוכנית לימים הראשונים במקום החדש: לינה, מזון בסיסי ותחבורה.",
+          "importance": "medium",
+          "timeFrame": "שבוע לפני"
+        }
+      ]
+    },
+    "freeMovingQuote": {
+      "title": "קבלו הצעת מחיר חינם להובלה",
+      "subtitle": "הערכה מיידית ב־3 שלבים | ללא התחייבות | חיסכון עד 30%",
+      "badges": {
+        "free": "100% חינם",
+        "noCard": "בלי כרטיס אשראי",
+        "response": "מענה תוך שעה",
+        "priceMatch": "התחייבות להתאמת מחיר"
+      },
+      "benefits": {
+        "pricing": {
+          "title": "תמחור שקוף",
+          "desc": "בלי עמלות נסתרות או הפתעות"
+        },
+        "insured": {
+          "title": "ביטוח מלא",
+          "desc": "הגנה מקיפה על הציוד שלכם"
+        },
+        "fast": {
+          "title": "מענה מהיר",
+          "desc": "הצעה תוך שעה, 7 ימים בשבוע"
+        },
+        "guarantee": {
+          "title": "התחייבות למחיר הטוב ביותר",
+          "desc": "נתאים לכל הצעת מתחרה"
+        }
+      },
+      "stepOf": "שלב {{step}} מתוך {{total}}",
+      "percentComplete": "{{percent}}% הושלם",
+      "steps": {
+        "moveDetails": "פרטי הובלה",
+        "services": "שירותים",
+        "contact": "פרטי קשר"
+      },
+      "step1Title": "ספרו לנו על ההובלה",
+      "moveTypeLabel": "סוג הובלה *",
+      "moveTypes": {
+        "local": "הובלה מקומית (עד 50 מייל)",
+        "longDistance": "הובלה בין־מדינתית",
+        "international": "הובלה בינלאומית"
+      },
+      "fromZip": "מיקוד מוצא *",
+      "toZip": "מיקוד יעד *",
+      "zipPlaceholderFrom": "לדוגמה 10001",
+      "zipPlaceholderTo": "לדוגמה 90210",
+      "moveDate": "תאריך הובלה מועדף *",
+      "flexibleDates": "תאריכים גמישים? נוכל להציע מחיר טוב יותר!",
+      "homeSize": "גודל הדירה *",
+      "homeSizeSelect": "בחרו גודל...",
+      "sizes": {
+        "studio": "סטודיו",
+        "one": "חדר שינה אחד",
+        "two": "2 חדרי שינה",
+        "three": "3 חדרי שינה",
+        "four": "4 חדרי שינה",
+        "fivePlus": "5+ חדרי שינה"
+      },
+      "step2Title": "בחרו שירותים נוספים",
+      "servicesHint": "סמנו את כל השירותים שמעניינים אתכם. אפשר לשנות אחר כך!",
+      "addonServices": [
+        {
+          "id": "packing",
+          "label": "אריזה מקצועית",
+          "desc": "אריזה מלאה כולל חומרים",
+          "cost": "+20%"
+        },
+        {
+          "id": "storage",
+          "label": "אחסון (30 יום)",
+          "desc": "מחסן מבוקר אקלים",
+          "cost": "+10%"
+        },
+        {
+          "id": "insurance",
+          "label": "הגנת ערך מלאה",
+          "desc": "כיסוי ביטוחי מקיף",
+          "cost": "+5%"
+        },
+        {
+          "id": "unpacking",
+          "label": "פריקה וסידור",
+          "desc": "נפרוק ונניח פריטים בבית החדש",
+          "cost": "+15%"
+        },
+        {
+          "id": "furniture",
+          "label": "הרכבת רהיטים",
+          "desc": "פירוק והרכבה של רהיטים",
+          "cost": "+8%"
+        },
+        {
+          "id": "cleaning",
+          "label": "ניקיון לאחר מעבר",
+          "desc": "ניקיון מקצועי של הבית הישן",
+          "cost": "+12%"
+        }
+      ],
+      "specialItems": "פריטים מיוחדים או הוראות",
+      "specialItemsPlaceholder": "לדוגמה: פסנתר, שולחן ביליארד, עתיקות שבירות...",
+      "step3Title": "פרטי קשר",
+      "estimatedCost": "העלות המשוערת שלכם",
+      "estimateNote": "המחיר הסופי כפוף לסקר בבית. ההערכה כוללת את השירותים שבחרתם.",
+      "phoneHint": "נתקשר תוך שעה לאישור הפרטים",
+      "consentPrefix": "אני מסכים/ה לקבלת הודעות ומבין/ה את",
+      "consentAnd": "ואת",
+      "whatNext": "מה קורה עכשיו?",
+      "nextSteps": [
+        "מומחה הובלות יתקשר אליכם תוך שעה",
+        "תיאום סקר חינם בבית (וירטואלי או פיזי)",
+        "קבלת הצעת מחיר סופית מחייבת",
+        "הזמנת ההובלה — ואפשר להירגע!"
+      ],
+      "back": "← חזרה",
+      "continue": "המשך →",
+      "submit": "קבלו הצעת מחיר חינם",
+      "submitSuccess": "תודה! הצוות שלנו ייצור קשר תוך שעה עם הצעה מפורטת.",
+      "trustedBy": "מעל 50,000 לקוחות מרוצים סומכים עלינו",
+      "trust": {
+        "licensed": "מורשה ומבוטח",
+        "bbb": "דירוג A+ ב־BBB",
+        "reviews": "מעל 5,000 ביקורות 5 כוכבים"
+      }
+    },
+    "worldwideMoving": {
+      "title": "הובלה בינלאומית ברחבי העולם",
+      "subtitle": "שילוח מדלת לדלת בין יבשות עם מומחיות מכס",
+      "ctaQuote": "קבלו הצעת מחיר עולמית",
+      "ctaCall": "דברו עם מומחה",
+      "alertTitle": "תכננו זמני אספקה מראש",
+      "alertBody": "הובלה ימית נמשכת בדרך כלל 30–60 יום. הובלה אווירית זמינה למשלוחים דחופים.",
+      "methodsTitle": "שיטות שילוח",
+      "destinationsTitle": "יעדים פופולריים",
+      "servicesTitle": "שירותים כלולים",
+      "processTitle": "איך עובדת הובלה עולמית",
+      "costsTitle": "גורמי עלות",
+      "prohibitedTitle": "פריטים מוגבלים ואסורים",
+      "finalCta": "מוכנים להובלה בינלאומית?",
+      "shippingMethods": [
+        {
+          "method": "Sea Freight (FCL)",
+          "time": "30-60 days",
+          "cost": "Most economical",
+          "bestFor": "Full household moves",
+          "description": "Exclusive use of a 20 or 40-foot container. Ideal for large moves with flexibility on timing.",
+          "features": [
+            "Door-to-door service",
+            "Most cost-effective",
+            "Secure container",
+            "Best for large volumes"
+          ]
+        },
+        {
+          "method": "Sea Freight (LCL)",
+          "time": "35-70 days",
+          "cost": "Budget-friendly",
+          "bestFor": "Smaller shipments",
+          "description": "Share container space with other shipments. Perfect for 1-2 bedroom apartments.",
+          "features": [
+            "Pay for space used",
+            "Flexible volume",
+            "Consolidated shipping",
+            "Cost-efficient"
+          ]
+        },
+        {
+          "method": "Air Freight",
+          "time": "5-10 days",
+          "cost": "Premium pricing",
+          "bestFor": "Urgent/valuable items",
+          "description": "Fastest international shipping option. Recommended for time-sensitive or high-value shipments.",
+          "features": [
+            "Express delivery",
+            "Climate controlled",
+            "Maximum security",
+            "Priority handling"
+          ]
+        }
+      ],
+      "popularDestinations": [
+        {
+          "continent": "Europe",
+          "countries": [
+            "UK",
+            "Germany",
+            "France",
+            "Spain",
+            "Italy",
+            "Netherlands"
+          ],
+          "time": "35-50 days"
+        },
+        {
+          "continent": "Asia",
+          "countries": [
+            "Israel",
+            "Japan",
+            "Singapore",
+            "South Korea",
+            "Hong Kong",
+            "UAE"
+          ],
+          "time": "25-45 days"
+        },
+        {
+          "continent": "Australia & Oceania",
+          "countries": [
+            "Australia",
+            "New Zealand"
+          ],
+          "time": "40-60 days"
+        },
+        {
+          "continent": "South America",
+          "countries": [
+            "Brazil",
+            "Argentina",
+            "Chile"
+          ],
+          "time": "35-55 days"
+        },
+        {
+          "continent": "Africa",
+          "countries": [
+            "South Africa",
+            "Kenya",
+            "Egypt"
+          ],
+          "time": "30-50 days"
+        },
+        {
+          "continent": "Middle East",
+          "countries": [
+            "UAE",
+            "Saudi Arabia",
+            "Qatar",
+            "Kuwait"
+          ],
+          "time": "25-40 days"
+        }
+      ],
+      "services": [
+        {
+          "title": "Professional Packing",
+          "description": "Expert packing with international-grade materials",
+          "included": [
+            "Custom crating",
+            "Bubble wrap & padding",
+            "Labeled inventory",
+            "Fragile item handling"
+          ]
+        },
+        {
+          "title": "Customs Clearance",
+          "description": "Full documentation and customs brokerage services",
+          "included": [
+            "Customs forms",
+            "Import permits",
+            "Duty calculations",
+            "Broker coordination"
+          ]
+        },
+        {
+          "title": "Door-to-Door Service",
+          "description": "Complete pickup and delivery to your new address",
+          "included": [
+            "Home pickup",
+            "Port handling",
+            "Destination delivery",
+            "Unpacking options"
+          ]
+        },
+        {
+          "title": "Comprehensive Insurance",
+          "description": "Full value protection for international moves",
+          "included": [
+            "All-risk coverage",
+            "Marine insurance",
+            "Claims assistance",
+            "Peace of mind"
+          ]
+        }
+      ],
+      "processSteps": [
+        {
+          "title": "Free Consultation",
+          "description": "Discuss your needs with our international move specialist"
+        },
+        {
+          "title": "Survey & Quote",
+          "description": "Virtual or in-home survey to assess volume and provide accurate quote"
+        },
+        {
+          "title": "Documentation",
+          "description": "Prepare all necessary paperwork, customs forms, and permits"
+        },
+        {
+          "title": "Professional Packing",
+          "description": "Expert team packs and labels all items with care"
+        },
+        {
+          "title": "Export & Shipping",
+          "description": "Container loaded, sealed, and shipped to destination port"
+        },
+        {
+          "title": "Customs Clearance",
+          "description": "Our agents handle all customs procedures at destination"
+        },
+        {
+          "title": "Final Delivery",
+          "description": "Delivery to your new home with unpacking if requested"
+        }
+      ],
+      "prohibitedItems": [
+        "Flammable liquids and explosives",
+        "Perishable foods",
+        "Plants and soil (many countries)",
+        "Weapons and ammunition",
+        "Illegal drugs and controlled substances"
+      ]
+    },
+    "interstateMoving": {
+      "title": "שירותי הובלה בין־מדינתיים",
+      "subtitle": "הובלות למרחקים ארוכים בכל 50 מדינות ארה״ב",
+      "ctaQuote": "קבלו הצעת מחיר בין־מדינתית",
+      "ctaCall": "התקשרו לרכז",
+      "promoTitle": "טיפ לעונת השיא",
+      "promoBody": "הזמינו 4–8 שבועות מראש למאי–ספטמבר כדי לנעול תאריכים ומחירים טובים יותר.",
+      "whyTitle": "למה לבחור ב־VIP להובלה בין־מדינתית",
+      "servicesTitle": "אפשרויות שירות",
+      "routesTitle": "מסלולים פופולריים",
+      "pricingTitle": "מה משפיע על המחיר",
+      "tipsTitle": "טיפים להובלה",
+      "howTitle": "איך זה עובד",
+      "includes": "כולל:",
+      "finalCta": "מוכנים להובלה בין־מדינתית?",
+      "services": [
+        {
+          "title": "Full-Service Moving",
+          "description": "Complete door-to-door service with professional packing, loading, transport, and unpacking",
+          "features": [
+            "Professional packing",
+            "Loading & unloading",
+            "Furniture disassembly/assembly",
+            "Unpacking services"
+          ]
+        },
+        {
+          "title": "Partial/Shared Moving",
+          "description": "Cost-effective solution for smaller moves, sharing truck space with other shipments",
+          "features": [
+            "Lower cost option",
+            "Flexible scheduling",
+            "Same care and protection",
+            "Ideal for 1-2 bedroom moves"
+          ]
+        },
+        {
+          "title": "Express Moving",
+          "description": "Priority service with dedicated truck and expedited delivery for time-sensitive moves",
+          "features": [
+            "Dedicated truck",
+            "3-5 day delivery",
+            "Priority scheduling",
+            "Real-time tracking"
+          ]
+        },
+        {
+          "title": "White Glove Service",
+          "description": "Premium moving experience with specialized handling for high-value and delicate items",
+          "features": [
+            "Custom crating",
+            "Climate-controlled transport",
+            "Installation services",
+            "Concierge support"
+          ]
+        }
+      ],
+      "popularRoutes": [
+        {
+          "from": "New York, NY",
+          "to": "Florida",
+          "duration": "3-5 days",
+          "distance": "1,200 mi"
+        },
+        {
+          "from": "California",
+          "to": "Texas",
+          "duration": "4-6 days",
+          "distance": "1,500 mi"
+        },
+        {
+          "from": "Illinois",
+          "to": "Arizona",
+          "duration": "4-5 days",
+          "distance": "1,700 mi"
+        },
+        {
+          "from": "Massachusetts",
+          "to": "North Carolina",
+          "duration": "3-4 days",
+          "distance": "800 mi"
+        },
+        {
+          "from": "Washington",
+          "to": "Colorado",
+          "duration": "3-4 days",
+          "distance": "1,300 mi"
+        },
+        {
+          "from": "Michigan",
+          "to": "Georgia",
+          "duration": "4-5 days",
+          "distance": "1,000 mi"
+        }
+      ],
+      "movingTips": [
+        {
+          "title": "Book Early",
+          "tip": "Reserve your moving date 4-8 weeks in advance, especially during peak season (May-September)"
+        },
+        {
+          "title": "Declutter First",
+          "tip": "Reduce moving costs by selling or donating items you no longer need before packing"
+        },
+        {
+          "title": "Get Multiple Quotes",
+          "tip": "Compare at least 3 estimates to ensure competitive pricing and understand what's included"
+        },
+        {
+          "title": "Read Reviews",
+          "tip": "Check BBB ratings, Google reviews, and FMCSA records before choosing a moving company"
+        }
+      ],
+      "pricingFactors": [
+        {
+          "factor": "Distance",
+          "impact": "Primary cost driver",
+          "description": "Longer distances = higher costs"
+        },
+        {
+          "factor": "Weight/Volume",
+          "impact": "Direct correlation",
+          "description": "Charged per pound or cubic foot"
+        },
+        {
+          "factor": "Season",
+          "impact": "Moderate effect",
+          "description": "Summer (peak) costs 20-30% more"
+        },
+        {
+          "factor": "Access",
+          "impact": "Additional fees",
+          "description": "Stairs, long carry, shuttle service"
+        },
+        {
+          "factor": "Packing Services",
+          "impact": "Optional add-on",
+          "description": "Professional packing adds 15-25%"
+        },
+        {
+          "factor": "Insurance",
+          "impact": "Recommended",
+          "description": "Full value protection for peace of mind"
+        }
+      ]
+    },
+    "terms": {
+      "title": "תנאי שימוש",
+      "lastUpdated": "עודכן לאחרונה",
+      "intro": "נא לקרוא בעיון את תנאי השימוש לפני השימוש בשירותי VIP International Shipping.",
+      "sections": [
+        {
+          "title": "1. קבלת התנאים",
+          "paragraphs": [
+            "בכניסה לאתר או שימוש בשירותים אתם מסכימים לתנאי שימוש אלה."
+          ]
+        },
+        {
+          "title": "2. השירותים",
+          "paragraphs": [
+            "אנו מספקים הובלה בינלאומית ומקומית, אריזה, אחסון ולוגיסטיקה בהתאם לזמינות ולחוק."
+          ]
+        },
+        {
+          "title": "3. הצעות מחיר",
+          "paragraphs": [
+            "הצעות מחיר הן הערכות אלא אם צוין אחרת. המחיר הסופי עשוי להשתנות לאחר סקר, מלאי או עמלות רגולטוריות."
+          ]
+        },
+        {
+          "title": "4. אחריות הלקוח",
+          "paragraphs": [
+            "אתם אחראים לדיוק המלאי, גישה לנכס, היתרים וציות לכללי מכס ופריטים אסורים."
+          ]
+        },
+        {
+          "title": "5. תשלומים",
+          "paragraphs": [
+            "תנאי התשלום מופיעים בחשבונית או באישור ההזמנה."
+          ]
+        },
+        {
+          "title": "6. ביטוח ואחריות",
+          "paragraphs": [
+            "אפשרויות כיסוי מוצעות בעת ההזמנה. מגבלות אחריות חלות לפי החוזה."
+          ]
+        },
+        {
+          "title": "7. ביטולים",
+          "paragraphs": [
+            "מדיניות ביטול ושינוי מועדים מסופקת עם ההזמנה."
+          ]
+        },
+        {
+          "title": "8. פרטיות",
+          "paragraphs": [
+            "מידע אישי מטופל לפי מדיניות הפרטיות."
+          ]
+        },
+        {
+          "title": "9. דין חל",
+          "paragraphs": [
+            "התנאים כפופים לדין החל בהסכם השירות."
+          ]
+        },
+        {
+          "title": "10. יצירת קשר",
+          "paragraphs": [
+            "לשאלות: support@vipshipping.com"
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "מדיניות פרטיות",
+      "subtitle": "איך אנחנו אוספים, משתמשים ומגנים על המידע שלכם",
+      "lastUpdated": "עודכן לאחרונה",
+      "intro": "מדיניות זו מסבירה כיצד VIP International Shipping מטפל במידע אישי.",
+      "sections": [
+        {
+          "title": "1. מידע שאנו אוספים",
+          "paragraphs": [
+            "פרטי קשר, כתובות הובלה, פרטי משלוח, אסמכתאות תשלום ונתוני שימוש הנחוצים לשירות."
+          ]
+        },
+        {
+          "title": "2. שימוש במידע",
+          "paragraphs": [
+            "להכנת הצעות, הפעלת משלוחים, תשלומים, תמיכה, שיפור השירות ועמידה בחובות חוקיות."
+          ]
+        },
+        {
+          "title": "3. שיתוף",
+          "paragraphs": [
+            "משתפים עם מובילים, עמילי מכס, מעבדי תשלום וספקים בחוזה, או כנדרש בחוק."
+          ]
+        },
+        {
+          "title": "4. אבטחה",
+          "paragraphs": [
+            "משתמשים באמצעי הגנה מנהליים, טכניים ופיזיים בהתאם לרגישות המידע."
+          ]
+        },
+        {
+          "title": "5. הזכויות שלכם",
+          "paragraphs": [
+            "בהתאם למיקום, ניתן לבקש עיון, תיקון, מחיקה או הגבלה של מידע אישי."
+          ]
+        },
+        {
+          "title": "6. עוגיות",
+          "paragraphs": [
+            "עוגיות הכרחיות לאימות ועוגיות אנליטיקה אופציונליות כשמותר."
+          ]
+        },
+        {
+          "title": "7. העברות בינלאומיות",
+          "paragraphs": [
+            "מידע עשוי לעבור עיבוד במדינות שבהן אנו או שותפינו פועלים, עם הגנות מתאימות."
+          ]
+        },
+        {
+          "title": "8. ילדים",
+          "paragraphs": [
+            "השירותים אינם מיועדים לילדים מתחת לגיל 16."
+          ]
+        },
+        {
+          "title": "9. שינויים",
+          "paragraphs": [
+            "ייתכנו עדכונים למדיניות; תאריך העדכון ישתנה בשינויים מהותיים."
+          ]
+        },
+        {
+          "title": "10. יצירת קשר",
+          "paragraphs": [
+            "לשאלות פרטיות: privacy@vipshipping.com"
+          ]
+        }
+      ]
+    }
+  },
+  "home": {
+    "priority_high": "עדיפות גבוהה",
+    "priority_medium": "עדיפות בינונית",
+    "priority_low": "עדיפות נמוכה",
+    "price_label": "מחיר",
+    "rec_household_desc": "מומלץ להובלות בית בינלאומיות עם ליווי לוגיסטי מלא.",
+    "rec_household_time": "14–28 ימים",
+    "rec_household_price": "החל מ-$800",
+    "rec_insurance_desc": "הגנו על המשלוח עם ביטוח הובלה מקיף.",
+    "rec_insurance_price": "3% משווי המשלוח",
+    "rec_packing_desc": "אריזה מקצועית לפריטים שבירים ויקרי ערך.",
+    "rec_packing_time": "1–2 ימים",
+    "rec_packing_price": "החל מ-$200",
+    "rec_storage_desc": "אחסון מאובטח לטווח קצר או ארוך לפני או אחרי המעבר.",
+    "rec_storage_price": "החל מ-$50 לחודש"
+  },
+  "prediction": {
+    "select_destination": "בחרו יעד...",
+    "europe": "אירופה",
+    "asia": "אסיה",
+    "australia": "אוסטרליה",
+    "africa": "אפריקה",
+    "south_america": "דרום אמריקה",
+    "weight": "משקל",
+    "urgency_standard": "רגיל (14–28 ימים)",
+    "urgency_express": "מהיר (7–14 ימים)",
+    "urgency_urgent": "דחוף (3–7 ימים)",
+    "enter_destination": "נא להזין יעד",
+    "accuracy": "דיוק {{percent}}%",
+    "estimated_total": "מחיר כולל משוער",
+    "price_factors": "גורמי מחיר:",
+    "save": "חיסכון ${{amount}}",
+    "factor_geo": "יעד גיאוגרפי",
+    "factor_geo_desc": "היעד {{location}} משפיע על המחיר",
+    "factor_weight": "משקל המשלוח",
+    "factor_weight_desc": "משקל של {{weight}} ק״ג דורש טיפול מיוחד",
+    "factor_service": "סוג שירות",
+    "factor_service_desc": "שירות {{service}} דורש טיפול מיוחד",
+    "factor_urgency": "רמת דחיפות",
+    "factor_urgency_desc": "שירות {{urgency}} זמין בתשלום נוסף",
+    "alt_standard": "שירות רגיל במקום מהיר",
+    "alt_group": "שילוב עם משלוחים אחרים",
+    "alt_self_pack": "אריזה עצמית",
+    "beta": "בטא"
   }
 }
-
-

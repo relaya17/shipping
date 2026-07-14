@@ -19,7 +19,7 @@ router.post('/', auth.optionalAuth, async (req, res, next) => {
 });
 
 // GET /api/analytics/dashboard - דשבורד בסיסי
-router.get('/dashboard', auth.requireAdmin, async (req, res, next) => {
+router.get('/dashboard', auth.requireAuth, auth.requireAdmin, async (req, res, next) => {
   try {
     // נתוני דוגמה
     return res.json({

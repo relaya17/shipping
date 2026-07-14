@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NavDropdown, Dropdown } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Globe } from 'react-bootstrap-icons';
+import { setLanguage } from '../redux/languageSlice';
 import { ROUTES } from '../routs/routes';
 import ChatBot from '../components/AI/ChatBot';
 import '../Navigation.css';
@@ -10,17 +12,11 @@ import '../Navigation.css';
 const NavigationBar: React.FC = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const dispatch = useDispatch();
 
   const changeLanguage = (lang: string) => {
-    console.log(`Changing language to: ${lang}`);
-    i18n.changeLanguage(lang);
-
-    // שינוי כיוון הדף לפי השפה
-    if (lang === 'he' || lang === 'ar') {
-      document.documentElement.setAttribute('dir', 'rtl');
-    } else {
-      document.documentElement.setAttribute('dir', 'ltr');
-    }
+    dispatch(setLanguage(lang));
+    void i18n.changeLanguage(lang);
   };
 
   const closeMobileMenu = () => {
@@ -55,95 +51,140 @@ const NavigationBar: React.FC = () => {
     };
   }, []);
 
+  const LANGUAGES = [
+    { code: 'en', label: 'English' },
+    { code: 'he', label: 'עברית' },
+    { code: 'ar', label: 'العربية' },
+    { code: 'es', label: 'Español' },
+    { code: 'ru', label: 'Русский' },
+    { code: 'zh', label: '中文' },
+    { code: 'tr', label: 'Türkçe' },
+    { code: 'sv', label: 'Svenska' },
+    { code: 'el', label: 'Ελληνικά' }
+  ];
+
+  const activeLang = (i18n.language || 'en').split('-')[0].toUpperCase();
+
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
-      <div className="container-fluid px-4">
+      <div className="container-fluid px-3 px-lg-4">
         {/* Logo and Brand */}
         <Link className="navbar-brand d-flex align-items-center fw-bold" to={ROUTES.HOME}>
           <img
-            src="/public/images/favicon.ico"
+            src="/images/favicon.ico"
             alt="VIP International Shipping Logo"
-            className="logo1 me-3"
+            className="logo1 me-2 me-lg-3"
             style={{
-              width: '50px',
-              height: '50px',
+              width: '44px',
+              height: '44px',
               borderRadius: '50%',
               objectFit: 'cover'
             }}
           />
-          VIP Shipping
+          <span className="d-none d-sm-inline">VIP Shipping</span>
+          <span className="d-inline d-sm-none">VIP</span>
         </Link>
 
-        {/* Mobile Toggle Button */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          onClick={() => setIsNavOpen(!isNavOpen)}
-          aria-controls="navbarNav"
-          aria-expanded={isNavOpen ? 'true' : 'false'}
-          aria-label="Toggle navigation"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          style={{
-            border: '1px solid #0d6efd'
-          }}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+        {/* Language + hamburger — always visible beside each other */}
+        <div className="d-flex align-items-center gap-2 order-lg-3 ms-auto">
+          <Dropdown align="end">
+            <Dropdown.Toggle
+              variant="outline-primary"
+              id="languageDropdown"
+              className="language-toggle d-flex align-items-center gap-1"
+              aria-label={t('nav.language')}
+              style={{
+                borderRadius: '999px',
+                padding: '0.35rem 0.7rem',
+                fontWeight: 600,
+                fontSize: '0.85rem'
+              }}
+            >
+              <Globe size={16} aria-hidden="true" />
+              <span>{activeLang}</span>
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu className="language-menu shadow">
+              {LANGUAGES.map((lang) => (
+                <Dropdown.Item
+                  key={lang.code}
+                  active={(i18n.language || 'en').startsWith(lang.code)}
+                  onClick={() => changeLanguage(lang.code)}
+                >
+                  {lang.label}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            onClick={() => setIsNavOpen(!isNavOpen)}
+            aria-controls="navbarNav"
+            aria-expanded={isNavOpen ? 'true' : 'false'}
+            aria-label="Toggle navigation"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            style={{ border: '1px solid #0d6efd' }}
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+        </div>
 
         {/* Navigation Menu */}
-        <div className={`navbar-collapse ${isNavOpen ? 'show' : ''}`} id="navbarNav">
-          <ul className="navbar-nav ms-auto align-items-center">
+        <div className={`navbar-collapse order-lg-2 ${isNavOpen ? 'show' : ''}`} id="navbarNav">
+          <ul className="navbar-nav ms-lg-auto me-lg-2 align-items-lg-center">
             {/* Home */}
             <li className="nav-item">
               <Link to={ROUTES.HOME} className="nav-link btn btn-outline-primary btn-sm" onClick={closeMobileMenu}>
-                🏠 {t('nav.home')}
+                {t('nav.home')}
               </Link>
             </li>
 
             {/* Moving Services */}
             <li className="nav-item dropdown">
-              <NavDropdown title={`🚛 ${t('nav.services')}`} id="moving-services-dropdown" className="nav-dropdown">
+              <NavDropdown title={t('nav.services')} id="moving-services-dropdown" className="nav-dropdown">
                 <NavDropdown.Item as={Link} to={ROUTES.INTERSTATE_MOVING} onClick={closeMobileMenu}>
-                  🚚 {t('services.interstate')}
+                  {t('services.interstate', { defaultValue: 'Interstate Moving' })}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.WORLDWIDE_MOVING} onClick={closeMobileMenu}>
-                  🌍 {t('services.worldwide')}
+                  {t('services.worldwide', { defaultValue: 'Worldwide Moving' })}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.MOVING_SERVICES} onClick={closeMobileMenu}>
-                  📦 {t('services.moving_services')}
+                  {t('services.moving_services', { defaultValue: 'Moving Services' })}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.PACKING_SERVICE} onClick={closeMobileMenu}>
-                  📦 {t('services.packing')}
+                  {t('services.packing')}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.INTERNATIONAL_HOUSEHOLD_MOVERS} onClick={closeMobileMenu}>
-                  🏠 {t('services.international')}
+                  {t('services.international', { defaultValue: 'International Household' })}
                 </NavDropdown.Item>
               </NavDropdown>
             </li>
 
             {/* Specialty Moving */}
             <li className="nav-item dropdown">
-              <NavDropdown title="🎯 Specialty" id="special-moving-dropdown" className="nav-dropdown">
+              <NavDropdown title="Specialty" id="special-moving-dropdown" className="nav-dropdown">
                 <NavDropdown.Item as={Link} to={ROUTES.INTERNATIONAL_CAR_SHIPPING} onClick={closeMobileMenu}>
-                  🚗 Car Shipping
+                  Car Shipping
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.MOTORCYCLE_TO_EUROPE} onClick={closeMobileMenu}>
-                  🏍️ Motorcycle to Europe
+                  Motorcycle to Europe
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.INTERNATIONAL_PIANO_MOVERS} onClick={closeMobileMenu}>
-                  🎹 Piano Moving
+                  Piano Moving
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.OVERSEAS_ARTWORK_SHIPPING} onClick={closeMobileMenu}>
-                  🖼️ Artwork Shipping
+                  Artwork Shipping
                 </NavDropdown.Item>
               </NavDropdown>
             </li>
 
             {/* Insurance & Quotes */}
             <li className="nav-item dropdown">
-              <NavDropdown title={`💼 ${t('nav.quote')}`} id="insurance-quotes-dropdown" className="nav-dropdown">
+              <NavDropdown title={t('nav.quote')} id="insurance-quotes-dropdown" className="nav-dropdown">
                 <NavDropdown.Item as={Link} to={ROUTES.FREE_MOVING_QUOTE} onClick={closeMobileMenu}>
                   {t('cta.free_consult')}
                 </NavDropdown.Item>
@@ -158,15 +199,15 @@ const NavigationBar: React.FC = () => {
 
             {/* Resources */}
             <li className="nav-item dropdown">
-              <NavDropdown title="📚 Resources" id="resources-dropdown" className="nav-dropdown">
+              <NavDropdown title="Resources" id="resources-dropdown" className="nav-dropdown">
                 <NavDropdown.Item as={Link} to={ROUTES.MOVING_TIPS} onClick={closeMobileMenu}>
-                  💡 Moving Tips
+                  Moving Tips
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.PODCAST} onClick={closeMobileMenu}>
-                  🎙️ Podcast
+                  Podcast
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.WHY_TRUST_VIP} onClick={closeMobileMenu}>
-                  ⭐ Why Choose VIP
+                  Why Choose VIP
                 </NavDropdown.Item>
               </NavDropdown>
             </li>
@@ -174,66 +215,15 @@ const NavigationBar: React.FC = () => {
             {/* About */}
             <li className="nav-item">
               <Link to={ROUTES.ABOUT} className="nav-link btn btn-outline-info btn-sm" onClick={closeMobileMenu}>
-                ℹ️ {t('nav.about')}
+                {t('nav.about')}
               </Link>
             </li>
 
             {/* Contact */}
             <li className="nav-item">
               <Link to={ROUTES.CONTACT} className="nav-link btn btn-outline-success btn-sm" onClick={closeMobileMenu}>
-                📞 {t('nav.contact')}
+                {t('nav.contact')}
               </Link>
-            </li>
-
-            {/* Language Selector */}
-            <li className="nav-item mx-2">
-              <Dropdown>
-                <Dropdown.Toggle
-                  variant="outline-light"
-                  id="languageDropdown"
-                  className="language-toggle"
-                  style={{
-                    border: '2px solid rgba(255, 255, 255, 0.3)',
-                    borderRadius: '50%',
-                    width: '45px',
-                    height: '45px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: 'transparent',
-                    color: 'white'
-                  }}
-                >
-                  <Globe size={20} />
-                </Dropdown.Toggle>
-
-                <Dropdown.Menu align="end" className="language-menu">
-                  <Dropdown.Item onClick={() => changeLanguage('he')}>
-                    <span className="flag">🇮🇱</span>
-                    <span className="ms-2">עברית</span>
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={() => changeLanguage('en')}>
-                    <span className="flag">🇺🇸</span>
-                    <span className="ms-2">English</span>
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={() => changeLanguage('es')}>
-                    <span className="flag">🇪🇸</span>
-                    <span className="ms-2">Español</span>
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={() => changeLanguage('ru')}>
-                    <span className="flag">🇷🇺</span>
-                    <span className="ms-2">Русский</span>
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={() => changeLanguage('ar')}>
-                    <span className="flag">🇸🇦</span>
-                    <span className="ms-2">العربية</span>
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={() => changeLanguage('zh')}>
-                    <span className="flag">🇨🇳</span>
-                    <span className="ms-2">中文</span>
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
             </li>
           </ul>
         </div>
@@ -241,7 +231,7 @@ const NavigationBar: React.FC = () => {
     </nav>
 
     {/* Spacer for fixed navbar */}
-    <div style={{ height: '70px', width: '100%' }}></div>
+    <div style={{ height: '70px', width: '100%' }} />
 
     <ChatBot />
     </>

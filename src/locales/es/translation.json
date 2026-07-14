@@ -7,7 +7,8 @@
     "contact": "Contacto",
     "tracking": "Rastrear Envío",
     "login": "Iniciar Sesión",
-    "signup": "Registrarse"
+    "signup": "Registrarse",
+    "language": "Language"
   },
   "hero": {
     "title": "Envíos Internacionales Profesionales",
@@ -41,7 +42,18 @@
     "quick_links": "Enlaces Rápidos",
     "services": "Nuestros Servicios",
     "legal": "Legal y Políticas",
-    "copyright": "Todos los derechos reservados"
+    "copyright": "Todos los derechos reservados",
+    "privacy": "Política de privacidad",
+    "terms": "Términos del servicio",
+    "accessibility": "Accesibilidad"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "mark_all_read": "Mark All as Read",
+    "no_notifications": "No notifications",
+    "shipment_started": "Shipment Started!",
+    "price_update": "Price Update",
+    "customs_inspection": "Customs Inspection"
   },
   "common": {
     "loading": "Cargando...",
@@ -59,7 +71,12 @@
     "previous": "Anterior",
     "search": "Buscar",
     "filter": "Filtrar",
-    "sort": "Ordenar"
+    "sort": "Ordenar",
+    "skip_to_content": "Skip to main content",
+    "go_home": "Go to homepage",
+    "go_back": "Go back",
+    "required": "Required",
+    "optional": "Optional"
   },
   "forms": {
     "name": "Nombre Completo",
@@ -74,7 +91,9 @@
     "urgency": "Nivel de Urgencia",
     "budget": "Rango de Presupuesto",
     "required": "Requerido",
-    "optional": "Opcional"
+    "optional": "Opcional",
+    "question": "Your question",
+    "send": "Send message"
   },
   "tracking": {
     "title": "Rastrear Tu Envío",
@@ -84,7 +103,16 @@
     "estimated_delivery": "Entrega Estimada",
     "location": "Ubicación Actual",
     "progress": "Progreso",
-    "timeline": "Cronograma de Envío"
+    "timeline": "Cronograma de Envío",
+    "live_gps": "Live GPS tracking",
+    "not_found": "Tracking number not found. Enter a valid VIP tracking number.",
+    "enter_number": "Please enter a tracking number",
+    "locating": "Locating shipment GPS...",
+    "open_map": "Open full map",
+    "route": "Route",
+    "milestones": "Milestones",
+    "auto_refresh": "Auto-refresh every 15 seconds",
+    "gps_pending": "GPS coordinates not yet available for this shipment."
   },
   "ai": {
     "recommendations": "Recomendaciones AI",
@@ -92,6 +120,1103 @@
     "smart_suggestions": "Sugerencias Inteligentes",
     "powered_by_ai": "Impulsado por IA",
     "analyzing": "Analizando tus necesidades...",
-    "calculating": "Calculando..."
+    "calculating": "Calculando...",
+    "open_assistant": "Open AI Shipping Assistant",
+    "welcome": "Hello! I am your VIP Shipping AI Expert.\n\nI can write formal shipping quotes, track live GPS, and advise on US moving law (FMCSA) across all 50 states.\n\nTry: \"Quote a move from Miami FL to Austin TX\" or \"Track VIP1234567890\"",
+    "help": "Ayuda IA"
+  },
+  "checkout": {
+    "title": "Secure Payment",
+    "subtitle": "Card details are never stored on this site. Payment is processed by Stripe Checkout (PCI compliant).",
+    "login_required": "Please sign in to pay an invoice securely.",
+    "go_home": "Back to homepage",
+    "signed_in_as": "Signed in as",
+    "stripe_missing": "Stripe is not configured on the server (STRIPE_SECRET_KEY). You can still recalculate tax and download PDF.",
+    "cart_note": "Cart items are shown for reference. Phase 2 payment is invoice-based after quote acceptance — not manual card entry.",
+    "invoice_label": "Invoice to pay",
+    "invoice_placeholder": "Paste invoice ID",
+    "status": "Status",
+    "customer": "Customer",
+    "subtotal": "Subtotal",
+    "tax": "Tax",
+    "amount_due": "Amount due",
+    "billing_address": "Tax billing address",
+    "country": "Country",
+    "state": "US state",
+    "street": "Street",
+    "city": "City",
+    "postal": "Postal code",
+    "recalc_tax": "Recalculate tax",
+    "pay_stripe": "Pay with Stripe",
+    "redirecting": "Redirecting to Stripe...",
+    "download_pdf": "Download invoice PDF",
+    "payment_success": "Payment received. Your invoice will update automatically.",
+    "payment_cancel": "Payment was cancelled. You can try again.",
+    "load_error": "Could not load invoices. Sign in again or confirm an open invoice exists.",
+    "tax_updated": "Tax updated for destination address",
+    "tax_failed": "Tax update failed",
+    "select_invoice": "Select an invoice to pay",
+    "no_checkout_url": "No Stripe checkout URL received",
+    "checkout_failed": "Checkout creation failed",
+    "pdf_failed": "PDF download failed",
+    "united_states": "United States",
+    "israel": "Israel"
+  },
+  "thankyou": {
+    "title": "Thank you!",
+    "subtitle": "Your request was submitted successfully",
+    "whats_next": "What happens next?",
+    "step1": "Our team will contact you within 24 hours",
+    "step2": "You will receive a detailed, personalized quote",
+    "step3": "We will help with any questions you have",
+    "appreciation": "We appreciate your trust in VIP International Shipping. Our team is ready to deliver excellent service.",
+    "download": "Download details"
+  },
+  "errors": {
+    "not_found_title": "Page not found",
+    "not_found_body": "Sorry, the page you requested does not exist or has moved.",
+    "image_alt": "404 error — page not found"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to help with your international move",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Hours",
+    "support_247": "24/7 support in English and Hebrew",
+    "fill_all": "Please fill in all required fields",
+    "thanks": "Thank you for contacting us, {{name}}",
+    "send_error": "Error sending the form",
+    "network_error": "A network error occurred while sending your message",
+    "form_title": "Send us a message"
+  },
+  "accessibility": {
+    "commitment_badges_note": "We are actively working toward WCAG 2.1 AA. The badges below describe our goal and progress — not a completed third-party certification.",
+    "goal_wcag": "Working toward WCAG 2.1 AA",
+    "goal_ada": "ADA accessibility program",
+    "goal_508": "Section 508 alignment in progress"
+  },
+  "auth": {
+    "login_failed": "Login failed",
+    "register_failed": "Registration failed",
+    "session_invalid": "Session invalid"
+  },
+  "admin": {
+    "unauthorized": "Admin access required",
+    "title": "Admin dashboard"
+  },
+  "pages": {
+    "about": {
+      "journeyTitle": "Nuestro recorrido",
+      "journeySubtitle": "Una línea de tiempo de crecimiento e innovación",
+      "storyTitle": "Nuestra historia",
+      "storyP1": "VIP International Shipping se fundó para ofrecer mudanzas internacionales con gran profesionalismo y atención personal. Combinamos equipos logísticos experimentados con tecnología de seguimiento moderna.",
+      "storyP2": "Con los años construimos una red de socios de confianza y sistemas de visibilidad en tiempo real, coordinación aduanera y entrega puerta a puerta fiable.",
+      "storyP3": "Hoy atendemos con orgullo a clientes en todo el mundo con altas tasas de finalización y soporte dedicado.",
+      "whyTitle": "Por qué elegirnos",
+      "teamTitle": "Equipo directivo",
+      "ctaTitle": "¿Listo para una mudanza internacional más sencilla?",
+      "ctaBody": "Únase a miles de clientes que confían en VIP International Shipping. Obtenga un presupuesto personalizado en minutos.",
+      "stats": {
+        "experience": "Años de experiencia",
+        "countries": "Países atendidos",
+        "shipments": "Envíos exitosos",
+        "satisfaction": "Satisfacción del cliente"
+      },
+      "features": [
+        {
+          "title": "Fiabilidad demostrada",
+          "description": "Licencia de la Federal Maritime Commission y más de 15 años en mudanzas internacionales"
+        },
+        {
+          "title": "Cobertura global",
+          "description": "Servicio en todos los continentes con socios locales de confianza en cada región"
+        },
+        {
+          "title": "Servicio de extremo a extremo",
+          "description": "Desde la recogida en puerta hasta la entrega final — nos ocupamos de cada detalle"
+        },
+        {
+          "title": "Soporte personal",
+          "description": "Cada cliente cuenta con un coordinador dedicado durante toda la mudanza"
+        }
+      ],
+      "timeline": [
+        {
+          "year": "2009",
+          "event": "Fundación de la empresa",
+          "milestone": "Inicio"
+        },
+        {
+          "year": "2012",
+          "event": "Expansión en Europa — 10.000 envíos",
+          "milestone": "Crecimiento"
+        },
+        {
+          "year": "2016",
+          "event": "Apertura de corredores a Asia y América",
+          "milestone": "Expansión"
+        },
+        {
+          "year": "2020",
+          "event": "Transformación digital completa + IA",
+          "milestone": "Innovación"
+        },
+        {
+          "year": "2023",
+          "event": "Lanzamiento de herramientas AR y machine learning",
+          "milestone": "Liderazgo"
+        },
+        {
+          "year": "2025",
+          "event": "Plataforma avanzada de envíos inteligentes",
+          "milestone": "Futuro"
+        }
+      ],
+      "team": [
+        {
+          "name": "Danny Cohen",
+          "position": "CEO y fundador",
+          "experience": "20 años",
+          "specialty": "Logística internacional"
+        },
+        {
+          "name": "Sarah Levy",
+          "position": "Directora de operaciones",
+          "experience": "12 años",
+          "specialty": "Logística y planificación"
+        },
+        {
+          "name": "Michal Abraham",
+          "position": "Responsable de éxito del cliente",
+          "experience": "8 años",
+          "specialty": "Atención al cliente"
+        }
+      ]
+    },
+    "packing": {
+      "title": "Embalaje profesional",
+      "subtitle": "Embalaje profesional que ayuda a que sus pertenencias lleguen a salvo",
+      "badge1": "Más de 20 años de experiencia",
+      "badge2": "0 % de daños con embalaje profesional",
+      "priceLabel": "Precio",
+      "durationLabel": "Duración",
+      "includesLabel": "Incluye:",
+      "chooseService": "Elegir este servicio",
+      "materialsTitle": "Materiales de embalaje profesionales",
+      "tipsTitle": "Consejos de embalaje DIY",
+      "ctaTitle": "¿Listo para un embalaje profesional?",
+      "ctaBody": "Ahorre tiempo y energía con nuestro servicio de embalaje profesional",
+      "services": [
+        {
+          "title": "Embalaje completo",
+          "description": "Embalamos todo — desde la taza más pequeña hasta el mueble más grande",
+          "price": "$15–25 por caja",
+          "duration": "1–2 días",
+          "includes": [
+            "Todos los materiales de embalaje",
+            "Etiquetado detallado",
+            "Lista de inventario",
+            "Cobertura durante el embalaje"
+          ]
+        },
+        {
+          "title": "Embalaje de artículos frágiles",
+          "description": "Embalaje especializado para pertenencias delicadas y de alto valor",
+          "price": "$25–40 por artículo",
+          "duration": "2–4 horas por artículo",
+          "includes": [
+            "Materiales de protección especializados",
+            "Doble embalaje",
+            "Etiquetado «Frágil»",
+            "Seguro reforzado"
+          ]
+        },
+        {
+          "title": "Embalaje parcial",
+          "description": "Usted embala lo básico; nosotros nos ocupamos de los artículos complejos y pesados",
+          "price": "$200–400 por día",
+          "duration": "4–8 horas",
+          "includes": [
+            "Materiales de embalaje profesionales",
+            "Orientación experta",
+            "Ayuda con artículos pesados",
+            "Asesoramiento de embalaje"
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "name": "Cajas de cartón reforzadas",
+          "description": "Tamaños 1–6, duraderas y de alta calidad"
+        },
+        {
+          "name": "Plástico de burbujas",
+          "description": "Para artículos frágiles y delicados"
+        },
+        {
+          "name": "Papel de embalaje",
+          "description": "Para objetos cotidianos y relleno de huecos"
+        },
+        {
+          "name": "Film estirable",
+          "description": "Protección frente a humedad y polvo"
+        },
+        {
+          "name": "Espuma de embalaje",
+          "description": "Para artículos especialmente delicados"
+        },
+        {
+          "name": "Cinta de embalaje",
+          "description": "Sellado fuerte y duradero de cajas"
+        },
+        {
+          "name": "Etiquetas y adhesivos",
+          "description": "Etiquetado claro y legible"
+        },
+        {
+          "name": "Bolsas de embalaje",
+          "description": "Para artículos pequeños y delicados"
+        }
+      ],
+      "tips": [
+        "Empiece por las habitaciones que menos usa",
+        "Empaquete un artículo pesado con varios ligeros en la misma caja",
+        "Rellene los huecos con papel o ropa suave",
+        "Coloque los artículos pesados en el fondo de la caja",
+        "No sobrecargue — mantenga las cajas entre 15 y 20 kg",
+        "Fotografie los objetos de valor antes de embalar",
+        "Lleve una lista del contenido de cada caja",
+        "Empaque la ropa en bolsas de vacío para ahorrar espacio"
+      ]
+    },
+    "movingServices": {
+      "title": "Servicios de mudanza",
+      "subtitle": "Una amplia gama de servicios de mudanza profesionales adaptados a cada necesidad",
+      "badge1": "Más de 20 servicios",
+      "badge2": "Cobertura mundial",
+      "popular": "Popular",
+      "fromPrice": "Desde",
+      "additionalTitle": "Servicios adicionales",
+      "ctaTitle": "¿Le interesan nuestros servicios?",
+      "services": [
+        {
+          "title": "Embalaje profesional",
+          "description": "Embalaje experto con materiales de alta calidad",
+          "features": [
+            "Materiales de embalaje profesionales",
+            "Embalaje de frágiles",
+            "Etiquetado detallado",
+            "Seguro incluido"
+          ],
+          "price": "Desde $200"
+        },
+        {
+          "title": "Transporte terrestre",
+          "description": "Transporte terrestre rápido y seguro a cualquier destino",
+          "features": [
+            "Camiones equipados",
+            "Seguimiento GPS",
+            "Seguro completo",
+            "Equipo profesional"
+          ],
+          "price": "Desde $500"
+        },
+        {
+          "title": "Mudanza internacional",
+          "description": "Mudanzas en todo el mundo con socios de confianza",
+          "features": [
+            "Todos los continentes",
+            "Gestión aduanera",
+            "Seguimiento en tiempo real",
+            "Seguro internacional"
+          ],
+          "price": "Desde $1,200"
+        },
+        {
+          "title": "Seguro y seguridad",
+          "description": "Cobertura integral y manipulación segura",
+          "features": [
+            "Seguro completo",
+            "Instalaciones seguras",
+            "Monitorización 24/7",
+            "Reclamaciones rápidas"
+          ],
+          "price": "3 % del valor"
+        },
+        {
+          "title": "Servicios de instalación",
+          "description": "Desmontaje y montaje de muebles y electrodomésticos",
+          "features": [
+            "Desmontaje profesional",
+            "Instalación en destino",
+            "Herramientas profesionales",
+            "Garantía de mano de obra"
+          ],
+          "price": "Desde $150"
+        },
+        {
+          "title": "Almacenamiento temporal",
+          "description": "Soluciones de almacenamiento flexibles y seguras",
+          "features": [
+            "Instalaciones seguras",
+            "Control climático",
+            "Acceso 24/7",
+            "Tarifas flexibles"
+          ],
+          "price": "Desde $50/mes"
+        }
+      ],
+      "additional": [
+        "Trámites aduaneros",
+        "Seguro premium",
+        "Recogida en ubicaciones remotas",
+        "Transporte de artículos de lujo",
+        "Consultoría logística",
+        "Almacenamiento a largo plazo",
+        "Limpieza posterior a la mudanza",
+        "Reubicación de mascotas"
+      ]
+    },
+    "movingTips": {
+      "title": "Consejos para mudanzas internacionales",
+      "subtitle": "Todo lo que necesita saber para una mudanza internacional exitosa y fluida",
+      "allCategories": "Todos",
+      "importanceHigh": "Muy importante",
+      "importanceMedium": "Importante",
+      "importanceLow": "Recomendado",
+      "timeframe": "Cuándo hacerlo:",
+      "tips": [
+        {
+          "category": "Planificación",
+          "title": "Empiece a planificar con antelación",
+          "content": "Comience a planificar su mudanza al menos 8 semanas antes de la fecha prevista. Así tendrá tiempo de obtener mejores presupuestos y prepararse bien.",
+          "importance": "high",
+          "timeFrame": "8 semanas antes"
+        },
+        {
+          "category": "Embalaje",
+          "title": "Embale de forma profesional",
+          "content": "Use materiales de embalaje de calidad. Envuelva los frágiles con plástico de burbujas y rellene los huecos con cartón o papel de embalaje.",
+          "importance": "high",
+          "timeFrame": "4 semanas antes"
+        },
+        {
+          "category": "Documentación",
+          "title": "Inventario y documentos",
+          "content": "Prepare un inventario detallado de todos los artículos, fotografíe los objetos de valor para el seguro y conserve copias de documentos importantes.",
+          "importance": "high",
+          "timeFrame": "6 semanas antes"
+        },
+        {
+          "category": "Seguro",
+          "title": "Seguro integral",
+          "content": "Invierta en un seguro de envío integral. Cubre daños o pérdida de artículos de alto valor durante la mudanza.",
+          "importance": "high",
+          "timeFrame": "2 semanas antes"
+        },
+        {
+          "category": "Planificación",
+          "title": "Investigue su nuevo país",
+          "content": "Infórmese sobre las normas aduaneras, el clima y la cultura local. Le ayudará a prepararse mejor para su nueva vida.",
+          "importance": "medium",
+          "timeFrame": "12 semanas antes"
+        },
+        {
+          "category": "Embalaje",
+          "title": "Etiquete las cajas con claridad",
+          "content": "Escriba el contenido y la habitación de destino en cada caja. Use colores distintos para cada habitación.",
+          "importance": "medium",
+          "timeFrame": "3 semanas antes"
+        },
+        {
+          "category": "Documentación",
+          "title": "Lleve consigo los documentos importantes",
+          "content": "Pasaporte, visado, documentos médicos y financieros — guárdelos en una bolsa separada que viaje con usted, no en el envío.",
+          "importance": "high",
+          "timeFrame": "Día de la mudanza"
+        },
+        {
+          "category": "Planificación",
+          "title": "Planifique sus primeros días",
+          "content": "Prepare un plan para los primeros días en su nuevo hogar: alojamiento, comida básica y transporte.",
+          "importance": "medium",
+          "timeFrame": "1 semana antes"
+        }
+      ]
+    },
+    "freeMovingQuote": {
+      "title": "Get Your Free Moving Quote",
+      "subtitle": "Instant estimate in 3 easy steps | No obligation | Save up to 30%",
+      "badges": {
+        "free": "100% Free",
+        "noCard": "No Credit Card",
+        "response": "1-Hour Response",
+        "priceMatch": "Price Match Guarantee"
+      },
+      "benefits": {
+        "pricing": {
+          "title": "Transparent Pricing",
+          "desc": "No hidden fees or surprise charges"
+        },
+        "insured": {
+          "title": "Fully Insured",
+          "desc": "Comprehensive protection for your belongings"
+        },
+        "fast": {
+          "title": "Fast Response",
+          "desc": "Quote within 1 hour, 7 days a week"
+        },
+        "guarantee": {
+          "title": "Best Price Guarantee",
+          "desc": "We'll match any competitor's quote"
+        }
+      },
+      "stepOf": "Step {{step}} of {{total}}",
+      "percentComplete": "{{percent}}% Complete",
+      "steps": {
+        "moveDetails": "Move Details",
+        "services": "Services",
+        "contact": "Contact Info"
+      },
+      "step1Title": "Tell Us About Your Move",
+      "moveTypeLabel": "Type of Move *",
+      "moveTypes": {
+        "local": "Local Move (Within 50 miles)",
+        "longDistance": "Long Distance (Interstate)",
+        "international": "International Move"
+      },
+      "fromZip": "From Zip Code *",
+      "toZip": "To Zip Code *",
+      "zipPlaceholderFrom": "e.g. 10001",
+      "zipPlaceholderTo": "e.g. 90210",
+      "moveDate": "Preferred Move Date *",
+      "flexibleDates": "Flexible dates? We can offer better pricing!",
+      "homeSize": "Home Size *",
+      "homeSizeSelect": "Select home size...",
+      "sizes": {
+        "studio": "Studio/Efficiency",
+        "one": "1 Bedroom",
+        "two": "2 Bedrooms",
+        "three": "3 Bedrooms",
+        "four": "4 Bedrooms",
+        "fivePlus": "5+ Bedrooms"
+      },
+      "step2Title": "Select Additional Services",
+      "servicesHint": "Check all services you're interested in. You can adjust later!",
+      "addonServices": [
+        {
+          "id": "packing",
+          "label": "Professional Packing",
+          "desc": "Full packing service with materials included",
+          "cost": "+20%"
+        },
+        {
+          "id": "storage",
+          "label": "Storage (30 days)",
+          "desc": "Climate-controlled storage facility",
+          "cost": "+10%"
+        },
+        {
+          "id": "insurance",
+          "label": "Full Value Protection",
+          "desc": "Comprehensive insurance coverage",
+          "cost": "+5%"
+        },
+        {
+          "id": "unpacking",
+          "label": "Unpacking Services",
+          "desc": "We unpack and place items in your new home",
+          "cost": "+15%"
+        },
+        {
+          "id": "furniture",
+          "label": "Furniture Assembly",
+          "desc": "Disassembly and reassembly of furniture",
+          "cost": "+8%"
+        },
+        {
+          "id": "cleaning",
+          "label": "Post-Move Cleaning",
+          "desc": "Professional cleaning of your old home",
+          "cost": "+12%"
+        }
+      ],
+      "specialItems": "Special Items or Instructions",
+      "specialItemsPlaceholder": "e.g., Piano, pool table, fragile antiques, tight parking...",
+      "step3Title": "Contact Information",
+      "estimatedCost": "Your Estimated Cost",
+      "estimateNote": "Final price subject to in-home survey. This estimate includes your selected services.",
+      "phoneHint": "We'll call within 1 hour to confirm details",
+      "consentPrefix": "I agree to receive communications and understand the",
+      "consentAnd": "and",
+      "whatNext": "What happens next?",
+      "nextSteps": [
+        "Our moving specialist will call you within 1 hour",
+        "Schedule a free in-home survey (virtual or in-person)",
+        "Receive your final binding quote",
+        "Book your move and relax!"
+      ],
+      "back": "← Back",
+      "continue": "Continue →",
+      "submit": "Get My Free Quote",
+      "submitSuccess": "Thank you! Our team will contact you within 1 hour with a detailed quote.",
+      "trustedBy": "Trusted by 50,000+ happy customers",
+      "trust": {
+        "licensed": "Licensed & Insured",
+        "bbb": "A+ BBB Rating",
+        "reviews": "5,000+ 5-Star Reviews"
+      }
+    },
+    "worldwideMoving": {
+      "title": "Worldwide International Moving",
+      "subtitle": "Door-to-door shipping across continents with customs expertise",
+      "ctaQuote": "Get a worldwide quote",
+      "ctaCall": "Talk to a specialist",
+      "alertTitle": "Plan lead times early",
+      "alertBody": "Ocean freight typically takes 30–60 days. Air freight is available for urgent shipments.",
+      "methodsTitle": "Shipping methods",
+      "destinationsTitle": "Popular destinations",
+      "servicesTitle": "Included services",
+      "processTitle": "How worldwide moves work",
+      "costsTitle": "Cost factors",
+      "prohibitedTitle": "Restricted & prohibited items",
+      "finalCta": "Ready to move worldwide?",
+      "shippingMethods": [
+        {
+          "method": "Sea Freight (FCL)",
+          "time": "30-60 days",
+          "cost": "Most economical",
+          "bestFor": "Full household moves",
+          "description": "Exclusive use of a 20 or 40-foot container. Ideal for large moves with flexibility on timing.",
+          "features": [
+            "Door-to-door service",
+            "Most cost-effective",
+            "Secure container",
+            "Best for large volumes"
+          ]
+        },
+        {
+          "method": "Sea Freight (LCL)",
+          "time": "35-70 days",
+          "cost": "Budget-friendly",
+          "bestFor": "Smaller shipments",
+          "description": "Share container space with other shipments. Perfect for 1-2 bedroom apartments.",
+          "features": [
+            "Pay for space used",
+            "Flexible volume",
+            "Consolidated shipping",
+            "Cost-efficient"
+          ]
+        },
+        {
+          "method": "Air Freight",
+          "time": "5-10 days",
+          "cost": "Premium pricing",
+          "bestFor": "Urgent/valuable items",
+          "description": "Fastest international shipping option. Recommended for time-sensitive or high-value shipments.",
+          "features": [
+            "Express delivery",
+            "Climate controlled",
+            "Maximum security",
+            "Priority handling"
+          ]
+        }
+      ],
+      "popularDestinations": [
+        {
+          "continent": "Europe",
+          "countries": [
+            "UK",
+            "Germany",
+            "France",
+            "Spain",
+            "Italy",
+            "Netherlands"
+          ],
+          "time": "35-50 days"
+        },
+        {
+          "continent": "Asia",
+          "countries": [
+            "Israel",
+            "Japan",
+            "Singapore",
+            "South Korea",
+            "Hong Kong",
+            "UAE"
+          ],
+          "time": "25-45 days"
+        },
+        {
+          "continent": "Australia & Oceania",
+          "countries": [
+            "Australia",
+            "New Zealand"
+          ],
+          "time": "40-60 days"
+        },
+        {
+          "continent": "South America",
+          "countries": [
+            "Brazil",
+            "Argentina",
+            "Chile"
+          ],
+          "time": "35-55 days"
+        },
+        {
+          "continent": "Africa",
+          "countries": [
+            "South Africa",
+            "Kenya",
+            "Egypt"
+          ],
+          "time": "30-50 days"
+        },
+        {
+          "continent": "Middle East",
+          "countries": [
+            "UAE",
+            "Saudi Arabia",
+            "Qatar",
+            "Kuwait"
+          ],
+          "time": "25-40 days"
+        }
+      ],
+      "services": [
+        {
+          "title": "Professional Packing",
+          "description": "Expert packing with international-grade materials",
+          "included": [
+            "Custom crating",
+            "Bubble wrap & padding",
+            "Labeled inventory",
+            "Fragile item handling"
+          ]
+        },
+        {
+          "title": "Customs Clearance",
+          "description": "Full documentation and customs brokerage services",
+          "included": [
+            "Customs forms",
+            "Import permits",
+            "Duty calculations",
+            "Broker coordination"
+          ]
+        },
+        {
+          "title": "Door-to-Door Service",
+          "description": "Complete pickup and delivery to your new address",
+          "included": [
+            "Home pickup",
+            "Port handling",
+            "Destination delivery",
+            "Unpacking options"
+          ]
+        },
+        {
+          "title": "Comprehensive Insurance",
+          "description": "Full value protection for international moves",
+          "included": [
+            "All-risk coverage",
+            "Marine insurance",
+            "Claims assistance",
+            "Peace of mind"
+          ]
+        }
+      ],
+      "processSteps": [
+        {
+          "title": "Free Consultation",
+          "description": "Discuss your needs with our international move specialist"
+        },
+        {
+          "title": "Survey & Quote",
+          "description": "Virtual or in-home survey to assess volume and provide accurate quote"
+        },
+        {
+          "title": "Documentation",
+          "description": "Prepare all necessary paperwork, customs forms, and permits"
+        },
+        {
+          "title": "Professional Packing",
+          "description": "Expert team packs and labels all items with care"
+        },
+        {
+          "title": "Export & Shipping",
+          "description": "Container loaded, sealed, and shipped to destination port"
+        },
+        {
+          "title": "Customs Clearance",
+          "description": "Our agents handle all customs procedures at destination"
+        },
+        {
+          "title": "Final Delivery",
+          "description": "Delivery to your new home with unpacking if requested"
+        }
+      ],
+      "prohibitedItems": [
+        "Flammable liquids and explosives",
+        "Perishable foods",
+        "Plants and soil (many countries)",
+        "Weapons and ammunition",
+        "Illegal drugs and controlled substances"
+      ]
+    },
+    "interstateMoving": {
+      "title": "Interstate Moving Services",
+      "subtitle": "Reliable long-distance moves across all 50 US states",
+      "ctaQuote": "Get an interstate quote",
+      "ctaCall": "Call a coordinator",
+      "promoTitle": "Peak season tip",
+      "promoBody": "Book 4–8 weeks ahead for May–September to lock better rates and dates.",
+      "whyTitle": "Why choose VIP for interstate moves",
+      "servicesTitle": "Service options",
+      "routesTitle": "Popular routes",
+      "pricingTitle": "What affects price",
+      "tipsTitle": "Moving tips",
+      "howTitle": "How it works",
+      "includes": "Includes:",
+      "finalCta": "Ready for your interstate move?",
+      "services": [
+        {
+          "title": "Full-Service Moving",
+          "description": "Complete door-to-door service with professional packing, loading, transport, and unpacking",
+          "features": [
+            "Professional packing",
+            "Loading & unloading",
+            "Furniture disassembly/assembly",
+            "Unpacking services"
+          ]
+        },
+        {
+          "title": "Partial/Shared Moving",
+          "description": "Cost-effective solution for smaller moves, sharing truck space with other shipments",
+          "features": [
+            "Lower cost option",
+            "Flexible scheduling",
+            "Same care and protection",
+            "Ideal for 1-2 bedroom moves"
+          ]
+        },
+        {
+          "title": "Express Moving",
+          "description": "Priority service with dedicated truck and expedited delivery for time-sensitive moves",
+          "features": [
+            "Dedicated truck",
+            "3-5 day delivery",
+            "Priority scheduling",
+            "Real-time tracking"
+          ]
+        },
+        {
+          "title": "White Glove Service",
+          "description": "Premium moving experience with specialized handling for high-value and delicate items",
+          "features": [
+            "Custom crating",
+            "Climate-controlled transport",
+            "Installation services",
+            "Concierge support"
+          ]
+        }
+      ],
+      "popularRoutes": [
+        {
+          "from": "New York, NY",
+          "to": "Florida",
+          "duration": "3-5 days",
+          "distance": "1,200 mi"
+        },
+        {
+          "from": "California",
+          "to": "Texas",
+          "duration": "4-6 days",
+          "distance": "1,500 mi"
+        },
+        {
+          "from": "Illinois",
+          "to": "Arizona",
+          "duration": "4-5 days",
+          "distance": "1,700 mi"
+        },
+        {
+          "from": "Massachusetts",
+          "to": "North Carolina",
+          "duration": "3-4 days",
+          "distance": "800 mi"
+        },
+        {
+          "from": "Washington",
+          "to": "Colorado",
+          "duration": "3-4 days",
+          "distance": "1,300 mi"
+        },
+        {
+          "from": "Michigan",
+          "to": "Georgia",
+          "duration": "4-5 days",
+          "distance": "1,000 mi"
+        }
+      ],
+      "movingTips": [
+        {
+          "title": "Book Early",
+          "tip": "Reserve your moving date 4-8 weeks in advance, especially during peak season (May-September)"
+        },
+        {
+          "title": "Declutter First",
+          "tip": "Reduce moving costs by selling or donating items you no longer need before packing"
+        },
+        {
+          "title": "Get Multiple Quotes",
+          "tip": "Compare at least 3 estimates to ensure competitive pricing and understand what's included"
+        },
+        {
+          "title": "Read Reviews",
+          "tip": "Check BBB ratings, Google reviews, and FMCSA records before choosing a moving company"
+        }
+      ],
+      "pricingFactors": [
+        {
+          "factor": "Distance",
+          "impact": "Primary cost driver",
+          "description": "Longer distances = higher costs"
+        },
+        {
+          "factor": "Weight/Volume",
+          "impact": "Direct correlation",
+          "description": "Charged per pound or cubic foot"
+        },
+        {
+          "factor": "Season",
+          "impact": "Moderate effect",
+          "description": "Summer (peak) costs 20-30% more"
+        },
+        {
+          "factor": "Access",
+          "impact": "Additional fees",
+          "description": "Stairs, long carry, shuttle service"
+        },
+        {
+          "factor": "Packing Services",
+          "impact": "Optional add-on",
+          "description": "Professional packing adds 15-25%"
+        },
+        {
+          "factor": "Insurance",
+          "impact": "Recommended",
+          "description": "Full value protection for peace of mind"
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "lastUpdated": "Last updated",
+      "intro": "Please read these Terms carefully before using VIP International Shipping services.",
+      "sections": [
+        {
+          "title": "1. Acceptance of Terms",
+          "paragraphs": [
+            "By accessing or using our website and services, you agree to be bound by these Terms of Service."
+          ]
+        },
+        {
+          "title": "2. Services",
+          "paragraphs": [
+            "We provide international and domestic moving, packing, storage, and related logistics services subject to availability and applicable law."
+          ]
+        },
+        {
+          "title": "3. Quotes and Pricing",
+          "paragraphs": [
+            "Quotes are estimates unless expressly stated as binding. Final pricing may change after survey, inventory, access conditions, or regulatory fees."
+          ]
+        },
+        {
+          "title": "4. Customer Responsibilities",
+          "paragraphs": [
+            "You are responsible for accurate inventory, access to premises, required permits, and compliance with customs and prohibited-item rules."
+          ]
+        },
+        {
+          "title": "5. Payments",
+          "paragraphs": [
+            "Payment terms are stated on your invoice or booking confirmation. Late payments may incur fees or service delays."
+          ]
+        },
+        {
+          "title": "6. Insurance and Liability",
+          "paragraphs": [
+            "Coverage options are offered at booking. Liability limits apply as disclosed in your contract and applicable carrier terms."
+          ]
+        },
+        {
+          "title": "7. Cancellations",
+          "paragraphs": [
+            "Cancellation and rescheduling policies are provided with your booking. Deposits may be non-refundable after certain deadlines."
+          ]
+        },
+        {
+          "title": "8. Privacy",
+          "paragraphs": [
+            "Personal data is handled according to our Privacy Policy."
+          ]
+        },
+        {
+          "title": "9. Governing Law",
+          "paragraphs": [
+            "These Terms are governed by the laws of the applicable jurisdiction stated in your service agreement."
+          ]
+        },
+        {
+          "title": "10. Contact",
+          "paragraphs": [
+            "Questions about these Terms: support@vipshipping.com"
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "How we collect, use, and protect your information",
+      "lastUpdated": "Last updated",
+      "intro": "This Privacy Policy explains how VIP International Shipping handles personal information.",
+      "sections": [
+        {
+          "title": "1. Information we collect",
+          "paragraphs": [
+            "Contact details, move addresses, shipment details, payment references, and usage data needed to provide services."
+          ]
+        },
+        {
+          "title": "2. How we use information",
+          "paragraphs": [
+            "To prepare quotes, operate shipments, process payments, provide support, improve services, and meet legal obligations."
+          ]
+        },
+        {
+          "title": "3. Sharing",
+          "paragraphs": [
+            "We share data with carriers, customs brokers, payment processors, and service providers under contract, or when required by law."
+          ]
+        },
+        {
+          "title": "4. Security",
+          "paragraphs": [
+            "We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data."
+          ]
+        },
+        {
+          "title": "5. Your rights",
+          "paragraphs": [
+            "Depending on your location, you may request access, correction, deletion, or restriction of personal data."
+          ]
+        },
+        {
+          "title": "6. Cookies",
+          "paragraphs": [
+            "We use necessary cookies for authentication and optional analytics cookies where permitted."
+          ]
+        },
+        {
+          "title": "7. International transfers",
+          "paragraphs": [
+            "Data may be processed in countries where we or our partners operate, with appropriate safeguards."
+          ]
+        },
+        {
+          "title": "8. Children",
+          "paragraphs": [
+            "Our services are not directed to children under 16."
+          ]
+        },
+        {
+          "title": "9. Changes",
+          "paragraphs": [
+            "We may update this policy and will revise the last-updated date when changes are material."
+          ]
+        },
+        {
+          "title": "10. Contact",
+          "paragraphs": [
+            "Privacy questions: privacy@vipshipping.com"
+          ]
+        }
+      ]
+    }
+  },
+  "home": {
+    "priority_high": "High Priority",
+    "priority_medium": "Medium Priority",
+    "priority_low": "Low Priority",
+    "price_label": "Price",
+    "rec_household_desc": "Recommended for international household moves with full logistics support.",
+    "rec_household_time": "14–28 days",
+    "rec_household_price": "From $800",
+    "rec_insurance_desc": "Protect your shipment with comprehensive moving insurance.",
+    "rec_insurance_price": "3% of shipment value",
+    "rec_packing_desc": "Professional packing for fragile and valuable items.",
+    "rec_packing_time": "1–2 days",
+    "rec_packing_price": "From $200",
+    "rec_storage_desc": "Secure short- or long-term storage before or after your move.",
+    "rec_storage_price": "From $50/month"
+  },
+  "volume": {
+    "title": "AR Volume Calculator",
+    "new_badge": "New!",
+    "use_camera": "Use your camera for automatic volume calculation",
+    "manual_entry": "Manual entry",
+    "start_scan": "Start scan",
+    "scanning": "Scanning items with AI...",
+    "ar_not_supported": "Camera is not available on this device",
+    "switch_to_camera": "Switch to camera",
+    "switch_to_manual": "Switch to manual entry",
+    "calculation_complete": "Calculation complete!",
+    "total_volume": "Total volume (m³)",
+    "estimated_weight": "Estimated weight (kg)",
+    "recommended_container": "Recommended container",
+    "estimated_price": "Estimated price",
+    "scanned_items": "Scanned items",
+    "calculate": "Calculate volume",
+    "fill_dimensions": "Please fill in all dimensions",
+    "container_20": "20ft Container",
+    "container_10": "10ft Container",
+    "custom_item": "Custom Item",
+    "sofa": "Sofa",
+    "dining_table": "Dining Table",
+    "wardrobe": "Wardrobe",
+    "accuracy": "{{percent}}% accuracy"
+  },
+  "prediction": {
+    "select_destination": "Select destination...",
+    "europe": "Europe",
+    "asia": "Asia",
+    "australia": "Australia",
+    "africa": "Africa",
+    "south_america": "South America",
+    "weight": "Weight",
+    "urgency_standard": "Standard (14–28 days)",
+    "urgency_express": "Express (7–14 days)",
+    "urgency_urgent": "Urgent (3–7 days)",
+    "enter_destination": "Please enter a destination",
+    "accuracy": "{{percent}}% accuracy",
+    "estimated_total": "Estimated total price",
+    "price_factors": "Price factors:",
+    "save": "Save ${{amount}}",
+    "factor_geo": "Geographic Destination",
+    "factor_geo_desc": "Destination {{location}} affects the price",
+    "factor_weight": "Shipment Weight",
+    "factor_weight_desc": "Weight of {{weight}} kg requires special handling",
+    "factor_service": "Service Type",
+    "factor_service_desc": "Service {{service}} requires special handling",
+    "factor_urgency": "Urgency Level",
+    "factor_urgency_desc": "Service {{urgency}} available for an additional fee",
+    "alt_standard": "Standard service instead of express",
+    "alt_group": "Group with other shipments",
+    "alt_self_pack": "Self-packing",
+    "beta": "Beta"
   }
 }

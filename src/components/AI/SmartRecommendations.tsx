@@ -1,75 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { Card, Button, Badge, Row, Col } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { Star, Clock, Shield, Truck, Globe } from 'react-bootstrap-icons';
 
-interface Recommendation {
-  id: string;
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  category: string;
-  priority: 'high' | 'medium' | 'low';
-  estimatedTime?: string;
-  price?: string;
-}
+type Priority = 'high' | 'medium' | 'low';
 
+/**
+ * Home recommendations — all copy from i18n so language switches update immediately.
+ */
 const SmartRecommendations: React.FC = () => {
-  const { t } = useTranslation();
-  const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { t, i18n } = useTranslation();
 
-  // Simulation of AI analyzing user behavior and recommendations
-  useEffect(() => {
-    // Simulating loading time
-    setTimeout(() => {
-      const mockRecommendations: Recommendation[] = [
-        {
-          id: '1',
-          title: t('services.household'),
-          description: t('ai.recommendations') + ' - ' + t('services.household'),
-          icon: <Globe size={24} />,
-          category: 'Travel',
-          priority: 'high',
-          estimatedTime: '7-14 days',
-          price: 'From $800'
-        },
-        {
-          id: '2',
-          title: t('services.insurance'),
-          description: t('ai.recommendations') + ' - ' + t('services.insurance'),
-          icon: <Shield size={24} />,
-          category: 'Insurance',
-          priority: 'high',
-          price: '3% of shipment value'
-        },
-        {
-          id: '3',
-          title: t('services.packing'),
-          description: t('ai.recommendations') + ' - ' + t('services.packing'),
-          icon: <Truck size={24} />,
-          category: 'Services',
-          priority: 'medium',
-          estimatedTime: '1-2 days',
-          price: 'From $200'
-        },
-        {
-          id: '4',
-          title: t('services.storage'),
-          description: t('ai.recommendations') + ' - ' + t('services.storage'),
-          icon: <Clock size={24} />,
-          category: 'Storage',
-          priority: 'low',
-          price: 'From $50/month'
-        }
-      ];
-      
-      setRecommendations(mockRecommendations);
-      setIsLoading(false);
-    }, 1500);
-  }, []);
+  const recommendations = useMemo(() => {
+    // i18n.language in deps so cards rebuild on language change
+    void i18n.language;
+    return [
+      {
+        id: '1',
+        title: t('services.household'),
+        description: t('home.rec_household_desc'),
+        icon: <Globe size={24} />,
+        priority: 'high' as Priority,
+        estimatedTime: t('home.rec_household_time'),
+        price: t('home.rec_household_price')
+      },
+      {
+        id: '2',
+        title: t('services.insurance'),
+        description: t('home.rec_insurance_desc'),
+        icon: <Shield size={24} />,
+        priority: 'high' as Priority,
+        price: t('home.rec_insurance_price')
+      },
+      {
+        id: '3',
+        title: t('services.packing'),
+        description: t('home.rec_packing_desc'),
+        icon: <Truck size={24} />,
+        priority: 'medium' as Priority,
+        estimatedTime: t('home.rec_packing_time'),
+        price: t('home.rec_packing_price')
+      },
+      {
+        id: '4',
+        title: t('services.storage'),
+        description: t('home.rec_storage_desc'),
+        icon: <Clock size={24} />,
+        priority: 'low' as Priority,
+        price: t('home.rec_storage_price')
+      }
+    ];
+  }, [t, i18n.language]);
 
-  const getPriorityColor = (priority: string) => {
+  const getPriorityColor = (priority: Priority) => {
     switch (priority) {
       case 'high': return 'danger';
       case 'medium': return 'warning';
@@ -78,48 +61,25 @@ const SmartRecommendations: React.FC = () => {
     }
   };
 
-  const getPriorityText = (priority: string) => {
+  const getPriorityText = (priority: Priority) => {
     switch (priority) {
-      case 'high': return 'High Priority';
-      case 'medium': return 'Medium Priority';
-      case 'low': return 'Low Priority';
+      case 'high': return t('home.priority_high');
+      case 'medium': return t('home.priority_medium');
+      case 'low': return t('home.priority_low');
       default: return '';
     }
   };
 
-  if (isLoading) {
-    return (
-      <Card className="mb-4">
-        <Card.Header>
-          <h5 className="mb-0">
-            <Star className="me-2" />
-            Smart Recommendations For You
-          </h5>
-        </Card.Header>
-        <Card.Body>
-          <div className="text-center">
-            <div className="spinner-border text-primary" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
-            <p className="mt-2">Analyzing your needs...</p>
-          </div>
-        </Card.Body>
-      </Card>
-    );
-  }
-
   return (
     <Card className="mb-4">
-        <Card.Header>
-          <h5 className="mb-0">
-            <Star className="me-2" />
-            {t('ai.recommendations')}
-            <Badge bg="primary" className="ms-2">{t('ai.powered_by_ai')}</Badge>
-          </h5>
-          <small className="text-muted">
-            {t('ai.smart_suggestions')}
-          </small>
-        </Card.Header>
+      <Card.Header>
+        <h2 className="h5 mb-0">
+          <Star className="me-2" aria-hidden="true" />
+          {t('ai.recommendations')}
+          <Badge bg="primary" className="ms-2">{t('ai.powered_by_ai')}</Badge>
+        </h2>
+        <small className="text-muted">{t('ai.smart_suggestions')}</small>
+      </Card.Header>
       <Card.Body>
         <Row>
           {recommendations.map((rec) => (
@@ -127,45 +87,33 @@ const SmartRecommendations: React.FC = () => {
               <Card className="h-100 border-0 shadow-sm">
                 <Card.Body>
                   <div className="d-flex align-items-start mb-3">
-                    <div className="me-3 text-primary">
-                      {rec.icon}
-                    </div>
+                    <div className="me-3 text-primary" aria-hidden="true">{rec.icon}</div>
                     <div className="flex-grow-1">
-                      <h6 className="card-title mb-1">{rec.title}</h6>
-                      <Badge 
-                        bg={getPriorityColor(rec.priority)} 
-                        className="mb-2"
-                      >
+                      <h3 className="h6 card-title mb-1">{rec.title}</h3>
+                      <Badge bg={getPriorityColor(rec.priority)} className="mb-2">
                         {getPriorityText(rec.priority)}
                       </Badge>
                     </div>
                   </div>
-                  
-                  <p className="card-text text-muted small mb-3">
-                    {rec.description}
-                  </p>
-                  
+
+                  <p className="card-text text-muted small mb-3">{rec.description}</p>
+
                   <div className="mb-3">
                     {rec.estimatedTime && (
                       <div className="d-flex align-items-center mb-1">
-                        <Clock size={14} className="me-2 text-muted" />
+                        <Clock size={14} className="me-2 text-muted" aria-hidden="true" />
                         <small className="text-muted">{rec.estimatedTime}</small>
                       </div>
                     )}
                     {rec.price && (
                       <div className="d-flex align-items-center">
-                        <span className="badge bg-success me-2">Price</span>
+                        <span className="badge bg-success me-2">{t('home.price_label')}</span>
                         <small className="fw-bold text-success">{rec.price}</small>
                       </div>
                     )}
                   </div>
-                  
-                  <Button
-                    variant="outline-primary"
-                    size="sm"
-                    className="w-100"
-                    aria-label={t('common.view')}
-                  >
+
+                  <Button variant="outline-primary" size="sm" className="w-100" aria-label={t('common.view')}>
                     {t('common.view')}
                   </Button>
                 </Card.Body>
@@ -173,10 +121,10 @@ const SmartRecommendations: React.FC = () => {
             </Col>
           ))}
         </Row>
-        
+
         <div className="text-center mt-3">
           <small className="text-muted">
-            <Star className="me-1" />
+            <Star className="me-1" aria-hidden="true" />
             {t('ai.powered_by_ai')}
           </small>
         </div>
