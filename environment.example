@@ -6,16 +6,43 @@ MONGODB_ATLAS_URI=mongodb+srv://username:password@cluster.mongodb.net/vip_shippi
 
 # Security
 JWT_SECRET=your-jwt-secret-key
+JWT_REFRESH_SECRET=your-jwt-refresh-secret-key
+JWT_ACCESS_EXPIRES_IN=15m
+JWT_REFRESH_EXPIRES_IN=7d
 BCRYPT_ROUNDS=12
 
-# Email
+# Email (nodemailer — quote / payment / tracking)
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-app-password
+EMAIL_FROM=VIP Shipping <noreply@vipshipping.com>
+# Optional SMTP override (otherwise Gmail service is used)
+# SMTP_HOST=smtp.example.com
+# SMTP_PORT=587
+# EMAIL_SERVICE=gmail
+
+# AI Agent (Vercel AI SDK - לא נעול לספק אחד)
+AI_PROVIDER=anthropic
+ANTHROPIC_API_KEY=your-anthropic-key
+OPENAI_API_KEY=your-openai-key
+
+# Stripe (Phase 2 — payments + optional Stripe Tax)
+STRIPE_SECRET_KEY=sk_test_xxx
+STRIPE_PUBLISHABLE_KEY=pk_test_xxx
+STRIPE_WEBHOOK_SECRET=whsec_xxx
+# true = Stripe Tax מחשב מס ארה״ב אוטומטית ב-Checkout (מומלץ בפרודקשן)
+STRIPE_TAX_ENABLED=false
+
+# US sales tax nexus — מדינות שבהן החברה גובה מס (רשימה מופרדת בפסיקים, או * לכולן)
+COMPANY_TAX_NEXUS_STATES=CA,NY,TX,FL,IL
+COMPANY_NAME=VIP International Shipping
+COMPANY_ADDRESS=United States
 
 # APIs
 GOOGLE_MAPS_API_KEY=your-google-maps-key
-OPENAI_API_KEY=your-openai-key
 
 # URLs
-FRONTEND_URL=http://localhost:3000
-API_URL=http://localhost:5000
+FRONTEND_URL=http://localhost:3639
+API_URL=http://localhost:5044
+CORS_ORIGIN=http://localhost:3639
+PORT=5044
+NODE_ENV=development

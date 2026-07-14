@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import { UniversalAccess, ShieldCheck, FileText, Envelope, Telephone } from 'react-bootstrap-icons';
+import { UniversalAccess, ShieldCheck, FileText, Envelope, Telephone, InfoCircle } from 'react-bootstrap-icons';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
 import { ROUTES } from '../routs/routes';
+import { CONTACT, LICENSE, SAFER_LOOKUP_URL, FMCSA_CONSUMER_RESOURCES } from '../config/companyInfo';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -21,14 +22,14 @@ const Footer: React.FC = () => {
             </p>
             <div className="mb-2">
               <Telephone className="me-2" size={16} />
-              <a href="tel:1-800-847-6683" className="text-light text-decoration-none">
-                1-800-VIP-MOVE
+              <a href={`tel:${CONTACT.phoneHref}`} className="text-light text-decoration-none">
+                {CONTACT.phoneDisplay}
               </a>
             </div>
             <div>
               <Envelope className="me-2" size={16} />
-              <a href="mailto:info@vipshipping.com" className="text-light text-decoration-none">
-                info@vipshipping.com
+              <a href={`mailto:${CONTACT.email}`} className="text-light text-decoration-none">
+                {CONTACT.email}
               </a>
             </div>
           </Col>
@@ -104,20 +105,42 @@ const Footer: React.FC = () => {
               <li className="mb-2">
                 <Link to={ROUTES.PRIVACY_POLICY} className="text-light text-decoration-none hover-underline">
                   <ShieldCheck size={14} className="me-1" />
-                  Privacy Policy
+                  {t('footer.privacy')}
                 </Link>
               </li>
               <li className="mb-2">
                 <Link to={ROUTES.TERMS_OF_SERVICE} className="text-light text-decoration-none hover-underline">
                   <FileText size={14} className="me-1" />
-                  Terms of Service
+                  {t('footer.terms')}
                 </Link>
               </li>
               <li className="mb-2">
                 <Link to={ROUTES.ACCESSIBILITY} className="text-light text-decoration-none hover-underline">
                   <UniversalAccess size={14} className="me-1" />
-                  Accessibility
+                  {t('footer.accessibility')}
                 </Link>
+              </li>
+              <li className="mb-2">
+                <a
+                  href={FMCSA_CONSUMER_RESOURCES.rightsAndResponsibilities}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-light text-decoration-none hover-underline"
+                >
+                  <InfoCircle size={14} className="me-1" />
+                  {t('footer.fmcsa_rights')}
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  href={FMCSA_CONSUMER_RESOURCES.protectYourMove}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-light text-decoration-none hover-underline"
+                >
+                  <InfoCircle size={14} className="me-1" />
+                  {t('footer.fmcsa_protect')}
+                </a>
               </li>
             </ul>
             <div className="mt-3">
@@ -134,7 +157,24 @@ const Footer: React.FC = () => {
             </small>
             <br />
             <small className="text-muted">
-              Licensed & Insured | MC-XXXXXX | DOT-XXXXXX
+              {LICENSE.usdotNumber || LICENSE.mcNumber ? (
+                <>
+                  {t('footer.licensed_insured')}
+                  {LICENSE.usdotNumber && ` | USDOT ${LICENSE.usdotNumber}`}
+                  {LICENSE.mcNumber && ` | ${LICENSE.mcNumber}`}
+                  {' '}
+                  <a href={SAFER_LOOKUP_URL} target="_blank" rel="noopener noreferrer" className="text-muted">
+                    {t('footer.verify_safer')}
+                  </a>
+                </>
+              ) : (
+                <>
+                  {t('footer.licensing_pending')}{' '}
+                  <a href={SAFER_LOOKUP_URL} target="_blank" rel="noopener noreferrer" className="text-muted">
+                    {t('footer.verify_before_booking')}
+                  </a>
+                </>
+              )}
             </small>
           </Col>
         </Row>

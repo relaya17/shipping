@@ -11,7 +11,7 @@ const quoteSchema = new mongoose.Schema({
       required: true,
       unique: true,
       uppercase: true,
-      match: [/^QUO[0-9]{8}$/, 'מספר הצעה חייב להיות בפורמט QUO + 8 ספרות']
+      match: [/^QUO[0-9]{8}$/, 'Quote number must be QUO + 8 digits']
     },
     status: {
       type: String,
@@ -57,6 +57,7 @@ const quoteSchema = new mongoose.Schema({
     origin: {
       country: { type: String, required: true },
       city: { type: String, required: true },
+      state: String,
       postalCode: String,
       address: String,
       coordinates: {
@@ -67,6 +68,7 @@ const quoteSchema = new mongoose.Schema({
     destination: {
       country: { type: String, required: true },
       city: { type: String, required: true },
+      state: String,
       postalCode: String,
       address: String,
       coordinates: {
@@ -377,19 +379,19 @@ quoteSchema.methods.generateAIRecommendations = function() {
   
   // המלצות בהתבסס על נתונים
   if (this.totalWeight > 1000) {
-    recommendations.push('מומלץ לשקול הובלה ימית לחיסכון בעלויות');
+    recommendations.push('Consider sea freight to save on costs');
   }
   
   if (this.items.some(item => item.specialRequirements.isFragile)) {
-    recommendations.push('אריזה מקצועית מומלצת בחום לפריטים שבירים');
+    recommendations.push('Professional packaging is strongly recommended for fragile items');
   }
   
   if (this.shipmentRequest.destination.country !== this.shipmentRequest.origin.country) {
-    recommendations.push('וודא שיש לך את כל המסמכים הנדרשים למכס');
+    recommendations.push('Ensure you have all required customs documents');
   }
   
   if (this.pricing.summary.totalPrice > 5000) {
-    recommendations.push('שקול ביטוח מקיף למשלוח בעל ערך גבוה');
+    recommendations.push('Consider comprehensive insurance for high-value shipments');
   }
   
   this.aiCalculations.recommendations = recommendations;
