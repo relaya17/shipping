@@ -64,6 +64,10 @@ coverage/
 # Temporary folders
 tmp/
 temp/
+_tmp_*
+
+# Local pnpm store (never commit)
+.pnpm-store/
 
 # Optional npm cache directory
 .npm

@@ -1,0 +1,1222 @@
+{
+  "nav": {
+    "home": "Αρχική",
+    "about": "Σχετικά",
+    "services": "Υπηρεσίες",
+    "quote": "Προσφορά",
+    "contact": "Επικοινωνία",
+    "tracking": "Παρακολούθηση",
+    "login": "Σύνδεση",
+    "signup": "Εγγραφή",
+    "language": "Γλώσσα"
+  },
+  "hero": {
+    "title": "Επαγγελματικές διεθνείς μετακομίσεις",
+    "subtitle": "Παγκόσμιες λύσεις μεταφοράς με συστάσεις AI",
+    "cta_primary": "Δωρεάν προσφορά",
+    "cta_secondary": "Μάθετε περισσότερα"
+  },
+  "services": {
+    "household": "Οικιακή μετακόμιση",
+    "commercial": "Επαγγελματική μετακόμιση",
+    "vehicle": "Μεταφορά οχημάτων",
+    "artwork": "Μεταφορά έργων τέχνης",
+    "piano": "Μεταφορά πιάνου",
+    "insurance": "Ασφάλεια μετακόμισης",
+    "packing": "Επαγγελματική συσκευασία",
+    "storage": "Αποθήκευση"
+  },
+  "cta": {
+    "get_quote": "Πάρτε προσφορά",
+    "free_consult": "Δωρεάν συμβουλή",
+    "call_now": "Καλέστε τώρα",
+    "email_us": "Στείλτε email"
+  },
+  "about": {
+    "title": "Σχετικά με την VIP International Shipping",
+    "description": "Κορυφαία εταιρεία διεθνών μετακομίσεων με δεκαετίες εμπειρίας"
+  },
+  "footer": {
+    "company_name": "VIP International Shipping",
+    "description": "Επαγγελματικές διεθνείς υπηρεσίες μετακόμισης και μεταφοράς",
+    "quick_links": "Γρήγοροι σύνδεσμοι",
+    "services": "Οι υπηρεσίες μας",
+    "legal": "Νομικά και πολιτικές",
+    "copyright": "Με επιφύλαξη παντός δικαιώματος",
+    "privacy": "Πολιτική απορρήτου",
+    "terms": "Όροι υπηρεσίας",
+    "accessibility": "Προσβασιμότητα"
+  },
+  "notifications": {
+    "title": "Ειδοποιήσεις",
+    "mark_all_read": "Σήμανση όλων ως αναγνωσμένων",
+    "no_notifications": "Καμία ειδοποίηση",
+    "shipment_started": "Η αποστολή ξεκίνησε!",
+    "price_update": "Ενημέρωση τιμής",
+    "customs_inspection": "Τελωνειακός έλεγχος"
+  },
+  "common": {
+    "loading": "Φόρτωση...",
+    "error": "Σφάλμα",
+    "success": "Επιτυχία",
+    "cancel": "Ακύρωση",
+    "confirm": "Επιβεβαίωση",
+    "submit": "Υποβολή",
+    "save": "Αποθήκευση",
+    "delete": "Διαγραφή",
+    "edit": "Επεξεργασία",
+    "view": "Προβολή",
+    "back": "Πίσω",
+    "next": "Επόμενο",
+    "previous": "Προηγούμενο",
+    "search": "Αναζήτηση",
+    "filter": "Φίλτρο",
+    "sort": "Ταξινόμηση",
+    "skip_to_content": "Μετάβαση στο κύριο περιεχόμενο",
+    "go_home": "Αρχική σελίδα",
+    "go_back": "Επιστροφή",
+    "required": "Υποχρεωτικό",
+    "optional": "Προαιρετικό"
+  },
+  "forms": {
+    "name": "Ονοματεπώνυμο",
+    "email": "Email",
+    "phone": "Τηλέφωνο",
+    "message": "Μήνυμα",
+    "subject": "Θέμα",
+    "from_location": "Από",
+    "to_location": "Προς",
+    "moving_date": "Ημερομηνία μετακόμισης",
+    "service_type": "Τύπος υπηρεσίας",
+    "urgency": "Επείγον",
+    "budget": "Προϋπολογισμός",
+    "required": "Υποχρεωτικό",
+    "optional": "Προαιρετικό",
+    "question": "Η ερώτησή σας",
+    "send": "Αποστολή μηνύματος"
+  },
+  "tracking": {
+    "title": "Παρακολουθήστε την αποστολή σας",
+    "tracking_number": "Αριθμός παρακολούθησης",
+    "track": "Παρακολούθηση",
+    "current_status": "Κατάσταση",
+    "estimated_delivery": "Εκτιμώμενη παράδοση",
+    "location": "Τοποθεσία",
+    "progress": "Πρόοδος",
+    "timeline": "Χρονολόγιο",
+    "live_gps": "Ζωντανή παρακολούθηση GPS",
+    "not_found": "Ο αριθμός παρακολούθησης δεν βρέθηκε.",
+    "enter_number": "Εισαγάγετε αριθμό παρακολούθησης",
+    "locating": "Εντοπισμός GPS...",
+    "open_map": "Άνοιγμα χάρτη",
+    "route": "Διαδρομή",
+    "milestones": "Ορόσημα",
+    "auto_refresh": "Ανανέωση κάθε 15 δευτερόλεπτα",
+    "gps_pending": "Δεν υπάρχουν ακόμη συντεταγμένες GPS."
+  },
+  "ai": {
+    "recommendations": "Προτάσεις AI",
+    "price_prediction": "Πρόβλεψη τιμής AI",
+    "smart_suggestions": "Έξυπνες προτάσεις",
+    "powered_by_ai": "Με τεχνητή νοημοσύνη",
+    "analyzing": "Ανάλυση αναγκών...",
+    "calculating": "Υπολογισμός...",
+    "open_assistant": "Άνοιγμα βοηθού AI",
+    "welcome": "Γεια! Είμαι ο AI ειδικός της VIP Shipping. Μπορώ να γράψω προσφορές, να παρακολουθήσω GPS και να συμβουλεύσω για κανόνες μετακόμισης στις ΗΠΑ.",
+    "help": "Βοήθεια AI"
+  },
+  "checkout": {
+    "title": "Ασφαλής πληρωμή",
+    "subtitle": "Τα στοιχεία κάρτας δεν αποθηκεύονται στον ιστότοπο. Η πληρωμή γίνεται μέσω Stripe Checkout.",
+    "login_required": "Συνδεθείτε για ασφαλή πληρωμή τιμολογίου.",
+    "go_home": "Επιστροφή στην αρχική",
+    "signed_in_as": "Συνδεδεμένος ως",
+    "stripe_missing": "Το Stripe δεν έχει ρυθμιστεί.",
+    "cart_note": "Η πληρωμή βασίζεται σε τιμολόγιο μετά την αποδοχή προσφοράς.",
+    "invoice_label": "Τιμολόγιο προς πληρωμή",
+    "invoice_placeholder": "Επικολλήστε το ID τιμολογίου",
+    "status": "Κατάσταση",
+    "customer": "Πελάτης",
+    "subtotal": "Υποσύνολο",
+    "tax": "Φόρος",
+    "amount_due": "Ποσό πληρωμής",
+    "billing_address": "Διεύθυνση φόρου",
+    "country": "Χώρα",
+    "state": "Πολιτεία ΗΠΑ",
+    "street": "Οδός",
+    "city": "Πόλη",
+    "postal": "Τ.Κ.",
+    "recalc_tax": "Επανυπολογισμός φόρου",
+    "pay_stripe": "Πληρωμή με Stripe",
+    "redirecting": "Μετάβαση στο Stripe...",
+    "download_pdf": "Λήψη PDF",
+    "payment_success": "Η πληρωμή ελήφθη.",
+    "payment_cancel": "Η πληρωμή ακυρώθηκε.",
+    "load_error": "Αδυναμία φόρτωσης τιμολογίων.",
+    "tax_updated": "Ο φόρος ενημερώθηκε",
+    "tax_failed": "Αποτυχία ενημέρωσης φόρου",
+    "select_invoice": "Επιλέξτε τιμολόγιο",
+    "no_checkout_url": "Δεν ελήφθη URL Stripe",
+    "checkout_failed": "Αποτυχία δημιουργίας πληρωμής",
+    "pdf_failed": "Αποτυχία λήψης PDF",
+    "united_states": "Ηνωμένες Πολιτείες",
+    "israel": "Ισραήλ"
+  },
+  "thankyou": {
+    "title": "Ευχαριστούμε!",
+    "subtitle": "Το αίτημά σας υποβλήθηκε επιτυχώς",
+    "whats_next": "Τι ακολουθεί;",
+    "step1": "Η ομάδα μας θα επικοινωνήσει εντός 24 ωρών",
+    "step2": "Θα λάβετε εξατομικευμένη προσφορά",
+    "step3": "Θα βοηθήσουμε με κάθε ερώτηση",
+    "appreciation": "Εκτιμούμε την εμπιστοσύνη σας στην VIP International Shipping.",
+    "download": "Λήψη λεπτομερειών"
+  },
+  "errors": {
+    "not_found_title": "Η σελίδα δεν βρέθηκε",
+    "not_found_body": "Η σελίδα που ζητήσατε δεν υπάρχει ή μετακινήθηκε.",
+    "image_alt": "Σφάλμα 404 — η σελίδα δεν βρέθηκε"
+  },
+  "contact": {
+    "title": "Επικοινωνία",
+    "subtitle": "Είμαστε εδώ για τη διεθνή μετακόμισή σας",
+    "phone": "Τηλέφωνο",
+    "email": "Email",
+    "address": "Διεύθυνση",
+    "hours": "Ώρες",
+    "support_247": "Υποστήριξη 24/7 στα αγγλικά",
+    "fill_all": "Συμπληρώστε όλα τα υποχρεωτικά πεδία",
+    "thanks": "Ευχαριστούμε που επικοινωνήσατε, {{name}}",
+    "send_error": "Σφάλμα κατά την αποστολή της φόρμας",
+    "network_error": "Προέκυψε σφάλμα δικτύου",
+    "form_title": "Στείλτε μας μήνυμα"
+  },
+  "accessibility": {
+    "commitment_badges_note": "Εργαζόμαστε προς WCAG 2.1 AA. Τα σήματα δείχνουν τον στόχο μας, όχι ολοκληρωμένη πιστοποίηση.",
+    "goal_wcag": "Στόχος WCAG 2.1 AA",
+    "goal_ada": "Πρόγραμμα προσβασιμότητας ADA",
+    "goal_508": "Section 508 σε εξέλιξη"
+  },
+  "auth": {
+    "login_failed": "Αποτυχία σύνδεσης",
+    "register_failed": "Αποτυχία εγγραφής",
+    "session_invalid": "Μη έγκυρη συνεδρία"
+  },
+  "admin": {
+    "unauthorized": "Απαιτείται πρόσβαση διαχειριστή",
+    "title": "Πίνακας διαχείρισης"
+  },
+  "pages": {
+    "about": {
+      "journeyTitle": "Η πορεία μας",
+      "journeySubtitle": "Χρονολόγιο ανάπτυξης και καινοτομίας",
+      "storyTitle": "Η ιστορία μας",
+      "storyP1": "Η VIP International Shipping ιδρύθηκε για να προσφέρει διεθνείς μετακομίσεις με υψηλό επαγγελματισμό και προσωπική φροντίδα. Συνδυάζουμε έμπειρες ομάδες logistics με σύγχρονη τεχνολογία παρακολούθησης.",
+      "storyP2": "Με τα χρόνια χτίσαμε ένα αξιόπιστο δίκτυο συνεργατών και συστήματα ορατότητας σε πραγματικό χρόνο, τελωνειακού συντονισμού και αξιόπιστης παράδοσης από πόρτα σε πόρτα.",
+      "storyP3": "Σήμερα εξυπηρετούμε με περηφάνια πελάτες παγκοσμίως με υψηλά ποσοστά ολοκλήρωσης και αποκλειστική υποστήριξη.",
+      "whyTitle": "Γιατί να μας επιλέξετε",
+      "teamTitle": "Ηγετική ομάδα",
+      "ctaTitle": "Έτοιμοι για μια πιο ομαλή διεθνή μετακόμιση;",
+      "ctaBody": "Γίνετε μέλος χιλιάδων πελατών που εμπιστεύονται την VIP International Shipping. Λάβετε εξατομικευμένη προσφορά σε λίγα λεπτά.",
+      "stats": {
+        "experience": "Χρόνια εμπειρίας",
+        "countries": "Χώρες εξυπηρέτησης",
+        "shipments": "Επιτυχημένες αποστολές",
+        "satisfaction": "Ικανοποίηση πελατών"
+      },
+      "features": [
+        {
+          "title": "Αποδεδειγμένη αξιοπιστία",
+          "description": "Άδεια Federal Maritime Commission και 15+ χρόνια σε διεθνείς μετακομίσεις"
+        },
+        {
+          "title": "Παγκόσμια κάλυψη",
+          "description": "Υπηρεσίες σε όλες τις ηπείρους με αξιόπιστους τοπικούς συνεργάτες σε κάθε περιοχή"
+        },
+        {
+          "title": "Ολοκληρωμένη υπηρεσία",
+          "description": "Από την παραλαβή στην πόρτα έως την τελική παράδοση — αναλαμβάνουμε κάθε λεπτομέρεια"
+        },
+        {
+          "title": "Προσωπική υποστήριξη",
+          "description": "Κάθε πελάτης έχει αποκλειστικό συντονιστή καθ’ όλη τη μετακόμιση"
+        }
+      ],
+      "timeline": [
+        {
+          "year": "2009",
+          "event": "Ίδρυση της εταιρείας",
+          "milestone": "Αρχή"
+        },
+        {
+          "year": "2012",
+          "event": "Επέκταση στην Ευρώπη — 10.000 αποστολές",
+          "milestone": "Ανάπτυξη"
+        },
+        {
+          "year": "2016",
+          "event": "Άνοιγμα διαδρομών προς Ασία και Αμερική",
+          "milestone": "Επέκταση"
+        },
+        {
+          "year": "2020",
+          "event": "Πλήρης ψηφιακός μετασχηματισμός + ΤΝ",
+          "milestone": "Καινοτομία"
+        },
+        {
+          "year": "2023",
+          "event": "Εκκίνηση εργαλείων AR και μηχανικής μάθησης",
+          "milestone": "Ηγεσία"
+        },
+        {
+          "year": "2025",
+          "event": "Προηγμένη πλατφόρμα έξυπνων αποστολών",
+          "milestone": "Μέλλον"
+        }
+      ],
+      "team": [
+        {
+          "name": "Danny Cohen",
+          "position": "CEO & Ιδρυτής",
+          "experience": "20 χρόνια",
+          "specialty": "Διεθνής logistics"
+        },
+        {
+          "name": "Sarah Levy",
+          "position": "Διευθύντρια λειτουργιών",
+          "experience": "12 χρόνια",
+          "specialty": "Logistics & σχεδιασμός"
+        },
+        {
+          "name": "Michal Abraham",
+          "position": "Υπεύθυνη επιτυχίας πελατών",
+          "experience": "8 χρόνια",
+          "specialty": "Υποστήριξη πελατών"
+        }
+      ]
+    },
+    "packing": {
+      "title": "Επαγγελματική συσκευασία",
+      "subtitle": "Επαγγελματική συσκευασία που βοηθά τα αντικείμενά σας να φτάσουν με ασφάλεια",
+      "badge1": "Πάνω από 20 χρόνια εμπειρίας",
+      "badge2": "0% ζημιές με επαγγελματική συσκευασία",
+      "priceLabel": "Τιμή",
+      "durationLabel": "Διάρκεια",
+      "includesLabel": "Περιλαμβάνει:",
+      "chooseService": "Επιλέξτε αυτή την υπηρεσία",
+      "materialsTitle": "Επαγγελματικά υλικά συσκευασίας",
+      "tipsTitle": "Συμβουλές αυτοσυσκευασίας",
+      "ctaTitle": "Έτοιμοι για επαγγελματική συσκευασία;",
+      "ctaBody": "Εξοικονομήστε χρόνο και ενέργεια με την επαγγελματική υπηρεσία συσκευασίας μας",
+      "services": [
+        {
+          "title": "Πλήρης συσκευασία",
+          "description": "Συσκευάζουμε τα πάντα — από το μικρότερο φλιτζάνι έως το μεγαλύτερο έπιπλο",
+          "price": "$15–25 ανά κιβώτιο",
+          "duration": "1–2 ημέρες",
+          "includes": [
+            "Όλα τα υλικά συσκευασίας",
+            "Αναλυτική επισήμανση",
+            "Κατάλογος απογραφής",
+            "Κάλυψη κατά τη συσκευασία"
+          ]
+        },
+        {
+          "title": "Συσκευασία εύθραυστων",
+          "description": "Εξειδικευμένη συσκευασία για ευαίσθητα και υψηλής αξίας αντικείμενα",
+          "price": "$25–40 ανά αντικείμενο",
+          "duration": "2–4 ώρες ανά αντικείμενο",
+          "includes": [
+            "Εξειδικευμένα προστατευτικά υλικά",
+            "Διπλή συσκευασία",
+            "Επισήμανση «Εύθραυστο»",
+            "Ενισχυμένη ασφάλεια"
+          ]
+        },
+        {
+          "title": "Μερική συσκευασία",
+          "description": "Εσείς συσκευάζετε τα βασικά· εμείς αναλαμβάνουμε τα σύνθετα και βαριά αντικείμενα",
+          "price": "$200–400 ανά ημέρα",
+          "duration": "4–8 ώρες",
+          "includes": [
+            "Επαγγελματικά υλικά",
+            "Καθοδήγηση ειδικών",
+            "Βοήθεια με βαριά αντικείμενα",
+            "Συμβουλές συσκευασίας"
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "name": "Ενισχυμένα χαρτοκιβώτια",
+          "description": "Μεγέθη 1–6, ανθεκτικά και υψηλής ποιότητας"
+        },
+        {
+          "name": "Φυσαλίδες αέρα",
+          "description": "Για εύθραυστα και ευαίσθητα αντικείμενα"
+        },
+        {
+          "name": "Χαρτί συσκευασίας",
+          "description": "Για καθημερινά αντικείμενα και γέμισμα κενών"
+        },
+        {
+          "name": "Μεμβράνη stretch",
+          "description": "Προστασία από υγρασία και σκόνη"
+        },
+        {
+          "name": "Αφρός συσκευασίας",
+          "description": "Για ιδιαίτερα ευαίσθητα αντικείμενα"
+        },
+        {
+          "name": "Ταινία συσκευασίας",
+          "description": "Ισχυρό και ανθεκτικό σφράγισμα κιβωτίων"
+        },
+        {
+          "name": "Ετικέτες και αυτοκόλλητα",
+          "description": "Καθαρή, ευανάγνωστη επισήμανση"
+        },
+        {
+          "name": "Σακούλες συσκευασίας",
+          "description": "Για μικρά και ευαίσθητα αντικείμενα"
+        }
+      ],
+      "tips": [
+        "Ξεκινήστε από τα δωμάτια που χρησιμοποιείτε λιγότερο",
+        "Τοποθετήστε ένα βαρύ αντικείμενο μαζί με αρκετά ελαφριά στο ίδιο κιβώτιο",
+        "Γεμίστε τα κενά με χαρτί ή μαλακά ρούχα",
+        "Τοποθετήστε τα βαριά αντικείμενα στον πυθμένα του κιβωτίου",
+        "Μην υπερφορτώνετε — κρατήστε τα κιβώτια στα 15–20 κιλά",
+        "Φωτογραφίστε πολύτιμα αντικείμενα πριν τη συσκευασία",
+        "Κρατήστε λίστα με το περιεχόμενο κάθε κιβωτίου",
+        "Συσκευάστε ρούχα σε σακούλες κενού για εξοικονόμηση χώρου"
+      ]
+    },
+    "movingServices": {
+      "title": "Υπηρεσίες μετακόμισης",
+      "subtitle": "Ευρύ φάσμα επαγγελματικών υπηρεσιών μετακόμισης προσαρμοσμένων σε κάθε ανάγκη",
+      "badge1": "20+ υπηρεσίες",
+      "badge2": "Παγκόσμια κάλυψη",
+      "popular": "Δημοφιλές",
+      "fromPrice": "Από",
+      "additionalTitle": "Πρόσθετες υπηρεσίες",
+      "ctaTitle": "Ενδιαφέρεστε για τις υπηρεσίες μας;",
+      "services": [
+        {
+          "title": "Επαγγελματική συσκευασία",
+          "description": "Εξειδικευμένη συσκευασία με υλικά υψηλής ποιότητας",
+          "features": [
+            "Επαγγελματικά υλικά",
+            "Συσκευασία εύθραυστων",
+            "Αναλυτική επισήμανση",
+            "Ασφάλεια συμπεριλαμβάνεται"
+          ],
+          "price": "Από $200"
+        },
+        {
+          "title": "Οδική μεταφορά",
+          "description": "Γρήγορη και ασφαλής οδική μεταφορά σε οποιονδήποτε προορισμό",
+          "features": [
+            "Εξοπλισμένα φορτηγά",
+            "Παρακολούθηση GPS",
+            "Πλήρης ασφάλεια",
+            "Επαγγελματικό συνεργείο"
+          ],
+          "price": "Από $500"
+        },
+        {
+          "title": "Διεθνής μετακόμιση",
+          "description": "Μετακομίσεις παγκοσμίως με αξιόπιστους συνεργάτες",
+          "features": [
+            "Όλες οι ήπειροι",
+            "Τελωνειακή διαχείριση",
+            "Παρακολούθηση σε πραγματικό χρόνο",
+            "Διεθνής ασφάλεια"
+          ],
+          "price": "Από $1,200"
+        },
+        {
+          "title": "Ασφάλεια & προστασία",
+          "description": "Ολοκληρωμένη κάλυψη και ασφαλής χειρισμός",
+          "features": [
+            "Πλήρης ασφάλεια",
+            "Ασφαλείς εγκαταστάσεις",
+            "Παρακολούθηση 24/7",
+            "Γρήγορες αξιώσεις"
+          ],
+          "price": "3% της αξίας"
+        },
+        {
+          "title": "Υπηρεσίες εγκατάστασης",
+          "description": "Αποσυναρμολόγηση και επανασυναρμολόγηση επίπλων και συσκευών",
+          "features": [
+            "Επαγγελματική αποσυναρμολόγηση",
+            "Εγκατάσταση στον προορισμό",
+            "Επαγγελματικά εργαλεία",
+            "Εγγύηση εργασίας"
+          ],
+          "price": "Από $150"
+        },
+        {
+          "title": "Προσωρινή αποθήκευση",
+          "description": "Ευέλικτες και ασφαλείς λύσεις αποθήκευσης",
+          "features": [
+            "Ασφαλείς εγκαταστάσεις",
+            "Κλιματικός έλεγχος",
+            "Πρόσβαση 24/7",
+            "Ευέλικτες χρεώσεις"
+          ],
+          "price": "Από $50/μήνα"
+        }
+      ],
+      "additional": [
+        "Τελωνειακά έγγραφα",
+        "Ασφάλεια premium",
+        "Παραλαβή από απομακρυσμένες τοποθεσίες",
+        "Μεταφορά ειδών πολυτελείας",
+        "Συμβουλευτική logistics",
+        "Μακροχρόνια αποθήκευση",
+        "Καθαρισμός μετά τη μετακόμιση",
+        "Μετακόμιση κατοικίδιων"
+      ]
+    },
+    "movingTips": {
+      "title": "Συμβουλές διεθνούς μετακόμισης",
+      "subtitle": "Όλα όσα πρέπει να γνωρίζετε για μια επιτυχημένη και ομαλή διεθνή μετακόμιση",
+      "allCategories": "Όλα",
+      "importanceHigh": "Πολύ σημαντικό",
+      "importanceMedium": "Σημαντικό",
+      "importanceLow": "Προτεινόμενο",
+      "timeframe": "Πότε να το κάνετε:",
+      "tips": [
+        {
+          "category": "Σχεδιασμός",
+          "title": "Ξεκινήστε τον σχεδιασμό νωρίς",
+          "content": "Ξεκινήστε τον σχεδιασμό της μετακόμισης τουλάχιστον 8 εβδομάδες πριν την προγραμματισμένη ημερομηνία. Έτσι θα έχετε χρόνο για καλύτερες προσφορές και σωστή προετοιμασία.",
+          "importance": "high",
+          "timeFrame": "8 εβδομάδες πριν"
+        },
+        {
+          "category": "Συσκευασία",
+          "title": "Συσκευάστε επαγγελματικά",
+          "content": "Χρησιμοποιήστε ποιοτικά υλικά συσκευασίας. Τυλίξτε τα εύθραυστα με φυσαλίδες και γεμίστε τα κενά με χαρτόνι ή χαρτί συσκευασίας.",
+          "importance": "high",
+          "timeFrame": "4 εβδομάδες πριν"
+        },
+        {
+          "category": "Έγγραφα",
+          "title": "Απογραφή και έγγραφα",
+          "content": "Ετοιμάστε αναλυτική απογραφή όλων των αντικειμένων, φωτογραφίστε τα πολύτιμα για την ασφάλεια και κρατήστε αντίγραφα σημαντικών εγγράφων.",
+          "importance": "high",
+          "timeFrame": "6 εβδομάδες πριν"
+        },
+        {
+          "category": "Ασφάλεια",
+          "title": "Ολοκληρωμένη ασφάλεια",
+          "content": "Επενδύστε σε ολοκληρωμένη ασφάλεια αποστολής. Καλύπτει ζημιά ή απώλεια αντικειμένων υψηλής αξίας κατά τη μετακόμιση.",
+          "importance": "high",
+          "timeFrame": "2 εβδομάδες πριν"
+        },
+        {
+          "category": "Σχεδιασμός",
+          "title": "Ερευνήστε τη νέα σας χώρα",
+          "content": "Μάθετε για τους τελωνειακούς κανόνες, το κλίμα και τον τοπικό πολιτισμό. Έτσι θα προετοιμαστείτε καλύτερα για τη νέα σας ζωή.",
+          "importance": "medium",
+          "timeFrame": "12 εβδομάδες πριν"
+        },
+        {
+          "category": "Συσκευασία",
+          "title": "Επισημάνετε καθαρά τα κιβώτια",
+          "content": "Γράψτε το περιεχόμενο και το δωμάτιο προορισμού σε κάθε κιβώτιο. Χρησιμοποιήστε διαφορετικά χρώματα για διαφορετικά δωμάτια.",
+          "importance": "medium",
+          "timeFrame": "3 εβδομάδες πριν"
+        },
+        {
+          "category": "Έγγραφα",
+          "title": "Κρατήστε σημαντικά έγγραφα μαζί σας",
+          "content": "Διαβατήριο, βίζα, ιατρικά και οικονομικά έγγραφα — κρατήστε τα σε ξεχωριστή τσάντα που ταξιδεύει μαζί σας, όχι στην αποστολή.",
+          "importance": "high",
+          "timeFrame": "Ημέρα μετακόμισης"
+        },
+        {
+          "category": "Σχεδιασμός",
+          "title": "Σχεδιάστε τις πρώτες σας ημέρες",
+          "content": "Ετοιμάστε ένα σχέδιο για τις πρώτες ημέρες στον νέο σας χώρο: διαμονή, βασικά τρόφιμα και μεταφορές.",
+          "importance": "medium",
+          "timeFrame": "1 εβδομάδα πριν"
+        }
+      ]
+    },
+    "freeMovingQuote": {
+      "title": "Λάβετε δωρεάν προσφορά μετακόμισης",
+      "subtitle": "Άμεση εκτίμηση σε 3 βήματα | Χωρίς δέσμευση | Εξοικονόμηση έως 30%",
+      "badges": {
+        "free": "100% δωρεάν",
+        "noCard": "Χωρίς κάρτα",
+        "response": "Απάντηση σε 1 ώρα",
+        "priceMatch": "Εγγύηση τιμής"
+      },
+      "benefits": {
+        "pricing": {
+          "title": "Transparent Pricing",
+          "desc": "No hidden fees or surprise charges"
+        },
+        "insured": {
+          "title": "Fully Insured",
+          "desc": "Comprehensive protection for your belongings"
+        },
+        "fast": {
+          "title": "Fast Response",
+          "desc": "Quote within 1 hour, 7 days a week"
+        },
+        "guarantee": {
+          "title": "Best Price Guarantee",
+          "desc": "We'll match any competitor's quote"
+        }
+      },
+      "stepOf": "Step {{step}} of {{total}}",
+      "percentComplete": "{{percent}}% Complete",
+      "steps": {
+        "moveDetails": "Move Details",
+        "services": "Services",
+        "contact": "Contact Info"
+      },
+      "step1Title": "Tell Us About Your Move",
+      "moveTypeLabel": "Type of Move *",
+      "moveTypes": {
+        "local": "Local Move (Within 50 miles)",
+        "longDistance": "Long Distance (Interstate)",
+        "international": "International Move"
+      },
+      "fromZip": "From Zip Code *",
+      "toZip": "To Zip Code *",
+      "zipPlaceholderFrom": "e.g. 10001",
+      "zipPlaceholderTo": "e.g. 90210",
+      "moveDate": "Preferred Move Date *",
+      "flexibleDates": "Flexible dates? We can offer better pricing!",
+      "homeSize": "Home Size *",
+      "homeSizeSelect": "Select home size...",
+      "sizes": {
+        "studio": "Studio/Efficiency",
+        "one": "1 Bedroom",
+        "two": "2 Bedrooms",
+        "three": "3 Bedrooms",
+        "four": "4 Bedrooms",
+        "fivePlus": "5+ Bedrooms"
+      },
+      "step2Title": "Select Additional Services",
+      "servicesHint": "Check all services you're interested in. You can adjust later!",
+      "addonServices": [
+        {
+          "id": "packing",
+          "label": "Professional Packing",
+          "desc": "Full packing service with materials included",
+          "cost": "+20%"
+        },
+        {
+          "id": "storage",
+          "label": "Storage (30 days)",
+          "desc": "Climate-controlled storage facility",
+          "cost": "+10%"
+        },
+        {
+          "id": "insurance",
+          "label": "Full Value Protection",
+          "desc": "Comprehensive insurance coverage",
+          "cost": "+5%"
+        },
+        {
+          "id": "unpacking",
+          "label": "Unpacking Services",
+          "desc": "We unpack and place items in your new home",
+          "cost": "+15%"
+        },
+        {
+          "id": "furniture",
+          "label": "Furniture Assembly",
+          "desc": "Disassembly and reassembly of furniture",
+          "cost": "+8%"
+        },
+        {
+          "id": "cleaning",
+          "label": "Post-Move Cleaning",
+          "desc": "Professional cleaning of your old home",
+          "cost": "+12%"
+        }
+      ],
+      "specialItems": "Special Items or Instructions",
+      "specialItemsPlaceholder": "e.g., Piano, pool table, fragile antiques, tight parking...",
+      "step3Title": "Contact Information",
+      "estimatedCost": "Your Estimated Cost",
+      "estimateNote": "Final price subject to in-home survey. This estimate includes your selected services.",
+      "phoneHint": "We'll call within 1 hour to confirm details",
+      "consentPrefix": "I agree to receive communications and understand the",
+      "consentAnd": "and",
+      "whatNext": "What happens next?",
+      "nextSteps": [
+        "Our moving specialist will call you within 1 hour",
+        "Schedule a free in-home survey (virtual or in-person)",
+        "Receive your final binding quote",
+        "Book your move and relax!"
+      ],
+      "back": "← Πίσω",
+      "continue": "Συνέχεια →",
+      "submit": "Λάβετε δωρεάν προσφορά",
+      "submitSuccess": "Thank you! Our team will contact you within 1 hour with a detailed quote.",
+      "trustedBy": "Trusted by 50,000+ happy customers",
+      "trust": {
+        "licensed": "Licensed & Insured",
+        "bbb": "A+ BBB Rating",
+        "reviews": "5,000+ 5-Star Reviews"
+      }
+    },
+    "worldwideMoving": {
+      "title": "Παγκόσμια διεθνής μετακόμιση",
+      "subtitle": "Από πόρτα σε πόρτα μεταξύ ηπείρων",
+      "ctaQuote": "Λάβετε παγκόσμια προσφορά",
+      "ctaCall": "Talk to a specialist",
+      "alertTitle": "Plan lead times early",
+      "alertBody": "Ocean freight typically takes 30–60 days. Air freight is available for urgent shipments.",
+      "methodsTitle": "Shipping methods",
+      "destinationsTitle": "Popular destinations",
+      "servicesTitle": "Included services",
+      "processTitle": "How worldwide moves work",
+      "costsTitle": "Cost factors",
+      "prohibitedTitle": "Restricted & prohibited items",
+      "finalCta": "Έτοιμοι για παγκόσμια μετακόμιση;",
+      "shippingMethods": [
+        {
+          "method": "Sea Freight (FCL)",
+          "time": "30-60 days",
+          "cost": "Most economical",
+          "bestFor": "Full household moves",
+          "description": "Exclusive use of a 20 or 40-foot container. Ideal for large moves with flexibility on timing.",
+          "features": [
+            "Door-to-door service",
+            "Most cost-effective",
+            "Secure container",
+            "Best for large volumes"
+          ]
+        },
+        {
+          "method": "Sea Freight (LCL)",
+          "time": "35-70 days",
+          "cost": "Budget-friendly",
+          "bestFor": "Smaller shipments",
+          "description": "Share container space with other shipments. Perfect for 1-2 bedroom apartments.",
+          "features": [
+            "Pay for space used",
+            "Flexible volume",
+            "Consolidated shipping",
+            "Cost-efficient"
+          ]
+        },
+        {
+          "method": "Air Freight",
+          "time": "5-10 days",
+          "cost": "Premium pricing",
+          "bestFor": "Urgent/valuable items",
+          "description": "Fastest international shipping option. Recommended for time-sensitive or high-value shipments.",
+          "features": [
+            "Express delivery",
+            "Climate controlled",
+            "Maximum security",
+            "Priority handling"
+          ]
+        }
+      ],
+      "popularDestinations": [
+        {
+          "continent": "Europe",
+          "countries": [
+            "UK",
+            "Germany",
+            "France",
+            "Spain",
+            "Italy",
+            "Netherlands"
+          ],
+          "time": "35-50 days"
+        },
+        {
+          "continent": "Asia",
+          "countries": [
+            "Israel",
+            "Japan",
+            "Singapore",
+            "South Korea",
+            "Hong Kong",
+            "UAE"
+          ],
+          "time": "25-45 days"
+        },
+        {
+          "continent": "Australia & Oceania",
+          "countries": [
+            "Australia",
+            "New Zealand"
+          ],
+          "time": "40-60 days"
+        },
+        {
+          "continent": "South America",
+          "countries": [
+            "Brazil",
+            "Argentina",
+            "Chile"
+          ],
+          "time": "35-55 days"
+        },
+        {
+          "continent": "Africa",
+          "countries": [
+            "South Africa",
+            "Kenya",
+            "Egypt"
+          ],
+          "time": "30-50 days"
+        },
+        {
+          "continent": "Middle East",
+          "countries": [
+            "UAE",
+            "Saudi Arabia",
+            "Qatar",
+            "Kuwait"
+          ],
+          "time": "25-40 days"
+        }
+      ],
+      "services": [
+        {
+          "title": "Professional Packing",
+          "description": "Expert packing with international-grade materials",
+          "included": [
+            "Custom crating",
+            "Bubble wrap & padding",
+            "Labeled inventory",
+            "Fragile item handling"
+          ]
+        },
+        {
+          "title": "Customs Clearance",
+          "description": "Full documentation and customs brokerage services",
+          "included": [
+            "Customs forms",
+            "Import permits",
+            "Duty calculations",
+            "Broker coordination"
+          ]
+        },
+        {
+          "title": "Door-to-Door Service",
+          "description": "Complete pickup and delivery to your new address",
+          "included": [
+            "Home pickup",
+            "Port handling",
+            "Destination delivery",
+            "Unpacking options"
+          ]
+        },
+        {
+          "title": "Comprehensive Insurance",
+          "description": "Full value protection for international moves",
+          "included": [
+            "All-risk coverage",
+            "Marine insurance",
+            "Claims assistance",
+            "Peace of mind"
+          ]
+        }
+      ],
+      "processSteps": [
+        {
+          "title": "Free Consultation",
+          "description": "Discuss your needs with our international move specialist"
+        },
+        {
+          "title": "Survey & Quote",
+          "description": "Virtual or in-home survey to assess volume and provide accurate quote"
+        },
+        {
+          "title": "Documentation",
+          "description": "Prepare all necessary paperwork, customs forms, and permits"
+        },
+        {
+          "title": "Professional Packing",
+          "description": "Expert team packs and labels all items with care"
+        },
+        {
+          "title": "Export & Shipping",
+          "description": "Container loaded, sealed, and shipped to destination port"
+        },
+        {
+          "title": "Customs Clearance",
+          "description": "Our agents handle all customs procedures at destination"
+        },
+        {
+          "title": "Final Delivery",
+          "description": "Delivery to your new home with unpacking if requested"
+        }
+      ],
+      "prohibitedItems": [
+        "Flammable liquids and explosives",
+        "Perishable foods",
+        "Plants and soil (many countries)",
+        "Weapons and ammunition",
+        "Illegal drugs and controlled substances"
+      ]
+    },
+    "interstateMoving": {
+      "title": "Διαπολιτειακές μετακομίσεις",
+      "subtitle": "Αξιόπιστες μεγάλες αποστάσεις και στις 50 πολιτείες των ΗΠΑ",
+      "ctaQuote": "Λάβετε διαπολιτειακή προσφορά",
+      "ctaCall": "Call a coordinator",
+      "promoTitle": "Peak season tip",
+      "promoBody": "Book 4–8 weeks ahead for May–September to lock better rates and dates.",
+      "whyTitle": "Why choose VIP for interstate moves",
+      "servicesTitle": "Service options",
+      "routesTitle": "Popular routes",
+      "pricingTitle": "What affects price",
+      "tipsTitle": "Moving tips",
+      "howTitle": "How it works",
+      "includes": "Includes:",
+      "finalCta": "Έτοιμοι για διαπολιτειακή μετακόμιση;",
+      "services": [
+        {
+          "title": "Full-Service Moving",
+          "description": "Complete door-to-door service with professional packing, loading, transport, and unpacking",
+          "features": [
+            "Professional packing",
+            "Loading & unloading",
+            "Furniture disassembly/assembly",
+            "Unpacking services"
+          ]
+        },
+        {
+          "title": "Partial/Shared Moving",
+          "description": "Cost-effective solution for smaller moves, sharing truck space with other shipments",
+          "features": [
+            "Lower cost option",
+            "Flexible scheduling",
+            "Same care and protection",
+            "Ideal for 1-2 bedroom moves"
+          ]
+        },
+        {
+          "title": "Express Moving",
+          "description": "Priority service with dedicated truck and expedited delivery for time-sensitive moves",
+          "features": [
+            "Dedicated truck",
+            "3-5 day delivery",
+            "Priority scheduling",
+            "Real-time tracking"
+          ]
+        },
+        {
+          "title": "White Glove Service",
+          "description": "Premium moving experience with specialized handling for high-value and delicate items",
+          "features": [
+            "Custom crating",
+            "Climate-controlled transport",
+            "Installation services",
+            "Concierge support"
+          ]
+        }
+      ],
+      "popularRoutes": [
+        {
+          "from": "New York, NY",
+          "to": "Florida",
+          "duration": "3-5 days",
+          "distance": "1,200 mi"
+        },
+        {
+          "from": "California",
+          "to": "Texas",
+          "duration": "4-6 days",
+          "distance": "1,500 mi"
+        },
+        {
+          "from": "Illinois",
+          "to": "Arizona",
+          "duration": "4-5 days",
+          "distance": "1,700 mi"
+        },
+        {
+          "from": "Massachusetts",
+          "to": "North Carolina",
+          "duration": "3-4 days",
+          "distance": "800 mi"
+        },
+        {
+          "from": "Washington",
+          "to": "Colorado",
+          "duration": "3-4 days",
+          "distance": "1,300 mi"
+        },
+        {
+          "from": "Michigan",
+          "to": "Georgia",
+          "duration": "4-5 days",
+          "distance": "1,000 mi"
+        }
+      ],
+      "movingTips": [
+        {
+          "title": "Book Early",
+          "tip": "Reserve your moving date 4-8 weeks in advance, especially during peak season (May-September)"
+        },
+        {
+          "title": "Declutter First",
+          "tip": "Reduce moving costs by selling or donating items you no longer need before packing"
+        },
+        {
+          "title": "Get Multiple Quotes",
+          "tip": "Compare at least 3 estimates to ensure competitive pricing and understand what's included"
+        },
+        {
+          "title": "Read Reviews",
+          "tip": "Check BBB ratings, Google reviews, and FMCSA records before choosing a moving company"
+        }
+      ],
+      "pricingFactors": [
+        {
+          "factor": "Distance",
+          "impact": "Primary cost driver",
+          "description": "Longer distances = higher costs"
+        },
+        {
+          "factor": "Weight/Volume",
+          "impact": "Direct correlation",
+          "description": "Charged per pound or cubic foot"
+        },
+        {
+          "factor": "Season",
+          "impact": "Moderate effect",
+          "description": "Summer (peak) costs 20-30% more"
+        },
+        {
+          "factor": "Access",
+          "impact": "Additional fees",
+          "description": "Stairs, long carry, shuttle service"
+        },
+        {
+          "factor": "Packing Services",
+          "impact": "Optional add-on",
+          "description": "Professional packing adds 15-25%"
+        },
+        {
+          "factor": "Insurance",
+          "impact": "Recommended",
+          "description": "Full value protection for peace of mind"
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "lastUpdated": "Last updated",
+      "intro": "Please read these Terms carefully before using VIP International Shipping services.",
+      "sections": [
+        {
+          "title": "1. Acceptance of Terms",
+          "paragraphs": [
+            "By accessing or using our website and services, you agree to be bound by these Terms of Service."
+          ]
+        },
+        {
+          "title": "2. Services",
+          "paragraphs": [
+            "We provide international and domestic moving, packing, storage, and related logistics services subject to availability and applicable law."
+          ]
+        },
+        {
+          "title": "3. Quotes and Pricing",
+          "paragraphs": [
+            "Quotes are estimates unless expressly stated as binding. Final pricing may change after survey, inventory, access conditions, or regulatory fees."
+          ]
+        },
+        {
+          "title": "4. Customer Responsibilities",
+          "paragraphs": [
+            "You are responsible for accurate inventory, access to premises, required permits, and compliance with customs and prohibited-item rules."
+          ]
+        },
+        {
+          "title": "5. Payments",
+          "paragraphs": [
+            "Payment terms are stated on your invoice or booking confirmation. Late payments may incur fees or service delays."
+          ]
+        },
+        {
+          "title": "6. Insurance and Liability",
+          "paragraphs": [
+            "Coverage options are offered at booking. Liability limits apply as disclosed in your contract and applicable carrier terms."
+          ]
+        },
+        {
+          "title": "7. Cancellations",
+          "paragraphs": [
+            "Cancellation and rescheduling policies are provided with your booking. Deposits may be non-refundable after certain deadlines."
+          ]
+        },
+        {
+          "title": "8. Privacy",
+          "paragraphs": [
+            "Personal data is handled according to our Privacy Policy."
+          ]
+        },
+        {
+          "title": "9. Governing Law",
+          "paragraphs": [
+            "These Terms are governed by the laws of the applicable jurisdiction stated in your service agreement."
+          ]
+        },
+        {
+          "title": "10. Contact",
+          "paragraphs": [
+            "Questions about these Terms: support@vipshipping.com"
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "How we collect, use, and protect your information",
+      "lastUpdated": "Last updated",
+      "intro": "This Privacy Policy explains how VIP International Shipping handles personal information.",
+      "sections": [
+        {
+          "title": "1. Information we collect",
+          "paragraphs": [
+            "Contact details, move addresses, shipment details, payment references, and usage data needed to provide services."
+          ]
+        },
+        {
+          "title": "2. How we use information",
+          "paragraphs": [
+            "To prepare quotes, operate shipments, process payments, provide support, improve services, and meet legal obligations."
+          ]
+        },
+        {
+          "title": "3. Sharing",
+          "paragraphs": [
+            "We share data with carriers, customs brokers, payment processors, and service providers under contract, or when required by law."
+          ]
+        },
+        {
+          "title": "4. Security",
+          "paragraphs": [
+            "We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data."
+          ]
+        },
+        {
+          "title": "5. Your rights",
+          "paragraphs": [
+            "Depending on your location, you may request access, correction, deletion, or restriction of personal data."
+          ]
+        },
+        {
+          "title": "6. Cookies",
+          "paragraphs": [
+            "We use necessary cookies for authentication and optional analytics cookies where permitted."
+          ]
+        },
+        {
+          "title": "7. International transfers",
+          "paragraphs": [
+            "Data may be processed in countries where we or our partners operate, with appropriate safeguards."
+          ]
+        },
+        {
+          "title": "8. Children",
+          "paragraphs": [
+            "Our services are not directed to children under 16."
+          ]
+        },
+        {
+          "title": "9. Changes",
+          "paragraphs": [
+            "We may update this policy and will revise the last-updated date when changes are material."
+          ]
+        },
+        {
+          "title": "10. Contact",
+          "paragraphs": [
+            "Privacy questions: privacy@vipshipping.com"
+          ]
+        }
+      ]
+    }
+  },
+  "home": {
+    "priority_high": "Υψηλή προτεραιότητα",
+    "priority_medium": "Μεσαία προτεραιότητα",
+    "priority_low": "Χαμηλή προτεραιότητα",
+    "price_label": "Τιμή",
+    "rec_household_desc": "Προτείνεται για διεθνείς μετακομίσεις κατοικίας με πλήρη logistics υποστήριξη.",
+    "rec_household_time": "14–28 ημέρες",
+    "rec_household_price": "Από $800",
+    "rec_insurance_desc": "Προστατέψτε την αποστολή με ολοκληρωμένη ασφάλεια μετακόμισης.",
+    "rec_insurance_price": "3% της αξίας αποστολής",
+    "rec_packing_desc": "Επαγγελματική συσκευασία για εύθραυστα και πολύτιμα αντικείμενα.",
+    "rec_packing_time": "1–2 ημέρες",
+    "rec_packing_price": "Από $200",
+    "rec_storage_desc": "Ασφαλής βραχυπρόθεσμη ή μακροπρόθεσμη αποθήκευση πριν ή μετά τη μετακόμιση.",
+    "rec_storage_price": "Από $50/μήνα"
+  },
+  "volume": {
+    "title": "AR Volume Calculator",
+    "new_badge": "New!",
+    "use_camera": "Use your camera for automatic volume calculation",
+    "manual_entry": "Manual entry",
+    "start_scan": "Start scan",
+    "scanning": "Scanning items with AI...",
+    "ar_not_supported": "Camera is not available on this device",
+    "switch_to_camera": "Switch to camera",
+    "switch_to_manual": "Switch to manual entry",
+    "calculation_complete": "Calculation complete!",
+    "total_volume": "Total volume (m³)",
+    "estimated_weight": "Estimated weight (kg)",
+    "recommended_container": "Recommended container",
+    "estimated_price": "Estimated price",
+    "scanned_items": "Scanned items",
+    "calculate": "Calculate volume",
+    "fill_dimensions": "Please fill in all dimensions",
+    "container_20": "20ft Container",
+    "container_10": "10ft Container",
+    "custom_item": "Custom Item",
+    "sofa": "Sofa",
+    "dining_table": "Dining Table",
+    "wardrobe": "Wardrobe",
+    "accuracy": "{{percent}}% accuracy"
+  },
+  "prediction": {
+    "select_destination": "Select destination...",
+    "europe": "Europe",
+    "asia": "Asia",
+    "australia": "Australia",
+    "africa": "Africa",
+    "south_america": "South America",
+    "weight": "Weight",
+    "urgency_standard": "Standard (14–28 days)",
+    "urgency_express": "Express (7–14 days)",
+    "urgency_urgent": "Urgent (3–7 days)",
+    "enter_destination": "Please enter a destination",
+    "accuracy": "{{percent}}% accuracy",
+    "estimated_total": "Estimated total price",
+    "price_factors": "Price factors:",
+    "save": "Save ${{amount}}",
+    "factor_geo": "Geographic Destination",
+    "factor_geo_desc": "Destination {{location}} affects the price",
+    "factor_weight": "Shipment Weight",
+    "factor_weight_desc": "Weight of {{weight}} kg requires special handling",
+    "factor_service": "Service Type",
+    "factor_service_desc": "Service {{service}} requires special handling",
+    "factor_urgency": "Urgency Level",
+    "factor_urgency_desc": "Service {{urgency}} available for an additional fee",
+    "alt_standard": "Standard service instead of express",
+    "alt_group": "Group with other shipments",
+    "alt_self_pack": "Self-packing",
+    "beta": "Beta"
+  }
+}

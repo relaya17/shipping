@@ -50,7 +50,7 @@ const VolumeCalculator: React.FC = () => {
         if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
           setIsARSupported(true);
         }
-      } catch (error) {
+      } catch {
         console.log('AR not supported');
         setIsARSupported(false);
       }
@@ -82,26 +82,26 @@ const VolumeCalculator: React.FC = () => {
         const mockResult: VolumeResult = {
           totalVolume: 2.5,
           estimatedWeight: 450,
-          recommendedContainer: '20ft Container',
+          recommendedContainer: t('volume.container_20'),
           estimatedPrice: 2800,
           items: [
             {
               id: '1',
-              name: 'Sofa',
+              name: t('volume.sofa'),
               dimensions: { length: 200, width: 90, height: 80 },
               volume: 1.44,
               confidence: 92
             },
             {
               id: '2',
-              name: 'Table',
+              name: t('volume.dining_table'),
               dimensions: { length: 150, width: 80, height: 75 },
               volume: 0.9,
               confidence: 88
             },
             {
               id: '3',
-              name: 'Wardrobe',
+              name: t('volume.wardrobe'),
               dimensions: { length: 120, width: 60, height: 200 },
               volume: 1.44,
               confidence: 95
@@ -129,7 +129,7 @@ const VolumeCalculator: React.FC = () => {
     const height = parseFloat(manualDimensions.height);
 
     if (!length || !width || !height) {
-      alert('Please fill in all dimensions');
+      alert(t('volume.fill_dimensions'));
       return;
     }
 
@@ -140,12 +140,12 @@ const VolumeCalculator: React.FC = () => {
     const mockResult: VolumeResult = {
       totalVolume: volume,
       estimatedWeight: weight,
-      recommendedContainer: volume > 2 ? '20ft Container' : '10ft Container',
+      recommendedContainer: volume > 2 ? t('volume.container_20') : t('volume.container_10'),
       estimatedPrice: price,
       items: [
         {
           id: '1',
-          name: 'Custom Item',
+          name: t('volume.custom_item'),
           dimensions: { length, width, height },
           volume,
           confidence: 100
@@ -315,7 +315,7 @@ const VolumeCalculator: React.FC = () => {
                   </div>
                   <div className="text-end">
                     <div>{item.volume.toFixed(2)} m³</div>
-                    <Badge bg="success">{item.confidence}% accuracy</Badge>
+                    <Badge bg="success">{t('volume.accuracy', { percent: item.confidence })}</Badge>
                   </div>
                 </div>
               ))}

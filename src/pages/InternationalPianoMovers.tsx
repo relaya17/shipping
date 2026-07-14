@@ -1,12 +1,22 @@
-// src/pages/InternationalPianoMovers.tsx
 import React from 'react';
+import { Container } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+import LinkButton from '../components/LinkButton';
+import { ROUTES } from '../routs/routes';
 
 const InternationalPianoMovers: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="container mt-5">
-      <h1>International Piano Movers</h1>
-      <p>Expert piano moving services for international relocation.</p>
-    </div>
+    <main id="main-content">
+      <Container className="my-5">
+        <h1 className="mb-3">{t('pages.stubs.piano.title')}</h1>
+        <p className="lead text-muted mb-4">{t('pages.stubs.piano.body')}</p>
+        <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="primary">
+          {t('cta.get_quote')}
+        </LinkButton>
+      </Container>
+    </main>
   );
 };
 

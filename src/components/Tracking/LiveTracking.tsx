@@ -1,140 +1,109 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Card, Form, Button, Badge, ProgressBar, Alert } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import { Search, GeoAlt, Truck, Water, CheckCircle } from 'react-bootstrap-icons';
+import { Search, GeoAlt, Truck, CheckCircle } from 'react-bootstrap-icons';
+import api from '../../service/api';
 
-interface TrackingEvent {
-  id: string;
-  date: string;
-  time: string;
-  location: string;
-  status: string;
-  description: string;
-  icon: React.ReactNode;
-  completed: boolean;
-}
+type GpsPoint = {
+  lat: number;
+  lon: number;
+  address?: string;
+  timestamp?: string;
+  speed?: number;
+};
 
-interface ShipmentStatus {
+type TrackingView = {
   trackingNumber: string;
-  currentStatus: string;
-  currentLocation: string;
-  estimatedDelivery: string;
+  status: string;
+  serviceType?: string;
+  currentLocation: {
+    address?: string;
+    city?: string;
+    country?: string;
+    lat?: number;
+    lon?: number;
+    lastUpdated?: string;
+  };
+  origin?: { city?: string; state?: string; country?: string };
+  destination?: { city?: string; state?: string; country?: string };
+  estimatedDelivery?: string;
+  distanceRemainingKm?: number;
+  route: GpsPoint[];
+  milestones: Array<{
+    id: string;
+    event: string;
+    location: string;
+    description?: string;
+    status?: string;
+    timestamp?: string;
+  }>;
   progress: number;
-  events: TrackingEvent[];
-}
+  map?: { embedUrl: string; openUrl: string } | null;
+};
 
 const LiveTracking: React.FC = () => {
   const { t } = useTranslation();
   const [trackingNumber, setTrackingNumber] = useState('');
-  const [shipmentData, setShipmentData] = useState<ShipmentStatus | null>(null);
+  const [shipmentData, setShipmentData] = useState<TrackingView | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Simulation of real-time tracking
-  const mockTrackingData: ShipmentStatus = {
-    trackingNumber: 'VIP123456789',
-    currentStatus: 'In Transit',
-    currentLocation: 'Hamburg Port, Germany',
-    estimatedDelivery: '2024-02-15',
-    progress: 65,
-    events: [
-      {
-        id: '1',
-        date: '2024-01-20',
-        time: '09:00',
-        location: 'New York, USA',
-        status: 'Picked Up',
-        description: 'Shipment picked up from origin',
-        icon: <CheckCircle className="text-success" />,
-        completed: true
-      },
-      {
-        id: '2',
-        date: '2024-01-22',
-        time: '14:30',
-        location: 'New York Port',
-        status: 'Loaded on Ship',
-        description: 'Shipment loaded onto cargo ship',
-        icon: <Water className="text-info" />,
-        completed: true
-      },
-      {
-        id: '3',
-        date: '2024-02-05',
-        time: '08:15',
-        location: 'Hamburg Port, Germany',
-        status: 'Arrived at Destination',
-        description: 'Shipment arrived at destination port',
-        icon: <GeoAlt className="text-warning" />,
-        completed: true
-      },
-      {
-        id: '4',
-        date: '2024-02-06',
-        time: '10:00',
-        location: 'Hamburg Warehouse',
-        status: 'Customs Clearance',
-        description: 'Shipment undergoing customs inspection',
-        icon: <Truck className="text-primary" />,
-        completed: false
-      },
-      {
-        id: '5',
-        date: '2024-02-15',
-        time: 'Estimated',
-        location: 'Final Address',
-        status: 'Final Delivery',
-        description: 'Delivery to final address',
-        icon: <CheckCircle className="text-muted" />,
-        completed: false
+  const fetchTracking = useCallback(async (number: string, silent = false) => {
+    if (!silent) {
+      setIsLoading(true);
+      setError('');
+    }
+    try {
+      const { data } = await api.get<{ success: boolean; tracking: TrackingView }>(
+        `/shipments/${encodeURIComponent(number.trim().toUpperCase())}/track`
+      );
+      setShipmentData(data.tracking);
+      setError('');
+    } catch {
+      if (!silent) {
+        setError(t('tracking.not_found'));
+        setShipmentData(null);
       }
-    ]
-  };
+    } finally {
+      if (!silent) setIsLoading(false);
+    }
+  }, [t]);
 
   const handleTrack = async () => {
     if (!trackingNumber.trim()) {
-      setError('Please enter a tracking number');
+      setError(t('tracking.enter_number'));
       return;
     }
-
-    setIsLoading(true);
-    setError('');
-
-    // Simulation of server call
-    setTimeout(() => {
-      if (trackingNumber.includes('VIP') || trackingNumber === 'demo') {
-        setShipmentData(mockTrackingData);
-        setError('');
-      } else {
-        setError('Tracking number not found. Try: VIP123456789 or demo');
-        setShipmentData(null);
-      }
-      setIsLoading(false);
-    }, 1500);
+    await fetchTracking(trackingNumber);
   };
 
-  const getStatusColor = (status: string) => {
-    switch (status.toLowerCase()) {
-      case 'picked up': return 'success';
-      case 'loaded on ship': return 'info';
-      case 'arrived at destination': return 'warning';
-      case 'customs clearance': return 'primary';
-      case 'final delivery': return 'secondary';
-      default: return 'secondary';
-    }
-  };
-
-  // Auto-refresh every 30 seconds (in production)
   useEffect(() => {
-    if (shipmentData) {
-      const interval = setInterval(() => {
-        // Real server call would go here
-        console.log('Refreshing real-time tracking...');
-      }, 30000);
+    if (!shipmentData?.trackingNumber) return undefined;
+    const interval = setInterval(() => {
+      fetchTracking(shipmentData.trackingNumber, true);
+    }, 15000);
+    return () => clearInterval(interval);
+  }, [shipmentData?.trackingNumber, fetchTracking]);
 
-      return () => clearInterval(interval);
-    }
-  }, [shipmentData]);
+  const statusColor = (status: string) => {
+    const s = (status || '').toLowerCase();
+    if (s.includes('deliver')) return 'success';
+    if (s.includes('transit') || s.includes('picked')) return 'info';
+    if (s.includes('customs')) return 'warning';
+    if (s.includes('cancel')) return 'danger';
+    return 'secondary';
+  };
+
+  const locationLabel = shipmentData?.currentLocation
+    ? [
+        shipmentData.currentLocation.address,
+        shipmentData.currentLocation.city,
+        shipmentData.currentLocation.country
+      ].filter(Boolean).join(', ') ||
+      (shipmentData.currentLocation.lat != null
+        ? `${shipmentData.currentLocation.lat.toFixed(4)}, ${shipmentData.currentLocation.lon?.toFixed(4)}`
+        : 'Location pending')
+    : '';
 
   return (
     <Card className="shadow">
@@ -143,11 +112,9 @@ const LiveTracking: React.FC = () => {
           <Search className="me-2" />
           {t('tracking.title')}
         </h5>
-        <small className="text-muted">
-          {t('tracking.progress')}
-        </small>
+        <small className="text-muted">{t('tracking.live_gps')}</small>
       </Card.Header>
-      
+
       <Card.Body>
         <Form onSubmit={(e) => { e.preventDefault(); handleTrack(); }}>
           <Form.Group className="mb-3">
@@ -155,103 +122,132 @@ const LiveTracking: React.FC = () => {
             <div className="input-group">
               <Form.Control
                 type="text"
-                placeholder={t('tracking.tracking_number')}
+                placeholder="VIP1234567890"
                 value={trackingNumber}
                 onChange={(e) => setTrackingNumber(e.target.value)}
                 aria-label={t('tracking.tracking_number')}
               />
-              <Button 
-                variant="primary" 
-                onClick={handleTrack}
-                disabled={isLoading}
-                aria-label="Search shipment"
-              >
-                {isLoading ? (
-                  <span className="spinner-border spinner-border-sm" />
-                ) : (
-                  <Search />
-                )}
+              <Button variant="primary" onClick={handleTrack} disabled={isLoading} aria-label={t('tracking.track')}>
+                {isLoading ? <span className="spinner-border spinner-border-sm" /> : <Search />}
               </Button>
             </div>
           </Form.Group>
         </Form>
 
-        {error && (
-          <Alert variant="warning" className="mb-3">
-            {error}
-          </Alert>
-        )}
+        {error && <Alert variant="warning" className="mb-3">{error}</Alert>}
 
         {isLoading && (
           <div className="text-center py-4">
             <div className="spinner-border text-primary mb-3" />
-            <p className="text-muted">Searching for your shipment...</p>
+            <p className="text-muted">{t('tracking.locating')}</p>
           </div>
         )}
 
         {shipmentData && (
-          <div className="mt-4">
-            <div className="d-flex justify-content-between align-items-center mb-3">
+          <div className="mt-3">
+            <div className="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
               <div>
                 <h6 className="mb-1">Tracking #: {shipmentData.trackingNumber}</h6>
-                <Badge bg={getStatusColor(shipmentData.currentStatus)} className="me-2">
-                  {shipmentData.currentStatus}
-                </Badge>
-                <small className="text-muted">{shipmentData.currentLocation}</small>
+                <Badge bg={statusColor(shipmentData.status)} className="me-2">{shipmentData.status}</Badge>
+                <small className="text-muted">
+                  <GeoAlt className="me-1" />
+                  {locationLabel}
+                </small>
               </div>
               <div className="text-end">
-                <small className="text-muted">Estimated arrival:</small>
+                <small className="text-muted">Estimated arrival</small>
                 <br />
-                <strong>{new Date(shipmentData.estimatedDelivery).toLocaleDateString('en-US')}</strong>
+                <strong>
+                  {shipmentData.estimatedDelivery
+                    ? new Date(shipmentData.estimatedDelivery).toLocaleDateString('en-US')
+                    : 'TBD'}
+                </strong>
               </div>
             </div>
 
-            <ProgressBar 
-              now={shipmentData.progress} 
+            <ProgressBar
+              now={shipmentData.progress}
               label={`${shipmentData.progress}%`}
-              className="mb-4"
+              className="mb-3"
               variant="success"
             />
 
-            <div className="timeline">
-              <h6 className="mb-3">Shipment Journey:</h6>
-              {shipmentData.events.map((event, index) => (
-                <div 
-                  key={event.id} 
-                  className={`d-flex align-items-start mb-3 ${event.completed ? '' : 'opacity-50'}`}
-                >
-                  <div className="me-3 mt-1">
-                    {event.icon}
-                  </div>
-                  <div className="flex-grow-1">
-                    <div className="d-flex justify-content-between align-items-start">
-                      <div>
-                        <h6 className="mb-1">{event.status}</h6>
-                        <p className="mb-1 text-muted">{event.description}</p>
-                        <small className="text-muted">
-                          📍 {event.location} • 🕐 {event.date} {event.time}
-                        </small>
-                      </div>
-                      {event.completed && (
-                        <CheckCircle className="text-success ms-2" />
-                      )}
-                    </div>
-                    {index < shipmentData.events.length - 1 && (
-                      <hr className="my-2" />
-                    )}
-                  </div>
+            {shipmentData.map?.embedUrl && (
+              <div className="mb-3 rounded overflow-hidden border">
+                <iframe
+                  title="Shipment GPS map"
+                  src={shipmentData.map.embedUrl}
+                  style={{ border: 0, width: '100%', height: 280 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+                <div className="p-2 bg-light small">
+                  <a href={shipmentData.map.openUrl} target="_blank" rel="noreferrer">
+                    Open full map
+                  </a>
+                  {shipmentData.currentLocation.lastUpdated && (
+                    <span className="text-muted ms-2">
+                      Updated {new Date(shipmentData.currentLocation.lastUpdated).toLocaleString()}
+                    </span>
+                  )}
                 </div>
-              ))}
+              </div>
+            )}
+
+            {!shipmentData.map?.embedUrl && (
+              <Alert variant="info">GPS coordinates not yet available for this shipment.</Alert>
+            )}
+
+            <div className="mb-3">
+              <h6>
+                <Truck className="me-2" />
+                Route
+              </h6>
+              <p className="mb-1 small text-muted">
+                {shipmentData.origin?.city || '?'}
+                {shipmentData.origin?.state ? `, ${shipmentData.origin.state}` : ''}
+                {' → '}
+                {shipmentData.destination?.city || '?'}
+                {shipmentData.destination?.state ? `, ${shipmentData.destination.state}` : ''}
+              </p>
+              {shipmentData.route?.length > 0 ? (
+                <ul className="list-unstyled small mb-0">
+                  {shipmentData.route.slice(-8).reverse().map((point, idx) => (
+                    <li key={`${point.lat}-${point.lon}-${idx}`} className="mb-1">
+                      <GeoAlt className="me-1 text-primary" />
+                      {point.address || `${point.lat.toFixed(4)}, ${point.lon.toFixed(4)}`}
+                      {point.timestamp && (
+                        <span className="text-muted"> · {new Date(point.timestamp).toLocaleString()}</span>
+                      )}
+                      {point.speed != null && <span className="text-muted"> · {point.speed} km/h</span>}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <small className="text-muted">No GPS trail yet.</small>
+              )}
             </div>
 
-            <div className="mt-4 p-3 bg-light rounded">
-              <h6>Additional Information:</h6>
-              <ul className="list-unstyled mb-0">
-                <li>🚛 <strong>Carrier:</strong> VIP International Shipping</li>
-                <li>📧 <strong>Updates:</strong> Sent automatically to email</li>
-                <li>📱 <strong>SMS:</strong> Updates at important milestones</li>
-                <li>🔄 <strong>Refresh:</strong> Automatic every 30 seconds</li>
-              </ul>
+            {shipmentData.milestones?.length > 0 && (
+              <div className="timeline">
+                <h6 className="mb-3">Milestones</h6>
+                {shipmentData.milestones.map((event) => (
+                  <div key={event.id} className="d-flex align-items-start mb-2">
+                    <CheckCircle className="text-success me-2 mt-1" />
+                    <div>
+                      <strong>{event.event}</strong>
+                      <div className="small text-muted">{event.description || event.location}</div>
+                      {event.timestamp && (
+                        <div className="small text-muted">{new Date(event.timestamp).toLocaleString()}</div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="mt-3 p-3 bg-light rounded small">
+              Auto-refresh every 15 seconds · Powered by VIP GPS tracking
             </div>
           </div>
         )}

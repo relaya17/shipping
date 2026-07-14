@@ -1,0 +1,1222 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "quote": "Teklif Al",
+    "contact": "İletişim",
+    "tracking": "Gönderi Takibi",
+    "login": "Giriş",
+    "signup": "Kayıt Ol",
+    "language": "Dil"
+  },
+  "hero": {
+    "title": "Profesyonel Uluslararası Nakliye",
+    "subtitle": "Yapay zeka destekli küresel taşıma çözümleri",
+    "cta_primary": "Ücretsiz Teklif",
+    "cta_secondary": "Daha Fazla"
+  },
+  "services": {
+    "household": "Ev Taşıma",
+    "commercial": "Ticari Taşıma",
+    "vehicle": "Araç Nakliyesi",
+    "artwork": "Sanat Eseri Nakliyesi",
+    "piano": "Piyano Taşıma",
+    "insurance": "Taşıma Sigortası",
+    "packing": "Profesyonel Paketleme",
+    "storage": "Depolama Çözümleri"
+  },
+  "cta": {
+    "get_quote": "Teklif Al",
+    "free_consult": "Ücretsiz Danışmanlık",
+    "call_now": "Hemen Ara",
+    "email_us": "E-posta Gönder"
+  },
+  "about": {
+    "title": "VIP International Shipping Hakkında",
+    "description": "Onlarca yıllık deneyime sahip önde gelen uluslararası taşıma şirketi"
+  },
+  "footer": {
+    "company_name": "VIP International Shipping",
+    "description": "Dünya çapında profesyonel uluslararası taşıma ve nakliye hizmetleri",
+    "quick_links": "Hızlı Bağlantılar",
+    "services": "Hizmetlerimiz",
+    "legal": "Yasal ve Politikalar",
+    "copyright": "Tüm hakları saklıdır",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Hizmet Şartları",
+    "accessibility": "Erişilebilirlik"
+  },
+  "notifications": {
+    "title": "Bildirimler",
+    "mark_all_read": "Tümünü okundu işaretle",
+    "no_notifications": "Bildirim yok",
+    "shipment_started": "Gönderi başladı!",
+    "price_update": "Fiyat güncellemesi",
+    "customs_inspection": "Gümrük kontrolü"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "confirm": "Onayla",
+    "submit": "Gönder",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "view": "Görüntüle",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki",
+    "search": "Ara",
+    "filter": "Filtrele",
+    "sort": "Sırala",
+    "skip_to_content": "Ana içeriğe atla",
+    "go_home": "Ana sayfaya git",
+    "go_back": "Geri dön",
+    "required": "Zorunlu",
+    "optional": "İsteğe bağlı"
+  },
+  "forms": {
+    "name": "Ad Soyad",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "message": "Mesaj",
+    "subject": "Konu",
+    "from_location": "Çıkış",
+    "to_location": "Varış",
+    "moving_date": "Taşınma tarihi",
+    "service_type": "Hizmet türü",
+    "urgency": "Aciliyet",
+    "budget": "Bütçe",
+    "required": "Zorunlu",
+    "optional": "İsteğe bağlı",
+    "question": "Sorunuz",
+    "send": "Mesaj gönder"
+  },
+  "tracking": {
+    "title": "Gönderinizi takip edin",
+    "tracking_number": "Takip numarası",
+    "track": "Takip et",
+    "current_status": "Durum",
+    "estimated_delivery": "Tahmini teslimat",
+    "location": "Konum",
+    "progress": "İlerleme",
+    "timeline": "Zaman çizelgesi",
+    "live_gps": "Canlı GPS takibi",
+    "not_found": "Takip numarası bulunamadı.",
+    "enter_number": "Lütfen bir takip numarası girin",
+    "locating": "GPS konumu aranıyor...",
+    "open_map": "Haritayı aç",
+    "route": "Rota",
+    "milestones": "Kilometre taşları",
+    "auto_refresh": "Her 15 saniyede yenilenir",
+    "gps_pending": "Bu gönderi için GPS henüz yok."
+  },
+  "ai": {
+    "recommendations": "YZ önerileri",
+    "price_prediction": "YZ fiyat tahmini",
+    "smart_suggestions": "Akıllı öneriler",
+    "powered_by_ai": "YZ destekli",
+    "analyzing": "İhtiyaçlarınız analiz ediliyor...",
+    "calculating": "Hesaplanıyor...",
+    "open_assistant": "YZ asistanını aç",
+    "welcome": "Merhaba! VIP Shipping YZ uzmanınızım. Teklif yazabilir, GPS takip edebilir ve ABD taşıma kuralları hakkında yardımcı olabilirim.",
+    "help": "AI Yardım"
+  },
+  "checkout": {
+    "title": "Güvenli ödeme",
+    "subtitle": "Kart bilgileri sitede saklanmaz. Ödeme Stripe Checkout ile yapılır.",
+    "login_required": "Fatura ödemek için giriş yapın.",
+    "go_home": "Ana sayfaya dön",
+    "signed_in_as": "Giriş yapan",
+    "stripe_missing": "Stripe yapılandırılmamış.",
+    "cart_note": "Ödeme fatura bazlıdır.",
+    "invoice_label": "Ödenecek fatura",
+    "invoice_placeholder": "Fatura kimliğini yapıştırın",
+    "status": "Durum",
+    "customer": "Müşteri",
+    "subtotal": "Ara toplam",
+    "tax": "Vergi",
+    "amount_due": "Ödenecek tutar",
+    "billing_address": "Vergi adresi",
+    "country": "Ülke",
+    "state": "ABD eyaleti",
+    "street": "Sokak",
+    "city": "Şehir",
+    "postal": "Posta kodu",
+    "recalc_tax": "Vergiyi yeniden hesapla",
+    "pay_stripe": "Stripe ile öde",
+    "redirecting": "Stripe'a yönlendiriliyor...",
+    "download_pdf": "PDF indir",
+    "payment_success": "Ödeme alındı.",
+    "payment_cancel": "Ödeme iptal edildi.",
+    "load_error": "Faturalar yüklenemedi.",
+    "tax_updated": "Vergi güncellendi",
+    "tax_failed": "Vergi güncellemesi başarısız",
+    "select_invoice": "Bir fatura seçin",
+    "no_checkout_url": "Checkout URL alınamadı",
+    "checkout_failed": "Ödeme oluşturulamadı",
+    "pdf_failed": "PDF indirilemedi",
+    "united_states": "Amerika Birleşik Devletleri",
+    "israel": "İsrail"
+  },
+  "thankyou": {
+    "title": "Teşekkürler!",
+    "subtitle": "Talebiniz başarıyla gönderildi",
+    "whats_next": "Sırada ne var?",
+    "step1": "Ekibimiz 24 saat içinde sizinle iletişime geçecek",
+    "step2": "Kişiselleştirilmiş teklif alacaksınız",
+    "step3": "Sorularınızda size yardımcı olacağız",
+    "appreciation": "VIP International Shipping'e güvendiğiniz için teşekkürler.",
+    "download": "Detayları indir"
+  },
+  "errors": {
+    "not_found_title": "Sayfa bulunamadı",
+    "not_found_body": "İstediğiniz sayfa mevcut değil veya taşındı.",
+    "image_alt": "404 hatası — sayfa bulunamadı"
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Uluslararası taşımanız için buradayız",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "address": "Adres",
+    "hours": "Çalışma saatleri",
+    "support_247": "7/24 İngilizce destek",
+    "fill_all": "Lütfen zorunlu alanları doldurun",
+    "thanks": "Bizimle iletişime geçtiğiniz için teşekkürler, {{name}}",
+    "send_error": "Form gönderilirken hata oluştu",
+    "network_error": "Ağ hatası oluştu",
+    "form_title": "Bize mesaj gönderin"
+  },
+  "accessibility": {
+    "commitment_badges_note": "WCAG 2.1 AA hedefine çalışıyoruz; bu rozetler hedefimizi gösterir, tamamlanmış sertifika değildir.",
+    "goal_wcag": "WCAG 2.1 AA hedefi",
+    "goal_ada": "ADA erişilebilirlik programı",
+    "goal_508": "Section 508 uyumu devam ediyor"
+  },
+  "auth": {
+    "login_failed": "Giriş başarısız",
+    "register_failed": "Kayıt başarısız",
+    "session_invalid": "Oturum geçersiz"
+  },
+  "admin": {
+    "unauthorized": "Yönetici erişimi gerekli",
+    "title": "Yönetici paneli"
+  },
+  "pages": {
+    "about": {
+      "journeyTitle": "Yolculuğumuz",
+      "journeySubtitle": "Büyüme ve inovasyon zaman çizelgesi",
+      "storyTitle": "Hikâyemiz",
+      "storyP1": "VIP International Shipping, uluslararası taşımacılığı yüksek profesyonellik ve kişisel özenle sunmak için kuruldu. Deneyimli lojistik ekiplerini modern takip teknolojisiyle birleştiriyoruz.",
+      "storyP2": "Yıllar içinde güvenilir bir iş ortağı ağı ile gerçek zamanlı görünürlük, gümrük koordinasyonu ve kapıdan kapıya teslimat sistemleri kurduk.",
+      "storyP3": "Bugün dünyanın dört bir yanındaki müşterilere yüksek tamamlanma oranları ve özel destekle hizmet veriyoruz.",
+      "whyTitle": "Neden bizi seçmelisiniz",
+      "teamTitle": "Yönetim ekibi",
+      "ctaTitle": "Daha sorunsuz bir uluslararası taşınmaya hazır mısınız?",
+      "ctaBody": "VIP International Shipping’e güvenen binlerce müşteriye katılın. Dakikalar içinde kişiselleştirilmiş teklif alın.",
+      "stats": {
+        "experience": "Yıllık deneyim",
+        "countries": "Hizmet verilen ülke",
+        "shipments": "Başarılı sevkiyat",
+        "satisfaction": "Müşteri memnuniyeti"
+      },
+      "features": [
+        {
+          "title": "Kanıtlanmış güvenilirlik",
+          "description": "Federal Maritime Commission lisansı ve 15+ yıllık uluslararası taşımacılık deneyimi"
+        },
+        {
+          "title": "Küresel kapsama",
+          "description": "Her bölgede güvenilir yerel ortaklarla kıtalar arası hizmet"
+        },
+        {
+          "title": "Uçtan uca hizmet",
+          "description": "Kapıdan alımdan nihai teslimata kadar her ayrıntıyı biz yönetiyoruz"
+        },
+        {
+          "title": "Kişisel destek",
+          "description": "Her müşteriye taşınma boyunca özel bir koordinatör atanır"
+        }
+      ],
+      "timeline": [
+        {
+          "year": "2009",
+          "event": "Şirketin kuruluşu",
+          "milestone": "Başlangıç"
+        },
+        {
+          "year": "2012",
+          "event": "Avrupa’ya genişleme — 10.000 sevkiyat",
+          "milestone": "Büyüme"
+        },
+        {
+          "year": "2016",
+          "event": "Asya ve Amerika koridorlarının açılması",
+          "milestone": "Genişleme"
+        },
+        {
+          "year": "2020",
+          "event": "Tam dijital dönüşüm + yapay zekâ",
+          "milestone": "İnovasyon"
+        },
+        {
+          "year": "2023",
+          "event": "AR araçları ve makine öğrenmesi lansmanı",
+          "milestone": "Liderlik"
+        },
+        {
+          "year": "2025",
+          "event": "Gelişmiş akıllı nakliye platformu",
+          "milestone": "Gelecek"
+        }
+      ],
+      "team": [
+        {
+          "name": "Danny Cohen",
+          "position": "CEO ve Kurucu",
+          "experience": "20 yıl",
+          "specialty": "Uluslararası lojistik"
+        },
+        {
+          "name": "Sarah Levy",
+          "position": "Operasyon Direktörü",
+          "experience": "12 yıl",
+          "specialty": "Lojistik ve planlama"
+        },
+        {
+          "name": "Michal Abraham",
+          "position": "Müşteri Başarı Lideri",
+          "experience": "8 yıl",
+          "specialty": "Müşteri desteği"
+        }
+      ]
+    },
+    "packing": {
+      "title": "Profesyonel paketleme",
+      "subtitle": "Eşyalarınızın güvenle ulaşmasını sağlayan profesyonel paketleme",
+      "badge1": "20 yılı aşkın deneyim",
+      "badge2": "Profesyonel paketlemede %0 hasar oranı",
+      "priceLabel": "Fiyat",
+      "durationLabel": "Süre",
+      "includesLabel": "Dahil:",
+      "chooseService": "Bu hizmeti seçin",
+      "materialsTitle": "Profesyonel paketleme malzemeleri",
+      "tipsTitle": "Kendin yap paketleme ipuçları",
+      "ctaTitle": "Profesyonel paketlemeye hazır mısınız?",
+      "ctaBody": "Profesyonel paketleme hizmetimizle zaman ve enerji tasarrufu yapın",
+      "services": [
+        {
+          "title": "Tam paketleme",
+          "description": "Her şeyi paketleriz — en küçük bardaktan en büyük mobilyaya kadar",
+          "price": "Kutu başı $15–25",
+          "duration": "1–2 gün",
+          "includes": [
+            "Tüm paketleme malzemeleri",
+            "Detaylı etiketleme",
+            "Envanter listesi",
+            "Paketleme sırasında teminat"
+          ]
+        },
+        {
+          "title": "Kırılgan eşya paketleme",
+          "description": "Hassas ve yüksek değerli eşyalar için özel paketleme",
+          "price": "Parça başı $25–40",
+          "duration": "Parça başı 2–4 saat",
+          "includes": [
+            "Özel koruyucu malzemeler",
+            "Çift paketleme",
+            "«Kırılgan» etiketleme",
+            "Gelişmiş sigorta"
+          ]
+        },
+        {
+          "title": "Kısmi paketleme",
+          "description": "Temel eşyaları siz paketlersiniz; karmaşık ve ağır parçaları biz üstleniriz",
+          "price": "Günlük $200–400",
+          "duration": "4–8 saat",
+          "includes": [
+            "Profesyonel malzemeler",
+            "Uzman rehberliği",
+            "Ağır eşya yardımı",
+            "Paketleme tavsiyesi"
+          ]
+        }
+      ],
+      "materials": [
+        {
+          "name": "Güçlendirilmiş karton kutular",
+          "description": "1–6 beden, dayanıklı ve kaliteli"
+        },
+        {
+          "name": "Balonlu naylon",
+          "description": "Kırılgan ve hassas eşyalar için"
+        },
+        {
+          "name": "Paketleme kâğıdı",
+          "description": "Günlük eşyalar ve boşluk doldurma için"
+        },
+        {
+          "name": "Streç film",
+          "description": "Nem ve toza karşı koruma"
+        },
+        {
+          "name": "Paketleme köpüğü",
+          "description": "Özellikle hassas eşyalar için"
+        },
+        {
+          "name": "Paketleme bandı",
+          "description": "Güçlü ve dayanıklı kutu mühürleme"
+        },
+        {
+          "name": "Etiketler ve çıkartmalar",
+          "description": "Net, okunaklı işaretleme"
+        },
+        {
+          "name": "Paketleme torbaları",
+          "description": "Küçük ve hassas eşyalar için"
+        }
+      ],
+      "tips": [
+        "En az kullandığınız odalardan başlayın",
+        "Aynı kutuya bir ağır eşyayla birkaç hafif eşya koyun",
+        "Boşlukları kâğıt veya yumuşak giysilerle doldurun",
+        "Ağır eşyaları kutunun altına yerleştirin",
+        "Aşırı yüklemeyin — kutuları 15–20 kg’da tutun",
+        "Değerli eşyaları paketlemeden önce fotoğraflayın",
+        "Her kutunun içeriğinin listesini tutun",
+        "Giysileri yer kazanmak için vakum torbalarına koyun"
+      ]
+    },
+    "movingServices": {
+      "title": "Taşıma hizmetleri",
+      "subtitle": "Her ihtiyaca özel profesyonel taşıma hizmetleri yelpazesi",
+      "badge1": "20+ hizmet",
+      "badge2": "Dünya çapında kapsama",
+      "popular": "Popüler",
+      "fromPrice": "Başlayan",
+      "additionalTitle": "Ek hizmetler",
+      "ctaTitle": "Hizmetlerimizle ilgileniyor musunuz?",
+      "services": [
+        {
+          "title": "Profesyonel paketleme",
+          "description": "Yüksek kaliteli malzemelerle uzman paketleme",
+          "features": [
+            "Profesyonel malzemeler",
+            "Kırılgan eşya paketleme",
+            "Detaylı etiketleme",
+            "Sigorta dahil"
+          ],
+          "price": "$200’den başlayan"
+        },
+        {
+          "title": "Kara taşımacılığı",
+          "description": "Her destinasyona hızlı ve güvenli kara nakliyesi",
+          "features": [
+            "Donanımlı kamyonlar",
+            "GPS takip",
+            "Tam sigorta",
+            "Profesyonel ekip"
+          ],
+          "price": "$500’den başlayan"
+        },
+        {
+          "title": "Uluslararası taşıma",
+          "description": "Güvenilir ortaklarla dünya çapında taşıma",
+          "features": [
+            "Tüm kıtalar",
+            "Gümrük işlemleri",
+            "Gerçek zamanlı takip",
+            "Uluslararası sigorta"
+          ],
+          "price": "$1.200’den başlayan"
+        },
+        {
+          "title": "Sigorta ve güvenlik",
+          "description": "Kapsamlı teminat ve güvenli elleçleme",
+          "features": [
+            "Tam sigorta",
+            "Güvenli tesisler",
+            "7/24 izleme",
+            "Hızlı hasar talepleri"
+          ],
+          "price": "Değerin %3’ü"
+        },
+        {
+          "title": "Kurulum hizmetleri",
+          "description": "Mobilya ve cihazların sökülmesi ve yeniden montajı",
+          "features": [
+            "Profesyonel söküm",
+            "Varışta kurulum",
+            "Profesyonel aletler",
+            "İşçilik garantisi"
+          ],
+          "price": "$150’den başlayan"
+        },
+        {
+          "title": "Geçici depolama",
+          "description": "Esnek ve güvenli depolama çözümleri",
+          "features": [
+            "Güvenli tesisler",
+            "İklim kontrolü",
+            "7/24 erişim",
+            "Esnek tarifeler"
+          ],
+          "price": "Aylık $50’den başlayan"
+        }
+      ],
+      "additional": [
+        "Gümrük evrakları",
+        "Premium sigorta",
+        "Uzak lokasyondan alma",
+        "Lüks eşya taşıma",
+        "Lojistik danışmanlık",
+        "Uzun süreli depolama",
+        "Taşınma sonrası temizlik",
+        "Evcil hayvan taşıma"
+      ]
+    },
+    "movingTips": {
+      "title": "Uluslararası taşıma ipuçları",
+      "subtitle": "Başarılı ve sorunsuz bir uluslararası taşınma için bilmeniz gerekenler",
+      "allCategories": "Tümü",
+      "importanceHigh": "Çok önemli",
+      "importanceMedium": "Önemli",
+      "importanceLow": "Önerilir",
+      "timeframe": "Ne zaman yapılmalı:",
+      "tips": [
+        {
+          "category": "Planlama",
+          "title": "Erken planlamaya başlayın",
+          "content": "Taşınmanızı planlanan tarihten en az 8 hafta önce planlamaya başlayın. Böylece daha iyi teklifler alıp doğru hazırlık yaparsınız.",
+          "importance": "high",
+          "timeFrame": "8 hafta önce"
+        },
+        {
+          "category": "Paketleme",
+          "title": "Profesyonel paketleyin",
+          "content": "Kaliteli paketleme malzemeleri kullanın. Kırılganları balonlu naylonla sarın, boşlukları karton veya kâğıtla doldurun.",
+          "importance": "high",
+          "timeFrame": "4 hafta önce"
+        },
+        {
+          "category": "Evrak",
+          "title": "Envanter ve belgeler",
+          "content": "Tüm eşyaların ayrıntılı envanterini hazırlayın, değerli eşyaları sigorta için fotoğraflayın ve önemli belgelerin kopyalarını saklayın.",
+          "importance": "high",
+          "timeFrame": "6 hafta önce"
+        },
+        {
+          "category": "Sigorta",
+          "title": "Kapsamlı sigorta",
+          "content": "Kapsamlı nakliye sigortasına yatırım yapın. Taşınma sırasında yüksek değerli eşyaların hasarını veya kaybını karşılar.",
+          "importance": "high",
+          "timeFrame": "2 hafta önce"
+        },
+        {
+          "category": "Planlama",
+          "title": "Yeni ülkenizi araştırın",
+          "content": "Gümrük kuralları, iklim ve yerel kültür hakkında bilgi edinin. Yeni hayatınıza daha iyi hazırlanmanıza yardımcı olur.",
+          "importance": "medium",
+          "timeFrame": "12 hafta önce"
+        },
+        {
+          "category": "Paketleme",
+          "title": "Kutuları net etiketleyin",
+          "content": "Her kutuya içeriği ve hedef odayı yazın. Farklı odalar için farklı renkler kullanın.",
+          "importance": "medium",
+          "timeFrame": "3 hafta önce"
+        },
+        {
+          "category": "Evrak",
+          "title": "Önemli belgeleri yanınızda taşıyın",
+          "content": "Pasaport, vize, tıbbi ve mali belgeler — sevkiyatta değil, sizinle seyahat eden ayrı bir çantada tutun.",
+          "importance": "high",
+          "timeFrame": "Taşınma günü"
+        },
+        {
+          "category": "Planlama",
+          "title": "İlk günlerinizi planlayın",
+          "content": "Yeni yerinizdeki ilk günler için bir plan hazırlayın: konaklama, temel gıda ve ulaşım.",
+          "importance": "medium",
+          "timeFrame": "1 hafta önce"
+        }
+      ]
+    },
+    "freeMovingQuote": {
+      "title": "Ücretsiz Taşıma Teklifi Alın",
+      "subtitle": "3 kolay adımda anlık tahmin | Yükümlülük yok | %30’a varan tasarruf",
+      "badges": {
+        "free": "%100 Ücretsiz",
+        "noCard": "Kredi Kartı Yok",
+        "response": "1 Saat İçinde Yanıt",
+        "priceMatch": "Fiyat Eşleştirme Garantisi"
+      },
+      "benefits": {
+        "pricing": {
+          "title": "Transparent Pricing",
+          "desc": "No hidden fees or surprise charges"
+        },
+        "insured": {
+          "title": "Fully Insured",
+          "desc": "Comprehensive protection for your belongings"
+        },
+        "fast": {
+          "title": "Fast Response",
+          "desc": "Quote within 1 hour, 7 days a week"
+        },
+        "guarantee": {
+          "title": "Best Price Guarantee",
+          "desc": "We'll match any competitor's quote"
+        }
+      },
+      "stepOf": "Step {{step}} of {{total}}",
+      "percentComplete": "{{percent}}% Complete",
+      "steps": {
+        "moveDetails": "Move Details",
+        "services": "Services",
+        "contact": "Contact Info"
+      },
+      "step1Title": "Tell Us About Your Move",
+      "moveTypeLabel": "Type of Move *",
+      "moveTypes": {
+        "local": "Local Move (Within 50 miles)",
+        "longDistance": "Long Distance (Interstate)",
+        "international": "International Move"
+      },
+      "fromZip": "From Zip Code *",
+      "toZip": "To Zip Code *",
+      "zipPlaceholderFrom": "e.g. 10001",
+      "zipPlaceholderTo": "e.g. 90210",
+      "moveDate": "Preferred Move Date *",
+      "flexibleDates": "Flexible dates? We can offer better pricing!",
+      "homeSize": "Home Size *",
+      "homeSizeSelect": "Select home size...",
+      "sizes": {
+        "studio": "Studio/Efficiency",
+        "one": "1 Bedroom",
+        "two": "2 Bedrooms",
+        "three": "3 Bedrooms",
+        "four": "4 Bedrooms",
+        "fivePlus": "5+ Bedrooms"
+      },
+      "step2Title": "Select Additional Services",
+      "servicesHint": "Check all services you're interested in. You can adjust later!",
+      "addonServices": [
+        {
+          "id": "packing",
+          "label": "Professional Packing",
+          "desc": "Full packing service with materials included",
+          "cost": "+20%"
+        },
+        {
+          "id": "storage",
+          "label": "Storage (30 days)",
+          "desc": "Climate-controlled storage facility",
+          "cost": "+10%"
+        },
+        {
+          "id": "insurance",
+          "label": "Full Value Protection",
+          "desc": "Comprehensive insurance coverage",
+          "cost": "+5%"
+        },
+        {
+          "id": "unpacking",
+          "label": "Unpacking Services",
+          "desc": "We unpack and place items in your new home",
+          "cost": "+15%"
+        },
+        {
+          "id": "furniture",
+          "label": "Furniture Assembly",
+          "desc": "Disassembly and reassembly of furniture",
+          "cost": "+8%"
+        },
+        {
+          "id": "cleaning",
+          "label": "Post-Move Cleaning",
+          "desc": "Professional cleaning of your old home",
+          "cost": "+12%"
+        }
+      ],
+      "specialItems": "Special Items or Instructions",
+      "specialItemsPlaceholder": "e.g., Piano, pool table, fragile antiques, tight parking...",
+      "step3Title": "Contact Information",
+      "estimatedCost": "Your Estimated Cost",
+      "estimateNote": "Final price subject to in-home survey. This estimate includes your selected services.",
+      "phoneHint": "We'll call within 1 hour to confirm details",
+      "consentPrefix": "I agree to receive communications and understand the",
+      "consentAnd": "and",
+      "whatNext": "What happens next?",
+      "nextSteps": [
+        "Our moving specialist will call you within 1 hour",
+        "Schedule a free in-home survey (virtual or in-person)",
+        "Receive your final binding quote",
+        "Book your move and relax!"
+      ],
+      "back": "← Geri",
+      "continue": "Devam →",
+      "submit": "Ücretsiz Teklifimi Al",
+      "submitSuccess": "Thank you! Our team will contact you within 1 hour with a detailed quote.",
+      "trustedBy": "Trusted by 50,000+ happy customers",
+      "trust": {
+        "licensed": "Licensed & Insured",
+        "bbb": "A+ BBB Rating",
+        "reviews": "5,000+ 5-Star Reviews"
+      }
+    },
+    "worldwideMoving": {
+      "title": "Dünya Çapında Uluslararası Taşımacılık",
+      "subtitle": "Kıtalar arası kapıdan kapıya sevkiyat",
+      "ctaQuote": "Küresel teklif alın",
+      "ctaCall": "Talk to a specialist",
+      "alertTitle": "Plan lead times early",
+      "alertBody": "Ocean freight typically takes 30–60 days. Air freight is available for urgent shipments.",
+      "methodsTitle": "Shipping methods",
+      "destinationsTitle": "Popular destinations",
+      "servicesTitle": "Included services",
+      "processTitle": "How worldwide moves work",
+      "costsTitle": "Cost factors",
+      "prohibitedTitle": "Restricted & prohibited items",
+      "finalCta": "Dünya çapında taşınmaya hazır mısınız?",
+      "shippingMethods": [
+        {
+          "method": "Sea Freight (FCL)",
+          "time": "30-60 days",
+          "cost": "Most economical",
+          "bestFor": "Full household moves",
+          "description": "Exclusive use of a 20 or 40-foot container. Ideal for large moves with flexibility on timing.",
+          "features": [
+            "Door-to-door service",
+            "Most cost-effective",
+            "Secure container",
+            "Best for large volumes"
+          ]
+        },
+        {
+          "method": "Sea Freight (LCL)",
+          "time": "35-70 days",
+          "cost": "Budget-friendly",
+          "bestFor": "Smaller shipments",
+          "description": "Share container space with other shipments. Perfect for 1-2 bedroom apartments.",
+          "features": [
+            "Pay for space used",
+            "Flexible volume",
+            "Consolidated shipping",
+            "Cost-efficient"
+          ]
+        },
+        {
+          "method": "Air Freight",
+          "time": "5-10 days",
+          "cost": "Premium pricing",
+          "bestFor": "Urgent/valuable items",
+          "description": "Fastest international shipping option. Recommended for time-sensitive or high-value shipments.",
+          "features": [
+            "Express delivery",
+            "Climate controlled",
+            "Maximum security",
+            "Priority handling"
+          ]
+        }
+      ],
+      "popularDestinations": [
+        {
+          "continent": "Europe",
+          "countries": [
+            "UK",
+            "Germany",
+            "France",
+            "Spain",
+            "Italy",
+            "Netherlands"
+          ],
+          "time": "35-50 days"
+        },
+        {
+          "continent": "Asia",
+          "countries": [
+            "Israel",
+            "Japan",
+            "Singapore",
+            "South Korea",
+            "Hong Kong",
+            "UAE"
+          ],
+          "time": "25-45 days"
+        },
+        {
+          "continent": "Australia & Oceania",
+          "countries": [
+            "Australia",
+            "New Zealand"
+          ],
+          "time": "40-60 days"
+        },
+        {
+          "continent": "South America",
+          "countries": [
+            "Brazil",
+            "Argentina",
+            "Chile"
+          ],
+          "time": "35-55 days"
+        },
+        {
+          "continent": "Africa",
+          "countries": [
+            "South Africa",
+            "Kenya",
+            "Egypt"
+          ],
+          "time": "30-50 days"
+        },
+        {
+          "continent": "Middle East",
+          "countries": [
+            "UAE",
+            "Saudi Arabia",
+            "Qatar",
+            "Kuwait"
+          ],
+          "time": "25-40 days"
+        }
+      ],
+      "services": [
+        {
+          "title": "Professional Packing",
+          "description": "Expert packing with international-grade materials",
+          "included": [
+            "Custom crating",
+            "Bubble wrap & padding",
+            "Labeled inventory",
+            "Fragile item handling"
+          ]
+        },
+        {
+          "title": "Customs Clearance",
+          "description": "Full documentation and customs brokerage services",
+          "included": [
+            "Customs forms",
+            "Import permits",
+            "Duty calculations",
+            "Broker coordination"
+          ]
+        },
+        {
+          "title": "Door-to-Door Service",
+          "description": "Complete pickup and delivery to your new address",
+          "included": [
+            "Home pickup",
+            "Port handling",
+            "Destination delivery",
+            "Unpacking options"
+          ]
+        },
+        {
+          "title": "Comprehensive Insurance",
+          "description": "Full value protection for international moves",
+          "included": [
+            "All-risk coverage",
+            "Marine insurance",
+            "Claims assistance",
+            "Peace of mind"
+          ]
+        }
+      ],
+      "processSteps": [
+        {
+          "title": "Free Consultation",
+          "description": "Discuss your needs with our international move specialist"
+        },
+        {
+          "title": "Survey & Quote",
+          "description": "Virtual or in-home survey to assess volume and provide accurate quote"
+        },
+        {
+          "title": "Documentation",
+          "description": "Prepare all necessary paperwork, customs forms, and permits"
+        },
+        {
+          "title": "Professional Packing",
+          "description": "Expert team packs and labels all items with care"
+        },
+        {
+          "title": "Export & Shipping",
+          "description": "Container loaded, sealed, and shipped to destination port"
+        },
+        {
+          "title": "Customs Clearance",
+          "description": "Our agents handle all customs procedures at destination"
+        },
+        {
+          "title": "Final Delivery",
+          "description": "Delivery to your new home with unpacking if requested"
+        }
+      ],
+      "prohibitedItems": [
+        "Flammable liquids and explosives",
+        "Perishable foods",
+        "Plants and soil (many countries)",
+        "Weapons and ammunition",
+        "Illegal drugs and controlled substances"
+      ]
+    },
+    "interstateMoving": {
+      "title": "Eyaletler Arası Taşımacılık",
+      "subtitle": "ABD’nin 50 eyaletinde güvenilir uzun mesafe taşıma",
+      "ctaQuote": "Eyaletler arası teklif alın",
+      "ctaCall": "Call a coordinator",
+      "promoTitle": "Peak season tip",
+      "promoBody": "Book 4–8 weeks ahead for May–September to lock better rates and dates.",
+      "whyTitle": "Why choose VIP for interstate moves",
+      "servicesTitle": "Service options",
+      "routesTitle": "Popular routes",
+      "pricingTitle": "What affects price",
+      "tipsTitle": "Moving tips",
+      "howTitle": "How it works",
+      "includes": "Includes:",
+      "finalCta": "Eyaletler arası taşınmaya hazır mısınız?",
+      "services": [
+        {
+          "title": "Full-Service Moving",
+          "description": "Complete door-to-door service with professional packing, loading, transport, and unpacking",
+          "features": [
+            "Professional packing",
+            "Loading & unloading",
+            "Furniture disassembly/assembly",
+            "Unpacking services"
+          ]
+        },
+        {
+          "title": "Partial/Shared Moving",
+          "description": "Cost-effective solution for smaller moves, sharing truck space with other shipments",
+          "features": [
+            "Lower cost option",
+            "Flexible scheduling",
+            "Same care and protection",
+            "Ideal for 1-2 bedroom moves"
+          ]
+        },
+        {
+          "title": "Express Moving",
+          "description": "Priority service with dedicated truck and expedited delivery for time-sensitive moves",
+          "features": [
+            "Dedicated truck",
+            "3-5 day delivery",
+            "Priority scheduling",
+            "Real-time tracking"
+          ]
+        },
+        {
+          "title": "White Glove Service",
+          "description": "Premium moving experience with specialized handling for high-value and delicate items",
+          "features": [
+            "Custom crating",
+            "Climate-controlled transport",
+            "Installation services",
+            "Concierge support"
+          ]
+        }
+      ],
+      "popularRoutes": [
+        {
+          "from": "New York, NY",
+          "to": "Florida",
+          "duration": "3-5 days",
+          "distance": "1,200 mi"
+        },
+        {
+          "from": "California",
+          "to": "Texas",
+          "duration": "4-6 days",
+          "distance": "1,500 mi"
+        },
+        {
+          "from": "Illinois",
+          "to": "Arizona",
+          "duration": "4-5 days",
+          "distance": "1,700 mi"
+        },
+        {
+          "from": "Massachusetts",
+          "to": "North Carolina",
+          "duration": "3-4 days",
+          "distance": "800 mi"
+        },
+        {
+          "from": "Washington",
+          "to": "Colorado",
+          "duration": "3-4 days",
+          "distance": "1,300 mi"
+        },
+        {
+          "from": "Michigan",
+          "to": "Georgia",
+          "duration": "4-5 days",
+          "distance": "1,000 mi"
+        }
+      ],
+      "movingTips": [
+        {
+          "title": "Book Early",
+          "tip": "Reserve your moving date 4-8 weeks in advance, especially during peak season (May-September)"
+        },
+        {
+          "title": "Declutter First",
+          "tip": "Reduce moving costs by selling or donating items you no longer need before packing"
+        },
+        {
+          "title": "Get Multiple Quotes",
+          "tip": "Compare at least 3 estimates to ensure competitive pricing and understand what's included"
+        },
+        {
+          "title": "Read Reviews",
+          "tip": "Check BBB ratings, Google reviews, and FMCSA records before choosing a moving company"
+        }
+      ],
+      "pricingFactors": [
+        {
+          "factor": "Distance",
+          "impact": "Primary cost driver",
+          "description": "Longer distances = higher costs"
+        },
+        {
+          "factor": "Weight/Volume",
+          "impact": "Direct correlation",
+          "description": "Charged per pound or cubic foot"
+        },
+        {
+          "factor": "Season",
+          "impact": "Moderate effect",
+          "description": "Summer (peak) costs 20-30% more"
+        },
+        {
+          "factor": "Access",
+          "impact": "Additional fees",
+          "description": "Stairs, long carry, shuttle service"
+        },
+        {
+          "factor": "Packing Services",
+          "impact": "Optional add-on",
+          "description": "Professional packing adds 15-25%"
+        },
+        {
+          "factor": "Insurance",
+          "impact": "Recommended",
+          "description": "Full value protection for peace of mind"
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "lastUpdated": "Last updated",
+      "intro": "Please read these Terms carefully before using VIP International Shipping services.",
+      "sections": [
+        {
+          "title": "1. Acceptance of Terms",
+          "paragraphs": [
+            "By accessing or using our website and services, you agree to be bound by these Terms of Service."
+          ]
+        },
+        {
+          "title": "2. Services",
+          "paragraphs": [
+            "We provide international and domestic moving, packing, storage, and related logistics services subject to availability and applicable law."
+          ]
+        },
+        {
+          "title": "3. Quotes and Pricing",
+          "paragraphs": [
+            "Quotes are estimates unless expressly stated as binding. Final pricing may change after survey, inventory, access conditions, or regulatory fees."
+          ]
+        },
+        {
+          "title": "4. Customer Responsibilities",
+          "paragraphs": [
+            "You are responsible for accurate inventory, access to premises, required permits, and compliance with customs and prohibited-item rules."
+          ]
+        },
+        {
+          "title": "5. Payments",
+          "paragraphs": [
+            "Payment terms are stated on your invoice or booking confirmation. Late payments may incur fees or service delays."
+          ]
+        },
+        {
+          "title": "6. Insurance and Liability",
+          "paragraphs": [
+            "Coverage options are offered at booking. Liability limits apply as disclosed in your contract and applicable carrier terms."
+          ]
+        },
+        {
+          "title": "7. Cancellations",
+          "paragraphs": [
+            "Cancellation and rescheduling policies are provided with your booking. Deposits may be non-refundable after certain deadlines."
+          ]
+        },
+        {
+          "title": "8. Privacy",
+          "paragraphs": [
+            "Personal data is handled according to our Privacy Policy."
+          ]
+        },
+        {
+          "title": "9. Governing Law",
+          "paragraphs": [
+            "These Terms are governed by the laws of the applicable jurisdiction stated in your service agreement."
+          ]
+        },
+        {
+          "title": "10. Contact",
+          "paragraphs": [
+            "Questions about these Terms: support@vipshipping.com"
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "How we collect, use, and protect your information",
+      "lastUpdated": "Last updated",
+      "intro": "This Privacy Policy explains how VIP International Shipping handles personal information.",
+      "sections": [
+        {
+          "title": "1. Information we collect",
+          "paragraphs": [
+            "Contact details, move addresses, shipment details, payment references, and usage data needed to provide services."
+          ]
+        },
+        {
+          "title": "2. How we use information",
+          "paragraphs": [
+            "To prepare quotes, operate shipments, process payments, provide support, improve services, and meet legal obligations."
+          ]
+        },
+        {
+          "title": "3. Sharing",
+          "paragraphs": [
+            "We share data with carriers, customs brokers, payment processors, and service providers under contract, or when required by law."
+          ]
+        },
+        {
+          "title": "4. Security",
+          "paragraphs": [
+            "We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data."
+          ]
+        },
+        {
+          "title": "5. Your rights",
+          "paragraphs": [
+            "Depending on your location, you may request access, correction, deletion, or restriction of personal data."
+          ]
+        },
+        {
+          "title": "6. Cookies",
+          "paragraphs": [
+            "We use necessary cookies for authentication and optional analytics cookies where permitted."
+          ]
+        },
+        {
+          "title": "7. International transfers",
+          "paragraphs": [
+            "Data may be processed in countries where we or our partners operate, with appropriate safeguards."
+          ]
+        },
+        {
+          "title": "8. Children",
+          "paragraphs": [
+            "Our services are not directed to children under 16."
+          ]
+        },
+        {
+          "title": "9. Changes",
+          "paragraphs": [
+            "We may update this policy and will revise the last-updated date when changes are material."
+          ]
+        },
+        {
+          "title": "10. Contact",
+          "paragraphs": [
+            "Privacy questions: privacy@vipshipping.com"
+          ]
+        }
+      ]
+    }
+  },
+  "home": {
+    "priority_high": "Yüksek Öncelik",
+    "priority_medium": "Orta Öncelik",
+    "priority_low": "Düşük Öncelik",
+    "price_label": "Fiyat",
+    "rec_household_desc": "Tam lojistik destekli uluslararası ev taşımaları için önerilir.",
+    "rec_household_time": "14–28 gün",
+    "rec_household_price": "800$’dan itibaren",
+    "rec_insurance_desc": "Kapsamlı taşıma sigortası ile gönderinizi koruyun.",
+    "rec_insurance_price": "Gönderi değerinin %3’ü",
+    "rec_packing_desc": "Kırılgan ve değerli eşyalar için profesyonel paketleme.",
+    "rec_packing_time": "1–2 gün",
+    "rec_packing_price": "200$’dan itibaren",
+    "rec_storage_desc": "Taşınma öncesi veya sonrası güvenli kısa/uzun dönem depolama.",
+    "rec_storage_price": "Aylık 50$’dan itibaren"
+  },
+  "volume": {
+    "title": "AR Volume Calculator",
+    "new_badge": "New!",
+    "use_camera": "Use your camera for automatic volume calculation",
+    "manual_entry": "Manual entry",
+    "start_scan": "Start scan",
+    "scanning": "Scanning items with AI...",
+    "ar_not_supported": "Camera is not available on this device",
+    "switch_to_camera": "Switch to camera",
+    "switch_to_manual": "Switch to manual entry",
+    "calculation_complete": "Calculation complete!",
+    "total_volume": "Total volume (m³)",
+    "estimated_weight": "Estimated weight (kg)",
+    "recommended_container": "Recommended container",
+    "estimated_price": "Estimated price",
+    "scanned_items": "Scanned items",
+    "calculate": "Calculate volume",
+    "fill_dimensions": "Please fill in all dimensions",
+    "container_20": "20ft Container",
+    "container_10": "10ft Container",
+    "custom_item": "Custom Item",
+    "sofa": "Sofa",
+    "dining_table": "Dining Table",
+    "wardrobe": "Wardrobe",
+    "accuracy": "{{percent}}% accuracy"
+  },
+  "prediction": {
+    "select_destination": "Select destination...",
+    "europe": "Europe",
+    "asia": "Asia",
+    "australia": "Australia",
+    "africa": "Africa",
+    "south_america": "South America",
+    "weight": "Weight",
+    "urgency_standard": "Standard (14–28 days)",
+    "urgency_express": "Express (7–14 days)",
+    "urgency_urgent": "Urgent (3–7 days)",
+    "enter_destination": "Please enter a destination",
+    "accuracy": "{{percent}}% accuracy",
+    "estimated_total": "Estimated total price",
+    "price_factors": "Price factors:",
+    "save": "Save ${{amount}}",
+    "factor_geo": "Geographic Destination",
+    "factor_geo_desc": "Destination {{location}} affects the price",
+    "factor_weight": "Shipment Weight",
+    "factor_weight_desc": "Weight of {{weight}} kg requires special handling",
+    "factor_service": "Service Type",
+    "factor_service_desc": "Service {{service}} requires special handling",
+    "factor_urgency": "Urgency Level",
+    "factor_urgency_desc": "Service {{urgency}} available for an additional fee",
+    "alt_standard": "Standard service instead of express",
+    "alt_group": "Group with other shipments",
+    "alt_self_pack": "Self-packing",
+    "beta": "Beta"
+  }
+}
