@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Badge, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Card, Badge, ListGroup } from 'react-bootstrap';
+import LinkButton from '../components/LinkButton';
 import {
   Box,
   Truck,
@@ -10,7 +11,6 @@ import {
   CheckCircle,
   Tools
 } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { trackPageView } from '../utils/analytics';
 import { ROUTES } from '../routs/routes';
@@ -93,15 +93,14 @@ const MovingServices: React.FC = () => {
                       ))}
                     </ListGroup>
 
-                    <Button
-                      as={Link as never}
+                    <LinkButton
                       to={ROUTES.FREE_MOVING_QUOTE}
                       variant={popular ? 'primary' : 'outline-primary'}
                       className="w-100"
                       aria-label={`${t('common.view')}: ${service.title}`}
                     >
                       {t('common.view')}
-                    </Button>
+                    </LinkButton>
                   </Card.Body>
                 </Card>
               </Col>
@@ -176,12 +175,12 @@ const MovingServices: React.FC = () => {
                 <p className="mb-4">
                   Get a free consultation from our moving experts and learn how we can help
                 </p>
-                <Button as={Link as never} to={ROUTES.CONTACT} variant="success" size="lg" className="me-3">
+                <LinkButton to={ROUTES.CONTACT} variant="success" size="lg" className="me-3">
                   {t('cta.free_consult')}
-                </Button>
-                <Button as={Link as never} to={ROUTES.FREE_MOVING_QUOTE} variant="outline-primary" size="lg">
+                </LinkButton>
+                <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="outline-primary" size="lg">
                   {t('cta.get_quote')}
-                </Button>
+                </LinkButton>
               </Card.Body>
             </Card>
           </Col>

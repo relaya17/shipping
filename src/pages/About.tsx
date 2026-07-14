@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
+import { Container, Row, Col, Card, Badge } from 'react-bootstrap';
+import LinkButton from '../components/LinkButton';
 import {
   Globe,
   Award,
@@ -10,10 +11,10 @@ import {
   Star,
   CheckCircle
 } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { trackPageView } from '../utils/analytics';
 import { ROUTES } from '../routs/routes';
+import { LICENSE, SAFER_LOOKUP_URL } from '../config/companyInfo';
 import '../About.css';
 
 interface AboutFeature {
@@ -81,9 +82,25 @@ const About: React.FC = () => {
           <Col>
             <h1 className="display-4 mb-3">{t('about.title')}</h1>
             <p className="lead text-muted mb-4">{t('about.description')}</p>
-            <Badge bg="primary" className="me-2">ISO 9001</Badge>
-            <Badge bg="success" className="me-2">FMC licensed</Badge>
+            {LICENSE.usdotNumber && (
+              <a href={SAFER_LOOKUP_URL} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                <Badge bg="primary" className="me-2">
+                  USDOT {LICENSE.usdotNumber} — verify on FMCSA
+                </Badge>
+              </a>
+            )}
+            {LICENSE.fmcNumber && (
+              <Badge bg="success" className="me-2">FMC licensed — {LICENSE.fmcNumber}</Badge>
+            )}
             <Badge bg="info">AI powered</Badge>
+            {!LICENSE.usdotNumber && !LICENSE.fmcNumber && (
+              <div className="mt-2">
+                <small className="text-muted">
+                  Licensing badges will appear here once real USDOT / FMC numbers are added to{' '}
+                  <code>src/config/companyInfo.ts</code>.
+                </small>
+              </div>
+            )}
           </Col>
         </Row>
 
@@ -133,6 +150,13 @@ const About: React.FC = () => {
                 International certifications
               </h2>
               <p className="text-muted">Credentials that reflect our quality standards</p>
+              <p className="text-muted small">
+                <em>
+                  Placeholder credentials — replace the <code>certifications</code> list in{' '}
+                  <code>src/pages/About.tsx</code> with your actual certificates and issuing-body
+                  verification links before publishing.
+                </em>
+              </p>
             </Col>
           </Row>
           <Row>
@@ -160,7 +184,7 @@ const About: React.FC = () => {
           </Col>
           <Col lg={6}>
             <img
-              src="/images/company-story.jpg"
+              src="/images/shippingVip.jpg"
               alt="VIP International Shipping team and operations"
               className="img-fluid rounded"
             />
@@ -182,7 +206,13 @@ const About: React.FC = () => {
           ))}
         </Row>
 
-        <h2 className="text-center mb-5">{t('pages.about.teamTitle')}</h2>
+        <h2 className="text-center mb-2">{t('pages.about.teamTitle')}</h2>
+        <p className="text-center text-muted small mb-5">
+          <em>
+            Placeholder team — edit the <code>team</code> array in <code>src/locales/*/translation.json</code>{' '}
+            (<code>pages.about.team</code>) with real names, roles, and bios.
+          </em>
+        </p>
         <Row className="mb-5">
           {team.map((member) => (
             <Col md={4} key={member.name} className="mb-4">
@@ -210,12 +240,12 @@ const About: React.FC = () => {
               <h2 className="h3 mb-3">{t('pages.about.ctaTitle')}</h2>
               <p className="lead mb-4">{t('pages.about.ctaBody')}</p>
               <div className="d-flex flex-wrap justify-content-center gap-3">
-                <Button as={Link as never} to={ROUTES.FREE_MOVING_QUOTE} variant="light" size="lg">
+                <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="light" size="lg">
                   {t('cta.get_quote')}
-                </Button>
-                <Button as={Link as never} to={ROUTES.CONTACT} variant="outline-light" size="lg">
+                </LinkButton>
+                <LinkButton to={ROUTES.CONTACT} variant="outline-light" size="lg">
                   {t('cta.free_consult')}
-                </Button>
+                </LinkButton>
               </div>
             </Col>
           </Row>

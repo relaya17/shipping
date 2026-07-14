@@ -15,6 +15,7 @@ import {
 import PhoneInput from 'react-phone-input-2';
 import { useTranslation } from 'react-i18next';
 import { trackPageView } from '../utils/analytics';
+import { CONTACT } from '../config/companyInfo';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
@@ -76,24 +77,22 @@ const Contact: React.FC = () => {
     {
       icon: <Telephone size={24} className="text-primary" />,
       title: t('contact.phone'),
-      details: ['+1 (555) 123-4567', '+972 3-123-4567', '+44 20 7123-4567'],
+      details: [CONTACT.phoneDisplay],
       available: t('contact.support_247'),
       urgent: true
     },
     {
       icon: <Envelope size={24} className="text-success" />,
       title: t('contact.email'),
-      details: ['info@vipshipping.com', 'quotes@vipshipping.com', 'support@vipshipping.com'],
+      details: [CONTACT.email, CONTACT.supportEmail],
       available: 'Guaranteed response within 2 hours',
       urgent: false
     },
     {
       icon: <GeoAlt size={24} className="text-info" />,
-      title: 'Global offices',
+      title: 'Office address',
       details: [
-        'New York: 123 Shipping Ave, NY 10001',
-        'Tel Aviv: 15 Moving Street, Tel Aviv 6512',
-        'London: 45 Logistics St, London EC1'
+        `${CONTACT.address.line1}, ${CONTACT.address.city}, ${CONTACT.address.region} ${CONTACT.address.postalCode}, ${CONTACT.address.country}`
       ],
       available: 'Visits by appointment',
       urgent: false
@@ -101,22 +100,14 @@ const Contact: React.FC = () => {
     {
       icon: <Whatsapp size={24} className="text-success" />,
       title: 'WhatsApp Business',
-      details: ['+972 50-123-4567', 'Instant chat support'],
+      details: [CONTACT.whatsappNumber, 'Instant chat support'],
       available: 'Available 24/7 — response within minutes',
       urgent: true
     }
   ];
 
   const officeHours = [
-    { location: 'Israel', hours: 'Sun–Thu: 8:00–18:00, Fri: 8:00–14:00', timezone: 'GMT+2' },
-    { location: 'United States', hours: 'Monday–Friday: 9:00–17:00 EST', timezone: 'GMT-5' },
-    { location: 'United Kingdom', hours: 'Monday–Friday: 9:00–17:00 GMT', timezone: 'GMT+0' }
-  ];
-
-  const emergencyContacts = [
-    { type: 'Shipment emergency', number: '+972 50-911-1234', available: '24/7' },
-    { type: 'Technical support', number: '+1 555-TECH-911', available: '24/7' },
-    { type: 'VIP customer service', number: '+972 3-VIP-1234', available: 'Sun–Fri' }
+    { location: CONTACT.address.country, hours: CONTACT.hours }
   ];
 
   return (
@@ -154,31 +145,25 @@ const Contact: React.FC = () => {
                 ))}
 
                 <Alert variant="danger" className="mt-4">
-                  <h6 className="mb-3">
-                    <strong>Emergency contacts</strong>
+                  <h6 className="mb-2">
+                    <strong>Shipment emergency?</strong>
                   </h6>
-                  {emergencyContacts.map((contact, index) => (
-                    <div key={index} className="d-flex justify-content-between align-items-center mb-2">
-                      <span className="fw-semibold">{contact.type}:</span>
-                      <div className="text-end">
-                        <div className="fw-bold">{contact.number}</div>
-                        <small>{contact.available}</small>
-                      </div>
-                    </div>
-                  ))}
+                  <p className="mb-0 small">
+                    Call our main line above — it is monitored 24/7 for active shipment
+                    emergencies.
+                  </p>
                 </Alert>
 
                 <Card className="mt-4 border-info">
                   <Card.Header className="bg-info text-white">
                     <Clock className="me-2" />
-                    <strong>Global office hours</strong>
+                    <strong>Office hours</strong>
                   </Card.Header>
                   <Card.Body className="p-3">
                     {officeHours.map((office, index) => (
                       <div key={index} className="mb-2">
                         <div className="fw-semibold">{office.location}</div>
                         <div className="text-muted small">{office.hours}</div>
-                        <Badge bg="light" text="dark" className="me-2">{office.timezone}</Badge>
                       </div>
                     ))}
                   </Card.Body>
@@ -280,11 +265,11 @@ const Contact: React.FC = () => {
                   <hr />
                   <p className="text-muted mb-3">Or contact us directly:</p>
                   <div className="d-flex justify-content-center gap-2">
-                    <Button variant="success" href="https://wa.me/15551234567">
+                    <Button variant="success" href={`https://wa.me/${CONTACT.whatsappNumber.replace(/\D/g, '')}`}>
                       <Whatsapp className="me-2" />
                       WhatsApp
                     </Button>
-                    <Button variant="outline-primary" href="tel:+15551234567">
+                    <Button variant="outline-primary" href={`tel:${CONTACT.phoneHref}`}>
                       <Telephone className="me-2" />
                       {t('cta.call_now')}
                     </Button>
@@ -391,12 +376,9 @@ const Contact: React.FC = () => {
                       <div>
                         <h6 className="text-primary">What payment methods do you accept?</h6>
                         <p className="text-muted mb-1">
-                          Credit cards (Visa, MasterCard, AMEX)<br />
-                          International bank transfer<br />
-                          Secure PayPal and Stripe<br />
-                          Apple Pay and Google Pay<br />
-                          Corporate invoicing (on credit)<br />
-                          Digital currencies (Bitcoin, USDC)
+                          Credit cards (Visa, MasterCard, AMEX) via Stripe Checkout<br />
+                          Secure, PCI-compliant online payment<br />
+                          Invoice-based billing after quote acceptance
                         </p>
                       </div>
                     </div>

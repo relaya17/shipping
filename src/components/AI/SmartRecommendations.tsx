@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import { Card, Button, Badge, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Card, Badge, Row, Col } from 'react-bootstrap';
+import LinkButton from '../LinkButton';
 import { useTranslation } from 'react-i18next';
 import { Star, Clock, Shield, Truck, Globe } from 'react-bootstrap-icons';
 import { ROUTES } from '../../routs/routes';
@@ -119,8 +119,7 @@ const SmartRecommendations: React.FC = () => {
                     )}
                   </div>
 
-                  <Button
-                    as={Link as never}
+                  <LinkButton
                     to={rec.to}
                     variant="outline-primary"
                     size="sm"
@@ -128,7 +127,7 @@ const SmartRecommendations: React.FC = () => {
                     aria-label={`${t('common.view')}: ${rec.title}`}
                   >
                     {t('common.view')}
-                  </Button>
+                  </LinkButton>
                 </Card.Body>
               </Card>
             </Col>

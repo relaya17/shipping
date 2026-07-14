@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Container, Row, Col, Card, Badge, Accordion, Button, Alert } from 'react-bootstrap';
+import LinkButton from '../components/LinkButton';
 import {
   Lightbulb,
   ExclamationTriangle,
@@ -11,7 +12,6 @@ import {
   Shield,
   Phone
 } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { trackPageView } from '../utils/analytics';
 import { ROUTES } from '../routs/routes';
@@ -186,13 +186,13 @@ const MovingTips: React.FC = () => {
                 <p className="mb-4">
                   Our team is available for advice and support at every stage of your move
                 </p>
-                <Button as={Link as never} to={ROUTES.CONTACT} variant="primary" size="lg" className="me-3">
+                <LinkButton to={ROUTES.CONTACT} variant="primary" size="lg" className="me-3">
                   <Phone className="me-2" />
                   {t('cta.call_now')}
-                </Button>
-                <Button as={Link as never} to={ROUTES.FREE_MOVING_QUOTE} variant="outline-success" size="lg">
+                </LinkButton>
+                <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="outline-success" size="lg">
                   {t('cta.get_quote')}
-                </Button>
+                </LinkButton>
               </Card.Body>
             </Card>
           </Col>

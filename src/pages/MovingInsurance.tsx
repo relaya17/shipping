@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Button, Form, Badge, Alert } from 'react-bootstrap';
+import LinkButton from '../components/LinkButton';
 import {
   Shield,
   CheckCircle,
@@ -9,7 +10,6 @@ import {
   CurrencyDollar,
   Clock
 } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { trackPageView } from '../utils/analytics';
 import { ROUTES } from '../routs/routes';
@@ -221,15 +221,14 @@ const MovingInsurance: React.FC = () => {
                     </Alert>
                   )}
 
-                  <Button
-                    as={Link as never}
+                  <LinkButton
                     to={ROUTES.FREE_MOVING_QUOTE}
                     variant="primary"
                     className="w-100"
                     disabled={!selectedPlan || !itemValue}
                   >
                     {t('cta.get_quote')}
-                  </Button>
+                  </LinkButton>
                 </Form>
               </Card.Body>
             </Card>
@@ -311,12 +310,12 @@ const MovingInsurance: React.FC = () => {
                 <p className="mb-4">
                   Get professional advice and choose the insurance plan that fits your needs
                 </p>
-                <Button as={Link as never} to={ROUTES.CONTACT} variant="success" size="lg" className="me-3">
+                <LinkButton to={ROUTES.CONTACT} variant="success" size="lg" className="me-3">
                   {t('cta.free_consult')}
-                </Button>
-                <Button as={Link as never} to={ROUTES.FREE_MOVING_QUOTE} variant="outline-primary" size="lg">
+                </LinkButton>
+                <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="outline-primary" size="lg">
                   {t('cta.get_quote')}
-                </Button>
+                </LinkButton>
               </Card.Body>
             </Card>
           </Col>

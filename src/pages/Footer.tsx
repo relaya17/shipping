@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import { UniversalAccess, ShieldCheck, FileText, Envelope, Telephone } from 'react-bootstrap-icons';
+import { UniversalAccess, ShieldCheck, FileText, Envelope, Telephone, InfoCircle } from 'react-bootstrap-icons';
 import { useTranslation } from 'react-i18next';
 import LanguageSelector from './LanguageSelector';
 import { ROUTES } from '../routs/routes';
+import { CONTACT, LICENSE, SAFER_LOOKUP_URL, FMCSA_CONSUMER_RESOURCES } from '../config/companyInfo';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -21,14 +22,14 @@ const Footer: React.FC = () => {
             </p>
             <div className="mb-2">
               <Telephone className="me-2" size={16} />
-              <a href="tel:1-800-847-6683" className="text-light text-decoration-none">
-                1-800-VIP-MOVE
+              <a href={`tel:${CONTACT.phoneHref}`} className="text-light text-decoration-none">
+                {CONTACT.phoneDisplay}
               </a>
             </div>
             <div>
               <Envelope className="me-2" size={16} />
-              <a href="mailto:info@vipshipping.com" className="text-light text-decoration-none">
-                info@vipshipping.com
+              <a href={`mailto:${CONTACT.email}`} className="text-light text-decoration-none">
+                {CONTACT.email}
               </a>
             </div>
           </Col>
@@ -119,6 +120,28 @@ const Footer: React.FC = () => {
                   {t('footer.accessibility')}
                 </Link>
               </li>
+              <li className="mb-2">
+                <a
+                  href={FMCSA_CONSUMER_RESOURCES.rightsAndResponsibilities}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-light text-decoration-none hover-underline"
+                >
+                  <InfoCircle size={14} className="me-1" />
+                  Your Rights &amp; Responsibilities (FMCSA)
+                </a>
+              </li>
+              <li className="mb-2">
+                <a
+                  href={FMCSA_CONSUMER_RESOURCES.protectYourMove}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-light text-decoration-none hover-underline"
+                >
+                  <InfoCircle size={14} className="me-1" />
+                  Protect Your Move (FMCSA)
+                </a>
+              </li>
             </ul>
             <div className="mt-3">
               <LanguageSelector />
@@ -134,7 +157,25 @@ const Footer: React.FC = () => {
             </small>
             <br />
             <small className="text-muted">
-              Licensed & Insured | MC-XXXXXX | DOT-XXXXXX
+              {LICENSE.usdotNumber || LICENSE.mcNumber ? (
+                <>
+                  Licensed &amp; Insured
+                  {LICENSE.usdotNumber && ` | USDOT ${LICENSE.usdotNumber}`}
+                  {LICENSE.mcNumber && ` | ${LICENSE.mcNumber}`}
+                  {' '}
+                  <a href={SAFER_LOOKUP_URL} target="_blank" rel="noopener noreferrer" className="text-muted">
+                    (verify on FMCSA SAFER)
+                  </a>
+                </>
+              ) : (
+                <>
+                  Licensing details pending —{' '}
+                  <a href={SAFER_LOOKUP_URL} target="_blank" rel="noopener noreferrer" className="text-muted">
+                    verify any mover on FMCSA SAFER
+                  </a>{' '}
+                  before booking.
+                </>
+              )}
             </small>
           </Col>
         </Row>

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Badge, Table, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Card, Badge, Table, Alert } from 'react-bootstrap';
+import LinkButton from '../components/LinkButton';
 import {
   Truck,
   Globe,
@@ -9,7 +10,6 @@ import {
   InfoCircle,
   Calculator
 } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { trackPageView } from '../utils/analytics';
 import { ROUTES } from '../routs/routes';
@@ -126,9 +126,9 @@ const InternationalCarShipping: React.FC = () => {
                     </ul>
                   </div>
 
-                  <Button as={Link as never} to={ROUTES.FREE_MOVING_QUOTE} variant="primary" className="w-100">
+                  <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="primary" className="w-100">
                     {t('cta.get_quote')}
-                  </Button>
+                  </LinkButton>
                 </Card.Body>
               </Card>
             </Col>
@@ -166,10 +166,10 @@ const InternationalCarShipping: React.FC = () => {
                         </td>
                         <td className="text-success fw-bold">{dest.price}</td>
                         <td>
-                          <Button as={Link as never} to={ROUTES.FREE_MOVING_QUOTE} variant="outline-primary" size="sm">
+                          <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="outline-primary" size="sm">
                             <Calculator className="me-1" />
                             {t('cta.get_quote')}
-                          </Button>
+                          </LinkButton>
                         </td>
                       </tr>
                     ))}
@@ -265,13 +265,13 @@ const InternationalCarShipping: React.FC = () => {
                 <p className="mb-4">
                   Get a personalized quote and start the process today
                 </p>
-                <Button as={Link as never} to={ROUTES.FREE_MOVING_QUOTE} variant="primary" size="lg" className="me-3">
+                <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="primary" size="lg" className="me-3">
                   <Calculator className="me-2" />
                   {t('cta.get_quote')}
-                </Button>
-                <Button as={Link as never} to={ROUTES.CONTACT} variant="outline-success" size="lg">
+                </LinkButton>
+                <LinkButton to={ROUTES.CONTACT} variant="outline-success" size="lg">
                   {t('cta.free_consult')}
-                </Button>
+                </LinkButton>
               </Card.Body>
             </Card>
           </Col>

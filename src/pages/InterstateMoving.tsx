@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import { Container, Row, Col, Card, Button, Badge, ListGroup, Alert } from 'react-bootstrap';
+import LinkButton from '../components/LinkButton';
 import {
   Truck,
   ShieldCheck,
@@ -11,7 +12,6 @@ import {
   GeoAlt,
   Star
 } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { trackPageView } from '../utils/analytics';
 import { ROUTES } from '../routs/routes';
@@ -67,9 +67,9 @@ const InterstateMoving: React.FC = () => {
           <h1 className="display-4 fw-bold mb-3">{t('pages.interstateMoving.title')}</h1>
           <p className="lead text-muted mb-4">{t('pages.interstateMoving.subtitle')}</p>
           <div className="d-flex gap-2 justify-content-center flex-wrap">
-            <Button as={Link as never} to={ROUTES.FREE_MOVING_QUOTE} variant="primary">
+            <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="primary">
               {t('pages.interstateMoving.ctaQuote')}
-            </Button>
+            </LinkButton>
             <Button href="tel:+18005550199" variant="outline-primary">
               {t('pages.interstateMoving.ctaCall')}
             </Button>
@@ -148,9 +148,9 @@ const InterstateMoving: React.FC = () => {
         <Card.Body className="text-center p-4">
           <Star size={36} className="mb-2" />
           <h2 className="h4">{t('pages.interstateMoving.finalCta')}</h2>
-          <Button as={Link as never} to={ROUTES.FREE_MOVING_QUOTE} variant="light" className="mt-2">
+          <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="light" className="mt-2">
             {t('pages.interstateMoving.ctaQuote')}
-          </Button>
+          </LinkButton>
         </Card.Body>
       </Card>
     </Container>

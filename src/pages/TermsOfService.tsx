@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, Alert } from 'react-bootstrap';
 import { FileText } from 'react-bootstrap-icons';
 import { useTranslation } from 'react-i18next';
 import { trackPageView } from '../utils/analytics';
+import { LICENSE, SAFER_LOOKUP_URL, FMCSA_CONSUMER_RESOURCES } from '../config/companyInfo';
 
 type TermSection = { title: string; paragraphs: string[] };
 
@@ -35,6 +36,35 @@ const TermsOfService: React.FC = () => {
 
           <Alert variant="info" className="mb-4">
             {t('pages.terms.intro')}
+          </Alert>
+
+          <Alert variant="warning" className="mb-4">
+            <h2 className="h6 mb-2">Required consumer protection disclosures (US interstate moves)</h2>
+            <p className="mb-2 small">
+              Under 49 CFR 375.213, movers and brokers must give prospective customers a copy of, or
+              a link to, the following official FMCSA publications before an interstate household
+              goods move:
+            </p>
+            <ul className="small mb-2">
+              <li>
+                <a href={FMCSA_CONSUMER_RESOURCES.rightsAndResponsibilities} target="_blank" rel="noopener noreferrer">
+                  Your Rights and Responsibilities When You Move (FMCSA)
+                </a>
+              </li>
+              <li>
+                <a href={FMCSA_CONSUMER_RESOURCES.protectYourMove} target="_blank" rel="noopener noreferrer">
+                  Protect Your Move — consumer resources (FMCSA)
+                </a>
+              </li>
+            </ul>
+            <p className="mb-0 small">
+              You can verify any interstate mover's USDOT registration and safety record on the
+              official{' '}
+              <a href={SAFER_LOOKUP_URL} target="_blank" rel="noopener noreferrer">
+                FMCSA SAFER database
+              </a>
+              {LICENSE.usdotNumber ? ` (our USDOT number: ${LICENSE.usdotNumber}).` : '.'}
+            </p>
           </Alert>
 
           {(Array.isArray(sections) ? sections : []).map((section) => (

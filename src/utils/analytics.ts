@@ -32,6 +32,12 @@ class AnalyticsManager {
 
   // רישום אירוע
   trackEvent(event: AnalyticsEvent): void {
+    // Respect cookie/analytics consent (see CookieConsent.tsx). No tracking
+    // events are recorded or sent until the visitor has opted in.
+    if (typeof window !== 'undefined' && localStorage.getItem('vip_cookie_consent') !== 'accepted') {
+      return;
+    }
+
     this.events.push({
       ...event,
       timestamp: new Date().toISOString()

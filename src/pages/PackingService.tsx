@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col, Card, Button, Badge, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Card, Badge, ListGroup } from 'react-bootstrap';
+import LinkButton from '../components/LinkButton';
 import {
   Box,
   Shield,
@@ -8,7 +9,6 @@ import {
   Clock,
   Tools
 } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { trackPageView } from '../utils/analytics';
 import { ROUTES } from '../routs/routes';
@@ -96,9 +96,9 @@ const PackingService: React.FC = () => {
                     ))}
                   </ListGroup>
 
-                  <Button as={Link as never} to={ROUTES.FREE_MOVING_QUOTE} variant="primary" className="w-100">
+                  <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="primary" className="w-100">
                     {t('pages.packing.chooseService')}
-                  </Button>
+                  </LinkButton>
                 </Card.Body>
               </Card>
             </Col>
@@ -210,12 +210,12 @@ const PackingService: React.FC = () => {
                 <p className="mb-4">
                   {t('pages.packing.ctaBody')}
                 </p>
-                <Button as={Link as never} to={ROUTES.FREE_MOVING_QUOTE} variant="primary" size="lg" className="me-3">
+                <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="primary" size="lg" className="me-3">
                   {t('cta.get_quote')}
-                </Button>
-                <Button as={Link as never} to={ROUTES.CONTACT} variant="outline-success" size="lg">
+                </LinkButton>
+                <LinkButton to={ROUTES.CONTACT} variant="outline-success" size="lg">
                   {t('cta.free_consult')}
-                </Button>
+                </LinkButton>
               </Card.Body>
             </Card>
           </Col>
