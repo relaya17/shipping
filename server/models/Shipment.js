@@ -11,7 +11,7 @@ const shipmentSchema = new mongoose.Schema({
       required: true,
       unique: true,
       uppercase: true,
-      match: [/^VIP[0-9]{10}$/, 'מספר מעקב חייב להיות בפורמט VIP + 10 ספרות']
+      match: [/^VIP[0-9]{10}$/, 'Tracking number must be VIP + 10 digits']
     },
     status: {
       type: String,
@@ -63,9 +63,11 @@ const shipmentSchema = new mongoose.Schema({
       state: String,
       postalCode: { type: String, required: true },
       country: { type: String, required: true },
+      // הערה: קואורדינטות אינן חובה - Phase 1 אינו כולל geocoding אמיתי.
+      // כשיתווסף geocoding (Phase מאוחר יותר) אפשר להחזיר required:true.
       coordinates: {
-        latitude: { type: Number, required: true },
-        longitude: { type: Number, required: true }
+        latitude: { type: Number },
+        longitude: { type: Number }
       },
       contactPerson: {
         name: String,
@@ -80,8 +82,8 @@ const shipmentSchema = new mongoose.Schema({
       postalCode: { type: String, required: true },
       country: { type: String, required: true },
       coordinates: {
-        latitude: { type: Number, required: true },
-        longitude: { type: Number, required: true }
+        latitude: { type: Number },
+        longitude: { type: Number }
       },
       contactPerson: {
         name: String,
@@ -378,13 +380,13 @@ shipmentSchema.methods.calculateAIInsights = function() {
   // המלצות
   const recommendations = [];
   if (this.aiInsights.riskScore > 50) {
-    recommendations.push('מומלץ ביטוח מקיף למשלוח זה');
+    recommendations.push('Comprehensive insurance is recommended for this shipment');
   }
   if (this.shipmentDetails.items.some(item => item.isFragile)) {
-    recommendations.push('השתמש באריזה מקצועית לפריטים שבירים');
+    recommendations.push('Use professional packaging for fragile items');
   }
   if (this.isDelayed) {
-    recommendations.push('עדכן את הלקוח על העיכוב ותן פיצוי');
+    recommendations.push('Update the customer about the delay and offer compensation');
   }
   
   this.aiInsights.recommendations = recommendations;

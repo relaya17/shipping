@@ -5,6 +5,8 @@ import Navigation from "../src/pages/Navigation";
 import AppRoutes from "../src/routs/AppRouts";
 import ChatBot from "./components/AI/ChatBot";
 import NotificationSystem from "./components/Notifications/NotificationSystem";
+import PageBackBar from "./components/PageBackBar";
+import CookieConsent from "./components/CookieConsent";
 
 const App = () => {
   return (
@@ -12,8 +14,10 @@ const App = () => {
       <Router>
         <NotificationSystem />
         <Navigation />
+        <PageBackBar />
         <AppRoutes />
         <ChatBot />
+        <CookieConsent />
       </Router>
     </Provider>
   );
