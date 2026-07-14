@@ -70,42 +70,49 @@ class VIPShippingApp {
       crossOriginEmbedderPolicy: false
     }));
 
-    // CORS מתקדם
+    // CORS — never throw from the origin callback (throws become HTTP 500)
     const corsOptions = {
       origin: (origin, callback) => {
-        // רשימת דומיינים מאושרים
         const allowedOrigins = [
           'http://localhost:3000',
+          'http://localhost:5044',
           'http://localhost:5173',
           'http://localhost:3639',
-          'https://vip-shipping-frontend.onrender.com', // Frontend הרשמי מ-render.yaml
+          'http://127.0.0.1:3000',
+          'http://127.0.0.1:5044',
+          'http://127.0.0.1:5173',
+          'http://127.0.0.1:3639',
+          'https://vip-shipping-frontend.onrender.com',
           'https://vip-shipping.onrender.com',
           'https://shipping-3y46.onrender.com',
           'https://vipshipping.com',
           'https://www.vipshipping.com'
         ];
 
-        // הוספת CORS_ORIGIN מהסביבה אם קיים
         if (process.env.CORS_ORIGIN && !allowedOrigins.includes(process.env.CORS_ORIGIN)) {
           allowedOrigins.push(process.env.CORS_ORIGIN);
         }
-        
-        // בפיתוח - אפשר הכל
-        if (this.environment === 'development' && !origin) {
-          return callback(null, true);
-        }
-        
-        // תמיד אפשר בקשות ללא origin (static files)
+
+        // Same-origin / non-browser / curl — no Origin header
         if (!origin) {
           return callback(null, true);
         }
-        
-        if (allowedOrigins.includes(origin)) {
-          callback(null, true);
-        } else {
-          console.warn(colors.yellow(`⚠️ CORS חסום עבור origin: ${origin}`));
-          callback(new Error('Not allowed by CORS policy'));
+
+        // Dev: allow any localhost / 127.0.0.1 port (Vite, Express static, Cursor preview)
+        if (
+          this.environment === 'development' &&
+          /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(origin)
+        ) {
+          return callback(null, true);
         }
+
+        if (allowedOrigins.includes(origin)) {
+          return callback(null, true);
+        }
+
+        console.warn(colors.yellow(`⚠️ CORS blocked for origin: ${origin}`));
+        // Reject without throwing — throwing here surfaces as 500 on /api/*
+        return callback(null, false);
       },
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],

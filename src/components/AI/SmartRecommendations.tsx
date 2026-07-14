@@ -1,7 +1,9 @@
 import React, { useMemo } from 'react';
 import { Card, Button, Badge, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Star, Clock, Shield, Truck, Globe } from 'react-bootstrap-icons';
+import { ROUTES } from '../../routs/routes';
 
 type Priority = 'high' | 'medium' | 'low';
 
@@ -22,7 +24,8 @@ const SmartRecommendations: React.FC = () => {
         icon: <Globe size={24} />,
         priority: 'high' as Priority,
         estimatedTime: t('home.rec_household_time'),
-        price: t('home.rec_household_price')
+        price: t('home.rec_household_price'),
+        to: ROUTES.INTERNATIONAL_HOUSEHOLD_MOVERS,
       },
       {
         id: '2',
@@ -30,7 +33,8 @@ const SmartRecommendations: React.FC = () => {
         description: t('home.rec_insurance_desc'),
         icon: <Shield size={24} />,
         priority: 'high' as Priority,
-        price: t('home.rec_insurance_price')
+        price: t('home.rec_insurance_price'),
+        to: ROUTES.MOVING_INSURANCE,
       },
       {
         id: '3',
@@ -39,7 +43,8 @@ const SmartRecommendations: React.FC = () => {
         icon: <Truck size={24} />,
         priority: 'medium' as Priority,
         estimatedTime: t('home.rec_packing_time'),
-        price: t('home.rec_packing_price')
+        price: t('home.rec_packing_price'),
+        to: ROUTES.PACKING_SERVICE,
       },
       {
         id: '4',
@@ -47,7 +52,8 @@ const SmartRecommendations: React.FC = () => {
         description: t('home.rec_storage_desc'),
         icon: <Clock size={24} />,
         priority: 'low' as Priority,
-        price: t('home.rec_storage_price')
+        price: t('home.rec_storage_price'),
+        to: ROUTES.MOVING_SERVICES,
       }
     ];
   }, [t, i18n.language]);
@@ -113,7 +119,14 @@ const SmartRecommendations: React.FC = () => {
                     )}
                   </div>
 
-                  <Button variant="outline-primary" size="sm" className="w-100" aria-label={t('common.view')}>
+                  <Button
+                    as={Link as never}
+                    to={rec.to}
+                    variant="outline-primary"
+                    size="sm"
+                    className="w-100"
+                    aria-label={`${t('common.view')}: ${rec.title}`}
+                  >
                     {t('common.view')}
                   </Button>
                 </Card.Body>
