@@ -1,48 +1,33 @@
-// JWT auth — Bearer header or httpOnly cookies
-
-const { verifyAccessToken } = require('../utils/jwt');
-
-function extractAccessToken(req) {
-  const authHeader = req.get('Authorization') || '';
-  if (authHeader.startsWith('Bearer ')) {
-    return authHeader.slice('Bearer '.length);
-  }
-  return req.cookies?.vip_access_token || null;
-}
+// Middleware אימות בסיסי ודמו לתפקידי משתמש
 
 const requireAuth = (req, res, next) => {
-  const token = extractAccessToken(req);
-  if (!token) {
-    return res.status(401).json({ success: false, error: 'Authentication required' });
+  const authHeader = req.get('Authorization') || '';
+  if (!authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ success: false, error: 'נדרש אימות' });
   }
-  try {
-    const payload = verifyAccessToken(token);
-    req.user = { id: payload.sub, email: payload.email, role: payload.role };
-    next();
-  } catch {
-    return res.status(401).json({ success: false, error: 'Invalid or expired token' });
-  }
+  const token = authHeader.slice('Bearer '.length);
+  // בדמו, נצמיד משתמש דמה
+  req.user = { id: 'demo', email: token.replace('demo-token-for-', ''), role: 'user' };
+  next();
 };
 
 const optionalAuth = (req, res, next) => {
-  const token = extractAccessToken(req);
-  if (token) {
-    try {
-      const payload = verifyAccessToken(token);
-      req.user = { id: payload.sub, email: payload.email, role: payload.role };
-    } catch {
-      // invalid token in optionalAuth — continue as guest
-    }
+  const authHeader = req.get('Authorization') || '';
+  if (authHeader.startsWith('Bearer ')) {
+    const token = authHeader.slice('Bearer '.length);
+    req.user = { id: 'demo', email: token.replace('demo-token-for-', ''), role: 'user' };
   }
   next();
 };
 
 const requireAdmin = (req, res, next) => {
-  if (!req.user) return res.status(401).json({ success: false, error: 'Authentication required' });
+  if (!req.user) return res.status(401).json({ success: false, error: 'נדרש אימות' });
   if (req.user.role !== 'admin' && req.user.role !== 'super_admin') {
-    return res.status(403).json({ success: false, error: 'Insufficient permissions' });
+    return res.status(403).json({ success: false, error: 'אין הרשאה' });
   }
   next();
 };
 
-module.exports = { requireAuth, optionalAuth, requireAdmin, extractAccessToken };
+module.exports = { requireAuth, optionalAuth, requireAdmin };
+
+

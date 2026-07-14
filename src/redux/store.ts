@@ -15,10 +15,8 @@ import motorcycleToEuropeReducer from "../redux/motorcycleToEuropeSlice";
 import movingInsuranceReducer from "../redux/movingInsuranceSlice";
 import comparingQuotesReducer from "../redux/comparingQuotesSlice";
 import customsReducer from "./customsSlice";
-import authReducer from "./authSlice";
 export const store = configureStore({
   reducer: {
-    auth: authReducer,
     user: userReducer,
     contact: contactReducer,
     language: languageReducer,

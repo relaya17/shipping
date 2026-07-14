@@ -27,11 +27,11 @@ import PrivacyPolicy from "../pages/PrivacyPolicy";
 import AccessibilityStatement from "../pages/AccessibilityStatement";
 import { ROUTES } from "../routs/routes";
 import Footer from '../pages/Footer';
-import ProtectedRoute from '../components/ProtectedRoute';
 
 const AppRoutes: React.FC = () => {
   return (
     <>
+      {/* <NavigationBar /> */}
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
         <Route path={ROUTES.ABOUT} element={<About />} />
@@ -56,17 +56,10 @@ const AppRoutes: React.FC = () => {
         <Route path={ROUTES.TERMS_OF_SERVICE} element={<TermsOfService />} />
         <Route path={ROUTES.PRIVACY_POLICY} element={<PrivacyPolicy />} />
         <Route path={ROUTES.ACCESSIBILITY} element={<AccessibilityStatement />} />
-        <Route
-          path="/admin"
-          element={(
-            <ProtectedRoute roles={['admin', 'super_admin']}>
-              <AdminDashboard />
-            </ProtectedRoute>
-          )}
-        />
+        <Route path="/admin" element={<AdminDashboard />} />
         <Route path="*" element={<Error404Page />} />
       </Routes>
-      <Footer />
+      <Footer /> {/* ודא שהפוטר נמצא כאן */}
     </>
   );
 };

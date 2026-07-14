@@ -1,3 +1,0 @@
-# Standalone project workspace — avoid attaching to a parent home-directory workspace
-packages:
-  - '.'

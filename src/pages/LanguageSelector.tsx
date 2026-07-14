@@ -1,45 +1,50 @@
+// src/components/LanguageSelector.tsx
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setLanguage } from '../redux/languageSlice';
 import { useTranslation } from 'react-i18next';
 
-const LANGUAGES = [
-  { code: 'en', name: 'English', short: 'EN' },
-  { code: 'he', name: 'עברית', short: 'HE' },
-  { code: 'ar', name: 'العربية', short: 'AR' },
-  { code: 'es', name: 'Español', short: 'ES' },
-  { code: 'ru', name: 'Русский', short: 'RU' },
-  { code: 'zh', name: '中文', short: 'ZH' },
-  { code: 'tr', name: 'Türkçe', short: 'TR' },
-  { code: 'sv', name: 'Svenska', short: 'SV' },
-  { code: 'el', name: 'Ελληνικά', short: 'EL' }
-];
-
 const LanguageSelector: React.FC = () => {
   const dispatch = useDispatch();
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
 
   const changeLanguage = (lang: string) => {
+    console.log(`Changing language to: ${lang}`);
     dispatch(setLanguage(lang));
-    void i18n.changeLanguage(lang);
+    i18n.changeLanguage(lang);
+
+    // הכיוון נשמר אוטומטית ב-i18n.ts
   };
 
-  const active = (i18n.language || 'en').split('-')[0];
+  const languages = [
+    { code: 'he', name: 'HE', flag: '🇮🇱' },
+    { code: 'en', name: 'EN', flag: '🇺🇸' },
+    { code: 'ar', name: 'AR', flag: '🇸🇦' },
+    { code: 'es', name: 'ES', flag: '🇪🇸' },
+    { code: 'ru', name: 'RU', flag: '🇷🇺' },
+    { code: 'zh', name: 'ZH', flag: '🇨🇳' }
+  ];
 
   return (
-    <div className="d-flex flex-wrap gap-1 align-items-center" role="group" aria-label={t('nav.language')}>
-      {LANGUAGES.map((lang) => (
+    <div className="d-flex gap-1 align-items-center">
+      {languages.map((lang) => (
         <button
           key={lang.code}
-          type="button"
           onClick={() => changeLanguage(lang.code)}
-          className={`btn btn-sm ${active === lang.code ? 'btn-primary' : 'btn-outline-secondary'}`}
-          style={{ padding: '0.25rem 0.45rem', fontSize: '0.75rem', minWidth: '2.25rem' }}
+          className={`btn btn-sm ${
+            i18n.language === lang.code ? 'btn-primary' : 'btn-outline-secondary'
+          }`}
+          style={{
+            transition: 'all 0.2s',
+            padding: '0.25rem 0.5rem',
+            fontSize: '1.2rem',
+            lineHeight: 1,
+            minWidth: '45px'
+          }}
           title={lang.name}
-          aria-label={`${t('nav.language')}: ${lang.name}`}
-          aria-pressed={active === lang.code}
+          aria-label={`החלף שפה ל-${lang.name}`}
         >
-          {lang.short}
+          {lang.flag}
         </button>
       ))}
     </div>
