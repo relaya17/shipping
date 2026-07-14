@@ -1,41 +1,24 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
-import { setMessage } from '../redux/trustedMovingCompanySlice';
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+import LinkButton from '../components/LinkButton';
+import { ROUTES } from '../routs/routes';
 
 const TrustedMovingCompany: React.FC = () => {
-  const dispatch = useDispatch();
-  const message = useSelector((state: { trustedMovingCompany: { message: string } }) => state.trustedMovingCompany.message);
-
-  useEffect(() => {
-    axios.get('http://localhost:5000/api/customs')
-      .then(response => {
-        const responseData = response.data as { message: string };
-        dispatch(setMessage(responseData.message));
-      })
-      .catch(error => {
-        console.error('Error fetching process information:', error);
-        dispatch(setMessage('Error fetching process information.'));
-      });
-  }, [dispatch]);
+  const { t } = useTranslation();
 
   return (
     <main id="main-content">
-      <div className="container d-flex justify-content-center mt-5">
-        <div className="card" style={{ width: '80%', maxWidth: '800px' }}>
-          <div className="card-body">
-            <h2 className="card-title text-center">Working with a Trusted Moving Company</h2>
-            <p className="card-text">{message}</p>
-            <p>Working with an experienced moving company can ease your customs process:</p>
-            <ul>
-              <li>Assistance in preparing the documentation correctly.</li>
-              <li>Proper packing and labeling to meet customs requirements.</li>
-              <li>Customs broker services (if required).</li>
-            </ul>
-            <p>To avoid delays, ensure your moving company has the necessary experience and expertise.</p>
-          </div>
-        </div>
-      </div>
+      <Container className="my-5">
+        <h1 className="mb-3">{t('pages.stubs.trusted.title')}</h1>
+        <p className="lead text-muted mb-4">{t('pages.stubs.trusted.body')}</p>
+        <LinkButton to={ROUTES.WHY_TRUST_VIP} variant="primary" className="me-2">
+          {t('nav.why_vip')}
+        </LinkButton>
+        <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="outline-primary">
+          {t('cta.get_quote')}
+        </LinkButton>
+      </Container>
     </main>
   );
 };

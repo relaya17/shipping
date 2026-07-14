@@ -15,15 +15,15 @@ const MovingForm: React.FC = () => {
     e.preventDefault();
 
     if (!movingFrom || !movingTo) {
-      alert('Please fill in both location fields');
+      alert(t('forms.fill_locations'));
       return;
     }
 
     dispatch(setMovingData({ movingFrom, movingTo }));
 
-    const calculatedQuote = `Your quote: $${Math.floor(Math.random() * 1000)}`;
+    const amount = Math.floor(Math.random() * 1000);
+    const calculatedQuote = t('forms.quote_amount', { amount });
     dispatch(setQuote(calculatedQuote));
-
     setQuoteState(calculatedQuote);
 
     try {
@@ -51,7 +51,7 @@ const MovingForm: React.FC = () => {
   return (
     <main id="main-content">
       <div className="container">
-        <h1>Moving Quote Form</h1>
+        <h1>{t('forms.fill_quote_title')}</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="movingFrom" className="form-label">{t('forms.from_location')}</label>
@@ -61,6 +61,7 @@ const MovingForm: React.FC = () => {
               id="movingFrom"
               value={movingFrom}
               onChange={(e) => setMovingFrom(e.target.value)}
+              placeholder={t('forms.enter_location')}
               required
             />
           </div>
@@ -73,6 +74,7 @@ const MovingForm: React.FC = () => {
               id="movingTo"
               value={movingTo}
               onChange={(e) => setMovingTo(e.target.value)}
+              placeholder={t('forms.enter_location')}
               required
             />
           </div>
@@ -84,7 +86,7 @@ const MovingForm: React.FC = () => {
 
         {quote && (
           <div className="alert alert-info mt-3">
-            <strong>Your quote:</strong> {quote}
+            <strong>{t('forms.your_quote')}</strong> {quote}
           </div>
         )}
       </div>

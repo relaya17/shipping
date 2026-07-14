@@ -11,7 +11,7 @@ const FreeQuoteForm = () => {
     e.preventDefault();
 
     if (!movingFrom || !movingTo) {
-      alert('Please fill in both location fields');
+      alert(t('forms.fill_locations'));
       return;
     }
 
@@ -44,7 +44,7 @@ const FreeQuoteForm = () => {
               id="movingFrom"
               value={movingFrom}
               onChange={(e) => setMovingFrom(e.target.value)}
-              placeholder="Enter location"
+              placeholder={t('forms.enter_location')}
             />
           </div>
           <div className="mb-3">
@@ -55,7 +55,7 @@ const FreeQuoteForm = () => {
               id="movingTo"
               value={movingTo}
               onChange={(e) => setMovingTo(e.target.value)}
-              placeholder="Enter location"
+              placeholder={t('forms.enter_location')}
             />
           </div>
           <button type="submit" className="btn btn-primary">{t('common.submit')}</button>

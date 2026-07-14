@@ -39,31 +39,28 @@ const TermsOfService: React.FC = () => {
           </Alert>
 
           <Alert variant="warning" className="mb-4">
-            <h2 className="h6 mb-2">Required consumer protection disclosures (US interstate moves)</h2>
-            <p className="mb-2 small">
-              Under 49 CFR 375.213, movers and brokers must give prospective customers a copy of, or
-              a link to, the following official FMCSA publications before an interstate household
-              goods move:
-            </p>
+            <h2 className="h6 mb-2">{t('pages.terms.fmcsaTitle')}</h2>
+            <p className="mb-2 small">{t('pages.terms.fmcsaBody')}</p>
             <ul className="small mb-2">
               <li>
                 <a href={FMCSA_CONSUMER_RESOURCES.rightsAndResponsibilities} target="_blank" rel="noopener noreferrer">
-                  Your Rights and Responsibilities When You Move (FMCSA)
+                  {t('pages.terms.fmcsaRights')}
                 </a>
               </li>
               <li>
                 <a href={FMCSA_CONSUMER_RESOURCES.protectYourMove} target="_blank" rel="noopener noreferrer">
-                  Protect Your Move — consumer resources (FMCSA)
+                  {t('pages.terms.fmcsaProtect')}
                 </a>
               </li>
             </ul>
             <p className="mb-0 small">
-              You can verify any interstate mover's USDOT registration and safety record on the
-              official{' '}
+              {t('pages.terms.fmcsaVerify')}{' '}
               <a href={SAFER_LOOKUP_URL} target="_blank" rel="noopener noreferrer">
-                FMCSA SAFER database
+                FMCSA SAFER
               </a>
-              {LICENSE.usdotNumber ? ` (our USDOT number: ${LICENSE.usdotNumber}).` : '.'}
+              {LICENSE.usdotNumber
+                ? t('pages.terms.fmcsaOurUsdot', { usdot: LICENSE.usdotNumber })
+                : '.'}
             </p>
           </Alert>
 
