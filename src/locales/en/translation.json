@@ -8,7 +8,18 @@
     "tracking": "Track Shipment",
     "login": "Login",
     "signup": "Sign Up",
-    "language": "Language"
+    "language": "Language",
+    "specialty": "Specialty",
+    "resources": "Resources",
+    "toggle": "Toggle navigation",
+    "logo_alt": "VIP International Shipping Logo",
+    "car_shipping": "Car Shipping",
+    "motorcycle_europe": "Motorcycle to Europe",
+    "piano_moving": "Piano Moving",
+    "artwork_shipping": "Artwork Shipping",
+    "moving_tips": "Moving Tips",
+    "podcast": "Podcast",
+    "why_vip": "Why Choose VIP"
   },
   "hero": {
     "title": "Professional International Shipping",
@@ -24,7 +35,11 @@
     "piano": "Piano Moving",
     "insurance": "Moving Insurance",
     "packing": "Professional Packing",
-    "storage": "Storage Solutions"
+    "storage": "Storage Solutions",
+    "interstate": "Interstate Moving",
+    "worldwide": "Worldwide Moving",
+    "moving_services": "Moving Services",
+    "international": "International Household"
   },
   "cta": {
     "get_quote": "Get Quote",
@@ -45,7 +60,13 @@
     "copyright": "All rights reserved",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "accessibility": "Accessibility"
+    "accessibility": "Accessibility",
+    "fmcsa_rights": "Your Rights & Responsibilities (FMCSA)",
+    "fmcsa_protect": "Protect Your Move (FMCSA)",
+    "licensed_insured": "Licensed & Insured",
+    "verify_safer": "(verify on FMCSA SAFER)",
+    "licensing_pending": "Licensing details pending —",
+    "verify_before_booking": "verify any mover on FMCSA SAFER before booking."
   },
   "notifications": {
     "title": "Notifications",
@@ -76,7 +97,8 @@
     "go_home": "Go to homepage",
     "go_back": "Go back",
     "required": "Required",
-    "optional": "Optional"
+    "optional": "Optional",
+    "close": "Close"
   },
   "forms": {
     "name": "Full Name",
@@ -123,7 +145,9 @@
     "calculating": "Calculating...",
     "open_assistant": "Open AI Shipping Assistant",
     "welcome": "Hello! I am your VIP Shipping AI Expert.\n\nI can write formal shipping quotes, track live GPS, and advise on US moving law (FMCSA) across all 50 states.\n\nTry: \"Quote a move from Miami FL to Austin TX\" or \"Track VIP1234567890\"",
-    "help": "AI Help"
+    "help": "AI Help",
+    "expert_title": "VIP AI Shipping Expert",
+    "live_agent": "Live AI Agent"
   },
   "checkout": {
     "title": "Secure Payment",
@@ -189,7 +213,74 @@
     "thanks": "Thank you for contacting us, {{name}}",
     "send_error": "Error sending the form",
     "network_error": "A network error occurred while sending your message",
-    "form_title": "Send us a message"
+    "form_title": "Send us a message",
+    "email_response": "Guaranteed response within 2 hours",
+    "office_address": "Office address",
+    "visits_appointment": "Visits by appointment",
+    "whatsapp_business": "WhatsApp Business",
+    "instant_chat": "Instant chat support",
+    "whatsapp_available": "Available 24/7 — response within minutes",
+    "details_title": "Contact details",
+    "urgent": "Urgent",
+    "emergency_title": "Shipment emergency?",
+    "emergency_body": "Call our main line above — it is monitored 24/7 for active shipment emergencies.",
+    "office_hours_title": "Office hours",
+    "placeholder_name": "Enter your full name",
+    "placeholder_email": "your@email.com",
+    "placeholder_message": "Write your question or message here...",
+    "subject_select": "Select a subject...",
+    "subject_quote": "Quote request",
+    "subject_tracking": "Shipment tracking",
+    "subject_insurance": "Insurance questions",
+    "subject_complaint": "Complaint",
+    "subject_general": "General",
+    "consent": "I agree to receive updates and promotional emails",
+    "or_direct": "Or contact us directly:",
+    "faq_title": "Frequently asked questions",
+    "faq_subtitle": "The information you need most",
+    "useful_links": "Useful links",
+    "link_packing": "Packing guide",
+    "link_customs": "Customs calculator",
+    "link_map": "Service map",
+    "link_call": "Book a call",
+    "offices_title": "Our office locations",
+    "map_title": "Interactive map",
+    "map_coming": "Coming soon: Google Maps with office locations",
+    "show_directions": "Show directions",
+    "faq": [
+      {
+        "q": "How long does international shipping take?",
+        "a": "Ocean freight: 14–35 days (economical)\nAir freight: 3–7 days (fast)\nGround: 5–14 days (Europe)\nExpress service: 24–48 hours (urgent)"
+      },
+      {
+        "q": "What insurance is included?",
+        "a": "Basic insurance: Included free (up to $1,000)\nComprehensive: 2–3% of value ($10,000+)\nPremium: Full coverage + replacement\nSpecialty: Fine art and luxury items"
+      },
+      {
+        "q": "What does your price include?",
+        "a": "Door / office pickup\nProfessional packing (optional)\nFull international shipping\nBasic insurance and customs handling\nReal-time GPS tracking\nDelivery to final destination"
+      },
+      {
+        "q": "How do I track my shipment?",
+        "a": "Advanced tracking:\nReal-time GPS with map\nAutomatic SMS and email updates\nDedicated mobile app\nSmart ChatBot for instant info\nPush notifications at every stage"
+      },
+      {
+        "q": "What items can I ship?",
+        "a": "Furniture and household goods\nElectronics and computers\nFine art and valuables\nVehicles and motorcycles\nMachinery and industrial equipment\nHazardous materials (special conditions only)"
+      },
+      {
+        "q": "What payment methods do you accept?",
+        "a": "Credit cards (Visa, MasterCard, AMEX) via Stripe Checkout\nSecure, PCI-compliant online payment\nInvoice-based billing after quote acceptance"
+      },
+      {
+        "q": "Which countries do you ship to?",
+        "a": "120+ countries worldwide:\nAll of Europe (fast service)\nUSA and Canada (regular lanes)\nAsia and Australia (local partners)\nLatin America and Africa\nIslands and remote regions"
+      },
+      {
+        "q": "What are your AI services?",
+        "a": "Smart technologies:\nChatBot with advanced NLP\nMachine-learning price prediction\nAutomatic route optimization\nPersonalized recommendations\nRisk analysis and delay forecasts"
+      }
+    ]
   },
   "accessibility": {
     "commitment_badges_note": "We are actively working toward WCAG 2.1 AA. The badges below describe our goal and progress — not a completed third-party certification.",
@@ -1146,6 +1237,24 @@
           ]
         }
       ]
+    },
+    "stubs": {
+      "household": {
+        "title": "International Household Movers",
+        "body": "Professional international household moving — packing, customs, and door-to-door delivery."
+      },
+      "artwork": {
+        "title": "Overseas Artwork Shipping",
+        "body": "Specialist handling for fine art with custom crating, full insurance, and tracking to destination."
+      },
+      "piano": {
+        "title": "International Piano Movers",
+        "body": "Trained teams for piano moves with specialized equipment, security, and comprehensive insurance."
+      },
+      "comparing": {
+        "title": "Comparing International Moving Quotes",
+        "body": "Get a transparent quote and compare shipping options — no obligation."
+      }
     }
   },
   "home": {

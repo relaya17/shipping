@@ -73,7 +73,7 @@ const NavigationBar: React.FC = () => {
         <Link className="navbar-brand d-flex align-items-center fw-bold" to={ROUTES.HOME}>
           <img
             src="/images/favicon.ico"
-            alt="VIP International Shipping Logo"
+            alt={t('nav.logo_alt')}
             className="logo1 me-2 me-lg-3"
             style={{
               width: '44px',
@@ -124,7 +124,7 @@ const NavigationBar: React.FC = () => {
             onClick={() => setIsNavOpen(!isNavOpen)}
             aria-controls="navbarNav"
             aria-expanded={isNavOpen ? 'true' : 'false'}
-            aria-label="Toggle navigation"
+            aria-label={t('nav.toggle')}
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
             style={{ border: '1px solid #0d6efd' }}
@@ -147,37 +147,37 @@ const NavigationBar: React.FC = () => {
             <li className="nav-item dropdown">
               <NavDropdown title={t('nav.services')} id="moving-services-dropdown" className="nav-dropdown">
                 <NavDropdown.Item as={Link} to={ROUTES.INTERSTATE_MOVING} onClick={closeMobileMenu}>
-                  {t('services.interstate', { defaultValue: 'Interstate Moving' })}
+                  {t('services.interstate')}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.WORLDWIDE_MOVING} onClick={closeMobileMenu}>
-                  {t('services.worldwide', { defaultValue: 'Worldwide Moving' })}
+                  {t('services.worldwide')}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.MOVING_SERVICES} onClick={closeMobileMenu}>
-                  {t('services.moving_services', { defaultValue: 'Moving Services' })}
+                  {t('services.moving_services')}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.PACKING_SERVICE} onClick={closeMobileMenu}>
                   {t('services.packing')}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.INTERNATIONAL_HOUSEHOLD_MOVERS} onClick={closeMobileMenu}>
-                  {t('services.international', { defaultValue: 'International Household' })}
+                  {t('services.international')}
                 </NavDropdown.Item>
               </NavDropdown>
             </li>
 
             {/* Specialty Moving */}
             <li className="nav-item dropdown">
-              <NavDropdown title="Specialty" id="special-moving-dropdown" className="nav-dropdown">
+              <NavDropdown title={t('nav.specialty')} id="special-moving-dropdown" className="nav-dropdown">
                 <NavDropdown.Item as={Link} to={ROUTES.INTERNATIONAL_CAR_SHIPPING} onClick={closeMobileMenu}>
-                  Car Shipping
+                  {t('nav.car_shipping')}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.MOTORCYCLE_TO_EUROPE} onClick={closeMobileMenu}>
-                  Motorcycle to Europe
+                  {t('nav.motorcycle_europe')}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.INTERNATIONAL_PIANO_MOVERS} onClick={closeMobileMenu}>
-                  Piano Moving
+                  {t('nav.piano_moving')}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.OVERSEAS_ARTWORK_SHIPPING} onClick={closeMobileMenu}>
-                  Artwork Shipping
+                  {t('nav.artwork_shipping')}
                 </NavDropdown.Item>
               </NavDropdown>
             </li>
@@ -199,15 +199,15 @@ const NavigationBar: React.FC = () => {
 
             {/* Resources */}
             <li className="nav-item dropdown">
-              <NavDropdown title="Resources" id="resources-dropdown" className="nav-dropdown">
+              <NavDropdown title={t('nav.resources')} id="resources-dropdown" className="nav-dropdown">
                 <NavDropdown.Item as={Link} to={ROUTES.MOVING_TIPS} onClick={closeMobileMenu}>
-                  Moving Tips
+                  {t('nav.moving_tips')}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.PODCAST} onClick={closeMobileMenu}>
-                  Podcast
+                  {t('nav.podcast')}
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to={ROUTES.WHY_TRUST_VIP} onClick={closeMobileMenu}>
-                  Why Choose VIP
+                  {t('nav.why_vip')}
                 </NavDropdown.Item>
               </NavDropdown>
             </li>

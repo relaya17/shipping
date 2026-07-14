@@ -8,7 +8,18 @@
     "tracking": "עקוב אחר משלוח",
     "login": "התחבר",
     "signup": "הרשם",
-    "language": "שפה"
+    "language": "שפה",
+    "specialty": "התמחויות",
+    "resources": "משאבים",
+    "toggle": "פתח או סגור תפריט ניווט",
+    "logo_alt": "לוגו VIP International Shipping",
+    "car_shipping": "הובלת רכב",
+    "motorcycle_europe": "אופנוע לאירופה",
+    "piano_moving": "הובלת פסנתר",
+    "artwork_shipping": "הובלת יצירות אמנות",
+    "moving_tips": "טיפים להובלה",
+    "podcast": "פודקאסט",
+    "why_vip": "למה לבחור ב-VIP"
   },
   "hero": {
     "title": "שירותי הובלה בינלאומיים מקצועיים",
@@ -49,7 +60,13 @@
     "copyright": "כל הזכויות שמורות",
     "privacy": "מדיניות פרטיות",
     "terms": "תנאי שימוש",
-    "accessibility": "נגישות"
+    "accessibility": "נגישות",
+    "fmcsa_rights": "הזכויות והאחריות שלך (FMCSA)",
+    "fmcsa_protect": "הגנה על המעבר שלך (FMCSA)",
+    "licensed_insured": "מורשה ומבוטח",
+    "verify_safer": "(אימות ב-FMCSA SAFER)",
+    "licensing_pending": "פרטי רישוי בהמתנה —",
+    "verify_before_booking": "אמתו כל מוביל ב-FMCSA SAFER לפני הזמנה."
   },
   "notifications": {
     "title": "התראות",
@@ -80,7 +97,8 @@
     "go_home": "לדף הבית",
     "go_back": "חזרה",
     "required": "חובה",
-    "optional": "אופציונלי"
+    "optional": "אופציונלי",
+    "close": "סגור"
   },
   "forms": {
     "name": "שם מלא",
@@ -132,88 +150,157 @@
     "open_assistant": "פתח את עוזר ההובלה AI",
     "welcome": "שלום! אני מומחה ההובלות של VIP.\n\nאני יכול לכתוב הצעות מחיר, לעקוב אחרי GPS בזמן אמת, ולייעץ לגבי חוקי הובלה בארה״ב (FMCSA) בכל 50 המדינות.\n\nנסו: \"הצעת מחיר ממיאמי לאוסטין\" או \"עקוב VIP1234567890\"",
     "factors": "גורמים משפיעים",
-    "help": "עזרת AI"
+    "help": "עזרת AI",
+    "expert_title": "מומחה ההובלות AI של VIP",
+    "live_agent": "סוכן AI חי"
   },
   "checkout": {
-    "title": "Secure Payment",
-    "subtitle": "Card details are never stored on this site. Payment is processed by Stripe Checkout (PCI compliant).",
-    "login_required": "Please sign in to pay an invoice securely.",
-    "go_home": "Back to homepage",
-    "signed_in_as": "Signed in as",
-    "stripe_missing": "Stripe is not configured on the server (STRIPE_SECRET_KEY). You can still recalculate tax and download PDF.",
-    "cart_note": "Cart items are shown for reference. Phase 2 payment is invoice-based after quote acceptance — not manual card entry.",
-    "invoice_label": "Invoice to pay",
-    "invoice_placeholder": "Paste invoice ID",
-    "status": "Status",
-    "customer": "Customer",
-    "subtotal": "Subtotal",
-    "tax": "Tax",
-    "amount_due": "Amount due",
-    "billing_address": "Tax billing address",
-    "country": "Country",
-    "state": "US state",
-    "street": "Street",
-    "city": "City",
-    "postal": "Postal code",
-    "recalc_tax": "Recalculate tax",
-    "pay_stripe": "Pay with Stripe",
-    "redirecting": "Redirecting to Stripe...",
-    "download_pdf": "Download invoice PDF",
-    "payment_success": "Payment received. Your invoice will update automatically.",
-    "payment_cancel": "Payment was cancelled. You can try again.",
-    "load_error": "Could not load invoices. Sign in again or confirm an open invoice exists.",
-    "tax_updated": "Tax updated for destination address",
-    "tax_failed": "Tax update failed",
-    "select_invoice": "Select an invoice to pay",
-    "no_checkout_url": "No Stripe checkout URL received",
-    "checkout_failed": "Checkout creation failed",
-    "pdf_failed": "PDF download failed",
-    "united_states": "United States",
-    "israel": "Israel"
+    "title": "תשלום מאובטח",
+    "subtitle": "פרטי כרטיס אינם נשמרים באתר. התשלום מעובד דרך Stripe Checkout (תקן PCI).",
+    "login_required": "נא להתחבר כדי לשלם חשבונית בצורה מאובטחת.",
+    "go_home": "חזרה לדף הבית",
+    "signed_in_as": "מחובר/ת כ",
+    "stripe_missing": "Stripe אינו מוגדר בשרת (STRIPE_SECRET_KEY). עדיין ניתן לחשב מס ולהוריד PDF.",
+    "cart_note": "פריטי העגלה מוצגים לעיון. תשלום בשלב 2 מבוסס חשבונית לאחר אישור הצעת מחיר — לא הזנת כרטיס ידנית.",
+    "invoice_label": "חשבונית לתשלום",
+    "invoice_placeholder": "הדביקו מזהה חשבונית",
+    "status": "סטטוס",
+    "customer": "לקוח",
+    "subtotal": "סכום ביניים",
+    "tax": "מס",
+    "amount_due": "סכום לתשלום",
+    "billing_address": "כתובת לחיוב מס",
+    "country": "מדינה",
+    "state": "מדינה בארה״ב",
+    "street": "רחוב",
+    "city": "עיר",
+    "postal": "מיקוד",
+    "recalc_tax": "חשב מס מחדש",
+    "pay_stripe": "שלם עם Stripe",
+    "redirecting": "מעביר ל-Stripe...",
+    "download_pdf": "הורד חשבונית PDF",
+    "payment_success": "התשלום התקבל. החשבונית תתעדכן אוטומטית.",
+    "payment_cancel": "התשלום בוטל. אפשר לנסות שוב.",
+    "load_error": "לא ניתן לטעון חשבוניות. התחברו שוב או ודאו שיש חשבונית פתוחה.",
+    "tax_updated": "המס עודכן לפי כתובת היעד",
+    "tax_failed": "עדכון המס נכשל",
+    "select_invoice": "בחרו חשבונית לתשלום",
+    "no_checkout_url": "לא התקבל קישור תשלום מ-Stripe",
+    "checkout_failed": "יצירת תשלום נכשלה",
+    "pdf_failed": "הורדת PDF נכשלה",
+    "united_states": "ארצות הברית",
+    "israel": "ישראל"
   },
   "thankyou": {
-    "title": "Thank you!",
-    "subtitle": "Your request was submitted successfully",
-    "whats_next": "What happens next?",
-    "step1": "Our team will contact you within 24 hours",
-    "step2": "You will receive a detailed, personalized quote",
-    "step3": "We will help with any questions you have",
-    "appreciation": "We appreciate your trust in VIP International Shipping. Our team is ready to deliver excellent service.",
-    "download": "Download details"
+    "title": "תודה רבה!",
+    "subtitle": "הבקשה שלכם נשלחה בהצלחה",
+    "whats_next": "מה קורה עכשיו?",
+    "step1": "הצוות שלנו ייצור קשר תוך 24 שעות",
+    "step2": "תקבלו הצעת מחיר מפורטת ומותאמת אישית",
+    "step3": "נסייע בכל שאלה שתעלה",
+    "appreciation": "תודה על האמון ב-VIP International Shipping. הצוות שלנו מוכן לספק שירות מעולה.",
+    "download": "הורדת פרטים"
   },
   "errors": {
-    "not_found_title": "Page not found",
-    "not_found_body": "Sorry, the page you requested does not exist or has moved.",
-    "image_alt": "404 error — page not found"
+    "not_found_title": "הדף לא נמצא",
+    "not_found_body": "מצטערים, הדף שביקשתם אינו קיים או הועבר.",
+    "image_alt": "שגיאת 404 — הדף לא נמצא"
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "We are here to help with your international move",
-    "phone": "Phone",
-    "email": "Email",
-    "address": "Address",
-    "hours": "Hours",
-    "support_247": "24/7 support in English and Hebrew",
-    "fill_all": "Please fill in all required fields",
-    "thanks": "Thank you for contacting us, {{name}}",
-    "send_error": "Error sending the form",
-    "network_error": "A network error occurred while sending your message",
-    "form_title": "Send us a message"
+    "title": "צור קשר",
+    "subtitle": "אנחנו כאן לעזור לכם בהובלה הבינלאומית",
+    "phone": "טלפון",
+    "email": "אימייל",
+    "address": "כתובת",
+    "hours": "שעות פעילות",
+    "support_247": "תמיכה 24/7 בעברית ובאנגלית",
+    "fill_all": "נא למלא את כל השדות החובה",
+    "thanks": "תודה שפניתם אלינו, {{name}}",
+    "send_error": "שגיאה בשליחת הטופס",
+    "network_error": "אירעה שגיאת רשת בעת שליחת ההודעה",
+    "form_title": "שלחו לנו הודעה",
+    "email_response": "מענה מובטח תוך שעתיים",
+    "office_address": "כתובת המשרד",
+    "visits_appointment": "ביקורים בתיאום מראש",
+    "whatsapp_business": "וואטסאפ עסקי",
+    "instant_chat": "תמיכה בצ׳אט מיידי",
+    "whatsapp_available": "זמין 24/7 — מענה תוך דקות",
+    "details_title": "פרטי התקשרות",
+    "urgent": "דחוף",
+    "emergency_title": "חירום במשלוח?",
+    "emergency_body": "התקשרו לקו הראשי למעלה — הוא מנוטר 24/7 לחירום במשלוחים פעילים.",
+    "office_hours_title": "שעות המשרד",
+    "placeholder_name": "הזינו שם מלא",
+    "placeholder_email": "your@email.com",
+    "placeholder_message": "כתבו כאן את השאלה או ההודעה...",
+    "subject_select": "בחרו נושא...",
+    "subject_quote": "בקשת הצעת מחיר",
+    "subject_tracking": "מעקב משלוח",
+    "subject_insurance": "שאלות ביטוח",
+    "subject_complaint": "תלונה",
+    "subject_general": "כללי",
+    "consent": "אני מסכים/ה לקבל עדכונים ומיילים שיווקיים",
+    "or_direct": "או צרו קשר ישירות:",
+    "faq_title": "שאלות נפוצות",
+    "faq_subtitle": "המידע שחשוב לדעת",
+    "useful_links": "קישורים שימושיים",
+    "link_packing": "מדריך אריזה",
+    "link_customs": "מחשבון מכס",
+    "link_map": "מפת שירות",
+    "link_call": "קביעת שיחה",
+    "offices_title": "מיקומי המשרדים שלנו",
+    "map_title": "מפה אינטראקטיבית",
+    "map_coming": "בקרוב: Google Maps עם מיקומי המשרדים",
+    "show_directions": "הצג הוראות הגעה",
+    "faq": [
+      {
+        "q": "כמה זמן נמשכת הובלה בינלאומית?",
+        "a": "הובלה ימית: 14–35 ימים (חסכוני)\nהובלה אווירית: 3–7 ימים (מהיר)\nיבשתי: 5–14 ימים (אירופה)\nשירות אקספרס: 24–48 שעות (דחוף)"
+      },
+      {
+        "q": "איזה ביטוח כלול?",
+        "a": "ביטוח בסיסי: כלול בחינם (עד $1,000)\nמקיף: 2–3% מהערך ($10,000+)\nפרימיום: כיסוי מלא + החלפה\nמיוחד: אמנות ופריטי יוקרה"
+      },
+      {
+        "q": "מה כולל המחיר?",
+        "a": "איסוף מהבית / המשרד\nאריזה מקצועית (אופציונלי)\nהובלה בינלאומית מלאה\nביטוח בסיסי וטיפול במכס\nמעקב GPS בזמן אמת\nמסירה ליעד הסופי"
+      },
+      {
+        "q": "איך עוקבים אחרי המשלוח?",
+        "a": "מעקב מתקדם:\nGPS בזמן אמת עם מפה\nעדכוני SMS ואימייל אוטומטיים\nאפליקציה ייעודית\nצ׳אטבוט לשאלות מיידיות\nהתראות בכל שלב"
+      },
+      {
+        "q": "מה אפשר לשלוח?",
+        "a": "ריהוט וציוד בית\nאלקטרוניקה ומחשבים\nאמנות וחפצי ערך\nרכבים ואופנועים\nציוד תעשייתי\nחומרים מסוכנים (בתנאים מיוחדים בלבד)"
+      },
+      {
+        "q": "אילו אמצעי תשלום מתקבלים?",
+        "a": "כרטיסי אשראי (Visa, MasterCard, AMEX) דרך Stripe Checkout\nתשלום מקוון מאובטח בתקן PCI\nחיוב לפי חשבונית לאחר אישור הצעת מחיר"
+      },
+      {
+        "q": "לאילו מדינות אתם שולחים?",
+        "a": "יותר מ-120 מדינות ברחבי העולם:\nכל אירופה (שירות מהיר)\nארה״ב וקנדה (קווים קבועים)\nאסיה ואוסטרליה (שותפים מקומיים)\nאמריקה הלטינית ואפריקה\nאיים ואזורים מרוחקים"
+      },
+      {
+        "q": "מהם שירותי ה-AI שלכם?",
+        "a": "טכנולוגיות חכמות:\nצ׳אטבוט עם עיבוד שפה טבעית\nחיזוי מחירים בלמידת מכונה\nאופטימיזציית מסלולים אוטומטית\nהמלצות מותאמות אישית\nניתוח סיכונים ותחזית עיכובים"
+      }
+    ]
   },
   "accessibility": {
-    "commitment_badges_note": "We are actively working toward WCAG 2.1 AA. The badges below describe our goal and progress — not a completed third-party certification.",
-    "goal_wcag": "Working toward WCAG 2.1 AA",
-    "goal_ada": "ADA accessibility program",
-    "goal_508": "Section 508 alignment in progress"
+    "commitment_badges_note": "אנו פועלים להשגת WCAG 2.1 AA. התגים למטה מתארים יעד והתקדמות — לא הסמכה של צד שלישי שהושלמה.",
+    "goal_wcag": "פועלים לקראת WCAG 2.1 AA",
+    "goal_ada": "תוכנית נגישות ADA",
+    "goal_508": "התאמה ל-Section 508 בתהליך"
   },
   "auth": {
-    "login_failed": "Login failed",
-    "register_failed": "Registration failed",
-    "session_invalid": "Session invalid"
+    "login_failed": "ההתחברות נכשלה",
+    "register_failed": "ההרשמה נכשלה",
+    "session_invalid": "ההפעלה אינה תקפה"
   },
   "admin": {
-    "unauthorized": "Admin access required",
-    "title": "Admin dashboard"
+    "unauthorized": "נדרשת הרשאת מנהל",
+    "title": "לוח בקרה למנהלים"
   },
   "volume": {
     "title": "מחשבון נפח AR",
@@ -232,14 +319,14 @@
     "estimated_price": "מחיר משוער",
     "scanned_items": "פריטים שנסרקו",
     "calculate": "חשב נפח",
-    "fill_dimensions": "Please fill in all dimensions",
-    "container_20": "20ft Container",
-    "container_10": "10ft Container",
-    "custom_item": "Custom Item",
-    "sofa": "Sofa",
-    "dining_table": "Dining Table",
-    "wardrobe": "Wardrobe",
-    "accuracy": "{{percent}}% accuracy"
+    "fill_dimensions": "נא למלא את כל המידות",
+    "container_20": "מכולה 20 רגל",
+    "container_10": "מכולה 10 רגל",
+    "custom_item": "פריט מותאם",
+    "sofa": "ספה",
+    "dining_table": "שולחן אוכל",
+    "wardrobe": "ארון בגדים",
+    "accuracy": "דיוק {{percent}}%"
   },
   "pages": {
     "about": {
@@ -720,185 +807,185 @@
       "finalCta": "מוכנים להובלה בינלאומית?",
       "shippingMethods": [
         {
-          "method": "Sea Freight (FCL)",
-          "time": "30-60 days",
-          "cost": "Most economical",
-          "bestFor": "Full household moves",
-          "description": "Exclusive use of a 20 or 40-foot container. Ideal for large moves with flexibility on timing.",
+          "method": "הובלה ימית (FCL)",
+          "time": "30–60 ימים",
+          "cost": "הכי חסכוני",
+          "bestFor": "מעברי דירה מלאים",
+          "description": "שימוש בלעדי במכולה של 20 או 40 רגל. אידיאלי להובלות גדולות עם גמישות בלוח הזמנים.",
           "features": [
-            "Door-to-door service",
-            "Most cost-effective",
-            "Secure container",
-            "Best for large volumes"
+            "שירות מדלת לדלת",
+            "הכי משתלם",
+            "מכולה מאובטחת",
+            "מתאים לנפחים גדולים"
           ]
         },
         {
-          "method": "Sea Freight (LCL)",
-          "time": "35-70 days",
-          "cost": "Budget-friendly",
-          "bestFor": "Smaller shipments",
-          "description": "Share container space with other shipments. Perfect for 1-2 bedroom apartments.",
+          "method": "הובלה ימית (LCL)",
+          "time": "35–70 ימים",
+          "cost": "ידידותי לתקציב",
+          "bestFor": "משלוחים קטנים יותר",
+          "description": "שיתוף מכולה עם משלוחים אחרים. מושלם לדירות 1–2 חדרים.",
           "features": [
-            "Pay for space used",
-            "Flexible volume",
-            "Consolidated shipping",
-            "Cost-efficient"
+            "תשלום לפי נפח בשימוש",
+            "נפח גמיש",
+            "משלוח מאוחד",
+            "חסכוני"
           ]
         },
         {
-          "method": "Air Freight",
-          "time": "5-10 days",
-          "cost": "Premium pricing",
-          "bestFor": "Urgent/valuable items",
-          "description": "Fastest international shipping option. Recommended for time-sensitive or high-value shipments.",
+          "method": "הובלה אווירית",
+          "time": "5–10 ימים",
+          "cost": "תמחור פרימיום",
+          "bestFor": "פריטים דחופים / יקרי ערך",
+          "description": "האפשרות המהירה ביותר להובלה בינלאומית. מומלץ למשלוחים רגישים לזמן או בעלי ערך גבוה.",
           "features": [
-            "Express delivery",
-            "Climate controlled",
-            "Maximum security",
-            "Priority handling"
+            "מסירה אקספרס",
+            "בקרת אקלים",
+            "אבטחה מרבית",
+            "טיפול בעדיפות"
           ]
         }
       ],
       "popularDestinations": [
         {
-          "continent": "Europe",
+          "continent": "אירופה",
           "countries": [
-            "UK",
-            "Germany",
-            "France",
-            "Spain",
-            "Italy",
-            "Netherlands"
+            "בריטניה",
+            "גרמניה",
+            "צרפת",
+            "ספרד",
+            "איטליה",
+            "הולנד"
           ],
-          "time": "35-50 days"
+          "time": "35–50 ימים"
         },
         {
-          "continent": "Asia",
+          "continent": "אסיה",
           "countries": [
-            "Israel",
-            "Japan",
-            "Singapore",
-            "South Korea",
-            "Hong Kong",
-            "UAE"
+            "ישראל",
+            "יפן",
+            "סינגפור",
+            "דרום קוריאה",
+            "הונג קונג",
+            "איחוד האמירויות"
           ],
-          "time": "25-45 days"
+          "time": "25–45 ימים"
         },
         {
-          "continent": "Australia & Oceania",
+          "continent": "אוסטרליה ואוקיאניה",
           "countries": [
-            "Australia",
-            "New Zealand"
+            "אוסטרליה",
+            "ניו זילנד"
           ],
-          "time": "40-60 days"
+          "time": "40–60 ימים"
         },
         {
-          "continent": "South America",
+          "continent": "דרום אמריקה",
           "countries": [
-            "Brazil",
-            "Argentina",
-            "Chile"
+            "ברזיל",
+            "ארגנטינה",
+            "צ׳ילה"
           ],
-          "time": "35-55 days"
+          "time": "35–55 ימים"
         },
         {
-          "continent": "Africa",
+          "continent": "אפריקה",
           "countries": [
-            "South Africa",
-            "Kenya",
-            "Egypt"
+            "דרום אפריקה",
+            "קניה",
+            "מצרים"
           ],
-          "time": "30-50 days"
+          "time": "30–50 ימים"
         },
         {
-          "continent": "Middle East",
+          "continent": "המזרח התיכון",
           "countries": [
-            "UAE",
-            "Saudi Arabia",
-            "Qatar",
-            "Kuwait"
+            "איחוד האמירויות",
+            "ערב הסעודית",
+            "קטאר",
+            "כווית"
           ],
-          "time": "25-40 days"
+          "time": "25–40 ימים"
         }
       ],
       "services": [
         {
-          "title": "Professional Packing",
-          "description": "Expert packing with international-grade materials",
+          "title": "אריזה מקצועית",
+          "description": "אריזה מקצועית עם חומרים ברמה בינלאומית",
           "included": [
-            "Custom crating",
-            "Bubble wrap & padding",
-            "Labeled inventory",
-            "Fragile item handling"
+            "ארגזים מותאמים",
+            "ניילון בועות וריפוד",
+            "מלאי מסומן",
+            "טיפול בפריטים שבירים"
           ]
         },
         {
-          "title": "Customs Clearance",
-          "description": "Full documentation and customs brokerage services",
+          "title": "שחרור מכס",
+          "description": "תיעוד מלא ושירותי עמילות מכס",
           "included": [
-            "Customs forms",
-            "Import permits",
-            "Duty calculations",
-            "Broker coordination"
+            "טפסי מכס",
+            "אישורי ייבוא",
+            "חישוב מכסים",
+            "תיאום עם עמילים"
           ]
         },
         {
-          "title": "Door-to-Door Service",
-          "description": "Complete pickup and delivery to your new address",
+          "title": "שירות מדלת לדלת",
+          "description": "איסוף ומסירה מלאים לכתובת החדשה",
           "included": [
-            "Home pickup",
-            "Port handling",
-            "Destination delivery",
-            "Unpacking options"
+            "איסוף מהבית",
+            "טיפול בנמל",
+            "מסירה ביעד",
+            "אפשרויות פריקה"
           ]
         },
         {
-          "title": "Comprehensive Insurance",
-          "description": "Full value protection for international moves",
+          "title": "ביטוח מקיף",
+          "description": "הגנה מלאה על ערך ההובלה הבינלאומית",
           "included": [
-            "All-risk coverage",
-            "Marine insurance",
-            "Claims assistance",
-            "Peace of mind"
+            "כיסוי כל הסיכונים",
+            "ביטוח ימי",
+            "סיוע בתביעות",
+            "שקט נפשי"
           ]
         }
       ],
       "processSteps": [
         {
-          "title": "Free Consultation",
-          "description": "Discuss your needs with our international move specialist"
+          "title": "ייעוץ חינם",
+          "description": "שיחה על הצרכים עם מומחה להובלות בינלאומיות"
         },
         {
-          "title": "Survey & Quote",
-          "description": "Virtual or in-home survey to assess volume and provide accurate quote"
+          "title": "סקר והצעת מחיר",
+          "description": "סקר וירטואלי או בבית להערכת נפח והצעת מחיר מדויקת"
         },
         {
-          "title": "Documentation",
-          "description": "Prepare all necessary paperwork, customs forms, and permits"
+          "title": "תיעוד",
+          "description": "הכנת כל המסמכים, טפסי המכס והאישורים הנדרשים"
         },
         {
-          "title": "Professional Packing",
-          "description": "Expert team packs and labels all items with care"
+          "title": "אריזה מקצועית",
+          "description": "צוות מומחים אורז ומסמן את כל הפריטים בזהירות"
         },
         {
-          "title": "Export & Shipping",
-          "description": "Container loaded, sealed, and shipped to destination port"
+          "title": "יצוא ומשלוח",
+          "description": "טעינת המכולה, איטום ומשלוח לנמל היעד"
         },
         {
-          "title": "Customs Clearance",
-          "description": "Our agents handle all customs procedures at destination"
+          "title": "שחרור מכס",
+          "description": "הסוכנים שלנו מטפלים בכל הליכי המכס ביעד"
         },
         {
-          "title": "Final Delivery",
-          "description": "Delivery to your new home with unpacking if requested"
+          "title": "מסירה סופית",
+          "description": "מסירה לבית החדש עם פריקה לפי בקשה"
         }
       ],
       "prohibitedItems": [
-        "Flammable liquids and explosives",
-        "Perishable foods",
-        "Plants and soil (many countries)",
-        "Weapons and ammunition",
-        "Illegal drugs and controlled substances"
+        "נוזלים דליקים וחומרי נפץ",
+        "מזון מתכלה",
+        "צמחים ואדמה (במדינות רבות)",
+        "נשק ותחמושת",
+        "סמים וחומרים אסורים"
       ]
     },
     "interstateMoving": {
@@ -918,132 +1005,132 @@
       "finalCta": "מוכנים להובלה בין־מדינתית?",
       "services": [
         {
-          "title": "Full-Service Moving",
-          "description": "Complete door-to-door service with professional packing, loading, transport, and unpacking",
+          "title": "הובלה מלאה",
+          "description": "שירות מדלת לדלת כולל אריזה, טעינה, הובלה ופריקה מקצועית",
           "features": [
-            "Professional packing",
-            "Loading & unloading",
-            "Furniture disassembly/assembly",
-            "Unpacking services"
+            "אריזה מקצועית",
+            "טעינה ופריקה",
+            "פירוק והרכבת רהיטים",
+            "שירותי פריקה"
           ]
         },
         {
-          "title": "Partial/Shared Moving",
-          "description": "Cost-effective solution for smaller moves, sharing truck space with other shipments",
+          "title": "הובלה חלקית / משותפת",
+          "description": "פתרון חסכוני להובלות קטנות, עם שיתוף משאית עם משלוחים אחרים",
           "features": [
-            "Lower cost option",
-            "Flexible scheduling",
-            "Same care and protection",
-            "Ideal for 1-2 bedroom moves"
+            "עלות נמוכה יותר",
+            "לוח זמנים גמיש",
+            "אותה רמת זהירות",
+            "מתאים לדירות 1–2 חדרים"
           ]
         },
         {
-          "title": "Express Moving",
-          "description": "Priority service with dedicated truck and expedited delivery for time-sensitive moves",
+          "title": "הובלת אקספרס",
+          "description": "שירות בעדיפות עם משאית ייעודית ומסירה מואצת להובלות דחופות",
           "features": [
-            "Dedicated truck",
-            "3-5 day delivery",
-            "Priority scheduling",
-            "Real-time tracking"
+            "משאית ייעודית",
+            "מסירה תוך 3–5 ימים",
+            "תזמון בעדיפות",
+            "מעקב בזמן אמת"
           ]
         },
         {
-          "title": "White Glove Service",
-          "description": "Premium moving experience with specialized handling for high-value and delicate items",
+          "title": "שירות White Glove",
+          "description": "חוויית הובלה פרימיום עם טיפול מיוחד בפריטים יקרי ערך ועדינים",
           "features": [
-            "Custom crating",
-            "Climate-controlled transport",
-            "Installation services",
-            "Concierge support"
+            "ארגזים מותאמים",
+            "הובלה בבקרת אקלים",
+            "שירותי התקנה",
+            "תמיכת קונסיירז׳"
           ]
         }
       ],
       "popularRoutes": [
         {
-          "from": "New York, NY",
-          "to": "Florida",
-          "duration": "3-5 days",
-          "distance": "1,200 mi"
+          "from": "ניו יורק, NY",
+          "to": "פלורידה",
+          "duration": "3–5 ימים",
+          "distance": "1,200 מייל"
         },
         {
-          "from": "California",
-          "to": "Texas",
-          "duration": "4-6 days",
-          "distance": "1,500 mi"
+          "from": "קליפורניה",
+          "to": "טקסס",
+          "duration": "4–6 ימים",
+          "distance": "1,500 מייל"
         },
         {
-          "from": "Illinois",
-          "to": "Arizona",
-          "duration": "4-5 days",
-          "distance": "1,700 mi"
+          "from": "אילינוי",
+          "to": "אריזונה",
+          "duration": "4–5 ימים",
+          "distance": "1,700 מייל"
         },
         {
-          "from": "Massachusetts",
-          "to": "North Carolina",
-          "duration": "3-4 days",
-          "distance": "800 mi"
+          "from": "מסצ׳וסטס",
+          "to": "צפון קרוליינה",
+          "duration": "3–4 ימים",
+          "distance": "800 מייל"
         },
         {
-          "from": "Washington",
-          "to": "Colorado",
-          "duration": "3-4 days",
-          "distance": "1,300 mi"
+          "from": "וושינגטון",
+          "to": "קולורדו",
+          "duration": "3–4 ימים",
+          "distance": "1,300 מייל"
         },
         {
-          "from": "Michigan",
-          "to": "Georgia",
-          "duration": "4-5 days",
-          "distance": "1,000 mi"
+          "from": "מישיגן",
+          "to": "ג׳ורג׳יה",
+          "duration": "4–5 ימים",
+          "distance": "1,000 מייל"
         }
       ],
       "movingTips": [
         {
-          "title": "Book Early",
-          "tip": "Reserve your moving date 4-8 weeks in advance, especially during peak season (May-September)"
+          "title": "הזמינו מראש",
+          "tip": "שמרו תאריך הובלה 4–8 שבועות מראש, במיוחד בעונת השיא (מאי–ספטמבר)"
         },
         {
-          "title": "Declutter First",
-          "tip": "Reduce moving costs by selling or donating items you no longer need before packing"
+          "title": "סדרו לפני",
+          "tip": "הפחיתו עלויות על ידי מכירה או תרומה של פריטים שאינכם צריכים לפני האריזה"
         },
         {
-          "title": "Get Multiple Quotes",
-          "tip": "Compare at least 3 estimates to ensure competitive pricing and understand what's included"
+          "title": "קבלו כמה הצעות",
+          "tip": "השוו לפחות 3 הצעות מחיר כדי לוודא מחיר תחרותי ולהבין מה כלול"
         },
         {
-          "title": "Read Reviews",
-          "tip": "Check BBB ratings, Google reviews, and FMCSA records before choosing a moving company"
+          "title": "קראו ביקורות",
+          "tip": "בדקו דירוגי BBB, ביקורות Google ורשומות FMCSA לפני בחירת חברת הובלה"
         }
       ],
       "pricingFactors": [
         {
-          "factor": "Distance",
-          "impact": "Primary cost driver",
-          "description": "Longer distances = higher costs"
+          "factor": "מרחק",
+          "impact": "גורם עלות עיקרי",
+          "description": "מרחק ארוך יותר = עלות גבוהה יותר"
         },
         {
-          "factor": "Weight/Volume",
-          "impact": "Direct correlation",
-          "description": "Charged per pound or cubic foot"
+          "factor": "משקל / נפח",
+          "impact": "השפעה ישירה",
+          "description": "חיוב לפי פאונד או רגל מעוקבת"
         },
         {
-          "factor": "Season",
-          "impact": "Moderate effect",
-          "description": "Summer (peak) costs 20-30% more"
+          "factor": "עונה",
+          "impact": "השפעה בינונית",
+          "description": "בקיץ (שיא) המחיר גבוה ב-20–30%"
         },
         {
-          "factor": "Access",
-          "impact": "Additional fees",
-          "description": "Stairs, long carry, shuttle service"
+          "factor": "גישה",
+          "impact": "תוספות",
+          "description": "מדרגות, הובלה ארוכה, שירות הסעה"
         },
         {
-          "factor": "Packing Services",
-          "impact": "Optional add-on",
-          "description": "Professional packing adds 15-25%"
+          "factor": "שירותי אריזה",
+          "impact": "תוספת אופציונלית",
+          "description": "אריזה מקצועית מוסיפה 15–25%"
         },
         {
-          "factor": "Insurance",
-          "impact": "Recommended",
-          "description": "Full value protection for peace of mind"
+          "factor": "ביטוח",
+          "impact": "מומלץ",
+          "description": "הגנה מלאה על הערך לשקט נפשי"
         }
       ]
     },
@@ -1181,6 +1268,24 @@
           ]
         }
       ]
+    },
+    "stubs": {
+      "household": {
+        "title": "הובלת בית בינלאומית",
+        "body": "שירותי הובלה בינלאומיים מקצועיים לדירות ובתים — אריזה, מכס ומסירה מדלת לדלת."
+      },
+      "artwork": {
+        "title": "הובלת יצירות אמנות לחו״ל",
+        "body": "טיפול מומחה ביצירות אמנות, אריזה מותאמת, ביטוח מלא ומעקב עד היעד."
+      },
+      "piano": {
+        "title": "הובלת פסנתרים בינלאומית",
+        "body": "צוות מיומן להובלת פסנתרים עם ציוד ייעודי, אבטחה וביטוח מקיף."
+      },
+      "comparing": {
+        "title": "השוואת הצעות מחיר להובלה בינלאומית",
+        "body": "קבלו הצעת מחיר שקופה והשוו אפשרויות הובלה — ללא התחייבות."
+      }
     }
   },
   "home": {

@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
                   className="text-light text-decoration-none hover-underline"
                 >
                   <InfoCircle size={14} className="me-1" />
-                  Your Rights &amp; Responsibilities (FMCSA)
+                  {t('footer.fmcsa_rights')}
                 </a>
               </li>
               <li className="mb-2">
@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
                   className="text-light text-decoration-none hover-underline"
                 >
                   <InfoCircle size={14} className="me-1" />
-                  Protect Your Move (FMCSA)
+                  {t('footer.fmcsa_protect')}
                 </a>
               </li>
             </ul>
@@ -159,21 +159,20 @@ const Footer: React.FC = () => {
             <small className="text-muted">
               {LICENSE.usdotNumber || LICENSE.mcNumber ? (
                 <>
-                  Licensed &amp; Insured
+                  {t('footer.licensed_insured')}
                   {LICENSE.usdotNumber && ` | USDOT ${LICENSE.usdotNumber}`}
                   {LICENSE.mcNumber && ` | ${LICENSE.mcNumber}`}
                   {' '}
                   <a href={SAFER_LOOKUP_URL} target="_blank" rel="noopener noreferrer" className="text-muted">
-                    (verify on FMCSA SAFER)
+                    {t('footer.verify_safer')}
                   </a>
                 </>
               ) : (
                 <>
-                  Licensing details pending —{' '}
+                  {t('footer.licensing_pending')}{' '}
                   <a href={SAFER_LOOKUP_URL} target="_blank" rel="noopener noreferrer" className="text-muted">
-                    verify any mover on FMCSA SAFER
-                  </a>{' '}
-                  before booking.
+                    {t('footer.verify_before_booking')}
+                  </a>
                 </>
               )}
             </small>

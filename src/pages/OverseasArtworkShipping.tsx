@@ -1,13 +1,22 @@
-
-// src/pages/OverseasArtworkShipping.tsx
 import React from 'react';
+import { Container } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+import LinkButton from '../components/LinkButton';
+import { ROUTES } from '../routs/routes';
 
 const OverseasArtworkShipping: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="container mt-5">
-      <h1>Overseas Artwork Shipping</h1>
-      <p>Specialized services for shipping artwork overseas.</p>
-    </div>
+    <main id="main-content">
+      <Container className="my-5">
+        <h1 className="mb-3">{t('pages.stubs.artwork.title')}</h1>
+        <p className="lead text-muted mb-4">{t('pages.stubs.artwork.body')}</p>
+        <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="primary">
+          {t('cta.get_quote')}
+        </LinkButton>
+      </Container>
+    </main>
   );
 };
 

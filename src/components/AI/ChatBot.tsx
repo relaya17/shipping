@@ -10,18 +10,30 @@ import { tokenStorage } from '../../service/api';
  * ChatBot connected to real AI agent (streaming + tools).
  */
 const ChatBot: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = React.useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const isRtl = i18n.dir() === 'rtl';
+  const side = isRtl ? 'left' : 'right';
+
+  const chatHeaders: Record<string, string> = {
+    'Accept-Language': (i18n.language || 'en').split('-')[0],
+    'X-App-Language': (i18n.language || 'en').split('-')[0],
+  };
+  const accessToken = tokenStorage.getAccessToken();
+  if (accessToken) {
+    chatHeaders.Authorization = `Bearer ${accessToken}`;
+  }
 
   const { messages, input, handleInputChange, handleSubmit, isLoading, append, setMessages } = useChat({
     api: '/api/ai/chat',
     initialMessages: [
       { id: 'welcome', role: 'assistant', content: t('ai.welcome') }
     ],
-    headers: tokenStorage.getAccessToken()
-      ? { Authorization: `Bearer ${tokenStorage.getAccessToken()}` }
-      : undefined,
+    headers: chatHeaders,
+    body: {
+      language: (i18n.language || 'en').split('-')[0],
+    },
     onFinish: (message) => {
       trackAIInteraction('bot_response', message.content);
     }
@@ -74,7 +86,7 @@ const ChatBot: React.FC = () => {
           style={{
             position: 'fixed',
             bottom: '20px',
-            right: '20px',
+            [side]: '20px',
             zIndex: 1000,
             borderRadius: '50%',
             width: '70px',
@@ -103,7 +115,7 @@ const ChatBot: React.FC = () => {
           style={{
             position: 'fixed',
             bottom: '20px',
-            right: '20px',
+            [side]: '20px',
             width: '360px',
             maxWidth: 'calc(100vw - 40px)',
             height: '480px',
@@ -118,16 +130,16 @@ const ChatBot: React.FC = () => {
         >
           <Card.Header className="d-flex justify-content-between align-items-center bg-primary text-white">
             <div>
-              <h6 className="mb-0">🤖 VIP AI Shipping Expert</h6>
+              <h6 className="mb-0">{t('ai.expert_title')}</h6>
               <small style={{ fontSize: '0.75rem', opacity: 0.9 }}>
-                Live AI Agent
+                {t('ai.live_agent')}
               </small>
             </div>
             <Button
               variant="light"
               size="sm"
               onClick={() => setIsOpen(false)}
-              aria-label="Close"
+              aria-label={t('common.close')}
               style={{
                 borderRadius: '50%',
                 width: '30px',

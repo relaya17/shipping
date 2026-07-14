@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFormData, resetFormData } from '../redux/contactSlice';
 import { RootState } from '../redux/store';
@@ -17,8 +17,10 @@ import { useTranslation } from 'react-i18next';
 import { trackPageView } from '../utils/analytics';
 import { CONTACT } from '../config/companyInfo';
 
+type FaqItem = { q: string; a: string };
+
 const Contact: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const dispatch = useDispatch();
   const formData = useSelector((state: RootState) => state.contact);
 
@@ -73,42 +75,48 @@ const Contact: React.FC = () => {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: <Telephone size={24} className="text-primary" />,
-      title: t('contact.phone'),
-      details: [CONTACT.phoneDisplay],
-      available: t('contact.support_247'),
-      urgent: true
-    },
-    {
-      icon: <Envelope size={24} className="text-success" />,
-      title: t('contact.email'),
-      details: [CONTACT.email, CONTACT.supportEmail],
-      available: 'Guaranteed response within 2 hours',
-      urgent: false
-    },
-    {
-      icon: <GeoAlt size={24} className="text-info" />,
-      title: 'Office address',
-      details: [
-        `${CONTACT.address.line1}, ${CONTACT.address.city}, ${CONTACT.address.region} ${CONTACT.address.postalCode}, ${CONTACT.address.country}`
-      ],
-      available: 'Visits by appointment',
-      urgent: false
-    },
-    {
-      icon: <Whatsapp size={24} className="text-success" />,
-      title: 'WhatsApp Business',
-      details: [CONTACT.whatsappNumber, 'Instant chat support'],
-      available: 'Available 24/7 — response within minutes',
-      urgent: true
-    }
-  ];
+  const contactInfo = useMemo(
+    () => [
+      {
+        icon: <Telephone size={24} className="text-primary" />,
+        title: t('contact.phone'),
+        details: [CONTACT.phoneDisplay],
+        available: t('contact.support_247'),
+        urgent: true
+      },
+      {
+        icon: <Envelope size={24} className="text-success" />,
+        title: t('contact.email'),
+        details: [CONTACT.email, CONTACT.supportEmail],
+        available: t('contact.email_response'),
+        urgent: false
+      },
+      {
+        icon: <GeoAlt size={24} className="text-info" />,
+        title: t('contact.office_address'),
+        details: [
+          `${CONTACT.address.line1}, ${CONTACT.address.city}, ${CONTACT.address.region} ${CONTACT.address.postalCode}, ${CONTACT.address.country}`
+        ],
+        available: t('contact.visits_appointment'),
+        urgent: false
+      },
+      {
+        icon: <Whatsapp size={24} className="text-success" />,
+        title: t('contact.whatsapp_business'),
+        details: [CONTACT.whatsappNumber, t('contact.instant_chat')],
+        available: t('contact.whatsapp_available'),
+        urgent: true
+      }
+    ],
+    [t, i18n.language]
+  );
 
-  const officeHours = [
-    { location: CONTACT.address.country, hours: CONTACT.hours }
-  ];
+  const faqs = useMemo(() => {
+    const items = t('contact.faq', { returnObjects: true });
+    return Array.isArray(items) ? (items as FaqItem[]) : [];
+  }, [t, i18n.language]);
+
+  const officeHours = [{ location: CONTACT.address.country, hours: CONTACT.hours }];
 
   return (
     <main id="main-content">
@@ -126,14 +134,14 @@ const Contact: React.FC = () => {
           <Col lg={4} className="mb-4">
             <Card className="border-0 shadow-sm h-100">
               <Card.Body className="p-4">
-                <h4 className="mb-4">Contact details</h4>
+                <h4 className="mb-4">{t('contact.details_title')}</h4>
 
                 {contactInfo.map((info, index) => (
                   <div key={index} className={`mb-4 p-3 rounded ${info.urgent ? 'bg-light border-start border-3 border-primary' : ''}`}>
                     <div className="d-flex align-items-center mb-2">
                       {info.icon}
                       <h6 className="mb-0 ms-2">{info.title}</h6>
-                      {info.urgent && <Badge bg="danger" className="ms-2">Urgent</Badge>}
+                      {info.urgent && <Badge bg="danger" className="ms-2">{t('contact.urgent')}</Badge>}
                     </div>
                     {info.details.map((detail, detailIndex) => (
                       <p key={detailIndex} className="mb-1 text-muted small">
@@ -146,18 +154,17 @@ const Contact: React.FC = () => {
 
                 <Alert variant="danger" className="mt-4">
                   <h6 className="mb-2">
-                    <strong>Shipment emergency?</strong>
+                    <strong>{t('contact.emergency_title')}</strong>
                   </h6>
                   <p className="mb-0 small">
-                    Call our main line above — it is monitored 24/7 for active shipment
-                    emergencies.
+                    {t('contact.emergency_body')}
                   </p>
                 </Alert>
 
                 <Card className="mt-4 border-info">
                   <Card.Header className="bg-info text-white">
                     <Clock className="me-2" />
-                    <strong>Office hours</strong>
+                    <strong>{t('contact.office_hours_title')}</strong>
                   </Card.Header>
                   <Card.Body className="p-3">
                     {officeHours.map((office, index) => (
@@ -184,7 +191,7 @@ const Contact: React.FC = () => {
                       name="name"
                       value={formData.name || ''}
                       onChange={handleChange}
-                      placeholder="Enter your full name"
+                      placeholder={t('contact.placeholder_name')}
                       required
                     />
                   </Form.Group>
@@ -196,7 +203,7 @@ const Contact: React.FC = () => {
                       name="email"
                       value={formData.email || ''}
                       onChange={handleChange}
-                      placeholder="your@email.com"
+                      placeholder={t('contact.placeholder_email')}
                       required
                     />
                   </Form.Group>
@@ -223,12 +230,12 @@ const Contact: React.FC = () => {
                       onChange={handleChange}
                       required
                     >
-                      <option value="">Select a subject...</option>
-                      <option value="quote">Quote request</option>
-                      <option value="tracking">Shipment tracking</option>
-                      <option value="insurance">Insurance questions</option>
-                      <option value="complaint">Complaint</option>
-                      <option value="general">General</option>
+                      <option value="">{t('contact.subject_select')}</option>
+                      <option value="quote">{t('contact.subject_quote')}</option>
+                      <option value="tracking">{t('contact.subject_tracking')}</option>
+                      <option value="insurance">{t('contact.subject_insurance')}</option>
+                      <option value="complaint">{t('contact.subject_complaint')}</option>
+                      <option value="general">{t('contact.subject_general')}</option>
                     </Form.Select>
                   </Form.Group>
 
@@ -239,7 +246,7 @@ const Contact: React.FC = () => {
                       name="question"
                       value={formData.question || ''}
                       onChange={handleChange}
-                      placeholder="Write your question or message here..."
+                      placeholder={t('contact.placeholder_message')}
                       required
                       rows={5}
                     />
@@ -248,7 +255,7 @@ const Contact: React.FC = () => {
                   <Form.Group className="mb-4" controlId="formConsent">
                     <Form.Check
                       type="checkbox"
-                      label="I agree to receive updates and promotional emails"
+                      label={t('contact.consent')}
                       required
                     />
                   </Form.Group>
@@ -263,7 +270,7 @@ const Contact: React.FC = () => {
 
                 <div className="text-center mt-4">
                   <hr />
-                  <p className="text-muted mb-3">Or contact us directly:</p>
+                  <p className="text-muted mb-3">{t('contact.or_direct')}</p>
                   <div className="d-flex justify-content-center gap-2">
                     <Button variant="success" href={`https://wa.me/${CONTACT.whatsappNumber.replace(/\D/g, '')}`}>
                       <Whatsapp className="me-2" />
@@ -284,162 +291,47 @@ const Contact: React.FC = () => {
           <Col>
             <Card className="border-0 shadow-lg">
               <Card.Header className="bg-primary text-white text-center">
-                <h4 className="mb-0">Frequently asked questions</h4>
-                <small>The information you need most</small>
+                <h4 className="mb-0">{t('contact.faq_title')}</h4>
+                <small>{t('contact.faq_subtitle')}</small>
               </Card.Header>
               <Card.Body className="p-4">
                 <Row>
-                  <Col md={6} className="mb-4">
-                    <div className="d-flex align-items-start">
-                      <CheckCircle className="text-success me-3 mt-1" size={20} />
-                      <div>
-                        <h6 className="text-primary">How long does international shipping take?</h6>
-                        <p className="text-muted mb-1">
-                          <strong>Ocean freight:</strong> 14–35 days (economical)<br />
-                          <strong>Air freight:</strong> 3–7 days (fast)<br />
-                          <strong>Ground:</strong> 5–14 days (Europe)<br />
-                          <strong>Express service:</strong> 24–48 hours (urgent)
-                        </p>
+                  {faqs.map((item) => (
+                    <Col md={6} className="mb-4" key={item.q}>
+                      <div className="d-flex align-items-start">
+                        <CheckCircle className="text-success me-3 mt-1" size={20} />
+                        <div>
+                          <h6 className="text-primary">{item.q}</h6>
+                          <p className="text-muted mb-1" style={{ whiteSpace: 'pre-line' }}>
+                            {item.a}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </Col>
-
-                  <Col md={6} className="mb-4">
-                    <div className="d-flex align-items-start">
-                      <CheckCircle className="text-success me-3 mt-1" size={20} />
-                      <div>
-                        <h6 className="text-primary">What insurance is included?</h6>
-                        <p className="text-muted mb-1">
-                          <strong>Basic insurance:</strong> Included free (up to $1,000)<br />
-                          <strong>Comprehensive:</strong> 2–3% of value ($10,000+)<br />
-                          <strong>Premium:</strong> Full coverage + replacement<br />
-                          <strong>Specialty:</strong> Fine art and luxury items
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col md={6} className="mb-4">
-                    <div className="d-flex align-items-start">
-                      <CheckCircle className="text-success me-3 mt-1" size={20} />
-                      <div>
-                        <h6 className="text-primary">What does your price include?</h6>
-                        <p className="text-muted mb-1">
-                          Door / office pickup<br />
-                          Professional packing (optional)<br />
-                          Full international shipping<br />
-                          Basic insurance and customs handling<br />
-                          Real-time GPS tracking<br />
-                          Delivery to final destination
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col md={6} className="mb-4">
-                    <div className="d-flex align-items-start">
-                      <CheckCircle className="text-success me-3 mt-1" size={20} />
-                      <div>
-                        <h6 className="text-primary">How do I track my shipment?</h6>
-                        <p className="text-muted mb-1">
-                          <strong>Advanced tracking:</strong><br />
-                          Real-time GPS with map<br />
-                          Automatic SMS and email updates<br />
-                          Dedicated mobile app<br />
-                          Smart ChatBot for instant info<br />
-                          Push notifications at every stage
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col md={6} className="mb-4">
-                    <div className="d-flex align-items-start">
-                      <CheckCircle className="text-success me-3 mt-1" size={20} />
-                      <div>
-                        <h6 className="text-primary">What items can I ship?</h6>
-                        <p className="text-muted mb-1">
-                          Furniture and household goods<br />
-                          Electronics and computers<br />
-                          Fine art and valuables<br />
-                          Vehicles and motorcycles<br />
-                          Machinery and industrial equipment<br />
-                          Hazardous materials (special conditions only)
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col md={6} className="mb-4">
-                    <div className="d-flex align-items-start">
-                      <CheckCircle className="text-success me-3 mt-1" size={20} />
-                      <div>
-                        <h6 className="text-primary">What payment methods do you accept?</h6>
-                        <p className="text-muted mb-1">
-                          Credit cards (Visa, MasterCard, AMEX) via Stripe Checkout<br />
-                          Secure, PCI-compliant online payment<br />
-                          Invoice-based billing after quote acceptance
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col md={6} className="mb-4">
-                    <div className="d-flex align-items-start">
-                      <CheckCircle className="text-success me-3 mt-1" size={20} />
-                      <div>
-                        <h6 className="text-primary">Which countries do you ship to?</h6>
-                        <p className="text-muted mb-1">
-                          <strong>120+ countries worldwide:</strong><br />
-                          All of Europe (fast service)<br />
-                          USA and Canada (regular lanes)<br />
-                          Asia and Australia (local partners)<br />
-                          Latin America and Africa<br />
-                          Islands and remote regions
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
-
-                  <Col md={6} className="mb-4">
-                    <div className="d-flex align-items-start">
-                      <CheckCircle className="text-success me-3 mt-1" size={20} />
-                      <div>
-                        <h6 className="text-primary">What are your AI services?</h6>
-                        <p className="text-muted mb-1">
-                          <strong>Smart technologies:</strong><br />
-                          ChatBot with advanced NLP<br />
-                          Machine-learning price prediction<br />
-                          Automatic route optimization<br />
-                          Personalized recommendations<br />
-                          Risk analysis and delay forecasts
-                        </p>
-                      </div>
-                    </div>
-                  </Col>
+                    </Col>
+                  ))}
                 </Row>
 
                 <div className="bg-light rounded-3 p-4 mt-4">
-                  <h6 className="mb-3 text-center">Useful links</h6>
+                  <h6 className="mb-3 text-center">{t('contact.useful_links')}</h6>
                   <Row className="text-center">
                     <Col md={3} className="mb-2">
                       <Button variant="outline-primary" size="sm" className="w-100">
-                        Packing guide
+                        {t('contact.link_packing')}
                       </Button>
                     </Col>
                     <Col md={3} className="mb-2">
                       <Button variant="outline-success" size="sm" className="w-100">
-                        Customs calculator
+                        {t('contact.link_customs')}
                       </Button>
                     </Col>
                     <Col md={3} className="mb-2">
                       <Button variant="outline-info" size="sm" className="w-100">
-                        Service map
+                        {t('contact.link_map')}
                       </Button>
                     </Col>
                     <Col md={3} className="mb-2">
                       <Button variant="outline-warning" size="sm" className="w-100">
-                        Book a call
+                        {t('contact.link_call')}
                       </Button>
                     </Col>
                   </Row>
@@ -455,17 +347,17 @@ const Contact: React.FC = () => {
               <Card.Header className="bg-info text-white">
                 <h5 className="mb-0">
                   <GeoAlt className="me-2" />
-                  Our office locations
+                  {t('contact.offices_title')}
                 </h5>
               </Card.Header>
               <Card.Body className="p-0">
                 <div className="bg-secondary d-flex align-items-center justify-content-center" style={{ height: '300px' }}>
                   <div className="text-center text-white">
                     <GeoAlt size={48} className="mb-3" />
-                    <h5>Interactive map</h5>
-                    <p>Coming soon: Google Maps with office locations</p>
+                    <h5>{t('contact.map_title')}</h5>
+                    <p>{t('contact.map_coming')}</p>
                     <Button variant="light" size="sm">
-                      Show directions
+                      {t('contact.show_directions')}
                     </Button>
                   </div>
                 </div>

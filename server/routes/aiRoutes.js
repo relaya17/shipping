@@ -20,7 +20,7 @@ router.post('/chat', auth.optionalAuth, async (req, res, next) => {
       });
     }
 
-    const { messages, message } = req.body || {};
+    const { messages, message, language } = req.body || {};
     const conversation = Array.isArray(messages) && messages.length
       ? messages
       : [{ role: 'user', content: message || '' }];
@@ -29,12 +29,34 @@ router.post('/chat', auth.optionalAuth, async (req, res, next) => {
       return res.status(400).json({ success: false, error: 'Message is required' });
     }
 
+    const lang = String(
+      language ||
+      req.get('X-App-Language') ||
+      (req.get('Accept-Language') || 'en').split(',')[0]
+    )
+      .split('-')[0]
+      .toLowerCase();
+
+    const languageNames = {
+      he: 'Hebrew',
+      ar: 'Arabic',
+      es: 'Spanish',
+      ru: 'Russian',
+      zh: 'Chinese',
+      tr: 'Turkish',
+      sv: 'Swedish',
+      el: 'Greek',
+      en: 'English'
+    };
+    const replyLanguage = languageNames[lang] || 'English';
+    const system = `${SYSTEM_PROMPT}\n\nAlways reply in ${replyLanguage} (language code: ${lang}) unless the user explicitly asks for another language.`;
+
     const { streamText } = await import('ai');
     const model = await providers.getModel();
 
     const result = streamText({
       model,
-      system: SYSTEM_PROMPT,
+      system,
       messages: conversation,
       tools,
       maxSteps: 8
