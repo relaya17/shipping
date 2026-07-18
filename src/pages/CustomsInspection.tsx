@@ -1,33 +1,21 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../redux/store';
-import { setProcessInfo } from '../redux/customsSlice';
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+import LinkButton from '../components/LinkButton';
+import { ROUTES } from '../routs/routes';
 
 const CustomsInspection: React.FC = () => {
-  const dispatch = useDispatch();
-  const processInfo = useSelector((state: RootState) => state.customs.processInfo);
-
-  useEffect(() => {
-    dispatch(setProcessInfo('The customs inspection process is underway.'));
-  }, [dispatch]);
+  const { t } = useTranslation();
 
   return (
     <main id="main-content">
-      <div className="container d-flex justify-content-center mt-5">
-        <div className="card" style={{ width: '80%', maxWidth: '800px' }}>
-          <div className="card-body">
-            <h2 className="card-title text-center">Customs Inspection Preparation</h2>
-            <p className="card-text">{processInfo}</p>
-            <p>Once your shipment arrives in the USA, it will undergo a customs inspection process. The steps include:</p>
-            <ul>
-              <li>Review of all documentation to ensure it is completed properly.</li>
-              <li>Physical inspection of your shipment (if selected for random screening).</li>
-              <li>Assessment of any duties and taxes (if applicable).</li>
-            </ul>
-            <p>To avoid delays, make sure your packing list is accurate and avoid including restricted items.</p>
-          </div>
-        </div>
-      </div>
+      <Container className="my-5">
+        <h1 className="mb-3">{t('pages.stubs.customs.title')}</h1>
+        <p className="lead text-muted mb-4">{t('pages.stubs.customs.body')}</p>
+        <LinkButton to={ROUTES.CONTACT} variant="primary">
+          {t('cta.free_consult')}
+        </LinkButton>
+      </Container>
     </main>
   );
 };

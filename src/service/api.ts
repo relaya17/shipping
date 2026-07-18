@@ -1,25 +1,30 @@
-// axios client — prefers httpOnly cookies; keeps optional Bearer for migration.
+// axios client — browser auth is httpOnly cookies only (no JWT in localStorage).
 
 import axios, { AxiosError, InternalAxiosRequestConfig } from 'axios';
 
-const ACCESS_TOKEN_KEY = 'vip_access_token';
-const REFRESH_TOKEN_KEY = 'vip_refresh_token';
+const LEGACY_ACCESS_KEY = 'vip_access_token';
+const LEGACY_REFRESH_KEY = 'vip_refresh_token';
 
-/** Legacy localStorage helpers — cleared on logout; prefer cookies. */
-export const tokenStorage = {
-  getAccessToken: () => localStorage.getItem(ACCESS_TOKEN_KEY),
-  getRefreshToken: () => localStorage.getItem(REFRESH_TOKEN_KEY),
-  setTokens: (accessToken: string, refreshToken: string) => {
-    // Keep in sync only if server still returns tokens (non-browser clients).
-    // Browser auth relies on httpOnly cookies set by the API.
-    if (accessToken) localStorage.setItem(ACCESS_TOKEN_KEY, accessToken);
-    if (refreshToken) localStorage.setItem(REFRESH_TOKEN_KEY, refreshToken);
-  },
-  clear: () => {
-    localStorage.removeItem(ACCESS_TOKEN_KEY);
-    localStorage.removeItem(REFRESH_TOKEN_KEY);
+/** One-shot wipe of legacy JWTs left in localStorage from older builds. */
+export function clearLegacyAuthStorage() {
+  try {
+    localStorage.removeItem(LEGACY_ACCESS_KEY);
+    localStorage.removeItem(LEGACY_REFRESH_KEY);
+  } catch {
+    /* ignore */
   }
-};
+}
+
+clearLegacyAuthStorage();
+
+function readCookie(name: string): string | null {
+  try {
+    const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+    return match ? decodeURIComponent(match[1]) : null;
+  } catch {
+    return null;
+  }
+}
 
 export const api = axios.create({
   baseURL: '/api',
@@ -27,12 +32,10 @@ export const api = axios.create({
   withCredentials: true
 });
 
-api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-  // Cookie is sent automatically via withCredentials.
-  // Attach Bearer only if a legacy localStorage token still exists.
-  const token = tokenStorage.getAccessToken();
-  if (token && config.headers) {
-    config.headers.Authorization = `Bearer ${token}`;
+api.interceptors.request.use((config) => {
+  const csrf = readCookie('vip_csrf');
+  if (csrf && config.headers) {
+    config.headers['X-CSRF-Token'] = csrf;
   }
   return config;
 });
@@ -41,17 +44,18 @@ let refreshPromise: Promise<boolean> | null = null;
 
 async function refreshAccessToken(): Promise<boolean> {
   try {
-    const { data } = await axios.post<{ accessToken?: string; refreshToken?: string }>(
+    const csrf = readCookie('vip_csrf');
+    await axios.post(
       '/api/auth/refresh',
       {},
-      { withCredentials: true }
+      {
+        withCredentials: true,
+        headers: csrf ? { 'X-CSRF-Token': csrf } : undefined
+      }
     );
-    if (data.accessToken && data.refreshToken) {
-      tokenStorage.setTokens(data.accessToken, data.refreshToken);
-    }
     return true;
   } catch {
-    tokenStorage.clear();
+    clearLegacyAuthStorage();
     return false;
   }
 }

@@ -31,6 +31,7 @@ const aiRoutes = require('./routes/aiRoutes');
 const errorHandler = require('./middleware/errorHandler');
 const authMiddleware = require('./middleware/auth');
 const validationMiddleware = require('./middleware/validation');
+const { csrfProtection } = require('./middleware/csrf');
 
 /**
  * יצירת אפליקציית Express מתקדמת
@@ -116,12 +117,22 @@ class VIPShippingApp {
       },
       credentials: true,
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-      allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'],
+      allowedHeaders: [
+        'Content-Type',
+        'Authorization',
+        'X-Requested-With',
+        'Accept',
+        'Origin',
+        'X-CSRF-Token',
+        'X-App-Language',
+        'Accept-Language'
+      ],
       exposedHeaders: ['X-Total-Count', 'X-Page-Count']
     };
 
     this.app.use(cors(corsOptions));
     this.app.use(cookieParser());
+    this.app.use(csrfProtection);
 
     // Rate limiting מתקדם - עדכון לגרסה 7
     const limiter = rateLimit({
@@ -234,6 +245,11 @@ class VIPShippingApp {
         memory: process.memoryUsage(),
         version: process.env.npm_package_version || '1.0.0'
       });
+    });
+
+    // CSRF cookie seed (double-submit) — call on app boot before mutating requests
+    this.app.get('/api/csrf', (req, res) => {
+      res.json({ success: true });
     });
 
     // API routes

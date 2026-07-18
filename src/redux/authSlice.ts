@@ -1,9 +1,7 @@
-// src/redux/authSlice.ts
-// Auth אמיתי (JWT) מול /api/auth. שונה מ-userSlice.ts הישן (שמתאר רק שם משתמש דמו) -
-// authSlice הוא מקור האמת ל-session האמיתי: טוקנים + משתמש מה-DB.
+// Auth via httpOnly cookies — Redux holds user only, never JWTs.
 
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import api, { tokenStorage } from '../service/api';
+import api, { clearLegacyAuthStorage } from '../service/api';
 
 export interface AuthUser {
   id: string;
@@ -28,8 +26,6 @@ const initialState: AuthState = {
 interface AuthResponse {
   success: boolean;
   user: AuthUser;
-  accessToken: string;
-  refreshToken: string;
 }
 
 export const login = createAsyncThunk(
@@ -37,7 +33,7 @@ export const login = createAsyncThunk(
   async (payload: { email: string; password: string }, { rejectWithValue }) => {
     try {
       const { data } = await api.post<AuthResponse>('/auth/login', payload);
-      tokenStorage.setTokens(data.accessToken, data.refreshToken);
+      clearLegacyAuthStorage();
       return data.user;
     } catch (error: unknown) {
       const message = (error as { response?: { data?: { error?: string } } })?.response?.data?.error
@@ -55,7 +51,7 @@ export const register = createAsyncThunk(
   ) => {
     try {
       const { data } = await api.post<AuthResponse>('/auth/register', payload);
-      tokenStorage.setTokens(data.accessToken, data.refreshToken);
+      clearLegacyAuthStorage();
       return data.user;
     } catch (error: unknown) {
       const message = (error as { response?: { data?: { error?: string } } })?.response?.data?.error
@@ -65,7 +61,6 @@ export const register = createAsyncThunk(
   }
 );
 
-// Restore session via httpOnly cookie (or legacy localStorage Bearer)
 export const restoreSession = createAsyncThunk(
   'auth/restoreSession',
   async (_: void, { rejectWithValue }) => {
@@ -73,7 +68,7 @@ export const restoreSession = createAsyncThunk(
       const { data } = await api.get<{ success: boolean; user: AuthUser }>('/auth/me');
       return data.user;
     } catch {
-      tokenStorage.clear();
+      clearLegacyAuthStorage();
       return rejectWithValue('session-invalid');
     }
   }
@@ -85,7 +80,7 @@ export const logoutAsync = createAsyncThunk('auth/logoutAsync', async () => {
   } catch {
     /* ignore network errors on logout */
   } finally {
-    tokenStorage.clear();
+    clearLegacyAuthStorage();
   }
 });
 
@@ -94,7 +89,7 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     logout: (state) => {
-      tokenStorage.clear();
+      clearLegacyAuthStorage();
       state.user = null;
       state.status = 'idle';
       state.error = null;

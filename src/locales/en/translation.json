@@ -74,7 +74,12 @@
     "no_notifications": "No notifications",
     "shipment_started": "Shipment Started!",
     "price_update": "Price Update",
-    "customs_inspection": "Customs Inspection"
+    "customs_inspection": "Customs Inspection",
+    "demo_shipment_msg": "Your shipment VIP123456 departed from New York Port",
+    "demo_price_msg": "Shipping prices to Europe updated - save up to 15%",
+    "demo_customs_msg": "Your shipment is under customs inspection - may be delayed by 24 hours",
+    "track": "Track",
+    "view_prices": "View Prices"
   },
   "common": {
     "loading": "Loading...",
@@ -98,7 +103,8 @@
     "go_back": "Go back",
     "required": "Required",
     "optional": "Optional",
-    "close": "Close"
+    "close": "Close",
+    "retry": "Retry"
   },
   "forms": {
     "name": "Full Name",
@@ -115,7 +121,14 @@
     "required": "Required",
     "optional": "Optional",
     "question": "Your question",
-    "send": "Send message"
+    "send": "Send message",
+    "enter_location": "Enter location",
+    "fill_locations": "Please fill in both location fields",
+    "quote_result": "Your moving quote from {{from}} to {{to}} is $500.00",
+    "quote_label": "Quote:",
+    "fill_quote_title": "Fill out the form for your free quote",
+    "your_quote": "Your quote:",
+    "quote_amount": "Your quote: ${{amount}}"
   },
   "tracking": {
     "title": "Track Your Shipment",
@@ -134,7 +147,12 @@
     "route": "Route",
     "milestones": "Milestones",
     "auto_refresh": "Auto-refresh every 15 seconds",
-    "gps_pending": "GPS coordinates not yet available for this shipment."
+    "gps_pending": "GPS coordinates not yet available for this shipment.",
+    "location_pending": "Location pending",
+    "map_title": "Shipment GPS map",
+    "tracking_hash": "Tracking #:",
+    "estimated_arrival": "Estimated arrival",
+    "tbd": "TBD"
   },
   "ai": {
     "recommendations": "AI Recommendations",
@@ -295,7 +313,34 @@
   },
   "admin": {
     "unauthorized": "Admin access required",
-    "title": "Admin dashboard"
+    "title": "Admin dashboard",
+    "load_error": "Could not load dashboard data.",
+    "period": "Select time period",
+    "period_7": "Last 7 days",
+    "period_30": "Last 30 days",
+    "period_90": "Last 90 days",
+    "export": "Export data",
+    "revenue": "Total revenue",
+    "active_shipments": "Active shipments",
+    "customers": "Registered customers",
+    "avg_delivery": "Avg. delivery time",
+    "days": "days",
+    "ops_snapshot": "Operations snapshot",
+    "quotes_period": "Quotes in period",
+    "satisfaction": "Customer satisfaction",
+    "live_note": "Metrics are loaded from live Quote, Shipment, Invoice, and User data.",
+    "recent_orders": "Recent orders",
+    "no_orders": "No shipments yet.",
+    "col_order": "Order",
+    "col_customer": "Customer",
+    "col_destination": "Destination",
+    "col_value": "Value",
+    "col_status": "Status",
+    "col_actions": "Actions",
+    "status_pending": "Pending",
+    "status_approved": "Approved",
+    "status_in_transit": "In transit",
+    "status_delivered": "Delivered"
   },
   "pages": {
     "about": {
@@ -1168,7 +1213,13 @@
             "Questions about these Terms: support@vipshipping.com"
           ]
         }
-      ]
+      ],
+      "fmcsaTitle": "Required consumer protection disclosures (US interstate moves)",
+      "fmcsaBody": "Under 49 CFR 375.213, movers and brokers must give prospective customers a copy of, or a link to, the following official FMCSA publications before an interstate household goods move:",
+      "fmcsaRights": "Your Rights and Responsibilities When You Move (FMCSA)",
+      "fmcsaProtect": "Protect Your Move — consumer resources (FMCSA)",
+      "fmcsaVerify": "You can verify any interstate mover's USDOT registration and safety record on the official FMCSA SAFER database",
+      "fmcsaOurUsdot": " (our USDOT number: {{usdot}})."
     },
     "privacy": {
       "title": "Privacy Policy",
@@ -1238,6 +1289,335 @@
         }
       ]
     },
+    "podcast": {
+      "title": "Moving Made Easy Podcast",
+      "subtitle": "Expert advice, insider tips, and real stories from the world of international moving",
+      "badgeEpisodes": "12 Episodes",
+      "badgeBiweekly": "New Episodes Biweekly",
+      "badgeFree": "Free Listening",
+      "listenOn": "Listen On Your Favorite Platform",
+      "featured": "Featured Episode",
+      "episodeLabel": "Episode {{n}}",
+      "duration": "Duration",
+      "published": "Published",
+      "guest": "Guest",
+      "topics": "Topics:",
+      "listenNow": "Listen Now",
+      "download": "Download",
+      "play": "Play",
+      "allEpisodes": "All Episodes",
+      "aboutTitle": "About Moving Made Easy",
+      "aboutIntro": "Moving Made Easy is your go-to resource for everything related to moving, whether you're relocating across town or across the world. Hosted by VIP International Shipping's moving experts, each episode features:",
+      "aboutPoints": [
+        "Expert advice from industry professionals",
+        "Real stories from people who've successfully moved",
+        "Practical tips you can use for your own move",
+        "Answers to your most common moving questions"
+      ],
+      "aboutOutro": "New episodes are released every two weeks. Subscribe on your favorite platform to never miss an episode!",
+      "ctaTitle": "Have a Topic Suggestion?",
+      "ctaBody": "We'd love to hear what you want to learn about! Send us your questions and topic ideas.",
+      "emailUs": "Email Us",
+      "contactForm": "Contact Form",
+      "platforms": [
+        {
+          "name": "Apple Podcasts",
+          "icon": "🎧"
+        },
+        {
+          "name": "Spotify",
+          "icon": "🎵"
+        },
+        {
+          "name": "Google Podcasts",
+          "icon": "📻"
+        },
+        {
+          "name": "YouTube",
+          "icon": "▶️"
+        }
+      ],
+      "episodes": [
+        {
+          "number": 12,
+          "title": "International Moving 101: Everything You Need to Know",
+          "description": "A comprehensive guide to planning your first international move, including customs, documentation, and choosing the right shipping method.",
+          "duration": "45 min",
+          "date": "Feb 15, 2025",
+          "topics": [
+            "International Moving",
+            "Customs",
+            "Documentation",
+            "Shipping Methods"
+          ],
+          "guest": "Sarah Chen, Customs Broker",
+          "featured": true
+        },
+        {
+          "number": 11,
+          "title": "Packing Tips from Professional Movers",
+          "description": "Learn the secrets professional movers use to pack efficiently and protect your belongings during transit.",
+          "duration": "32 min",
+          "date": "Feb 1, 2025",
+          "topics": [
+            "Packing",
+            "Tips & Tricks",
+            "Organization"
+          ],
+          "guest": "Mike Rodriguez, Lead Packer"
+        },
+        {
+          "number": 10,
+          "title": "Moving with Kids: A Parent's Guide",
+          "description": "Strategies to make moving less stressful for children of all ages, from toddlers to teenagers.",
+          "duration": "38 min",
+          "date": "Jan 18, 2025",
+          "topics": [
+            "Family Moving",
+            "Kids",
+            "Mental Health"
+          ],
+          "guest": "Dr. Emily Johnson, Child Psychologist"
+        },
+        {
+          "number": 9,
+          "title": "Cost-Saving Strategies for Your Move",
+          "description": "Expert tips on how to reduce moving costs without sacrificing quality or service.",
+          "duration": "29 min",
+          "date": "Jan 4, 2025",
+          "topics": [
+            "Budget",
+            "Money Saving",
+            "Planning"
+          ],
+          "guest": null
+        },
+        {
+          "number": 8,
+          "title": "Pet Relocation: Moving with Furry Friends",
+          "description": "Everything you need to know about moving with pets internationally, including health certificates and quarantine requirements.",
+          "duration": "41 min",
+          "date": "Dec 21, 2024",
+          "topics": [
+            "Pet Moving",
+            "International",
+            "Documentation"
+          ],
+          "guest": "Dr. Amanda Lee, Veterinarian"
+        },
+        {
+          "number": 7,
+          "title": "Downsizing Before a Move",
+          "description": "How to declutter effectively and decide what to keep, sell, donate, or discard before your move.",
+          "duration": "35 min",
+          "date": "Dec 7, 2024",
+          "topics": [
+            "Downsizing",
+            "Organization",
+            "Minimalism"
+          ],
+          "guest": "Marie Thompson, Professional Organizer"
+        },
+        {
+          "number": 6,
+          "title": "Understanding Moving Insurance",
+          "description": "A deep dive into different types of moving insurance and how to choose the right protection for your belongings.",
+          "duration": "28 min",
+          "date": "Nov 23, 2024",
+          "topics": [
+            "Insurance",
+            "Protection",
+            "Claims"
+          ],
+          "guest": null
+        },
+        {
+          "number": 5,
+          "title": "Moving to Europe: A Complete Guide",
+          "description": "Specific considerations for relocating to European countries, including visa requirements and cultural adaptation.",
+          "duration": "52 min",
+          "date": "Nov 9, 2024",
+          "topics": [
+            "Europe",
+            "International",
+            "Visas",
+            "Culture"
+          ],
+          "guest": "James Wilson, Expat Consultant"
+        },
+        {
+          "number": 4,
+          "title": "How to Choose a Moving Company",
+          "description": "Red flags to watch for, questions to ask, and how to verify a moving company's credentials.",
+          "duration": "31 min",
+          "date": "Oct 26, 2024",
+          "topics": [
+            "Choosing Movers",
+            "Scams",
+            "Research"
+          ],
+          "guest": null
+        },
+        {
+          "number": 3,
+          "title": "Moving Timeline: When to Do What",
+          "description": "A detailed timeline of tasks from 3 months before your move to settling into your new home.",
+          "duration": "27 min",
+          "date": "Oct 12, 2024",
+          "topics": [
+            "Planning",
+            "Timeline",
+            "Checklist"
+          ],
+          "guest": null
+        },
+        {
+          "number": 2,
+          "title": "Special Items: Pianos, Art, and Antiques",
+          "description": "How to properly move high-value and delicate items that require special handling and crating.",
+          "duration": "39 min",
+          "date": "Sep 28, 2024",
+          "topics": [
+            "Special Items",
+            "White Glove",
+            "Crating"
+          ],
+          "guest": "David Miller, Fine Art Handler"
+        },
+        {
+          "number": 1,
+          "title": "Welcome to Moving Made Easy",
+          "description": "Introduction to our podcast and what you can expect from future episodes. Meet your hosts and learn about VIP International Shipping.",
+          "duration": "22 min",
+          "date": "Sep 14, 2024",
+          "topics": [
+            "Introduction",
+            "Welcome"
+          ],
+          "guest": null
+        }
+      ]
+    },
+    "accessibilityStatement": {
+      "title": "Accessibility Statement",
+      "subtitle": "VIP International Shipping is Committed to Digital Accessibility",
+      "badgesNote": "These badges describe our accessibility goals and ongoing work. They are not a claim of completed third-party certification or a VPAT.",
+      "lastUpdated": "Last Updated",
+      "commitmentTitle": "Our Commitment",
+      "commitmentBody": "VIP International Shipping is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.",
+      "goalsTitle": "Accessibility Goals",
+      "goalsIntro": "We are actively improving toward the following accessibility standards. This page describes our program and goals; it does not assert completed formal certification:",
+      "goals": [
+        {
+          "title": "WCAG 2.1 Level AA (target)",
+          "body": "Web Content Accessibility Guidelines (WCAG) 2.1 at the AA level. These guidelines explain how to make web content more accessible for people with disabilities, and user friendly for everyone."
+        },
+        {
+          "title": "ADA Title III (program)",
+          "body": "Americans with Disabilities Act (ADA) Title III requirements for public accommodations and commercial facilities, ensuring equal access to our services."
+        },
+        {
+          "title": "Section 508 (alignment goal)",
+          "body": "Section 508 of the Rehabilitation Act, requiring federal agencies and contractors to make their electronic and information technology accessible to people with disabilities."
+        },
+        {
+          "title": "EN 301 549 (alignment goal)",
+          "body": "European Standard for digital accessibility, ensuring compatibility with international requirements."
+        }
+      ],
+      "goalsStatus": "Program status: We are actively working toward WCAG 2.1 Level AA. Improvements are ongoing; this is not a claim of completed third-party certification.",
+      "featuresTitle": "Accessibility Features",
+      "featureGroups": [
+        {
+          "title": "Keyboard Navigation",
+          "items": [
+            "Full keyboard accessibility throughout the site",
+            "Skip navigation links for quick access to main content",
+            "Logical tab order for all interactive elements",
+            "Visible focus indicators on all focusable elements",
+            "No keyboard traps"
+          ]
+        },
+        {
+          "title": "Visual Accessibility",
+          "items": [
+            "High contrast ratios (minimum 4.5:1 for normal text)",
+            "Resizable text up to 200% without loss of functionality",
+            "Alternative text for all meaningful images",
+            "Clear visual hierarchy and consistent navigation",
+            "No information conveyed by color alone",
+            "Support for browser zoom and text-only zoom"
+          ]
+        },
+        {
+          "title": "Screen Reader Compatibility",
+          "items": [
+            "Semantic HTML markup for proper structure",
+            "ARIA labels and landmarks where appropriate",
+            "Descriptive link text and button labels",
+            "Table headers properly associated with data cells",
+            "Form labels correctly associated with inputs",
+            "Status messages announced to assistive technology"
+          ]
+        },
+        {
+          "title": "Content Accessibility",
+          "items": [
+            "Clear and simple language",
+            "Consistent page layouts and navigation",
+            "Headings used to organize content hierarchically",
+            "Lists used for grouping related items",
+            "Sufficient time limits with options to extend",
+            "No automatically playing audio or video"
+          ]
+        },
+        {
+          "title": "Mobile and Touch Accessibility",
+          "items": [
+            "Responsive design for all device sizes",
+            "Touch targets at least 44x44 pixels",
+            "Adequate spacing between interactive elements",
+            "Orientation flexibility (portrait and landscape)",
+            "Gesture alternatives for all interactions"
+          ]
+        },
+        {
+          "title": "Forms and Interactions",
+          "items": [
+            "Clear error messages and validation",
+            "Error prevention and confirmation for critical actions",
+            "Inline help and instructions",
+            "Autocomplete attributes for common fields",
+            "Multiple ways to submit forms"
+          ]
+        }
+      ],
+      "feedbackTitle": "Feedback and Contact Information",
+      "feedbackBody": "We welcome your feedback on the accessibility of VIP International Shipping's website. Please let us know if you encounter accessibility barriers:",
+      "feedbackEmail": "accessibility@vipshipping.com",
+      "responseTime": "We aim to respond to accessibility feedback within 2 business days.",
+      "limitationsTitle": "Known Limitations",
+      "limitations": [
+        "Third-Party Content: Some embedded content from third-party providers (e.g., payment processors, social media widgets) may not be fully accessible. We are working with these providers to improve accessibility.",
+        "PDF Documents: Some older PDF documents may not be fully accessible. We are in the process of remediating these documents and providing accessible alternatives.",
+        "Complex Interactive Features: Some advanced interactive features (e.g., 3D volume calculators, augmented reality tools) may have limited accessibility. We provide alternative methods to access the same functionality.",
+        "Legacy Content: Older blog posts and archived content are being updated to meet current accessibility standards."
+      ],
+      "limitationsNote": "Alternative Access: If you encounter any accessibility barriers, please contact us. We will provide alternative methods to access the information or service you need.",
+      "ongoingTitle": "Our Commitment to Continuous Improvement",
+      "ongoing": [
+        "Regularly reviewing and updating our accessibility policies and practices",
+        "Providing accessibility training for all staff members",
+        "Including accessibility in our design and development process from the start",
+        "Conducting regular accessibility audits and user testing",
+        "Prioritizing accessibility in our product roadmap",
+        "Engaging with the disability community for feedback and guidance",
+        "Staying current with evolving accessibility standards and best practices"
+      ],
+      "ongoingNote": "Audit status: No formal third-party accessibility audit or VPAT has been completed yet. We are working toward WCAG 2.1 AA and will update this page after an independent review.",
+      "contactTitle": "Accessibility is a Right, Not a Feature",
+      "contactBody": "We believe that everyone deserves equal access to our services, regardless of ability. This commitment extends beyond legal compliance—it's about creating an inclusive experience for all users. Thank you for helping us improve accessibility by sharing your feedback."
+    },
     "stubs": {
       "household": {
         "title": "International Household Movers",
@@ -1254,7 +1634,265 @@
       "comparing": {
         "title": "Comparing International Moving Quotes",
         "body": "Get a transparent quote and compare shipping options — no obligation."
+      },
+      "motorcycle": {
+        "title": "Shipping a Motorcycle to Europe",
+        "body": "Specialized motorcycle shipping to Europe with secure crating, customs support, and door-to-port or door-to-door options."
+      },
+      "customs": {
+        "title": "Customs Inspection",
+        "body": "Guidance on customs inspections, required documents, and how VIP coordinates clearance for international moves."
+      },
+      "trusted": {
+        "title": "Trusted Moving Company",
+        "body": "Learn why customers trust VIP International Shipping for licensed, insured, and professionally managed relocations."
+      },
+      "intlInsurance": {
+        "title": "International Moving Insurance",
+        "body": "Protect your international shipment with coverage options tailored to household goods and high-value items."
       }
+    },
+    "movingInsurance": {
+      "subtitle": "Full protection for your valuables with personalized insurance coverage",
+      "badgeLloyd": "Lloyd's of London licensed",
+      "badgeCoverage": "Coverage up to $100,000",
+      "recommended": "Recommended",
+      "selectPlan": "Select plan",
+      "calculatorTitle": "Insurance calculator",
+      "itemValue": "Item value (USD)",
+      "selectPlanLabel": "Select insurance plan",
+      "selectPlanPlaceholder": "Select a plan...",
+      "calculatedPremium": "Calculated premium:",
+      "forCoverage": "For coverage of ${{value}}",
+      "claimsTitle": "Claims process",
+      "stepLabel": "Step {{n}}:",
+      "avgProcessing": "Average processing time:",
+      "avgProcessingBody": "7–14 business days for most claims",
+      "coverageTitle": "What does insurance cover?",
+      "coveredTitle": "Covered:",
+      "notCoveredTitle": "Not covered:",
+      "ctaTitle": "Ready to protect your move?",
+      "ctaBody": "Get professional advice and choose the insurance plan that fits your needs",
+      "covered": [
+        "Physical damage during transport",
+        "Theft or loss",
+        "Water and fire damage",
+        "Transport accidents",
+        "Damage during loading/unloading"
+      ],
+      "notCovered": [
+        "Normal wear and tear",
+        "Pre-existing damage",
+        "Improper packing",
+        "Insect or rodent damage",
+        "Prohibited shipping items"
+      ],
+      "plans": [
+        {
+          "id": "basic",
+          "rate": 1.5,
+          "name": "Basic insurance",
+          "coverage": "Up to $10,000",
+          "premium": "1.5% of value",
+          "features": [
+            "Coverage for physical damage",
+            "Basic loss protection",
+            "Claims up to $10,000",
+            "Processing within 30 days"
+          ],
+          "color": "primary",
+          "recommended": false
+        },
+        {
+          "id": "standard",
+          "rate": 2.5,
+          "name": "Standard insurance",
+          "coverage": "Up to $50,000",
+          "premium": "2.5% of value",
+          "features": [
+            "Everything in Basic",
+            "Coverage for luxury items",
+            "Claims up to $50,000",
+            "Processing within 14 days",
+            "Priority customer service"
+          ],
+          "color": "success",
+          "recommended": true
+        },
+        {
+          "id": "premium",
+          "rate": 3.5,
+          "name": "Premium insurance",
+          "coverage": "Up to $100,000",
+          "premium": "3.5% of value",
+          "features": [
+            "Everything in Standard",
+            "Coverage for all damage types",
+            "Claims up to $100,000",
+            "Processing within 7 days",
+            "Dedicated claims representative",
+            "Delay coverage"
+          ],
+          "color": "warning",
+          "recommended": false
+        }
+      ],
+      "claimSteps": [
+        {
+          "title": "Report immediately",
+          "description": "Report the damage within 48 hours"
+        },
+        {
+          "title": "Document the damage",
+          "description": "Photograph the damage and complete a claim form"
+        },
+        {
+          "title": "Adjuster review",
+          "description": "A licensed adjuster inspects the damage"
+        },
+        {
+          "title": "Compensation",
+          "description": "Receive full, fast compensation"
+        }
+      ]
+    },
+    "carShipping": {
+      "subtitle": "Professional vehicle shipping worldwide with full insurance and personal care",
+      "badgeVolume": "Over 5,000 vehicles per year",
+      "badgeSafe": "99.5% damage-free arrival",
+      "optionsTitle": "Shipping options",
+      "priceLabel": "Price",
+      "durationLabel": "Duration",
+      "pros": "Pros:",
+      "cons": "Cons:",
+      "destinationsTitle": "Popular destinations",
+      "colCountry": "Country",
+      "colPort": "Destination port",
+      "colDuration": "Duration",
+      "colPrice": "Price from",
+      "colAction": "Action",
+      "docsTitle": "Required documents",
+      "docsImportant": "Important:",
+      "docsNote": "All documents must be in English or officially translated",
+      "processTitle": "Shipping process",
+      "ctaTitle": "Ready to ship your vehicle?",
+      "ctaBody": "Get a personalized quote and start the process today",
+      "options": [
+        {
+          "type": "RoRo (Roll-on/Roll-off)",
+          "description": "Your vehicle drives onto the ship deck",
+          "price": "$800 – $1,500",
+          "duration": "2–4 weeks",
+          "pros": [
+            "More affordable",
+            "Faster",
+            "Less handling"
+          ],
+          "cons": [
+            "Exposed to weather",
+            "Higher risk"
+          ]
+        },
+        {
+          "type": "Container Shipping",
+          "description": "Your vehicle ships in a sealed container",
+          "price": "$1,200 – $2,500",
+          "duration": "3–6 weeks",
+          "pros": [
+            "Full protection",
+            "More secure",
+            "Room for extra belongings"
+          ],
+          "cons": [
+            "More expensive",
+            "Takes longer"
+          ]
+        }
+      ],
+      "destinations": [
+        {
+          "country": "Germany",
+          "port": "Hamburg",
+          "duration": "3–4 weeks",
+          "price": "$1,200"
+        },
+        {
+          "country": "United Kingdom",
+          "port": "Southampton",
+          "duration": "2–3 weeks",
+          "price": "$1,100"
+        },
+        {
+          "country": "Australia",
+          "port": "Sydney",
+          "duration": "4–6 weeks",
+          "price": "$1,800"
+        },
+        {
+          "country": "Japan",
+          "port": "Yokohama",
+          "duration": "3–5 weeks",
+          "price": "$1,600"
+        }
+      ],
+      "requirements": [
+        "Valid driver's license",
+        "Vehicle title / registration",
+        "Valid insurance",
+        "Passport copy",
+        "Original vehicle invoice",
+        "Vehicle value declaration"
+      ],
+      "processSteps": [
+        {
+          "title": "Booking & payment",
+          "description": "Book the service and pay a deposit"
+        },
+        {
+          "title": "Vehicle pickup",
+          "description": "Pickup from a location you choose"
+        },
+        {
+          "title": "Prepare for shipping",
+          "description": "Inspect and document vehicle condition"
+        },
+        {
+          "title": "International shipping",
+          "description": "Transport with real-time tracking"
+        },
+        {
+          "title": "Delivery at destination",
+          "description": "Arrival and handover at the final destination"
+        }
+      ]
+    },
+    "whyTrust": {
+      "title": "Why Trust VIP International Shipping?",
+      "intro1": "An international move is a significant milestone in life, whether you're expanding your business, reconnecting with loved ones, retiring in a more affordable destination, or finding a place with the ideal climate.",
+      "intro2": "At VIP International Shipping, we specialize in international relocation, offering a reliable and global network to make your move smooth and hassle-free. We are dedicated to ensuring the safe and timely transportation of your belongings, no matter where your new journey takes you.",
+      "intro3": "With a strong presence in key locations around the world, including exclusive partnerships across Europe, the Middle East, and Asia, VIP International Shipping is equipped to handle all aspects of your move. Our team ensures personalized services to meet the unique needs of each client.",
+      "sections": [
+        {
+          "title": "Global Coverage",
+          "body": "VIP International Shipping offers seamless service across all continents, with dedicated teams on both the East and West coasts of the United States. We ensure your move is taken care of no matter where it’s heading."
+        },
+        {
+          "title": "Storage and Preparation",
+          "body": "Our state-of-the-art facilities in the US and Europe allow us to store and prepare shipments efficiently. Your items will be carefully handled, ensuring their safety during transit."
+        },
+        {
+          "title": "Licensed and Trusted",
+          "body": "VIP International Shipping is fully licensed by the Federal Maritime Commission for international sea shipments. You can trust us with your most valuable possessions for a smooth and secure move."
+        },
+        {
+          "title": "Household and Office Relocations",
+          "body": "Whether you’re moving your household, office, or specialized items like vehicles or artwork, VIP International Shipping is equipped to handle all aspects of your move with personalized service."
+        },
+        {
+          "title": "Reliable and Stress-Free Service",
+          "body": "We ensure your move is stress-free by providing reliable and timely transportation of your belongings, whether it’s across the country or around the world."
+        }
+      ]
     }
   },
   "home": {

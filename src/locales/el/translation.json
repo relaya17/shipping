@@ -76,7 +76,8 @@
     "go_home": "Αρχική σελίδα",
     "go_back": "Επιστροφή",
     "required": "Υποχρεωτικό",
-    "optional": "Προαιρετικό"
+    "optional": "Προαιρετικό",
+    "retry": "Δοκιμάστε ξανά"
   },
   "forms": {
     "name": "Ονοματεπώνυμο",
@@ -204,7 +205,34 @@
   },
   "admin": {
     "unauthorized": "Απαιτείται πρόσβαση διαχειριστή",
-    "title": "Πίνακας διαχείρισης"
+    "title": "Πίνακας διαχείρισης",
+    "load_error": "Δεν ήταν δυνατή η φόρτωση δεδομένων πίνακα.",
+    "period": "Επιλέξτε χρονική περίοδο",
+    "period_7": "Τελευταίες 7 ημέρες",
+    "period_30": "Τελευταίες 30 ημέρες",
+    "period_90": "Τελευταίες 90 ημέρες",
+    "export": "Εξαγωγή δεδομένων",
+    "revenue": "Συνολικά έσοδα",
+    "active_shipments": "Ενεργές αποστολές",
+    "customers": "Εγγεγραμμένοι πελάτες",
+    "avg_delivery": "Μέσος χρόνος παράδοσης",
+    "days": "ημέρες",
+    "ops_snapshot": "Επιχειρησιακή εικόνα",
+    "quotes_period": "Προσφορές στην περίοδο",
+    "satisfaction": "Ικανοποίηση πελατών",
+    "live_note": "Τα μετρικά φορτώνονται από ζωντανά δεδομένα Προσφορών, Αποστολών, Τιμολογίων και Χρηστών.",
+    "recent_orders": "Πρόσφατες παραγγελίες",
+    "no_orders": "Δεν υπάρχουν αποστολές ακόμα.",
+    "col_order": "Παραγγελία",
+    "col_customer": "Πελάτης",
+    "col_destination": "Προορισμός",
+    "col_value": "Αξία",
+    "col_status": "Κατάσταση",
+    "col_actions": "Ενέργειες",
+    "status_pending": "Εκκρεμεί",
+    "status_approved": "Εγκρίθηκε",
+    "status_in_transit": "Σε μεταφορά",
+    "status_delivered": "Παραδόθηκε"
   },
   "pages": {
     "about": {
@@ -1013,136 +1041,142 @@
       ]
     },
     "terms": {
-      "title": "Terms of Service",
-      "lastUpdated": "Last updated",
-      "intro": "Please read these Terms carefully before using VIP International Shipping services.",
+      "title": "Όροι χρήσης",
+      "lastUpdated": "Τελευταία ενημέρωση",
+      "intro": "Διαβάστε προσεκτικά αυτούς τους Όρους πριν χρησιμοποιήσετε τις υπηρεσίες της VIP International Shipping.",
       "sections": [
         {
-          "title": "1. Acceptance of Terms",
+          "title": "1. Αποδοχή όρων",
           "paragraphs": [
-            "By accessing or using our website and services, you agree to be bound by these Terms of Service."
+            "Με την πρόσβαση ή χρήση του ιστότοπου και των υπηρεσιών μας, συμφωνείτε να δεσμεύεστε από αυτούς τους Όρους χρήσης."
           ]
         },
         {
-          "title": "2. Services",
+          "title": "2. Υπηρεσίες",
           "paragraphs": [
-            "We provide international and domestic moving, packing, storage, and related logistics services subject to availability and applicable law."
+            "Παρέχουμε διεθνείς και εγχώριες μετακομίσεις, συσκευασία, αποθήκευση και σχετικές logistics υπηρεσίες, σύμφωνα με τη διαθεσιμότητα και την ισχύουσα νομοθεσία."
           ]
         },
         {
-          "title": "3. Quotes and Pricing",
+          "title": "3. Προσφορές και τιμολόγηση",
           "paragraphs": [
-            "Quotes are estimates unless expressly stated as binding. Final pricing may change after survey, inventory, access conditions, or regulatory fees."
+            "Οι προσφορές είναι εκτιμήσεις, εκτός αν αναφέρεται ρητά ότι είναι δεσμευτικές. Η τελική τιμή μπορεί να αλλάξει μετά από επιθεώρηση, απογραφή, συνθήκες πρόσβασης ή ρυθμιστικά τέλη."
           ]
         },
         {
-          "title": "4. Customer Responsibilities",
+          "title": "4. Ευθύνες πελάτη",
           "paragraphs": [
-            "You are responsible for accurate inventory, access to premises, required permits, and compliance with customs and prohibited-item rules."
+            "Είστε υπεύθυνοι για ακριβή απογραφή, πρόσβαση στους χώρους, απαιτούμενες άδειες και συμμόρφωση με τελωνειακούς κανόνες και απαγορευμένα αντικείμενα."
           ]
         },
         {
-          "title": "5. Payments",
+          "title": "5. Πληρωμές",
           "paragraphs": [
-            "Payment terms are stated on your invoice or booking confirmation. Late payments may incur fees or service delays."
+            "Οι όροι πληρωμής αναφέρονται στο τιμολόγιο ή την επιβεβαίωση κράτησης. Οι καθυστερημένες πληρωμές μπορεί να επιφέρουν χρεώσεις ή καθυστερήσεις."
           ]
         },
         {
-          "title": "6. Insurance and Liability",
+          "title": "6. Ασφάλιση και ευθύνη",
           "paragraphs": [
-            "Coverage options are offered at booking. Liability limits apply as disclosed in your contract and applicable carrier terms."
+            "Επιλογές κάλυψης προσφέρονται κατά την κράτηση. Ισχύουν όρια ευθύνης όπως αποκαλύπτονται στο συμβόλαιό σας και στους όρους του μεταφορέα."
           ]
         },
         {
-          "title": "7. Cancellations",
+          "title": "7. Ακυρώσεις",
           "paragraphs": [
-            "Cancellation and rescheduling policies are provided with your booking. Deposits may be non-refundable after certain deadlines."
+            "Οι πολιτικές ακύρωσης και επαναπρογραμματισμού παρέχονται με την κράτησή σας. Οι καταθέσεις μπορεί να μην επιστρέφονται μετά από ορισμένες προθεσμίες."
           ]
         },
         {
-          "title": "8. Privacy",
+          "title": "8. Απόρρητο",
           "paragraphs": [
-            "Personal data is handled according to our Privacy Policy."
+            "Τα προσωπικά δεδομένα χειρίζονται σύμφωνα με την Πολιτική απορρήτου μας."
           ]
         },
         {
-          "title": "9. Governing Law",
+          "title": "9. Εφαρμοστέο δίκαιο",
           "paragraphs": [
-            "These Terms are governed by the laws of the applicable jurisdiction stated in your service agreement."
+            "Αυτοί οι Όροι διέπονται από τους νόμους της δικαιοδοσίας που αναφέρεται στη σύμβαση υπηρεσίας σας."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. Επικοινωνία",
           "paragraphs": [
-            "Questions about these Terms: support@vipshipping.com"
+            "Ερωτήσεις για αυτούς τους Όρους: support@vipshipping.com"
           ]
         }
-      ]
+      ],
+      "fmcsaTitle": "Υποχρεωτικές αποκαλύψεις προστασίας καταναλωτή (διαπολιτειακές μετακομίσεις στις ΗΠΑ)",
+      "fmcsaBody": "Σύμφωνα με 49 CFR 375.213, οι μεταφορείς και μεσίτες πρέπει να παρέχουν στους πιθανούς πελάτες αντίγραφο ή σύνδεσμο στις ακόλουθες επίσημες δημοσιεύσεις FMCSA πριν από διαπολιτειακή μετακόμιση οικοσκευών:",
+      "fmcsaRights": "Τα δικαιώματα και οι ευθύνες σας όταν μετακομίζετε (FMCSA)",
+      "fmcsaProtect": "Προστατέψτε τη μετακόμισή σας — πόροι καταναλωτή (FMCSA)",
+      "fmcsaVerify": "Μπορείτε να επαληθεύσετε την εγγραφή USDOT και το ιστορικό ασφάλειας οποιουδήποτε διαπολιτειακού μεταφορέα στη επίσημη βάση FMCSA SAFER",
+      "fmcsaOurUsdot": " (ο αριθμός USDOT μας: {{usdot}})."
     },
     "privacy": {
-      "title": "Privacy Policy",
-      "subtitle": "How we collect, use, and protect your information",
-      "lastUpdated": "Last updated",
-      "intro": "This Privacy Policy explains how VIP International Shipping handles personal information.",
+      "title": "Πολιτική απορρήτου",
+      "subtitle": "Πώς συλλέγουμε, χρησιμοποιούμε και προστατεύουμε τις πληροφορίες σας",
+      "lastUpdated": "Τελευταία ενημέρωση",
+      "intro": "Αυτή η Πολιτική απορρήτου εξηγεί πώς η VIP International Shipping χειρίζεται προσωπικά δεδομένα.",
       "sections": [
         {
-          "title": "1. Information we collect",
+          "title": "1. Πληροφορίες που συλλέγουμε",
           "paragraphs": [
-            "Contact details, move addresses, shipment details, payment references, and usage data needed to provide services."
+            "Στοιχεία επικοινωνίας, διευθύνσεις μετακόμισης, λεπτομέρειες αποστολής, αναφορές πληρωμής και δεδομένα χρήσης απαραίτητα για την παροχή υπηρεσιών."
           ]
         },
         {
-          "title": "2. How we use information",
+          "title": "2. Πώς χρησιμοποιούμε τις πληροφορίες",
           "paragraphs": [
-            "To prepare quotes, operate shipments, process payments, provide support, improve services, and meet legal obligations."
+            "Για προετοιμασία προσφορών, διαχείριση αποστολών, επεξεργασία πληρωμών, υποστήριξη, βελτίωση υπηρεσιών και συμμόρφωση με νομικές υποχρεώσεις."
           ]
         },
         {
-          "title": "3. Sharing",
+          "title": "3. Κοινοποίηση",
           "paragraphs": [
-            "We share data with carriers, customs brokers, payment processors, and service providers under contract, or when required by law."
+            "Κοινοποιούμε δεδομένα σε μεταφορείς, τελωνειακούς πράκτορες, επεξεργαστές πληρωμών και παρόχους υπηρεσιών με σύμβαση, ή όταν απαιτείται από τον νόμο."
           ]
         },
         {
-          "title": "4. Security",
+          "title": "4. Ασφάλεια",
           "paragraphs": [
-            "We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data."
+            "Χρησιμοποιούμε διοικητικά, τεχνικά και φυσικά μέτρα προστασίας κατάλληλα για την ευαισθησία των δεδομένων."
           ]
         },
         {
-          "title": "5. Your rights",
+          "title": "5. Τα δικαιώματά σας",
           "paragraphs": [
-            "Depending on your location, you may request access, correction, deletion, or restriction of personal data."
+            "Ανάλογα με την τοποθεσία σας, μπορείτε να ζητήσετε πρόσβαση, διόρθωση, διαγραφή ή περιορισμό προσωπικών δεδομένων."
           ]
         },
         {
           "title": "6. Cookies",
           "paragraphs": [
-            "We use necessary cookies for authentication and optional analytics cookies where permitted."
+            "Χρησιμοποιούμε απαραίτητα cookies για έλεγχο ταυτότητας και προαιρετικά αναλυτικά cookies όπου επιτρέπεται."
           ]
         },
         {
-          "title": "7. International transfers",
+          "title": "7. Διεθνείς μεταφορές",
           "paragraphs": [
-            "Data may be processed in countries where we or our partners operate, with appropriate safeguards."
+            "Τα δεδομένα μπορεί να επεξεργάζονται σε χώρες όπου λειτουργούμε εμείς ή οι συνεργάτες μας, με κατάλληλες εγγυήσεις."
           ]
         },
         {
-          "title": "8. Children",
+          "title": "8. Παιδιά",
           "paragraphs": [
-            "Our services are not directed to children under 16."
+            "Οι υπηρεσίες μας δεν απευθύνονται σε παιδιά κάτω των 16 ετών."
           ]
         },
         {
-          "title": "9. Changes",
+          "title": "9. Αλλαγές",
           "paragraphs": [
-            "We may update this policy and will revise the last-updated date when changes are material."
+            "Μπορούμε να ενημερώσουμε αυτή την πολιτική και θα αναθεωρήσουμε την ημερομηνία τελευταίας ενημέρωσης σε ουσιώδεις αλλαγές."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. Επικοινωνία",
           "paragraphs": [
-            "Privacy questions: privacy@vipshipping.com"
+            "Ερωτήσεις απορρήτου: privacy@vipshipping.com"
           ]
         }
       ]

@@ -30,8 +30,8 @@ function publicUser(user) {
 function respondWithAuth(res, status, user) {
   const tokens = issueTokens(user);
   setAuthCookies(res, tokens);
-  // Tokens also returned for non-browser clients; browser should prefer httpOnly cookies.
-  return res.status(status).json({ success: true, user: publicUser(user), ...tokens });
+  // Never return JWTs in JSON — browser auth is httpOnly cookies only.
+  return res.status(status).json({ success: true, user: publicUser(user) });
 }
 
 router.post('/register', commonValidations.email, handleValidationErrors, async (req, res, next) => {
@@ -118,7 +118,7 @@ router.post('/refresh', async (req, res, next) => {
 
     const tokens = issueTokens(user);
     setAuthCookies(res, tokens);
-    return res.json({ success: true, ...tokens });
+    return res.json({ success: true });
   } catch (error) {
     next(error);
   }

@@ -19,7 +19,8 @@
     "deploy": "pnpm run build:prod && echo 'Ready for deployment!'",
     "test": "echo 'No tests specified yet'",
     "smoke": "node scripts/smoke.js",
-    "type-check": "tsc -b --pretty false"
+    "type-check": "tsc -b --pretty false",
+    "qa": "node scripts/preDeployQA.js"
   },
   "packageManager": "pnpm@10.17.1",
   "dependencies": {

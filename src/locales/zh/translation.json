@@ -76,7 +76,8 @@
     "go_home": "Go to homepage",
     "go_back": "Go back",
     "required": "Required",
-    "optional": "Optional"
+    "optional": "Optional",
+    "retry": "重试"
   },
   "forms": {
     "name": "全名",
@@ -204,7 +205,34 @@
   },
   "admin": {
     "unauthorized": "Admin access required",
-    "title": "Admin dashboard"
+    "title": "Admin dashboard",
+    "load_error": "Could not load dashboard data.",
+    "period": "Select time period",
+    "period_7": "Last 7 days",
+    "period_30": "Last 30 days",
+    "period_90": "Last 90 days",
+    "export": "Export data",
+    "revenue": "Total revenue",
+    "active_shipments": "Active shipments",
+    "customers": "Registered customers",
+    "avg_delivery": "Avg. delivery time",
+    "days": "days",
+    "ops_snapshot": "Operations snapshot",
+    "quotes_period": "Quotes in period",
+    "satisfaction": "Customer satisfaction",
+    "live_note": "Metrics are loaded from live Quote, Shipment, Invoice, and User data.",
+    "recent_orders": "Recent orders",
+    "no_orders": "No shipments yet.",
+    "col_order": "Order",
+    "col_customer": "Customer",
+    "col_destination": "Destination",
+    "col_value": "Value",
+    "col_status": "Status",
+    "col_actions": "Actions",
+    "status_pending": "Pending",
+    "status_approved": "Approved",
+    "status_in_transit": "In transit",
+    "status_delivered": "Delivered"
   },
   "pages": {
     "about": {
@@ -547,186 +575,186 @@
       ]
     },
     "freeMovingQuote": {
-      "title": "Get Your Free Moving Quote",
-      "subtitle": "Instant estimate in 3 easy steps | No obligation | Save up to 30%",
+      "title": "获取免费搬家报价",
+      "subtitle": "3 步即时估算 | 无义务 | 最高节省 30%",
       "badges": {
-        "free": "100% Free",
-        "noCard": "No Credit Card",
-        "response": "1-Hour Response",
-        "priceMatch": "Price Match Guarantee"
+        "free": "100% 免费",
+        "noCard": "无需信用卡",
+        "response": "1 小时内回复",
+        "priceMatch": "价格匹配保证"
       },
       "benefits": {
         "pricing": {
-          "title": "Transparent Pricing",
-          "desc": "No hidden fees or surprise charges"
+          "title": "透明定价",
+          "desc": "无隐藏费用或意外收费"
         },
         "insured": {
-          "title": "Fully Insured",
-          "desc": "Comprehensive protection for your belongings"
+          "title": "全面保险",
+          "desc": "为您的物品提供全面保护"
         },
         "fast": {
-          "title": "Fast Response",
-          "desc": "Quote within 1 hour, 7 days a week"
+          "title": "快速响应",
+          "desc": "1 小时内报价，每周 7 天"
         },
         "guarantee": {
-          "title": "Best Price Guarantee",
-          "desc": "We'll match any competitor's quote"
+          "title": "最优价格保证",
+          "desc": "我们将匹配任何竞争对手报价"
         }
       },
-      "stepOf": "Step {{step}} of {{total}}",
-      "percentComplete": "{{percent}}% Complete",
+      "stepOf": "第 {{step}} 步，共 {{total}} 步",
+      "percentComplete": "已完成 {{percent}}%",
       "steps": {
-        "moveDetails": "Move Details",
-        "services": "Services",
-        "contact": "Contact Info"
+        "moveDetails": "搬家详情",
+        "services": "服务",
+        "contact": "联系信息"
       },
-      "step1Title": "Tell Us About Your Move",
-      "moveTypeLabel": "Type of Move *",
+      "step1Title": "告诉我们您的搬家需求",
+      "moveTypeLabel": "搬家类型 *",
       "moveTypes": {
-        "local": "Local Move (Within 50 miles)",
-        "longDistance": "Long Distance (Interstate)",
-        "international": "International Move"
+        "local": "本地搬家（50 英里内）",
+        "longDistance": "长途搬家（州际）",
+        "international": "国际搬家"
       },
-      "fromZip": "From Zip Code *",
-      "toZip": "To Zip Code *",
-      "zipPlaceholderFrom": "e.g. 10001",
-      "zipPlaceholderTo": "e.g. 90210",
-      "moveDate": "Preferred Move Date *",
-      "flexibleDates": "Flexible dates? We can offer better pricing!",
-      "homeSize": "Home Size *",
-      "homeSizeSelect": "Select home size...",
+      "fromZip": "出发地邮编 *",
+      "toZip": "目的地邮编 *",
+      "zipPlaceholderFrom": "例如 10001",
+      "zipPlaceholderTo": "例如 90210",
+      "moveDate": "首选搬家日期 *",
+      "flexibleDates": "日期灵活？我们可以提供更优价格！",
+      "homeSize": "房屋大小 *",
+      "homeSizeSelect": "选择房屋大小...",
       "sizes": {
-        "studio": "Studio/Efficiency",
-        "one": "1 Bedroom",
-        "two": "2 Bedrooms",
-        "three": "3 Bedrooms",
-        "four": "4 Bedrooms",
-        "fivePlus": "5+ Bedrooms"
+        "studio": "单间",
+        "one": "1 卧室",
+        "two": "2 卧室",
+        "three": "3 卧室",
+        "four": "4 卧室",
+        "fivePlus": "5+ 卧室"
       },
-      "step2Title": "Select Additional Services",
-      "servicesHint": "Check all services you're interested in. You can adjust later!",
+      "step2Title": "选择附加服务",
+      "servicesHint": "勾选您感兴趣的所有服务。稍后仍可调整！",
       "addonServices": [
         {
           "id": "packing",
-          "label": "Professional Packing",
-          "desc": "Full packing service with materials included",
+          "label": "专业打包",
+          "desc": "全套打包服务，含材料",
           "cost": "+20%"
         },
         {
           "id": "storage",
-          "label": "Storage (30 days)",
-          "desc": "Climate-controlled storage facility",
+          "label": "仓储（30 天）",
+          "desc": "恒温仓储设施",
           "cost": "+10%"
         },
         {
           "id": "insurance",
-          "label": "Full Value Protection",
-          "desc": "Comprehensive insurance coverage",
+          "label": "全值保护",
+          "desc": "全面保险覆盖",
           "cost": "+5%"
         },
         {
           "id": "unpacking",
-          "label": "Unpacking Services",
-          "desc": "We unpack and place items in your new home",
+          "label": "拆包服务",
+          "desc": "在新家拆包并摆放物品",
           "cost": "+15%"
         },
         {
           "id": "furniture",
-          "label": "Furniture Assembly",
-          "desc": "Disassembly and reassembly of furniture",
+          "label": "家具组装",
+          "desc": "家具拆卸与重新组装",
           "cost": "+8%"
         },
         {
           "id": "cleaning",
-          "label": "Post-Move Cleaning",
-          "desc": "Professional cleaning of your old home",
+          "label": "搬家后清洁",
+          "desc": "旧居专业清洁",
           "cost": "+12%"
         }
       ],
-      "specialItems": "Special Items or Instructions",
-      "specialItemsPlaceholder": "e.g., Piano, pool table, fragile antiques, tight parking...",
-      "step3Title": "Contact Information",
-      "estimatedCost": "Your Estimated Cost",
-      "estimateNote": "Final price subject to in-home survey. This estimate includes your selected services.",
-      "phoneHint": "We'll call within 1 hour to confirm details",
-      "consentPrefix": "I agree to receive communications and understand the",
-      "consentAnd": "and",
-      "whatNext": "What happens next?",
+      "specialItems": "特殊物品或说明",
+      "specialItemsPlaceholder": "例如：钢琴、台球桌、易碎古董、停车困难...",
+      "step3Title": "联系信息",
+      "estimatedCost": "预估费用",
+      "estimateNote": "最终价格以入户勘察为准。此估算包含您选择的服务。",
+      "phoneHint": "我们将在 1 小时内致电确认详情",
+      "consentPrefix": "我同意接收通讯并理解",
+      "consentAnd": "和",
+      "whatNext": "接下来会发生什么？",
       "nextSteps": [
-        "Our moving specialist will call you within 1 hour",
-        "Schedule a free in-home survey (virtual or in-person)",
-        "Receive your final binding quote",
-        "Book your move and relax!"
+        "搬家专员将在 1 小时内致电",
+        "安排免费入户勘察（线上或现场）",
+        "收到最终具有约束力的报价",
+        "预订搬家，轻松等待！"
       ],
-      "back": "← Back",
-      "continue": "Continue →",
-      "submit": "Get My Free Quote",
-      "submitSuccess": "Thank you! Our team will contact you within 1 hour with a detailed quote.",
-      "trustedBy": "Trusted by 50,000+ happy customers",
+      "back": "← 返回",
+      "continue": "继续 →",
+      "submit": "获取免费报价",
+      "submitSuccess": "谢谢！我们的团队将在 1 小时内联系您并提供详细报价。",
+      "trustedBy": "超过 50,000 位满意客户信赖我们",
       "trust": {
-        "licensed": "Licensed & Insured",
-        "bbb": "A+ BBB Rating",
-        "reviews": "5,000+ 5-Star Reviews"
+        "licensed": "持证投保",
+        "bbb": "A+ BBB 评级",
+        "reviews": "5000+ 五星评价"
       }
     },
     "worldwideMoving": {
-      "title": "Worldwide International Moving",
-      "subtitle": "Door-to-door shipping across continents with customs expertise",
-      "ctaQuote": "Get a worldwide quote",
-      "ctaCall": "Talk to a specialist",
-      "alertTitle": "Plan lead times early",
-      "alertBody": "Ocean freight typically takes 30–60 days. Air freight is available for urgent shipments.",
-      "methodsTitle": "Shipping methods",
-      "destinationsTitle": "Popular destinations",
-      "servicesTitle": "Included services",
-      "processTitle": "How worldwide moves work",
-      "costsTitle": "Cost factors",
-      "prohibitedTitle": "Restricted & prohibited items",
-      "finalCta": "Ready to move worldwide?",
+      "title": "全球国际搬家",
+      "subtitle": "跨洲门到门运输，具备海关专业知识",
+      "ctaQuote": "获取全球报价",
+      "ctaCall": "咨询专家",
+      "alertTitle": "请提前规划交期",
+      "alertBody": "海运通常需要 30–60 天。空运适用于紧急货运。",
+      "methodsTitle": "运输方式",
+      "destinationsTitle": "热门目的地",
+      "servicesTitle": "包含服务",
+      "processTitle": "全球搬家流程",
+      "costsTitle": "费用因素",
+      "prohibitedTitle": "限制与禁运物品",
+      "finalCta": "准备好全球搬家了吗？",
       "shippingMethods": [
         {
-          "method": "Sea Freight (FCL)",
+          "method": "海运 (FCL)",
           "time": "30-60 days",
-          "cost": "Most economical",
-          "bestFor": "Full household moves",
-          "description": "Exclusive use of a 20 or 40-foot container. Ideal for large moves with flexibility on timing.",
+          "cost": "最经济",
+          "bestFor": "整户搬家",
+          "description": "独享 20 或 40 英尺集装箱。适合大型搬家且时间灵活。",
           "features": [
-            "Door-to-door service",
-            "Most cost-effective",
-            "Secure container",
-            "Best for large volumes"
+            "门到门服务",
+            "最具成本效益",
+            "安全集装箱",
+            "适合大体积"
           ]
         },
         {
-          "method": "Sea Freight (LCL)",
+          "method": "海运 (LCL)",
           "time": "35-70 days",
-          "cost": "Budget-friendly",
-          "bestFor": "Smaller shipments",
-          "description": "Share container space with other shipments. Perfect for 1-2 bedroom apartments.",
+          "cost": "预算友好",
+          "bestFor": "较小货运",
+          "description": "与其他货运共享集装箱空间。适合 1-2 卧室公寓。",
           "features": [
-            "Pay for space used",
-            "Flexible volume",
-            "Consolidated shipping",
-            "Cost-efficient"
+            "按使用空间付费",
+            "灵活体积",
+            "拼箱运输",
+            "成本高效"
           ]
         },
         {
-          "method": "Air Freight",
+          "method": "空运",
           "time": "5-10 days",
-          "cost": "Premium pricing",
-          "bestFor": "Urgent/valuable items",
-          "description": "Fastest international shipping option. Recommended for time-sensitive or high-value shipments.",
+          "cost": "高端定价",
+          "bestFor": "紧急/贵重物品",
+          "description": "最快的国际运输方式。推荐用于时间敏感或高价值货物。",
           "features": [
-            "Express delivery",
-            "Climate controlled",
-            "Maximum security",
-            "Priority handling"
+            "快递交付",
+            "温控",
+            "最高安全性",
+            "优先处理"
           ]
         }
       ],
       "popularDestinations": [
         {
-          "continent": "Europe",
+          "continent": "欧洲",
           "countries": [
             "UK",
             "Germany",
@@ -738,7 +766,7 @@
           "time": "35-50 days"
         },
         {
-          "continent": "Asia",
+          "continent": "亚洲",
           "countries": [
             "Israel",
             "Japan",
@@ -750,7 +778,7 @@
           "time": "25-45 days"
         },
         {
-          "continent": "Australia & Oceania",
+          "continent": "澳大利亚与大洋洲",
           "countries": [
             "Australia",
             "New Zealand"
@@ -758,7 +786,7 @@
           "time": "40-60 days"
         },
         {
-          "continent": "South America",
+          "continent": "南美洲",
           "countries": [
             "Brazil",
             "Argentina",
@@ -767,7 +795,7 @@
           "time": "35-55 days"
         },
         {
-          "continent": "Africa",
+          "continent": "非洲",
           "countries": [
             "South Africa",
             "Kenya",
@@ -776,7 +804,7 @@
           "time": "30-50 days"
         },
         {
-          "continent": "Middle East",
+          "continent": "中东",
           "countries": [
             "UAE",
             "Saudi Arabia",
@@ -788,138 +816,138 @@
       ],
       "services": [
         {
-          "title": "Professional Packing",
-          "description": "Expert packing with international-grade materials",
+          "title": "专业打包",
+          "description": "使用国际级材料的专业打包",
           "included": [
-            "Custom crating",
-            "Bubble wrap & padding",
-            "Labeled inventory",
-            "Fragile item handling"
+            "定制木箱",
+            "气泡膜与缓冲",
+            "标注清单",
+            "易碎品处理"
           ]
         },
         {
-          "title": "Customs Clearance",
-          "description": "Full documentation and customs brokerage services",
+          "title": "清关",
+          "description": "完整文件与报关代理服务",
           "included": [
-            "Customs forms",
-            "Import permits",
-            "Duty calculations",
-            "Broker coordination"
+            "海关表格",
+            "进口许可",
+            "关税计算",
+            "代理协调"
           ]
         },
         {
-          "title": "Door-to-Door Service",
-          "description": "Complete pickup and delivery to your new address",
+          "title": "门到门服务",
+          "description": "完整取件并送达新地址",
           "included": [
-            "Home pickup",
-            "Port handling",
-            "Destination delivery",
-            "Unpacking options"
+            "上门取件",
+            "港口处理",
+            "目的地交付",
+            "拆包选项"
           ]
         },
         {
-          "title": "Comprehensive Insurance",
-          "description": "Full value protection for international moves",
+          "title": "综合保险",
+          "description": "国际搬家的全值保护",
           "included": [
-            "All-risk coverage",
-            "Marine insurance",
-            "Claims assistance",
-            "Peace of mind"
+            "全险覆盖",
+            "海运保险",
+            "理赔协助",
+            "安心保障"
           ]
         }
       ],
       "processSteps": [
         {
-          "title": "Free Consultation",
-          "description": "Discuss your needs with our international move specialist"
+          "title": "免费咨询",
+          "description": "与国际搬家专家讨论您的需求"
         },
         {
-          "title": "Survey & Quote",
-          "description": "Virtual or in-home survey to assess volume and provide accurate quote"
+          "title": "勘察与报价",
+          "description": "线上或入户勘察评估体积并提供准确报价"
         },
         {
-          "title": "Documentation",
-          "description": "Prepare all necessary paperwork, customs forms, and permits"
+          "title": "文件准备",
+          "description": "准备所有必要文件、海关表格和许可"
         },
         {
-          "title": "Professional Packing",
-          "description": "Expert team packs and labels all items with care"
+          "title": "专业打包",
+          "description": "专家团队仔细打包并标注所有物品"
         },
         {
-          "title": "Export & Shipping",
-          "description": "Container loaded, sealed, and shipped to destination port"
+          "title": "出口与运输",
+          "description": "集装箱装载、封箱并运往目的港"
         },
         {
-          "title": "Customs Clearance",
-          "description": "Our agents handle all customs procedures at destination"
+          "title": "清关",
+          "description": "我们的代理在目的地处理所有海关手续"
         },
         {
-          "title": "Final Delivery",
-          "description": "Delivery to your new home with unpacking if requested"
+          "title": "最终交付",
+          "description": "送达新家，可按需提供拆包"
         }
       ],
       "prohibitedItems": [
-        "Flammable liquids and explosives",
-        "Perishable foods",
-        "Plants and soil (many countries)",
-        "Weapons and ammunition",
-        "Illegal drugs and controlled substances"
+        "易燃液体和爆炸物",
+        "易腐食品",
+        "植物和土壤（许多国家限制）",
+        "武器和弹药",
+        "非法药物和管制物质"
       ]
     },
     "interstateMoving": {
-      "title": "Interstate Moving Services",
-      "subtitle": "Reliable long-distance moves across all 50 US states",
-      "ctaQuote": "Get an interstate quote",
-      "ctaCall": "Call a coordinator",
-      "promoTitle": "Peak season tip",
-      "promoBody": "Book 4–8 weeks ahead for May–September to lock better rates and dates.",
-      "whyTitle": "Why choose VIP for interstate moves",
-      "servicesTitle": "Service options",
-      "routesTitle": "Popular routes",
-      "pricingTitle": "What affects price",
-      "tipsTitle": "Moving tips",
-      "howTitle": "How it works",
-      "includes": "Includes:",
-      "finalCta": "Ready for your interstate move?",
+      "title": "州际搬家服务",
+      "subtitle": "覆盖美国全部 50 个州的可靠长途搬家",
+      "ctaQuote": "获取州际报价",
+      "ctaCall": "联系协调员",
+      "promoTitle": "旺季提示",
+      "promoBody": "5–9 月请提前 4–8 周预订，以锁定更优价格与日期。",
+      "whyTitle": "为何选择 VIP 州际搬家",
+      "servicesTitle": "服务选项",
+      "routesTitle": "热门路线",
+      "pricingTitle": "价格影响因素",
+      "tipsTitle": "搬家贴士",
+      "howTitle": "流程说明",
+      "includes": "包括：",
+      "finalCta": "准备好州际搬家了吗？",
       "services": [
         {
-          "title": "Full-Service Moving",
-          "description": "Complete door-to-door service with professional packing, loading, transport, and unpacking",
+          "title": "全服务搬家",
+          "description": "门到门全流程，含专业打包、装卸、运输和拆包",
           "features": [
-            "Professional packing",
-            "Loading & unloading",
-            "Furniture disassembly/assembly",
-            "Unpacking services"
+            "专业打包",
+            "装卸服务",
+            "家具拆装",
+            "拆包服务"
           ]
         },
         {
-          "title": "Partial/Shared Moving",
-          "description": "Cost-effective solution for smaller moves, sharing truck space with other shipments",
+          "title": "部分/拼车搬家",
+          "description": "较小搬家的经济方案，与其他货运共享卡车空间",
           "features": [
-            "Lower cost option",
-            "Flexible scheduling",
-            "Same care and protection",
-            "Ideal for 1-2 bedroom moves"
+            "更低成本",
+            "灵活排期",
+            "同等保护",
+            "适合 1-2 卧室"
           ]
         },
         {
-          "title": "Express Moving",
-          "description": "Priority service with dedicated truck and expedited delivery for time-sensitive moves",
+          "title": "快速搬家",
+          "description": "专属卡车与加急交付的优先服务",
           "features": [
-            "Dedicated truck",
-            "3-5 day delivery",
-            "Priority scheduling",
-            "Real-time tracking"
+            "专属卡车",
+            "3-5 天交付",
+            "优先排期",
+            "实时追踪"
           ]
         },
         {
-          "title": "White Glove Service",
-          "description": "Premium moving experience with specialized handling for high-value and delicate items",
+          "title": "White Glove 服务",
+          "description": "高端搬家体验，专为高价值与易碎物品提供特殊处理",
           "features": [
-            "Custom crating",
-            "Climate-controlled transport",
-            "Installation services",
-            "Concierge support"
+            "定制木箱",
+            "温控运输",
+            "安装服务",
+            "礼宾支持"
           ]
         }
       ],
@@ -963,186 +991,192 @@
       ],
       "movingTips": [
         {
-          "title": "Book Early",
-          "tip": "Reserve your moving date 4-8 weeks in advance, especially during peak season (May-September)"
+          "title": "提前预订",
+          "tip": "提前 4-8 周预订搬家日期，旺季（5-9 月）尤其重要"
         },
         {
-          "title": "Declutter First",
-          "tip": "Reduce moving costs by selling or donating items you no longer need before packing"
+          "title": "先整理物品",
+          "tip": "打包前出售或捐赠不需要的物品以降低成本"
         },
         {
-          "title": "Get Multiple Quotes",
-          "tip": "Compare at least 3 estimates to ensure competitive pricing and understand what's included"
+          "title": "获取多家报价",
+          "tip": "至少比较 3 份估价以确保竞争价格并了解包含内容"
         },
         {
-          "title": "Read Reviews",
-          "tip": "Check BBB ratings, Google reviews, and FMCSA records before choosing a moving company"
+          "title": "阅读评价",
+          "tip": "选择搬家公司前查看 BBB 评级、Google 评价和 FMCSA 记录"
         }
       ],
       "pricingFactors": [
         {
-          "factor": "Distance",
-          "impact": "Primary cost driver",
-          "description": "Longer distances = higher costs"
+          "factor": "距离",
+          "impact": "主要成本因素",
+          "description": "距离越长 = 成本越高"
         },
         {
-          "factor": "Weight/Volume",
-          "impact": "Direct correlation",
-          "description": "Charged per pound or cubic foot"
+          "factor": "重量/体积",
+          "impact": "直接相关",
+          "description": "按磅或立方英尺计费"
         },
         {
-          "factor": "Season",
-          "impact": "Moderate effect",
-          "description": "Summer (peak) costs 20-30% more"
+          "factor": "季节",
+          "impact": "中等影响",
+          "description": "夏季（旺季）贵 20-30%"
         },
         {
-          "factor": "Access",
-          "impact": "Additional fees",
-          "description": "Stairs, long carry, shuttle service"
+          "factor": "通行条件",
+          "impact": "额外费用",
+          "description": "楼梯、长距离搬运、shuttle 服务"
         },
         {
-          "factor": "Packing Services",
-          "impact": "Optional add-on",
-          "description": "Professional packing adds 15-25%"
+          "factor": "打包服务",
+          "impact": "可选附加",
+          "description": "专业打包增加 15-25%"
         },
         {
-          "factor": "Insurance",
-          "impact": "Recommended",
-          "description": "Full value protection for peace of mind"
+          "factor": "保险",
+          "impact": "推荐",
+          "description": "全值保护，安心无忧"
         }
       ]
     },
     "terms": {
-      "title": "Terms of Service",
-      "lastUpdated": "Last updated",
-      "intro": "Please read these Terms carefully before using VIP International Shipping services.",
+      "title": "服务条款",
+      "lastUpdated": "最后更新",
+      "intro": "在使用 VIP International Shipping 服务之前，请仔细阅读本条款。",
       "sections": [
         {
-          "title": "1. Acceptance of Terms",
+          "title": "1. 接受条款",
           "paragraphs": [
-            "By accessing or using our website and services, you agree to be bound by these Terms of Service."
+            "访问或使用我们的网站和服务，即表示您同意受本服务条款约束。"
           ]
         },
         {
-          "title": "2. Services",
+          "title": "2. 服务",
           "paragraphs": [
-            "We provide international and domestic moving, packing, storage, and related logistics services subject to availability and applicable law."
+            "我们提供国际和国内搬家、包装、仓储及相关物流服务，视供应情况及适用法律而定。"
           ]
         },
         {
-          "title": "3. Quotes and Pricing",
+          "title": "3. 报价与定价",
           "paragraphs": [
-            "Quotes are estimates unless expressly stated as binding. Final pricing may change after survey, inventory, access conditions, or regulatory fees."
+            "除非明确说明为具有约束力的报价，否则报价均为估算。最终价格可能在勘察、清单、通行条件或监管费用后发生变化。"
           ]
         },
         {
-          "title": "4. Customer Responsibilities",
+          "title": "4. 客户责任",
           "paragraphs": [
-            "You are responsible for accurate inventory, access to premises, required permits, and compliance with customs and prohibited-item rules."
+            "您有责任提供准确的物品清单、确保现场可进入、取得所需许可，并遵守海关及禁运物品规定。"
           ]
         },
         {
-          "title": "5. Payments",
+          "title": "5. 付款",
           "paragraphs": [
-            "Payment terms are stated on your invoice or booking confirmation. Late payments may incur fees or service delays."
+            "付款条件见您的发票或预订确认。逾期付款可能产生费用或导致服务延迟。"
           ]
         },
         {
-          "title": "6. Insurance and Liability",
+          "title": "6. 保险与责任",
           "paragraphs": [
-            "Coverage options are offered at booking. Liability limits apply as disclosed in your contract and applicable carrier terms."
+            "预订时可选择保障方案。责任限制以合同及适用承运条款为准。"
           ]
         },
         {
-          "title": "7. Cancellations",
+          "title": "7. 取消",
           "paragraphs": [
-            "Cancellation and rescheduling policies are provided with your booking. Deposits may be non-refundable after certain deadlines."
+            "取消与改期政策随预订提供。在某些截止日期后，订金可能不可退还。"
           ]
         },
         {
-          "title": "8. Privacy",
+          "title": "8. 隐私",
           "paragraphs": [
-            "Personal data is handled according to our Privacy Policy."
+            "个人数据按我们的隐私政策处理。"
           ]
         },
         {
-          "title": "9. Governing Law",
+          "title": "9. 适用法律",
           "paragraphs": [
-            "These Terms are governed by the laws of the applicable jurisdiction stated in your service agreement."
+            "本条款受您服务协议中所列适用司法管辖法律管辖。"
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. 联系",
           "paragraphs": [
-            "Questions about these Terms: support@vipshipping.com"
+            "有关本条款的问题：support@vipshipping.com"
           ]
         }
-      ]
+      ],
+      "fmcsaTitle": "必要的消费者保护披露（美国州际搬家）",
+      "fmcsaBody": "根据 49 CFR 375.213，搬家公司和经纪人在州际家庭物品搬家前，必须向潜在客户提供以下 FMCSA 官方出版物的副本或链接：",
+      "fmcsaRights": "搬家时的权利与责任（FMCSA）",
+      "fmcsaProtect": "保护您的搬家 — 消费者资源（FMCSA）",
+      "fmcsaVerify": "您可在官方 FMCSA SAFER 数据库中核实任何州际搬家公司的 USDOT 注册及安全记录",
+      "fmcsaOurUsdot": "（我们的 USDOT 编号：{{usdot}}）。"
     },
     "privacy": {
-      "title": "Privacy Policy",
-      "subtitle": "How we collect, use, and protect your information",
-      "lastUpdated": "Last updated",
-      "intro": "This Privacy Policy explains how VIP International Shipping handles personal information.",
+      "title": "隐私政策",
+      "subtitle": "我们如何收集、使用和保护您的信息",
+      "lastUpdated": "最后更新",
+      "intro": "本隐私政策说明 VIP International Shipping 如何处理个人信息。",
       "sections": [
         {
-          "title": "1. Information we collect",
+          "title": "1. 我们收集的信息",
           "paragraphs": [
-            "Contact details, move addresses, shipment details, payment references, and usage data needed to provide services."
+            "联系方式、搬家地址、货运详情、付款参考及提供服务所需的使用数据。"
           ]
         },
         {
-          "title": "2. How we use information",
+          "title": "2. 信息用途",
           "paragraphs": [
-            "To prepare quotes, operate shipments, process payments, provide support, improve services, and meet legal obligations."
+            "用于准备报价、运营货运、处理付款、提供支持、改进服务及履行法律义务。"
           ]
         },
         {
-          "title": "3. Sharing",
+          "title": "3. 共享",
           "paragraphs": [
-            "We share data with carriers, customs brokers, payment processors, and service providers under contract, or when required by law."
+            "我们按合同与承运商、报关行、支付处理商及服务提供商共享数据，或在法律要求时共享。"
           ]
         },
         {
-          "title": "4. Security",
+          "title": "4. 安全",
           "paragraphs": [
-            "We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data."
+            "我们采用与数据敏感程度相适应的管理、技术和物理保障措施。"
           ]
         },
         {
-          "title": "5. Your rights",
+          "title": "5. 您的权利",
           "paragraphs": [
-            "Depending on your location, you may request access, correction, deletion, or restriction of personal data."
+            "根据您所在地区，您可请求访问、更正、删除或限制个人数据。"
           ]
         },
         {
-          "title": "6. Cookies",
+          "title": "6. Cookie",
           "paragraphs": [
-            "We use necessary cookies for authentication and optional analytics cookies where permitted."
+            "我们使用认证所需 Cookie，并在允许时使用可选分析 Cookie。"
           ]
         },
         {
-          "title": "7. International transfers",
+          "title": "7. 国际传输",
           "paragraphs": [
-            "Data may be processed in countries where we or our partners operate, with appropriate safeguards."
+            "数据可能在我们或合作伙伴运营的国家/地区处理，并采取适当保障。"
           ]
         },
         {
-          "title": "8. Children",
+          "title": "8. 儿童",
           "paragraphs": [
-            "Our services are not directed to children under 16."
+            "我们的服务不面向 16 岁以下儿童。"
           ]
         },
         {
-          "title": "9. Changes",
+          "title": "9. 变更",
           "paragraphs": [
-            "We may update this policy and will revise the last-updated date when changes are material."
+            "我们可能更新本政策，并在重大变更时修订最后更新日期。"
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. 联系",
           "paragraphs": [
-            "Privacy questions: privacy@vipshipping.com"
+            "隐私问题：privacy@vipshipping.com"
           ]
         }
       ]

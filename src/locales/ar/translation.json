@@ -76,7 +76,8 @@
     "go_home": "Go to homepage",
     "go_back": "Go back",
     "required": "Required",
-    "optional": "Optional"
+    "optional": "Optional",
+    "retry": "إعادة المحاولة"
   },
   "forms": {
     "name": "الاسم الكامل",
@@ -204,7 +205,34 @@
   },
   "admin": {
     "unauthorized": "Admin access required",
-    "title": "Admin dashboard"
+    "title": "Admin dashboard",
+    "load_error": "Could not load dashboard data.",
+    "period": "Select time period",
+    "period_7": "Last 7 days",
+    "period_30": "Last 30 days",
+    "period_90": "Last 90 days",
+    "export": "Export data",
+    "revenue": "Total revenue",
+    "active_shipments": "Active shipments",
+    "customers": "Registered customers",
+    "avg_delivery": "Avg. delivery time",
+    "days": "days",
+    "ops_snapshot": "Operations snapshot",
+    "quotes_period": "Quotes in period",
+    "satisfaction": "Customer satisfaction",
+    "live_note": "Metrics are loaded from live Quote, Shipment, Invoice, and User data.",
+    "recent_orders": "Recent orders",
+    "no_orders": "No shipments yet.",
+    "col_order": "Order",
+    "col_customer": "Customer",
+    "col_destination": "Destination",
+    "col_value": "Value",
+    "col_status": "Status",
+    "col_actions": "Actions",
+    "status_pending": "Pending",
+    "status_approved": "Approved",
+    "status_in_transit": "In transit",
+    "status_delivered": "Delivered"
   },
   "pages": {
     "about": {
@@ -547,186 +575,186 @@
       ]
     },
     "freeMovingQuote": {
-      "title": "Get Your Free Moving Quote",
-      "subtitle": "Instant estimate in 3 easy steps | No obligation | Save up to 30%",
+      "title": "احصل على عرض سعر مجاني للنقل",
+      "subtitle": "تقدير فوري في 3 خطوات | بدون التزام | وفّر حتى 30%",
       "badges": {
-        "free": "100% Free",
-        "noCard": "No Credit Card",
-        "response": "1-Hour Response",
-        "priceMatch": "Price Match Guarantee"
+        "free": "100% مجاني",
+        "noCard": "بدون بطاقة ائتمان",
+        "response": "رد خلال ساعة",
+        "priceMatch": "ضمان مطابقة السعر"
       },
       "benefits": {
         "pricing": {
-          "title": "Transparent Pricing",
-          "desc": "No hidden fees or surprise charges"
+          "title": "تسعير شفاف",
+          "desc": "بدون رسوم مخفية أو مفاجآت"
         },
         "insured": {
-          "title": "Fully Insured",
-          "desc": "Comprehensive protection for your belongings"
+          "title": "مؤمّن بالكامل",
+          "desc": "حماية شاملة لممتلكاتك"
         },
         "fast": {
-          "title": "Fast Response",
-          "desc": "Quote within 1 hour, 7 days a week"
+          "title": "استجابة سريعة",
+          "desc": "عرض سعر خلال ساعة، 7 أيام في الأسبوع"
         },
         "guarantee": {
-          "title": "Best Price Guarantee",
-          "desc": "We'll match any competitor's quote"
+          "title": "ضمان أفضل سعر",
+          "desc": "نطابق أي عرض من المنافسين"
         }
       },
-      "stepOf": "Step {{step}} of {{total}}",
-      "percentComplete": "{{percent}}% Complete",
+      "stepOf": "الخطوة {{step}} من {{total}}",
+      "percentComplete": "{{percent}}% مكتمل",
       "steps": {
-        "moveDetails": "Move Details",
-        "services": "Services",
-        "contact": "Contact Info"
+        "moveDetails": "تفاصيل النقل",
+        "services": "الخدمات",
+        "contact": "معلومات الاتصال"
       },
-      "step1Title": "Tell Us About Your Move",
-      "moveTypeLabel": "Type of Move *",
+      "step1Title": "أخبرنا عن نقلتك",
+      "moveTypeLabel": "نوع النقل *",
       "moveTypes": {
-        "local": "Local Move (Within 50 miles)",
-        "longDistance": "Long Distance (Interstate)",
-        "international": "International Move"
+        "local": "نقل محلي (ضمن 50 ميل)",
+        "longDistance": "مسافة طويلة (بين الولايات)",
+        "international": "نقل دولي"
       },
-      "fromZip": "From Zip Code *",
-      "toZip": "To Zip Code *",
-      "zipPlaceholderFrom": "e.g. 10001",
-      "zipPlaceholderTo": "e.g. 90210",
-      "moveDate": "Preferred Move Date *",
-      "flexibleDates": "Flexible dates? We can offer better pricing!",
-      "homeSize": "Home Size *",
-      "homeSizeSelect": "Select home size...",
+      "fromZip": "الرمز البريدي للمكان الأصلي *",
+      "toZip": "الرمز البريدي للوجهة *",
+      "zipPlaceholderFrom": "مثال 10001",
+      "zipPlaceholderTo": "مثال 90210",
+      "moveDate": "تاريخ النقل المفضل *",
+      "flexibleDates": "تواريخ مرنة؟ يمكننا تقديم سعر أفضل!",
+      "homeSize": "حجم المنزل *",
+      "homeSizeSelect": "اختر حجم المنزل...",
       "sizes": {
-        "studio": "Studio/Efficiency",
-        "one": "1 Bedroom",
-        "two": "2 Bedrooms",
-        "three": "3 Bedrooms",
-        "four": "4 Bedrooms",
-        "fivePlus": "5+ Bedrooms"
+        "studio": "استوديو",
+        "one": "غرفة نوم واحدة",
+        "two": "غرفتا نوم",
+        "three": "3 غرف نوم",
+        "four": "4 غرف نوم",
+        "fivePlus": "5+ غرف نوم"
       },
-      "step2Title": "Select Additional Services",
-      "servicesHint": "Check all services you're interested in. You can adjust later!",
+      "step2Title": "اختر خدمات إضافية",
+      "servicesHint": "حدّد جميع الخدمات التي تهمك. يمكنك التعديل لاحقًا!",
       "addonServices": [
         {
           "id": "packing",
-          "label": "Professional Packing",
-          "desc": "Full packing service with materials included",
+          "label": "تعبئة احترافية",
+          "desc": "خدمة تعبئة كاملة مع المواد",
           "cost": "+20%"
         },
         {
           "id": "storage",
-          "label": "Storage (30 days)",
-          "desc": "Climate-controlled storage facility",
+          "label": "تخزين (30 يومًا)",
+          "desc": "مستودع بتحكم في المناخ",
           "cost": "+10%"
         },
         {
           "id": "insurance",
-          "label": "Full Value Protection",
-          "desc": "Comprehensive insurance coverage",
+          "label": "حماية القيمة الكاملة",
+          "desc": "تغطية تأمينية شاملة",
           "cost": "+5%"
         },
         {
           "id": "unpacking",
-          "label": "Unpacking Services",
-          "desc": "We unpack and place items in your new home",
+          "label": "خدمات فك التعبئة",
+          "desc": "نفك التعبئة ونرتب الأغراض في منزلك الجديد",
           "cost": "+15%"
         },
         {
           "id": "furniture",
-          "label": "Furniture Assembly",
-          "desc": "Disassembly and reassembly of furniture",
+          "label": "تركيب الأثاث",
+          "desc": "فك وتركيب الأثاث",
           "cost": "+8%"
         },
         {
           "id": "cleaning",
-          "label": "Post-Move Cleaning",
-          "desc": "Professional cleaning of your old home",
+          "label": "تنظيف بعد النقل",
+          "desc": "تنظيف احترافي لمنزلك القديم",
           "cost": "+12%"
         }
       ],
-      "specialItems": "Special Items or Instructions",
-      "specialItemsPlaceholder": "e.g., Piano, pool table, fragile antiques, tight parking...",
-      "step3Title": "Contact Information",
-      "estimatedCost": "Your Estimated Cost",
-      "estimateNote": "Final price subject to in-home survey. This estimate includes your selected services.",
-      "phoneHint": "We'll call within 1 hour to confirm details",
-      "consentPrefix": "I agree to receive communications and understand the",
-      "consentAnd": "and",
-      "whatNext": "What happens next?",
+      "specialItems": "أغراض خاصة أو تعليمات",
+      "specialItemsPlaceholder": "مثال: بيانو، طاولة بلياردو، تحف هشة، موقف ضيق...",
+      "step3Title": "معلومات الاتصال",
+      "estimatedCost": "التكلفة المقدّرة",
+      "estimateNote": "السعر النهائي يخضع لمعاينة في المنزل. يشمل هذا التقدير الخدمات المختارة.",
+      "phoneHint": "سنتصل خلال ساعة لتأكيد التفاصيل",
+      "consentPrefix": "أوافق على تلقي الاتصالات وأفهم",
+      "consentAnd": "و",
+      "whatNext": "ماذا يحدث بعد ذلك؟",
       "nextSteps": [
-        "Our moving specialist will call you within 1 hour",
-        "Schedule a free in-home survey (virtual or in-person)",
-        "Receive your final binding quote",
-        "Book your move and relax!"
+        "سيتصل بك أخصائي النقل خلال ساعة",
+        "جدولة معاينة مجانية في المنزل (افتراضية أو حضورية)",
+        "استلام عرض السعر النهائي الملزم",
+        "احجز نقلتك واسترخِ!"
       ],
-      "back": "← Back",
-      "continue": "Continue →",
-      "submit": "Get My Free Quote",
-      "submitSuccess": "Thank you! Our team will contact you within 1 hour with a detailed quote.",
-      "trustedBy": "Trusted by 50,000+ happy customers",
+      "back": "← رجوع",
+      "continue": "متابعة →",
+      "submit": "احصل على عرضي المجاني",
+      "submitSuccess": "شكرًا! سيتواصل فريقنا معك خلال ساعة بعرض مفصّل.",
+      "trustedBy": "موثوق من أكثر من 50,000 عميل سعيد",
       "trust": {
-        "licensed": "Licensed & Insured",
-        "bbb": "A+ BBB Rating",
-        "reviews": "5,000+ 5-Star Reviews"
+        "licensed": "مرخّص ومؤمّن",
+        "bbb": "تصنيف A+ BBB",
+        "reviews": "أكثر من 5,000 تقييم 5 نجوم"
       }
     },
     "worldwideMoving": {
-      "title": "Worldwide International Moving",
-      "subtitle": "Door-to-door shipping across continents with customs expertise",
-      "ctaQuote": "Get a worldwide quote",
-      "ctaCall": "Talk to a specialist",
-      "alertTitle": "Plan lead times early",
-      "alertBody": "Ocean freight typically takes 30–60 days. Air freight is available for urgent shipments.",
-      "methodsTitle": "Shipping methods",
-      "destinationsTitle": "Popular destinations",
-      "servicesTitle": "Included services",
-      "processTitle": "How worldwide moves work",
-      "costsTitle": "Cost factors",
-      "prohibitedTitle": "Restricted & prohibited items",
-      "finalCta": "Ready to move worldwide?",
+      "title": "نقل دولي في جميع أنحاء العالم",
+      "subtitle": "شحن من الباب إلى الباب عبر القارات مع خبرة جمركية",
+      "ctaQuote": "احصل على عرض عالمي",
+      "ctaCall": "تحدث مع أخصائي",
+      "alertTitle": "خطّط مسبقًا لأوقات التسليم",
+      "alertBody": "الشحن البحري يستغرق عادةً 30–60 يومًا. الشحن الجوي متاح للشحنات العاجلة.",
+      "methodsTitle": "طرق الشحن",
+      "destinationsTitle": "الوجهات الشائعة",
+      "servicesTitle": "الخدمات المشمولة",
+      "processTitle": "كيف تعمل عمليات النقل العالمية",
+      "costsTitle": "عوامل التكلفة",
+      "prohibitedTitle": "المواد المقيدة والمحظورة",
+      "finalCta": "هل أنت مستعد للنقل عالميًا؟",
       "shippingMethods": [
         {
-          "method": "Sea Freight (FCL)",
+          "method": "شحن بحري (FCL)",
           "time": "30-60 days",
-          "cost": "Most economical",
-          "bestFor": "Full household moves",
-          "description": "Exclusive use of a 20 or 40-foot container. Ideal for large moves with flexibility on timing.",
+          "cost": "الأكثر اقتصادًا",
+          "bestFor": "نقل منزل كامل",
+          "description": "استخدام حصري لحاوية 20 أو 40 قدم. مثالي للنقل الكبير مع مرونة في المواعيد.",
           "features": [
-            "Door-to-door service",
-            "Most cost-effective",
-            "Secure container",
-            "Best for large volumes"
+            "خدمة من الباب إلى الباب",
+            "الأكثر فعالية من حيث التكلفة",
+            "حاوية آمنة",
+            "الأفضل للأحجام الكبيرة"
           ]
         },
         {
-          "method": "Sea Freight (LCL)",
+          "method": "شحن بحري (LCL)",
           "time": "35-70 days",
-          "cost": "Budget-friendly",
-          "bestFor": "Smaller shipments",
-          "description": "Share container space with other shipments. Perfect for 1-2 bedroom apartments.",
+          "cost": "مناسب للميزانية",
+          "bestFor": "شحنات أصغر",
+          "description": "مشاركة مساحة الحاوية مع شحنات أخرى. مثالي لشقق 1-2 غرف.",
           "features": [
-            "Pay for space used",
-            "Flexible volume",
-            "Consolidated shipping",
-            "Cost-efficient"
+            "الدفع مقابل المساحة المستخدمة",
+            "حجم مرن",
+            "شحن مجمّع",
+            "فعّال من حيث التكلفة"
           ]
         },
         {
-          "method": "Air Freight",
+          "method": "شحن جوي",
           "time": "5-10 days",
-          "cost": "Premium pricing",
-          "bestFor": "Urgent/valuable items",
-          "description": "Fastest international shipping option. Recommended for time-sensitive or high-value shipments.",
+          "cost": "تسعير متميز",
+          "bestFor": "أغراض عاجلة/ثمينة",
+          "description": "أسرع خيار للشحن الدولي. موصى به للشحنات الحساسة للوقت أو عالية القيمة.",
           "features": [
-            "Express delivery",
-            "Climate controlled",
-            "Maximum security",
-            "Priority handling"
+            "تسليم سريع",
+            "تحكم في المناخ",
+            "أقصى أمان",
+            "معالجة بأولوية"
           ]
         }
       ],
       "popularDestinations": [
         {
-          "continent": "Europe",
+          "continent": "أوروبا",
           "countries": [
             "UK",
             "Germany",
@@ -738,7 +766,7 @@
           "time": "35-50 days"
         },
         {
-          "continent": "Asia",
+          "continent": "آسيا",
           "countries": [
             "Israel",
             "Japan",
@@ -750,7 +778,7 @@
           "time": "25-45 days"
         },
         {
-          "continent": "Australia & Oceania",
+          "continent": "أستراليا وأوقيانوسيا",
           "countries": [
             "Australia",
             "New Zealand"
@@ -758,7 +786,7 @@
           "time": "40-60 days"
         },
         {
-          "continent": "South America",
+          "continent": "أمريكا الجنوبية",
           "countries": [
             "Brazil",
             "Argentina",
@@ -767,7 +795,7 @@
           "time": "35-55 days"
         },
         {
-          "continent": "Africa",
+          "continent": "أفريقيا",
           "countries": [
             "South Africa",
             "Kenya",
@@ -776,7 +804,7 @@
           "time": "30-50 days"
         },
         {
-          "continent": "Middle East",
+          "continent": "الشرق الأوسط",
           "countries": [
             "UAE",
             "Saudi Arabia",
@@ -788,138 +816,138 @@
       ],
       "services": [
         {
-          "title": "Professional Packing",
-          "description": "Expert packing with international-grade materials",
+          "title": "تعبئة احترافية",
+          "description": "تعبئة خبيرة بمواد بمعايير دولية",
           "included": [
-            "Custom crating",
-            "Bubble wrap & padding",
-            "Labeled inventory",
-            "Fragile item handling"
+            "صناديق مخصصة",
+            "فقاعات هوائية وحشو",
+            "جرد موسوم",
+            "معالجة الأغراض الهشة"
           ]
         },
         {
-          "title": "Customs Clearance",
-          "description": "Full documentation and customs brokerage services",
+          "title": "التخليص الجمركي",
+          "description": "توثيق كامل وخدمات وساطة جمركية",
           "included": [
-            "Customs forms",
-            "Import permits",
-            "Duty calculations",
-            "Broker coordination"
+            "نماذج جمركية",
+            "تصاريح استيراد",
+            "حساب الرسوم",
+            "تنسيق مع الوسطاء"
           ]
         },
         {
-          "title": "Door-to-Door Service",
-          "description": "Complete pickup and delivery to your new address",
+          "title": "خدمة من الباب إلى الباب",
+          "description": "استلام وتسليم كامل إلى عنوانك الجديد",
           "included": [
-            "Home pickup",
-            "Port handling",
-            "Destination delivery",
-            "Unpacking options"
+            "استلام من المنزل",
+            "معالجة في الميناء",
+            "تسليم في الوجهة",
+            "خيارات فك التعبئة"
           ]
         },
         {
-          "title": "Comprehensive Insurance",
-          "description": "Full value protection for international moves",
+          "title": "تأمين شامل",
+          "description": "حماية كاملة للقيمة في النقل الدولي",
           "included": [
-            "All-risk coverage",
-            "Marine insurance",
-            "Claims assistance",
-            "Peace of mind"
+            "تغطية جميع المخاطر",
+            "تأمين بحري",
+            "مساعدة في المطالبات",
+            "راحة البال"
           ]
         }
       ],
       "processSteps": [
         {
-          "title": "Free Consultation",
-          "description": "Discuss your needs with our international move specialist"
+          "title": "استشارة مجانية",
+          "description": "ناقش احتياجاتك مع أخصائي النقل الدولي"
         },
         {
-          "title": "Survey & Quote",
-          "description": "Virtual or in-home survey to assess volume and provide accurate quote"
+          "title": "معاينة وعرض سعر",
+          "description": "معاينة افتراضية أو في المنزل لتقدير الحجم وتقديم عرض دقيق"
         },
         {
-          "title": "Documentation",
-          "description": "Prepare all necessary paperwork, customs forms, and permits"
+          "title": "التوثيق",
+          "description": "إعداد جميع الأوراق ونماذج الجمارك والتصاريح"
         },
         {
-          "title": "Professional Packing",
-          "description": "Expert team packs and labels all items with care"
+          "title": "تعبئة احترافية",
+          "description": "فريق خبراء يعبئ ويوسم جميع الأغراض بعناية"
         },
         {
-          "title": "Export & Shipping",
-          "description": "Container loaded, sealed, and shipped to destination port"
+          "title": "التصدير والشحن",
+          "description": "تحميل الحاوية وإغلاقها وشحنها إلى ميناء الوجهة"
         },
         {
-          "title": "Customs Clearance",
-          "description": "Our agents handle all customs procedures at destination"
+          "title": "التخليص الجمركي",
+          "description": "وكلاؤنا يتولون جميع إجراءات الجمارك في الوجهة"
         },
         {
-          "title": "Final Delivery",
-          "description": "Delivery to your new home with unpacking if requested"
+          "title": "التسليم النهائي",
+          "description": "التسليم إلى منزلك الجديد مع فك التعبئة عند الطلب"
         }
       ],
       "prohibitedItems": [
-        "Flammable liquids and explosives",
-        "Perishable foods",
-        "Plants and soil (many countries)",
-        "Weapons and ammunition",
-        "Illegal drugs and controlled substances"
+        "سوائل قابلة للاشتعال ومواد متفجرة",
+        "أطعمة قابلة للتلف",
+        "نباتات وتربة (في دول كثيرة)",
+        "أسلحة وذخيرة",
+        "المخدرات والمواد الخاضعة للرقابة"
       ]
     },
     "interstateMoving": {
-      "title": "Interstate Moving Services",
-      "subtitle": "Reliable long-distance moves across all 50 US states",
-      "ctaQuote": "Get an interstate quote",
-      "ctaCall": "Call a coordinator",
-      "promoTitle": "Peak season tip",
-      "promoBody": "Book 4–8 weeks ahead for May–September to lock better rates and dates.",
-      "whyTitle": "Why choose VIP for interstate moves",
-      "servicesTitle": "Service options",
-      "routesTitle": "Popular routes",
-      "pricingTitle": "What affects price",
-      "tipsTitle": "Moving tips",
-      "howTitle": "How it works",
-      "includes": "Includes:",
-      "finalCta": "Ready for your interstate move?",
+      "title": "خدمات النقل بين الولايات",
+      "subtitle": "نقل موثوق لمسافات طويلة في جميع الولايات الأمريكية الـ50",
+      "ctaQuote": "احصل على عرض بين الولايات",
+      "ctaCall": "اتصل بمنسّق",
+      "promoTitle": "نصيحة موسم الذروة",
+      "promoBody": "احجز قبل 4–8 أسابيع من مايو–سبتمبر لضمان أسعار وتواريخ أفضل.",
+      "whyTitle": "لماذا VIP للنقل بين الولايات",
+      "servicesTitle": "خيارات الخدمة",
+      "routesTitle": "المسارات الشائعة",
+      "pricingTitle": "ما يؤثر على السعر",
+      "tipsTitle": "نصائح للنقل",
+      "howTitle": "كيف يعمل",
+      "includes": "يشمل:",
+      "finalCta": "هل أنت مستعد لنقلتك بين الولايات؟",
       "services": [
         {
-          "title": "Full-Service Moving",
-          "description": "Complete door-to-door service with professional packing, loading, transport, and unpacking",
+          "title": "نقل كامل الخدمة",
+          "description": "خدمة من الباب إلى الباب تشمل التعبئة والتحميل والنقل وفك التعبئة",
           "features": [
-            "Professional packing",
-            "Loading & unloading",
-            "Furniture disassembly/assembly",
-            "Unpacking services"
+            "تعبئة احترافية",
+            "تحميل وتفريغ",
+            "فك وتركيب الأثاث",
+            "خدمات فك التعبئة"
           ]
         },
         {
-          "title": "Partial/Shared Moving",
-          "description": "Cost-effective solution for smaller moves, sharing truck space with other shipments",
+          "title": "نقل جزئي/مشترك",
+          "description": "حل اقتصادي للنقلات الأصغر بمشاركة مساحة الشاحنة",
           "features": [
-            "Lower cost option",
-            "Flexible scheduling",
-            "Same care and protection",
-            "Ideal for 1-2 bedroom moves"
+            "تكلفة أقل",
+            "جدولة مرنة",
+            "نفس مستوى العناية",
+            "مثالي لـ 1-2 غرف"
           ]
         },
         {
-          "title": "Express Moving",
-          "description": "Priority service with dedicated truck and expedited delivery for time-sensitive moves",
+          "title": "نقل سريع",
+          "description": "خدمة أولوية مع شاحنة مخصصة وتسليم معجل",
           "features": [
-            "Dedicated truck",
-            "3-5 day delivery",
-            "Priority scheduling",
-            "Real-time tracking"
+            "شاحنة مخصصة",
+            "تسليم 3-5 أيام",
+            "جدولة بأولوية",
+            "تتبع في الوقت الفعلي"
           ]
         },
         {
-          "title": "White Glove Service",
-          "description": "Premium moving experience with specialized handling for high-value and delicate items",
+          "title": "خدمة White Glove",
+          "description": "تجربة نقل متميزة مع معالجة خاصة للأغراض الثمينة والحساسة",
           "features": [
-            "Custom crating",
-            "Climate-controlled transport",
-            "Installation services",
-            "Concierge support"
+            "صناديق مخصصة",
+            "نقل بتحكم في المناخ",
+            "خدمات تركيب",
+            "دعم كونسierge"
           ]
         }
       ],
@@ -963,186 +991,192 @@
       ],
       "movingTips": [
         {
-          "title": "Book Early",
-          "tip": "Reserve your moving date 4-8 weeks in advance, especially during peak season (May-September)"
+          "title": "احجز مبكرًا",
+          "tip": "احجز تاريخ النقل قبل 4-8 أسابيع، خاصة في موسم الذروة (مايو–سبتمبر)"
         },
         {
-          "title": "Declutter First",
-          "tip": "Reduce moving costs by selling or donating items you no longer need before packing"
+          "title": "رتّب قبل النقل",
+          "tip": "قلّل التكاليف ببيع أو التبرع بالأغراض غير الضرورية قبل التعبئة"
         },
         {
-          "title": "Get Multiple Quotes",
-          "tip": "Compare at least 3 estimates to ensure competitive pricing and understand what's included"
+          "title": "احصل على عروض متعددة",
+          "tip": "قارن 3 عروض على الأقل لضمان تسعير تنافسي وفهم ما هو مشمول"
         },
         {
-          "title": "Read Reviews",
-          "tip": "Check BBB ratings, Google reviews, and FMCSA records before choosing a moving company"
+          "title": "اقرأ التقييمات",
+          "tip": "تحقق من تصنيفات BBB وGoogle وسجلات FMCSA قبل اختيار شركة النقل"
         }
       ],
       "pricingFactors": [
         {
-          "factor": "Distance",
-          "impact": "Primary cost driver",
-          "description": "Longer distances = higher costs"
+          "factor": "المسافة",
+          "impact": "عامل التكلفة الرئيسي",
+          "description": "مسافة أطول = تكلفة أعلى"
         },
         {
-          "factor": "Weight/Volume",
-          "impact": "Direct correlation",
-          "description": "Charged per pound or cubic foot"
+          "factor": "الوزن/الحجم",
+          "impact": "ارتباط مباشر",
+          "description": "يُحسب بالرطل أو القدم المكعب"
         },
         {
-          "factor": "Season",
-          "impact": "Moderate effect",
-          "description": "Summer (peak) costs 20-30% more"
+          "factor": "الموسم",
+          "impact": "تأثير متوسط",
+          "description": "الصيف (الذروة) أغلى بنسبة 20-30%"
         },
         {
-          "factor": "Access",
-          "impact": "Additional fees",
-          "description": "Stairs, long carry, shuttle service"
+          "factor": "الوصول",
+          "impact": "رسوم إضافية",
+          "description": "سلالم، حمل طويل، خدمة shuttle"
         },
         {
-          "factor": "Packing Services",
-          "impact": "Optional add-on",
-          "description": "Professional packing adds 15-25%"
+          "factor": "خدمات التعبئة",
+          "impact": "إضافة اختيارية",
+          "description": "التعبئة الاحترافية تضيف 15-25%"
         },
         {
-          "factor": "Insurance",
-          "impact": "Recommended",
-          "description": "Full value protection for peace of mind"
+          "factor": "التأمين",
+          "impact": "موصى به",
+          "description": "حماية كاملة للقيمة وراحة البال"
         }
       ]
     },
     "terms": {
-      "title": "Terms of Service",
-      "lastUpdated": "Last updated",
-      "intro": "Please read these Terms carefully before using VIP International Shipping services.",
+      "title": "شروط الخدمة",
+      "lastUpdated": "آخر تحديث",
+      "intro": "يرجى قراءة هذه الشروط بعناية قبل استخدام خدمات VIP International Shipping.",
       "sections": [
         {
-          "title": "1. Acceptance of Terms",
+          "title": "1. قبول الشروط",
           "paragraphs": [
-            "By accessing or using our website and services, you agree to be bound by these Terms of Service."
+            "باستخدام موقعنا أو خدماتنا، فإنك توافق على الالتزام بشروط الخدمة هذه."
           ]
         },
         {
-          "title": "2. Services",
+          "title": "2. الخدمات",
           "paragraphs": [
-            "We provide international and domestic moving, packing, storage, and related logistics services subject to availability and applicable law."
+            "نقدم خدمات النقل الدولي والمحلي والتعبئة والتخزين والخدمات اللوجستية ذات الصلة وفقًا للتوفر والقانون المعمول به."
           ]
         },
         {
-          "title": "3. Quotes and Pricing",
+          "title": "3. عروض الأسعار والتسعير",
           "paragraphs": [
-            "Quotes are estimates unless expressly stated as binding. Final pricing may change after survey, inventory, access conditions, or regulatory fees."
+            "عروض الأسعار تقديرات ما لم يُذكر صراحةً أنها ملزمة. قد يتغير السعر النهائي بعد المعاينة أو الجرد أو ظروف الوصول أو الرسوم التنظيمية."
           ]
         },
         {
-          "title": "4. Customer Responsibilities",
+          "title": "4. مسؤوليات العميل",
           "paragraphs": [
-            "You are responsible for accurate inventory, access to premises, required permits, and compliance with customs and prohibited-item rules."
+            "أنت مسؤول عن دقة الجرد والوصول إلى المبنى والتصاريح المطلوبة والامتثال لقواعد الجمارك والمواد المحظورة."
           ]
         },
         {
-          "title": "5. Payments",
+          "title": "5. المدفوعات",
           "paragraphs": [
-            "Payment terms are stated on your invoice or booking confirmation. Late payments may incur fees or service delays."
+            "تظهر شروط الدفع في فاتورتك أو تأكيد الحجز. قد تؤدي المدفوعات المتأخرة إلى رسوم أو تأخير في الخدمة."
           ]
         },
         {
-          "title": "6. Insurance and Liability",
+          "title": "6. التأمين والمسؤولية",
           "paragraphs": [
-            "Coverage options are offered at booking. Liability limits apply as disclosed in your contract and applicable carrier terms."
+            "تُعرض خيارات التغطية عند الحجز. تنطبق حدود المسؤولية كما هو موضح في عقدك وشروط الناقل المعمول بها."
           ]
         },
         {
-          "title": "7. Cancellations",
+          "title": "7. الإلغاء",
           "paragraphs": [
-            "Cancellation and rescheduling policies are provided with your booking. Deposits may be non-refundable after certain deadlines."
+            "تُقدَّم سياسات الإلغاء وإعادة الجدولة مع حجزك. قد تكون الودائع غير قابلة للاسترداد بعد مواعيد نهائية معينة."
           ]
         },
         {
-          "title": "8. Privacy",
+          "title": "8. الخصوصية",
           "paragraphs": [
-            "Personal data is handled according to our Privacy Policy."
+            "تُعالج البيانات الشخصية وفقًا لسياسة الخصوصية الخاصة بنا."
           ]
         },
         {
-          "title": "9. Governing Law",
+          "title": "9. القانون الحاكم",
           "paragraphs": [
-            "These Terms are governed by the laws of the applicable jurisdiction stated in your service agreement."
+            "تخضع هذه الشروط للقوانين المعمول بها في الولاية القضائية المنصوص عليها في اتفاقية الخدمة الخاصة بك."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. التواصل",
           "paragraphs": [
-            "Questions about these Terms: support@vipshipping.com"
+            "أسئلة حول هذه الشروط: support@vipshipping.com"
           ]
         }
-      ]
+      ],
+      "fmcsaTitle": "إفصاحات حماية المستهلك المطلوبة (النقل بين الولايات في الولايات المتحدة)",
+      "fmcsaBody": "بموجب 49 CFR 375.213، يجب على شركات النقل والوسطاء تزويد العملاء المحتملين بنسخة أو رابط للمنشورات الرسمية التالية من FMCSA قبل نقل أثاث منزلي بين الولايات:",
+      "fmcsaRights": "حقوقك ومسؤولياتك عند الانتقال (FMCSA)",
+      "fmcsaProtect": "احمِ انتقالك — موارد المستهلك (FMCSA)",
+      "fmcsaVerify": "يمكنك التحقق من تسجيل USDOT وسجل السلامة لأي ناقل بين الولايات في قاعدة بيانات FMCSA SAFER الرسمية",
+      "fmcsaOurUsdot": " (رقم USDOT الخاص بنا: {{usdot}})."
     },
     "privacy": {
-      "title": "Privacy Policy",
-      "subtitle": "How we collect, use, and protect your information",
-      "lastUpdated": "Last updated",
-      "intro": "This Privacy Policy explains how VIP International Shipping handles personal information.",
+      "title": "سياسة الخصوصية",
+      "subtitle": "كيف نجمع معلوماتك ونستخدمها ونحميها",
+      "lastUpdated": "آخر تحديث",
+      "intro": "توضح سياسة الخصوصية هذه كيف تتعامل VIP International Shipping مع المعلومات الشخصية.",
       "sections": [
         {
-          "title": "1. Information we collect",
+          "title": "1. المعلومات التي نجمعها",
           "paragraphs": [
-            "Contact details, move addresses, shipment details, payment references, and usage data needed to provide services."
+            "بيانات الاتصال وعناوين النقل وتفاصيل الشحن ومراجع الدفع وبيانات الاستخدام اللازمة لتقديم الخدمات."
           ]
         },
         {
-          "title": "2. How we use information",
+          "title": "2. كيف نستخدم المعلومات",
           "paragraphs": [
-            "To prepare quotes, operate shipments, process payments, provide support, improve services, and meet legal obligations."
+            "لإعداد عروض الأسعار وتشغيل الشحنات ومعالجة المدفوعات وتقديم الدعم وتحسين الخدمات والوفاء بالالتزامات القانونية."
           ]
         },
         {
-          "title": "3. Sharing",
+          "title": "3. المشاركة",
           "paragraphs": [
-            "We share data with carriers, customs brokers, payment processors, and service providers under contract, or when required by law."
+            "نشارك البيانات مع الناقلين ووسطاء الجمارك ومعالجي الدفع ومقدمي الخدمات بموجب عقد، أو عندما يقتضي القانون ذلك."
           ]
         },
         {
-          "title": "4. Security",
+          "title": "4. الأمان",
           "paragraphs": [
-            "We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data."
+            "نستخدم ضمانات إدارية وتقنية ومادية مناسبة لحساسية البيانات."
           ]
         },
         {
-          "title": "5. Your rights",
+          "title": "5. حقوقك",
           "paragraphs": [
-            "Depending on your location, you may request access, correction, deletion, or restriction of personal data."
+            "حسب موقعك، قد تطلب الوصول أو التصحيح أو الحذف أو تقييد البيانات الشخصية."
           ]
         },
         {
-          "title": "6. Cookies",
+          "title": "6. ملفات تعريف الارتباط",
           "paragraphs": [
-            "We use necessary cookies for authentication and optional analytics cookies where permitted."
+            "نستخدم ملفات تعريف الارتباط الضرورية للمصادقة وملفات التحليلات الاختيارية حيث يُسمح بذلك."
           ]
         },
         {
-          "title": "7. International transfers",
+          "title": "7. عمليات النقل الدولية",
           "paragraphs": [
-            "Data may be processed in countries where we or our partners operate, with appropriate safeguards."
+            "قد تُعالَج البيانات في البلدان التي نعمل فيها نحن أو شركاؤنا، مع ضمانات مناسبة."
           ]
         },
         {
-          "title": "8. Children",
+          "title": "8. الأطفال",
           "paragraphs": [
-            "Our services are not directed to children under 16."
+            "خدماتنا غير موجهة للأطفال دون سن 16."
           ]
         },
         {
-          "title": "9. Changes",
+          "title": "9. التغييرات",
           "paragraphs": [
-            "We may update this policy and will revise the last-updated date when changes are material."
+            "قد نحدّث هذه السياسة وسنُعدِّل تاريخ آخر تحديث عند إجراء تغييرات جوهرية."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. التواصل",
           "paragraphs": [
-            "Privacy questions: privacy@vipshipping.com"
+            "أسئلة الخصوصية: privacy@vipshipping.com"
           ]
         }
       ]

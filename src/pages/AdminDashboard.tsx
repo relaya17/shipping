@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Container,
   Row,
@@ -17,21 +17,20 @@ import {
   Truck,
   CurrencyDollar,
   Clock,
-  CheckCircle,
-  ExclamationTriangle,
   Eye,
   Download
 } from 'react-bootstrap-icons';
 import { useTranslation } from 'react-i18next';
-import { useAnalytics } from '../utils/analytics';
+import api from '../service/api';
 
 interface DashboardMetrics {
   totalRevenue: number;
   activeShipments: number;
   totalCustomers: number;
-  avgDeliveryTime: number;
-  customerSatisfaction: number;
-  aiInteractions: number;
+  totalQuotes: number;
+  avgDeliveryTime: number | null;
+  customerSatisfaction: number | null;
+  aiInteractions: number | null;
 }
 
 interface RecentOrder {
@@ -39,7 +38,7 @@ interface RecentOrder {
   customer: string;
   destination: string;
   value: number;
-  status: 'pending' | 'approved' | 'in_transit' | 'delivered';
+  status: string;
   aiRecommendations: string[];
 }
 
@@ -48,48 +47,33 @@ const AdminDashboard: React.FC = () => {
   const [metrics, setMetrics] = useState<DashboardMetrics | null>(null);
   const [recentOrders, setRecentOrders] = useState<RecentOrder[]>([]);
   const [selectedPeriod, setSelectedPeriod] = useState('7days');
-  const { getData } = useAnalytics();
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  const loadDashboard = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const { data } = await api.get<{
+        success: boolean;
+        metrics: DashboardMetrics;
+        recentOrders: RecentOrder[];
+      }>('/analytics/dashboard', { params: { period: selectedPeriod } });
+
+      setMetrics(data.metrics);
+      setRecentOrders(Array.isArray(data.recentOrders) ? data.recentOrders : []);
+    } catch {
+      setMetrics(null);
+      setRecentOrders([]);
+      setError(t('admin.load_error', { defaultValue: 'Could not load dashboard data.' }));
+    } finally {
+      setLoading(false);
+    }
+  }, [selectedPeriod, t]);
 
   useEffect(() => {
-    // Simulate server data
-    setTimeout(() => {
-      setMetrics({
-        totalRevenue: 125000,
-        activeShipments: 34,
-        totalCustomers: 456,
-        avgDeliveryTime: 16,
-        customerSatisfaction: 4.8,
-        aiInteractions: 1230
-      });
-
-      setRecentOrders([
-        {
-          id: 'ORD001',
-          customer: 'John Cohen',
-          destination: 'London, UK',
-          value: 3200,
-          status: 'in_transit',
-          aiRecommendations: ['Full insurance', 'Premium tracking']
-        },
-        {
-          id: 'ORD002',
-          customer: 'Sarah Levy',
-          destination: 'Paris, France',
-          value: 2800,
-          status: 'pending',
-          aiRecommendations: ['Professional packing', 'Express service']
-        },
-        {
-          id: 'ORD003',
-          customer: 'David Moses',
-          destination: 'Tokyo, Japan',
-          value: 4500,
-          status: 'approved',
-          aiRecommendations: ['Premium insurance', 'GPS tracking']
-        }
-      ]);
-    }, 1000);
-  }, [selectedPeriod]);
+    void loadDashboard();
+  }, [loadDashboard]);
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -103,26 +87,22 @@ const AdminDashboard: React.FC = () => {
 
   const getStatusText = (status: string) => {
     switch (status) {
-      case 'pending': return 'Pending approval';
-      case 'approved': return 'Approved';
-      case 'in_transit': return 'In transit';
-      case 'delivered': return 'Delivered';
+      case 'pending': return t('admin.status_pending', { defaultValue: 'Pending' });
+      case 'approved': return t('admin.status_approved', { defaultValue: 'Approved' });
+      case 'in_transit': return t('admin.status_in_transit', { defaultValue: 'In transit' });
+      case 'delivered': return t('admin.status_delivered', { defaultValue: 'Delivered' });
       default: return status;
     }
   };
 
   const exportData = () => {
-    const analyticsData = getData();
     const payload = {
+      period: selectedPeriod,
       metrics,
       recentOrders,
-      analytics: analyticsData,
       exportDate: new Date().toISOString()
     };
-
-    const blob = new Blob([JSON.stringify(payload, null, 2)], {
-      type: 'application/json'
-    });
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -131,7 +111,7 @@ const AdminDashboard: React.FC = () => {
     URL.revokeObjectURL(url);
   };
 
-  if (!metrics) {
+  if (loading && !metrics) {
     return (
       <main id="main-content">
         <Container className="mt-5">
@@ -149,222 +129,200 @@ const AdminDashboard: React.FC = () => {
       <Container fluid className="mt-3">
         <Row className="mb-4">
           <Col>
-            <div className="d-flex justify-content-between align-items-center">
-              <h2>Admin Dashboard</h2>
+            <div className="d-flex justify-content-between align-items-center flex-wrap gap-2">
+              <h2>{t('admin.title')}</h2>
               <div className="d-flex gap-2">
                 <Form.Select
                   value={selectedPeriod}
                   onChange={(e) => setSelectedPeriod(e.target.value)}
                   style={{ width: 'auto' }}
-                  aria-label="Select time period"
+                  aria-label={t('admin.period', { defaultValue: 'Select time period' })}
                 >
-                  <option value="7days">Last 7 days</option>
-                  <option value="30days">Last 30 days</option>
-                  <option value="90days">Last 90 days</option>
+                  <option value="7days">{t('admin.period_7', { defaultValue: 'Last 7 days' })}</option>
+                  <option value="30days">{t('admin.period_30', { defaultValue: 'Last 30 days' })}</option>
+                  <option value="90days">{t('admin.period_90', { defaultValue: 'Last 90 days' })}</option>
                 </Form.Select>
-                <Button variant="outline-primary" onClick={exportData}>
+                <Button variant="outline-primary" onClick={exportData} disabled={!metrics}>
                   <Download className="me-2" />
-                  Export data
+                  {t('admin.export', { defaultValue: 'Export data' })}
                 </Button>
               </div>
             </div>
           </Col>
         </Row>
 
-        <Row className="mb-4">
-          <Col md={6} lg={3} className="mb-3">
-            <Card className="border-0 shadow-sm">
-              <Card.Body>
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>
-                    <h6 className="text-muted mb-1">Total revenue</h6>
-                    <h3 className="text-success mb-0">
-                      ${metrics.totalRevenue.toLocaleString()}
-                    </h3>
-                  </div>
-                  <CurrencyDollar size={32} className="text-success" />
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
+        {error && (
+          <Alert variant="danger" className="mb-4">
+            {error}
+            <Button variant="link" className="p-0 ms-2" onClick={() => void loadDashboard()}>
+              {t('common.retry', { defaultValue: 'Retry' })}
+            </Button>
+          </Alert>
+        )}
 
-          <Col md={6} lg={3} className="mb-3">
-            <Card className="border-0 shadow-sm">
-              <Card.Body>
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>
-                    <h6 className="text-muted mb-1">Active shipments</h6>
-                    <h3 className="text-primary mb-0">{metrics.activeShipments}</h3>
-                  </div>
-                  <Truck size={32} className="text-primary" />
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
+        {metrics && (
+          <>
+            <Row className="mb-4">
+              <Col md={6} lg={3} className="mb-3">
+                <Card className="border-0 shadow-sm">
+                  <Card.Body>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div>
+                        <h6 className="text-muted mb-1">{t('admin.revenue', { defaultValue: 'Total revenue' })}</h6>
+                        <h3 className="text-success mb-0">
+                          ${metrics.totalRevenue.toLocaleString()}
+                        </h3>
+                      </div>
+                      <CurrencyDollar size={32} className="text-success" />
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
 
-          <Col md={6} lg={3} className="mb-3">
-            <Card className="border-0 shadow-sm">
-              <Card.Body>
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>
-                    <h6 className="text-muted mb-1">Registered customers</h6>
-                    <h3 className="text-info mb-0">{metrics.totalCustomers}</h3>
-                  </div>
-                  <People size={32} className="text-info" />
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
+              <Col md={6} lg={3} className="mb-3">
+                <Card className="border-0 shadow-sm">
+                  <Card.Body>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div>
+                        <h6 className="text-muted mb-1">{t('admin.active_shipments', { defaultValue: 'Active shipments' })}</h6>
+                        <h3 className="text-primary mb-0">{metrics.activeShipments}</h3>
+                      </div>
+                      <Truck size={32} className="text-primary" />
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
 
-          <Col md={6} lg={3} className="mb-3">
-            <Card className="border-0 shadow-sm">
-              <Card.Body>
-                <div className="d-flex justify-content-between align-items-center">
-                  <div>
-                    <h6 className="text-muted mb-1">Avg. delivery time</h6>
-                    <h3 className="text-warning mb-0">{metrics.avgDeliveryTime} days</h3>
-                  </div>
-                  <Clock size={32} className="text-warning" />
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
+              <Col md={6} lg={3} className="mb-3">
+                <Card className="border-0 shadow-sm">
+                  <Card.Body>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div>
+                        <h6 className="text-muted mb-1">{t('admin.customers', { defaultValue: 'Registered customers' })}</h6>
+                        <h3 className="text-info mb-0">{metrics.totalCustomers}</h3>
+                      </div>
+                      <People size={32} className="text-info" />
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
 
-        <Row className="mb-4">
-          <Col lg={6} className="mb-3">
-            <Card className="border-0 shadow-sm">
-              <Card.Header>
-                <h6 className="mb-0">
-                  <GraphUp className="me-2" />
-                  AI performance
-                </h6>
-              </Card.Header>
-              <Card.Body>
-                <div className="mb-3">
-                  <div className="d-flex justify-content-between mb-2">
-                    <span>Customer satisfaction</span>
-                    <span className="fw-bold">{metrics.customerSatisfaction}/5.0</span>
-                  </div>
-                  <ProgressBar
-                    now={(metrics.customerSatisfaction / 5) * 100}
-                    variant="success"
-                  />
-                </div>
+              <Col md={6} lg={3} className="mb-3">
+                <Card className="border-0 shadow-sm">
+                  <Card.Body>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div>
+                        <h6 className="text-muted mb-1">{t('admin.avg_delivery', { defaultValue: 'Avg. delivery time' })}</h6>
+                        <h3 className="text-warning mb-0">
+                          {metrics.avgDeliveryTime != null
+                            ? `${metrics.avgDeliveryTime} ${t('admin.days', { defaultValue: 'days' })}`
+                            : '—'}
+                        </h3>
+                      </div>
+                      <Clock size={32} className="text-warning" />
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
 
-                <div className="mb-3">
-                  <div className="d-flex justify-content-between mb-2">
-                    <span>AI interactions</span>
-                    <span className="fw-bold">{metrics.aiInteractions}</span>
-                  </div>
-                  <ProgressBar now={85} variant="info" />
-                </div>
-
-                <Alert variant="info" className="mb-0">
-                  <small>
-                    <strong>AI insight:</strong> ChatBot improves conversion rate by 23%
-                    and saves 40% of support time.
-                  </small>
-                </Alert>
-              </Card.Body>
-            </Card>
-          </Col>
-
-          <Col lg={6} className="mb-3">
-            <Card className="border-0 shadow-sm">
-              <Card.Header>
-                <h6 className="mb-0">Recent orders</h6>
-              </Card.Header>
-              <Card.Body className="p-0">
-                <Table responsive className="mb-0">
-                  <thead className="table-light">
-                    <tr>
-                      <th>Order</th>
-                      <th>Customer</th>
-                      <th>Destination</th>
-                      <th>Value</th>
-                      <th>Status</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {recentOrders.map((order) => (
-                      <tr key={order.id}>
-                        <td>
-                          <small className="font-monospace">{order.id}</small>
-                        </td>
-                        <td>{order.customer}</td>
-                        <td>
-                          <small>{order.destination}</small>
-                        </td>
-                        <td>
-                          <strong>${order.value.toLocaleString()}</strong>
-                        </td>
-                        <td>
-                          <Badge bg={getStatusColor(order.status)}>
-                            {getStatusText(order.status)}
-                          </Badge>
-                        </td>
-                        <td>
-                          <Button variant="outline-primary" size="sm" aria-label={t('common.view')}>
-                            <Eye size={14} />
-                          </Button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </Table>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <Card className="border-0 shadow-sm">
-              <Card.Header>
-                <h6 className="mb-0">
-                  AI recommendations for managers
-                  <Badge bg="success" className="ms-2">Live</Badge>
-                </h6>
-              </Card.Header>
-              <Card.Body>
-                <Row>
-                  <Col md={4} className="mb-3">
-                    <Alert variant="success">
-                      <CheckCircle className="me-2" />
-                      <strong>Optimization:</strong>
-                      <br />
-                      <small>
-                        Grouping 3 shipments to Germany will save $450 in costs.
-                      </small>
-                    </Alert>
-                  </Col>
-                  <Col md={4} className="mb-3">
-                    <Alert variant="warning">
-                      <ExclamationTriangle className="me-2" />
-                      <strong>Alert:</strong>
-                      <br />
-                      <small>
-                        High load to Asia — consider adding capacity.
-                      </small>
-                    </Alert>
-                  </Col>
-                  <Col md={4} className="mb-3">
-                    <Alert variant="info">
+            <Row className="mb-4">
+              <Col lg={6} className="mb-3">
+                <Card className="border-0 shadow-sm">
+                  <Card.Header>
+                    <h6 className="mb-0">
                       <GraphUp className="me-2" />
-                      <strong>Opportunity:</strong>
-                      <br />
-                      <small>
-                        25% increase in demand for premium services.
-                      </small>
+                      {t('admin.ops_snapshot', { defaultValue: 'Operations snapshot' })}
+                    </h6>
+                  </Card.Header>
+                  <Card.Body>
+                    <div className="mb-3">
+                      <div className="d-flex justify-content-between mb-2">
+                        <span>{t('admin.quotes_period', { defaultValue: 'Quotes in period' })}</span>
+                        <span className="fw-bold">{metrics.totalQuotes}</span>
+                      </div>
+                    </div>
+                    <div className="mb-3">
+                      <div className="d-flex justify-content-between mb-2">
+                        <span>{t('admin.satisfaction', { defaultValue: 'Customer satisfaction' })}</span>
+                        <span className="fw-bold">
+                          {metrics.customerSatisfaction != null
+                            ? `${metrics.customerSatisfaction}/5.0`
+                            : '—'}
+                        </span>
+                      </div>
+                      {metrics.customerSatisfaction != null && (
+                        <ProgressBar
+                          now={(metrics.customerSatisfaction / 5) * 100}
+                          variant="success"
+                        />
+                      )}
+                    </div>
+                    <Alert variant="secondary" className="mb-0 small">
+                      {t('admin.live_note', {
+                        defaultValue: 'Metrics are loaded from live Quote, Shipment, Invoice, and User data.'
+                      })}
                     </Alert>
-                  </Col>
-                </Row>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
+                  </Card.Body>
+                </Card>
+              </Col>
+
+              <Col lg={6} className="mb-3">
+                <Card className="border-0 shadow-sm">
+                  <Card.Header>
+                    <h6 className="mb-0">{t('admin.recent_orders', { defaultValue: 'Recent orders' })}</h6>
+                  </Card.Header>
+                  <Card.Body className="p-0">
+                    {recentOrders.length === 0 ? (
+                      <p className="text-muted p-3 mb-0">
+                        {t('admin.no_orders', { defaultValue: 'No shipments yet.' })}
+                      </p>
+                    ) : (
+                      <Table responsive className="mb-0">
+                        <thead className="table-light">
+                          <tr>
+                            <th>{t('admin.col_order', { defaultValue: 'Order' })}</th>
+                            <th>{t('admin.col_customer', { defaultValue: 'Customer' })}</th>
+                            <th>{t('admin.col_destination', { defaultValue: 'Destination' })}</th>
+                            <th>{t('admin.col_value', { defaultValue: 'Value' })}</th>
+                            <th>{t('admin.col_status', { defaultValue: 'Status' })}</th>
+                            <th>{t('admin.col_actions', { defaultValue: 'Actions' })}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {recentOrders.map((order) => (
+                            <tr key={order.id}>
+                              <td>
+                                <small className="font-monospace">{order.id}</small>
+                              </td>
+                              <td>{order.customer}</td>
+                              <td>
+                                <small>{order.destination}</small>
+                              </td>
+                              <td>
+                                <strong>${Number(order.value || 0).toLocaleString()}</strong>
+                              </td>
+                              <td>
+                                <Badge bg={getStatusColor(order.status)}>
+                                  {getStatusText(order.status)}
+                                </Badge>
+                              </td>
+                              <td>
+                                <Button variant="outline-primary" size="sm" aria-label={t('common.view')}>
+                                  <Eye size={14} />
+                                </Button>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </Table>
+                    )}
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+          </>
+        )}
       </Container>
     </main>
   );

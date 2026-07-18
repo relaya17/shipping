@@ -76,7 +76,8 @@
     "go_home": "Ana sayfaya git",
     "go_back": "Geri dön",
     "required": "Zorunlu",
-    "optional": "İsteğe bağlı"
+    "optional": "İsteğe bağlı",
+    "retry": "Tekrar dene"
   },
   "forms": {
     "name": "Ad Soyad",
@@ -204,7 +205,34 @@
   },
   "admin": {
     "unauthorized": "Yönetici erişimi gerekli",
-    "title": "Yönetici paneli"
+    "title": "Yönetici paneli",
+    "load_error": "Kontrol paneli verileri yüklenemedi.",
+    "period": "Zaman aralığı seçin",
+    "period_7": "Son 7 gün",
+    "period_30": "Son 30 gün",
+    "period_90": "Son 90 gün",
+    "export": "Verileri dışa aktar",
+    "revenue": "Toplam gelir",
+    "active_shipments": "Aktif sevkiyatlar",
+    "customers": "Kayıtlı müşteriler",
+    "avg_delivery": "Ort. teslimat süresi",
+    "days": "gün",
+    "ops_snapshot": "Operasyon özeti",
+    "quotes_period": "Dönemdeki teklifler",
+    "satisfaction": "Müşteri memnuniyeti",
+    "live_note": "Metrikler canlı Teklif, Sevkiyat, Fatura ve Kullanıcı verilerinden yüklenir.",
+    "recent_orders": "Son siparişler",
+    "no_orders": "Henüz sevkiyat yok.",
+    "col_order": "Sipariş",
+    "col_customer": "Müşteri",
+    "col_destination": "Varış noktası",
+    "col_value": "Değer",
+    "col_status": "Durum",
+    "col_actions": "İşlemler",
+    "status_pending": "Beklemede",
+    "status_approved": "Onaylandı",
+    "status_in_transit": "Yolda",
+    "status_delivered": "Teslim edildi"
   },
   "pages": {
     "about": {
@@ -1013,136 +1041,142 @@
       ]
     },
     "terms": {
-      "title": "Terms of Service",
-      "lastUpdated": "Last updated",
-      "intro": "Please read these Terms carefully before using VIP International Shipping services.",
+      "title": "Hizmet Şartları",
+      "lastUpdated": "Son güncelleme",
+      "intro": "VIP International Shipping hizmetlerini kullanmadan önce lütfen bu Şartları dikkatlice okuyun.",
       "sections": [
         {
-          "title": "1. Acceptance of Terms",
+          "title": "1. Şartların kabulü",
           "paragraphs": [
-            "By accessing or using our website and services, you agree to be bound by these Terms of Service."
+            "Web sitemize veya hizmetlerimize erişerek bu Hizmet Şartlarına bağlı kalmayı kabul edersiniz."
           ]
         },
         {
-          "title": "2. Services",
+          "title": "2. Hizmetler",
           "paragraphs": [
-            "We provide international and domestic moving, packing, storage, and related logistics services subject to availability and applicable law."
+            "Uluslararası ve yurtiçi taşımacılık, paketleme, depolama ve ilgili lojistik hizmetleri sunuyoruz; müsaitlik ve yürürlükteki yasalara tabidir."
           ]
         },
         {
-          "title": "3. Quotes and Pricing",
+          "title": "3. Teklifler ve fiyatlandırma",
           "paragraphs": [
-            "Quotes are estimates unless expressly stated as binding. Final pricing may change after survey, inventory, access conditions, or regulatory fees."
+            "Teklifler, aksi açıkça belirtilmedikçe tahmindir. Nihai fiyat, keşif, envanter, erişim koşulları veya düzenleyici ücretler sonrası değişebilir."
           ]
         },
         {
-          "title": "4. Customer Responsibilities",
+          "title": "4. Müşteri sorumlulukları",
           "paragraphs": [
-            "You are responsible for accurate inventory, access to premises, required permits, and compliance with customs and prohibited-item rules."
+            "Doğru envanter, tesise erişim, gerekli izinler ve gümrük ile yasaklı eşya kurallarına uyum sizin sorumluluğunuzdadır."
           ]
         },
         {
-          "title": "5. Payments",
+          "title": "5. Ödemeler",
           "paragraphs": [
-            "Payment terms are stated on your invoice or booking confirmation. Late payments may incur fees or service delays."
+            "Ödeme koşulları faturanızda veya rezervasyon onayında belirtilir. Gecikmiş ödemeler ücret veya hizmet gecikmesine yol açabilir."
           ]
         },
         {
-          "title": "6. Insurance and Liability",
+          "title": "6. Sigorta ve sorumluluk",
           "paragraphs": [
-            "Coverage options are offered at booking. Liability limits apply as disclosed in your contract and applicable carrier terms."
+            "Kapsam seçenekleri rezervasyon sırasında sunulur. Sorumluluk sınırları sözleşmenizde ve taşıyıcı şartlarında belirtildiği gibi uygulanır."
           ]
         },
         {
-          "title": "7. Cancellations",
+          "title": "7. İptaller",
           "paragraphs": [
-            "Cancellation and rescheduling policies are provided with your booking. Deposits may be non-refundable after certain deadlines."
+            "İptal ve yeniden planlama politikaları rezervasyonunuzla birlikte sağlanır. Belirli tarihlerden sonra depozitolar iade edilmeyebilir."
           ]
         },
         {
-          "title": "8. Privacy",
+          "title": "8. Gizlilik",
           "paragraphs": [
-            "Personal data is handled according to our Privacy Policy."
+            "Kişisel veriler Gizlilik Politikamıza göre işlenir."
           ]
         },
         {
-          "title": "9. Governing Law",
+          "title": "9. Uygulanacak hukuk",
           "paragraphs": [
-            "These Terms are governed by the laws of the applicable jurisdiction stated in your service agreement."
+            "Bu Şartlar, hizmet sözleşmenizde belirtilen yargı alanının yasalarına tabidir."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. İletişim",
           "paragraphs": [
-            "Questions about these Terms: support@vipshipping.com"
+            "Bu Şartlar hakkında sorular: support@vipshipping.com"
           ]
         }
-      ]
+      ],
+      "fmcsaTitle": "Zorunlu tüketici koruma açıklamaları (ABD eyaletler arası taşımalar)",
+      "fmcsaBody": "49 CFR 375.213 uyarınca, taşıyıcılar ve brokerler eyaletler arası ev eşyası taşımasından önce potansiyel müşterilere aşağıdaki resmi FMCSA yayınlarının bir kopyasını veya bağlantısını vermelidir:",
+      "fmcsaRights": "Taşınırken Haklarınız ve Sorumluluklarınız (FMCSA)",
+      "fmcsaProtect": "Taşınmanızı Koruyun — tüketici kaynakları (FMCSA)",
+      "fmcsaVerify": "Herhangi bir eyaletler arası taşıyıcının USDOT kaydını ve güvenlik geçmişini resmi FMCSA SAFER veritabanında doğrulayabilirsiniz",
+      "fmcsaOurUsdot": " (USDOT numaramız: {{usdot}})."
     },
     "privacy": {
-      "title": "Privacy Policy",
-      "subtitle": "How we collect, use, and protect your information",
-      "lastUpdated": "Last updated",
-      "intro": "This Privacy Policy explains how VIP International Shipping handles personal information.",
+      "title": "Gizlilik Politikası",
+      "subtitle": "Bilgilerinizi nasıl topladığımız, kullandığımız ve koruduğumuz",
+      "lastUpdated": "Son güncelleme",
+      "intro": "Bu Gizlilik Politikası, VIP International Shipping'in kişisel bilgileri nasıl işlediğini açıklar.",
       "sections": [
         {
-          "title": "1. Information we collect",
+          "title": "1. Topladığımız bilgiler",
           "paragraphs": [
-            "Contact details, move addresses, shipment details, payment references, and usage data needed to provide services."
+            "Hizmet sunmak için gereken iletişim bilgileri, taşınma adresleri, sevkiyat ayrıntıları, ödeme referansları ve kullanım verileri."
           ]
         },
         {
-          "title": "2. How we use information",
+          "title": "2. Bilgileri nasıl kullanırız",
           "paragraphs": [
-            "To prepare quotes, operate shipments, process payments, provide support, improve services, and meet legal obligations."
+            "Teklif hazırlamak, sevkiyatları yürütmek, ödemeleri işlemek, destek sağlamak, hizmetleri iyileştirmek ve yasal yükümlülükleri yerine getirmek için."
           ]
         },
         {
-          "title": "3. Sharing",
+          "title": "3. Paylaşım",
           "paragraphs": [
-            "We share data with carriers, customs brokers, payment processors, and service providers under contract, or when required by law."
+            "Verileri taşıyıcılar, gümrük komisyoncuları, ödeme işlemcileri ve sözleşmeli hizmet sağlayıcılarla veya yasa gereği paylaşırız."
           ]
         },
         {
-          "title": "4. Security",
+          "title": "4. Güvenlik",
           "paragraphs": [
-            "We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data."
+            "Verinin hassasiyetine uygun idari, teknik ve fiziksel önlemler kullanırız."
           ]
         },
         {
-          "title": "5. Your rights",
+          "title": "5. Haklarınız",
           "paragraphs": [
-            "Depending on your location, you may request access, correction, deletion, or restriction of personal data."
+            "Konumunuza bağlı olarak kişisel verilere erişim, düzeltme, silme veya kısıtlama talep edebilirsiniz."
           ]
         },
         {
-          "title": "6. Cookies",
+          "title": "6. Çerezler",
           "paragraphs": [
-            "We use necessary cookies for authentication and optional analytics cookies where permitted."
+            "Kimlik doğrulama için gerekli çerezler ve izin verildiğinde isteğe bağlı analitik çerezler kullanırız."
           ]
         },
         {
-          "title": "7. International transfers",
+          "title": "7. Uluslararası aktarımlar",
           "paragraphs": [
-            "Data may be processed in countries where we or our partners operate, with appropriate safeguards."
+            "Veriler, bizim veya ortaklarımızın faaliyet gösterdiği ülkelerde uygun güvencelerle işlenebilir."
           ]
         },
         {
-          "title": "8. Children",
+          "title": "8. Çocuklar",
           "paragraphs": [
-            "Our services are not directed to children under 16."
+            "Hizmetlerimiz 16 yaşın altındaki çocuklara yönelik değildir."
           ]
         },
         {
-          "title": "9. Changes",
+          "title": "9. Değişiklikler",
           "paragraphs": [
-            "We may update this policy and will revise the last-updated date when changes are material."
+            "Bu politikayı güncelleyebilir ve önemli değişikliklerde son güncelleme tarihini revize ederiz."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. İletişim",
           "paragraphs": [
-            "Privacy questions: privacy@vipshipping.com"
+            "Gizlilik soruları: privacy@vipshipping.com"
           ]
         }
       ]

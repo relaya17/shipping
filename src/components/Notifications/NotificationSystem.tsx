@@ -23,7 +23,7 @@ interface Notification {
 }
 
 const NotificationSystem: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [showToasts, setShowToasts] = useState(true);
   const [unreadCount, setUnreadCount] = useState(0);
@@ -80,30 +80,29 @@ const NotificationSystem: React.FC = () => {
     const demoNotifications = [
       {
         type: 'success' as const,
-        title: 'Shipment Started!',
-        message: 'Your shipment VIP123456 departed from New York Port',
+        title: t('notifications.shipment_started'),
+        message: t('notifications.demo_shipment_msg'),
         action: {
-          label: 'Track',
+          label: t('notifications.track'),
           onClick: () => console.log('Navigate to tracking')
         }
       },
       {
         type: 'info' as const,
-        title: 'Price Update',
-        message: 'Shipping prices to Europe updated - save up to 15%',
+        title: t('notifications.price_update'),
+        message: t('notifications.demo_price_msg'),
         action: {
-          label: 'View Prices',
+          label: t('notifications.view_prices'),
           onClick: () => console.log('Navigate to prices')
         }
       },
       {
         type: 'warning' as const,
-        title: 'Customs Inspection',
-        message: 'Your shipment is under customs inspection - may be delayed by 24 hours',
+        title: t('notifications.customs_inspection'),
+        message: t('notifications.demo_customs_msg'),
       }
     ];
 
-    // Add demo notifications every 10 seconds
     let index = 0;
     const interval = setInterval(() => {
       if (index < demoNotifications.length) {
@@ -115,7 +114,7 @@ const NotificationSystem: React.FC = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [t, i18n.language]);
 
   const getIcon = (type: string) => {
     switch (type) {
@@ -216,7 +215,7 @@ const NotificationSystem: React.FC = () => {
               </div>
               <strong className="me-auto">{notification.title}</strong>
               <small className="text-muted">
-                {notification.timestamp.toLocaleTimeString('en-US', {
+                {notification.timestamp.toLocaleTimeString(i18n.language || 'en', {
                   hour: '2-digit',
                   minute: '2-digit'
                 })}
@@ -285,7 +284,7 @@ const NotificationSystem: React.FC = () => {
                     <h6 className="mb-1 small">{notification.title}</h6>
                     <p className="mb-1 small text-muted">{notification.message}</p>
                     <small className="text-muted">
-                      {notification.timestamp.toLocaleString('en-US')}
+                      {notification.timestamp.toLocaleString(i18n.language || 'en')}
                     </small>
                   </div>
                   {!notification.read && (

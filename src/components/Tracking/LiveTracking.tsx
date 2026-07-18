@@ -42,7 +42,7 @@ type TrackingView = {
 };
 
 const LiveTracking: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [trackingNumber, setTrackingNumber] = useState('');
   const [shipmentData, setShipmentData] = useState<TrackingView | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -102,7 +102,7 @@ const LiveTracking: React.FC = () => {
       ].filter(Boolean).join(', ') ||
       (shipmentData.currentLocation.lat != null
         ? `${shipmentData.currentLocation.lat.toFixed(4)}, ${shipmentData.currentLocation.lon?.toFixed(4)}`
-        : 'Location pending')
+        : t('tracking.location_pending'))
     : '';
 
   return (
@@ -147,7 +147,7 @@ const LiveTracking: React.FC = () => {
           <div className="mt-3">
             <div className="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
               <div>
-                <h6 className="mb-1">Tracking #: {shipmentData.trackingNumber}</h6>
+                <h6 className="mb-1">{t('tracking.tracking_hash')} {shipmentData.trackingNumber}</h6>
                 <Badge bg={statusColor(shipmentData.status)} className="me-2">{shipmentData.status}</Badge>
                 <small className="text-muted">
                   <GeoAlt className="me-1" />
@@ -155,12 +155,12 @@ const LiveTracking: React.FC = () => {
                 </small>
               </div>
               <div className="text-end">
-                <small className="text-muted">Estimated arrival</small>
+                <small className="text-muted">{t('tracking.estimated_arrival')}</small>
                 <br />
                 <strong>
                   {shipmentData.estimatedDelivery
-                    ? new Date(shipmentData.estimatedDelivery).toLocaleDateString('en-US')
-                    : 'TBD'}
+                    ? new Date(shipmentData.estimatedDelivery).toLocaleDateString(i18n.language || 'en')
+                    : t('tracking.tbd')}
                 </strong>
               </div>
             </div>
@@ -175,7 +175,7 @@ const LiveTracking: React.FC = () => {
             {shipmentData.map?.embedUrl && (
               <div className="mb-3 rounded overflow-hidden border">
                 <iframe
-                  title="Shipment GPS map"
+                  title={t('tracking.map_title')}
                   src={shipmentData.map.embedUrl}
                   style={{ border: 0, width: '100%', height: 280 }}
                   loading="lazy"

@@ -76,7 +76,8 @@
     "go_home": "Till startsidan",
     "go_back": "Gå tillbaka",
     "required": "Obligatoriskt",
-    "optional": "Valfritt"
+    "optional": "Valfritt",
+    "retry": "Försök igen"
   },
   "forms": {
     "name": "Fullständigt namn",
@@ -204,7 +205,34 @@
   },
   "admin": {
     "unauthorized": "Administratörsbehörighet krävs",
-    "title": "Adminpanel"
+    "title": "Adminpanel",
+    "load_error": "Kunde inte ladda instrumentpaneldata.",
+    "period": "Välj tidsperiod",
+    "period_7": "Senaste 7 dagarna",
+    "period_30": "Senaste 30 dagarna",
+    "period_90": "Senaste 90 dagarna",
+    "export": "Exportera data",
+    "revenue": "Total intäkt",
+    "active_shipments": "Aktiva försändelser",
+    "customers": "Registrerade kunder",
+    "avg_delivery": "Genomsnittlig leveranstid",
+    "days": "dagar",
+    "ops_snapshot": "Driftöversikt",
+    "quotes_period": "Offerter under perioden",
+    "satisfaction": "Kundnöjdhet",
+    "live_note": "Mätvärden laddas från live data för offerter, försändelser, fakturor och användare.",
+    "recent_orders": "Senaste order",
+    "no_orders": "Inga försändelser ännu.",
+    "col_order": "Order",
+    "col_customer": "Kund",
+    "col_destination": "Destination",
+    "col_value": "Värde",
+    "col_status": "Status",
+    "col_actions": "Åtgärder",
+    "status_pending": "Väntande",
+    "status_approved": "Godkänd",
+    "status_in_transit": "Under transport",
+    "status_delivered": "Levererad"
   },
   "pages": {
     "about": {
@@ -1013,136 +1041,142 @@
       ]
     },
     "terms": {
-      "title": "Terms of Service",
-      "lastUpdated": "Last updated",
-      "intro": "Please read these Terms carefully before using VIP International Shipping services.",
+      "title": "Användarvillkor",
+      "lastUpdated": "Senast uppdaterad",
+      "intro": "Läs dessa villkor noggrant innan du använder VIP International Shippings tjänster.",
       "sections": [
         {
-          "title": "1. Acceptance of Terms",
+          "title": "1. Godkännande av villkor",
           "paragraphs": [
-            "By accessing or using our website and services, you agree to be bound by these Terms of Service."
+            "Genom att använda vår webbplats och våra tjänster godkänner du att vara bunden av dessa användarvillkor."
           ]
         },
         {
-          "title": "2. Services",
+          "title": "2. Tjänster",
           "paragraphs": [
-            "We provide international and domestic moving, packing, storage, and related logistics services subject to availability and applicable law."
+            "Vi erbjuder internationella och inhemska flyttar, packning, lagring och relaterade logistiktjänster i enlighet med tillgänglighet och tillämplig lag."
           ]
         },
         {
-          "title": "3. Quotes and Pricing",
+          "title": "3. Offerter och prissättning",
           "paragraphs": [
-            "Quotes are estimates unless expressly stated as binding. Final pricing may change after survey, inventory, access conditions, or regulatory fees."
+            "Offerter är uppskattningar om de inte uttryckligen anges som bindande. Slutpriset kan ändras efter besiktning, inventering, tillträdesförhållanden eller regulatoriska avgifter."
           ]
         },
         {
-          "title": "4. Customer Responsibilities",
+          "title": "4. Kundansvar",
           "paragraphs": [
-            "You are responsible for accurate inventory, access to premises, required permits, and compliance with customs and prohibited-item rules."
+            "Du ansvarar för korrekt inventering, tillgång till lokaler, nödvändiga tillstånd och efterlevnad av tull- och förbudsregler."
           ]
         },
         {
-          "title": "5. Payments",
+          "title": "5. Betalningar",
           "paragraphs": [
-            "Payment terms are stated on your invoice or booking confirmation. Late payments may incur fees or service delays."
+            "Betalningsvillkor anges på din faktura eller bokningsbekräftelse. Sena betalningar kan medföra avgifter eller förseningar."
           ]
         },
         {
-          "title": "6. Insurance and Liability",
+          "title": "6. Försäkring och ansvar",
           "paragraphs": [
-            "Coverage options are offered at booking. Liability limits apply as disclosed in your contract and applicable carrier terms."
+            "Täckningsalternativ erbjuds vid bokning. Ansvarsbegränsningar gäller enligt ditt avtal och transportörens villkor."
           ]
         },
         {
-          "title": "7. Cancellations",
+          "title": "7. Avbokningar",
           "paragraphs": [
-            "Cancellation and rescheduling policies are provided with your booking. Deposits may be non-refundable after certain deadlines."
+            "Avboknings- och ombokningspolicyer tillhandahålls med din bokning. Depositioner kan vara icke återbetalningsbara efter vissa deadlines."
           ]
         },
         {
-          "title": "8. Privacy",
+          "title": "8. Integritet",
           "paragraphs": [
-            "Personal data is handled according to our Privacy Policy."
+            "Personuppgifter hanteras enligt vår integritetspolicy."
           ]
         },
         {
-          "title": "9. Governing Law",
+          "title": "9. Tillämplig lag",
           "paragraphs": [
-            "These Terms are governed by the laws of the applicable jurisdiction stated in your service agreement."
+            "Dessa villkor styrs av lagarna i den jurisdiktion som anges i ditt serviceavtal."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. Kontakt",
           "paragraphs": [
-            "Questions about these Terms: support@vipshipping.com"
+            "Frågor om dessa villkor: support@vipshipping.com"
           ]
         }
-      ]
+      ],
+      "fmcsaTitle": "Obligatoriska konsumentskyddsupplysningar (interstatliga flyttar i USA)",
+      "fmcsaBody": "Enligt 49 CFR 375.213 måste flyttfirmor och mäklare ge potentiella kunder en kopia av eller länk till följande officiella FMCSA-publikationer före en interstatlig hushållsförflyttning:",
+      "fmcsaRights": "Dina rättigheter och skyldigheter när du flyttar (FMCSA)",
+      "fmcsaProtect": "Skydda din flytt — konsumentresurser (FMCSA)",
+      "fmcsaVerify": "Du kan verifiera en interstatlig flyttfirms USDOT-registrering och säkerhetshistorik i den officiella FMCSA SAFER-databasen",
+      "fmcsaOurUsdot": " (vårt USDOT-nummer: {{usdot}})."
     },
     "privacy": {
-      "title": "Privacy Policy",
-      "subtitle": "How we collect, use, and protect your information",
-      "lastUpdated": "Last updated",
-      "intro": "This Privacy Policy explains how VIP International Shipping handles personal information.",
+      "title": "Integritetspolicy",
+      "subtitle": "Hur vi samlar in, använder och skyddar din information",
+      "lastUpdated": "Senast uppdaterad",
+      "intro": "Denna integritetspolicy förklarar hur VIP International Shipping hanterar personuppgifter.",
       "sections": [
         {
-          "title": "1. Information we collect",
+          "title": "1. Information vi samlar in",
           "paragraphs": [
-            "Contact details, move addresses, shipment details, payment references, and usage data needed to provide services."
+            "Kontaktuppgifter, flyttadresser, försändelsedetaljer, betalningsreferenser och användningsdata som behövs för att tillhandahålla tjänster."
           ]
         },
         {
-          "title": "2. How we use information",
+          "title": "2. Hur vi använder information",
           "paragraphs": [
-            "To prepare quotes, operate shipments, process payments, provide support, improve services, and meet legal obligations."
+            "För att förbereda offerter, hantera försändelser, behandla betalningar, ge support, förbättra tjänster och uppfylla rättsliga skyldigheter."
           ]
         },
         {
-          "title": "3. Sharing",
+          "title": "3. Delning",
           "paragraphs": [
-            "We share data with carriers, customs brokers, payment processors, and service providers under contract, or when required by law."
+            "Vi delar data med transportörer, tullombud, betalningsprocessorer och tjänsteleverantörer enligt avtal, eller när lagen kräver det."
           ]
         },
         {
-          "title": "4. Security",
+          "title": "4. Säkerhet",
           "paragraphs": [
-            "We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data."
+            "Vi använder administrativa, tekniska och fysiska skyddsåtgärder som är lämpliga för datakänsligheten."
           ]
         },
         {
-          "title": "5. Your rights",
+          "title": "5. Dina rättigheter",
           "paragraphs": [
-            "Depending on your location, you may request access, correction, deletion, or restriction of personal data."
+            "Beroende på var du befinner dig kan du begära åtkomst, rättelse, radering eller begränsning av personuppgifter."
           ]
         },
         {
           "title": "6. Cookies",
           "paragraphs": [
-            "We use necessary cookies for authentication and optional analytics cookies where permitted."
+            "Vi använder nödvändiga cookies för autentisering och valfria analytiska cookies där det är tillåtet."
           ]
         },
         {
-          "title": "7. International transfers",
+          "title": "7. Internationella överföringar",
           "paragraphs": [
-            "Data may be processed in countries where we or our partners operate, with appropriate safeguards."
+            "Data kan behandlas i länder där vi eller våra partners verkar, med lämpliga skyddsåtgärder."
           ]
         },
         {
-          "title": "8. Children",
+          "title": "8. Barn",
           "paragraphs": [
-            "Our services are not directed to children under 16."
+            "Våra tjänster riktar sig inte till barn under 16 år."
           ]
         },
         {
-          "title": "9. Changes",
+          "title": "9. Ändringar",
           "paragraphs": [
-            "We may update this policy and will revise the last-updated date when changes are material."
+            "Vi kan uppdatera denna policy och reviderar datumet för senaste uppdatering vid väsentliga ändringar."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. Kontakt",
           "paragraphs": [
-            "Privacy questions: privacy@vipshipping.com"
+            "Integritetsfrågor: privacy@vipshipping.com"
           ]
         }
       ]

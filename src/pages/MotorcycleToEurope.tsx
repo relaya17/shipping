@@ -1,33 +1,22 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { setDetails } from "../redux/motorcycleToEuropeSlice";
-import { Button, Form } from "react-bootstrap";
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+import LinkButton from '../components/LinkButton';
+import { ROUTES } from '../routs/routes';
 
-const MotorcycleToEurope = () => {
-  const [details, setDetailsValue] = useState<string>("");
-  const dispatch = useDispatch();
-
-  const handleSubmit = () => {
-    dispatch(setDetails(details));
-  };
+const MotorcycleToEurope: React.FC = () => {
+  const { t } = useTranslation();
 
   return (
-    <div className="container mt-4">
-      <h2>Motorcycle to Europe</h2>
-      <Form>
-        <Form.Group controlId="formDetails">
-          <Form.Label>Enter Motorcycle Details</Form.Label>
-          <Form.Control
-            type="text"
-            value={details}
-            onChange={(e) => setDetailsValue(e.target.value)}
-          />
-        </Form.Group>
-        <Button variant="primary" onClick={handleSubmit}>
-          Submit Details
-        </Button>
-      </Form>
-    </div>
+    <main id="main-content">
+      <Container className="my-5">
+        <h1 className="mb-3">{t('pages.stubs.motorcycle.title')}</h1>
+        <p className="lead text-muted mb-4">{t('pages.stubs.motorcycle.body')}</p>
+        <LinkButton to={ROUTES.FREE_MOVING_QUOTE} variant="primary">
+          {t('cta.get_quote')}
+        </LinkButton>
+      </Container>
+    </main>
   );
 };
 

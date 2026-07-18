@@ -76,7 +76,8 @@
     "go_home": "Go to homepage",
     "go_back": "Go back",
     "required": "Required",
-    "optional": "Optional"
+    "optional": "Optional",
+    "retry": "Reintentar"
   },
   "forms": {
     "name": "Nombre Completo",
@@ -204,7 +205,34 @@
   },
   "admin": {
     "unauthorized": "Admin access required",
-    "title": "Admin dashboard"
+    "title": "Admin dashboard",
+    "load_error": "Could not load dashboard data.",
+    "period": "Select time period",
+    "period_7": "Last 7 days",
+    "period_30": "Last 30 days",
+    "period_90": "Last 90 days",
+    "export": "Export data",
+    "revenue": "Total revenue",
+    "active_shipments": "Active shipments",
+    "customers": "Registered customers",
+    "avg_delivery": "Avg. delivery time",
+    "days": "days",
+    "ops_snapshot": "Operations snapshot",
+    "quotes_period": "Quotes in period",
+    "satisfaction": "Customer satisfaction",
+    "live_note": "Metrics are loaded from live Quote, Shipment, Invoice, and User data.",
+    "recent_orders": "Recent orders",
+    "no_orders": "No shipments yet.",
+    "col_order": "Order",
+    "col_customer": "Customer",
+    "col_destination": "Destination",
+    "col_value": "Value",
+    "col_status": "Status",
+    "col_actions": "Actions",
+    "status_pending": "Pending",
+    "status_approved": "Approved",
+    "status_in_transit": "In transit",
+    "status_delivered": "Delivered"
   },
   "pages": {
     "about": {
@@ -547,186 +575,186 @@
       ]
     },
     "freeMovingQuote": {
-      "title": "Get Your Free Moving Quote",
-      "subtitle": "Instant estimate in 3 easy steps | No obligation | Save up to 30%",
+      "title": "Obtenga su cotización gratuita de mudanza",
+      "subtitle": "Estimación instantánea en 3 pasos | Sin compromiso | Ahorre hasta 30%",
       "badges": {
-        "free": "100% Free",
-        "noCard": "No Credit Card",
-        "response": "1-Hour Response",
-        "priceMatch": "Price Match Guarantee"
+        "free": "100% gratis",
+        "noCard": "Sin tarjeta de crédito",
+        "response": "Respuesta en 1 hora",
+        "priceMatch": "Garantía de igualación de precio"
       },
       "benefits": {
         "pricing": {
-          "title": "Transparent Pricing",
-          "desc": "No hidden fees or surprise charges"
+          "title": "Precios transparentes",
+          "desc": "Sin cargos ocultos ni sorpresas"
         },
         "insured": {
-          "title": "Fully Insured",
-          "desc": "Comprehensive protection for your belongings"
+          "title": "Totalmente asegurado",
+          "desc": "Protección integral para sus pertenencias"
         },
         "fast": {
-          "title": "Fast Response",
-          "desc": "Quote within 1 hour, 7 days a week"
+          "title": "Respuesta rápida",
+          "desc": "Cotización en 1 hora, 7 días a la semana"
         },
         "guarantee": {
-          "title": "Best Price Guarantee",
-          "desc": "We'll match any competitor's quote"
+          "title": "Garantía del mejor precio",
+          "desc": "Igualamos cualquier cotización de la competencia"
         }
       },
-      "stepOf": "Step {{step}} of {{total}}",
-      "percentComplete": "{{percent}}% Complete",
+      "stepOf": "Paso {{step}} de {{total}}",
+      "percentComplete": "{{percent}}% completado",
       "steps": {
-        "moveDetails": "Move Details",
-        "services": "Services",
-        "contact": "Contact Info"
+        "moveDetails": "Detalles de la mudanza",
+        "services": "Servicios",
+        "contact": "Datos de contacto"
       },
-      "step1Title": "Tell Us About Your Move",
-      "moveTypeLabel": "Type of Move *",
+      "step1Title": "Cuéntenos sobre su mudanza",
+      "moveTypeLabel": "Tipo de mudanza *",
       "moveTypes": {
-        "local": "Local Move (Within 50 miles)",
-        "longDistance": "Long Distance (Interstate)",
-        "international": "International Move"
+        "local": "Mudanza local (hasta 50 millas)",
+        "longDistance": "Larga distancia (interestatal)",
+        "international": "Mudanza internacional"
       },
-      "fromZip": "From Zip Code *",
-      "toZip": "To Zip Code *",
-      "zipPlaceholderFrom": "e.g. 10001",
-      "zipPlaceholderTo": "e.g. 90210",
-      "moveDate": "Preferred Move Date *",
-      "flexibleDates": "Flexible dates? We can offer better pricing!",
-      "homeSize": "Home Size *",
-      "homeSizeSelect": "Select home size...",
+      "fromZip": "Código postal de origen *",
+      "toZip": "Código postal de destino *",
+      "zipPlaceholderFrom": "p. ej. 10001",
+      "zipPlaceholderTo": "p. ej. 90210",
+      "moveDate": "Fecha preferida de mudanza *",
+      "flexibleDates": "¿Fechas flexibles? ¡Podemos ofrecer un mejor precio!",
+      "homeSize": "Tamaño del hogar *",
+      "homeSizeSelect": "Seleccione el tamaño...",
       "sizes": {
-        "studio": "Studio/Efficiency",
-        "one": "1 Bedroom",
-        "two": "2 Bedrooms",
-        "three": "3 Bedrooms",
-        "four": "4 Bedrooms",
-        "fivePlus": "5+ Bedrooms"
+        "studio": "Estudio",
+        "one": "1 dormitorio",
+        "two": "2 dormitorios",
+        "three": "3 dormitorios",
+        "four": "4 dormitorios",
+        "fivePlus": "5+ dormitorios"
       },
-      "step2Title": "Select Additional Services",
-      "servicesHint": "Check all services you're interested in. You can adjust later!",
+      "step2Title": "Seleccione servicios adicionales",
+      "servicesHint": "Marque todos los servicios que le interesen. ¡Puede ajustarlos después!",
       "addonServices": [
         {
           "id": "packing",
-          "label": "Professional Packing",
-          "desc": "Full packing service with materials included",
+          "label": "Embalaje profesional",
+          "desc": "Servicio completo de embalaje con materiales incluidos",
           "cost": "+20%"
         },
         {
           "id": "storage",
-          "label": "Storage (30 days)",
-          "desc": "Climate-controlled storage facility",
+          "label": "Almacenamiento (30 días)",
+          "desc": "Instalación con clima controlado",
           "cost": "+10%"
         },
         {
           "id": "insurance",
-          "label": "Full Value Protection",
-          "desc": "Comprehensive insurance coverage",
+          "label": "Protección de valor completo",
+          "desc": "Cobertura de seguro integral",
           "cost": "+5%"
         },
         {
           "id": "unpacking",
-          "label": "Unpacking Services",
-          "desc": "We unpack and place items in your new home",
+          "label": "Servicios de desembalaje",
+          "desc": "Desembalamos y colocamos artículos en su nuevo hogar",
           "cost": "+15%"
         },
         {
           "id": "furniture",
-          "label": "Furniture Assembly",
-          "desc": "Disassembly and reassembly of furniture",
+          "label": "Montaje de muebles",
+          "desc": "Desmontaje y remontaje de muebles",
           "cost": "+8%"
         },
         {
           "id": "cleaning",
-          "label": "Post-Move Cleaning",
-          "desc": "Professional cleaning of your old home",
+          "label": "Limpieza post-mudanza",
+          "desc": "Limpieza profesional de su hogar anterior",
           "cost": "+12%"
         }
       ],
-      "specialItems": "Special Items or Instructions",
-      "specialItemsPlaceholder": "e.g., Piano, pool table, fragile antiques, tight parking...",
-      "step3Title": "Contact Information",
-      "estimatedCost": "Your Estimated Cost",
-      "estimateNote": "Final price subject to in-home survey. This estimate includes your selected services.",
-      "phoneHint": "We'll call within 1 hour to confirm details",
-      "consentPrefix": "I agree to receive communications and understand the",
-      "consentAnd": "and",
-      "whatNext": "What happens next?",
+      "specialItems": "Artículos especiales o instrucciones",
+      "specialItemsPlaceholder": "p. ej., piano, mesa de billar, antigüedades frágiles, estacionamiento difícil...",
+      "step3Title": "Información de contacto",
+      "estimatedCost": "Costo estimado",
+      "estimateNote": "El precio final está sujeto a una inspección en el hogar. Esta estimación incluye los servicios seleccionados.",
+      "phoneHint": "Llamaremos en 1 hora para confirmar los detalles",
+      "consentPrefix": "Acepto recibir comunicaciones y entiendo la",
+      "consentAnd": "y la",
+      "whatNext": "¿Qué sigue?",
       "nextSteps": [
-        "Our moving specialist will call you within 1 hour",
-        "Schedule a free in-home survey (virtual or in-person)",
-        "Receive your final binding quote",
-        "Book your move and relax!"
+        "Nuestro especialista le llamará en 1 hora",
+        "Programe una inspección gratuita en el hogar (virtual o presencial)",
+        "Reciba su cotización final vinculante",
+        "¡Reserve su mudanza y relájese!"
       ],
-      "back": "← Back",
-      "continue": "Continue →",
-      "submit": "Get My Free Quote",
-      "submitSuccess": "Thank you! Our team will contact you within 1 hour with a detailed quote.",
-      "trustedBy": "Trusted by 50,000+ happy customers",
+      "back": "← Atrás",
+      "continue": "Continuar →",
+      "submit": "Obtener mi cotización gratis",
+      "submitSuccess": "¡Gracias! Nuestro equipo se pondrá en contacto en 1 hora con una cotización detallada.",
+      "trustedBy": "Confiado por más de 50,000 clientes satisfechos",
       "trust": {
-        "licensed": "Licensed & Insured",
-        "bbb": "A+ BBB Rating",
-        "reviews": "5,000+ 5-Star Reviews"
+        "licensed": "Licenciado y asegurado",
+        "bbb": "Calificación A+ BBB",
+        "reviews": "Más de 5,000 reseñas de 5 estrellas"
       }
     },
     "worldwideMoving": {
-      "title": "Worldwide International Moving",
-      "subtitle": "Door-to-door shipping across continents with customs expertise",
-      "ctaQuote": "Get a worldwide quote",
-      "ctaCall": "Talk to a specialist",
-      "alertTitle": "Plan lead times early",
-      "alertBody": "Ocean freight typically takes 30–60 days. Air freight is available for urgent shipments.",
-      "methodsTitle": "Shipping methods",
-      "destinationsTitle": "Popular destinations",
-      "servicesTitle": "Included services",
-      "processTitle": "How worldwide moves work",
-      "costsTitle": "Cost factors",
-      "prohibitedTitle": "Restricted & prohibited items",
-      "finalCta": "Ready to move worldwide?",
+      "title": "Mudanza internacional en todo el mundo",
+      "subtitle": "Envío puerta a puerta entre continentes con experiencia aduanera",
+      "ctaQuote": "Obtener cotización mundial",
+      "ctaCall": "Hablar con un especialista",
+      "alertTitle": "Planifique los plazos con anticipación",
+      "alertBody": "El flete marítimo suele tardar 30–60 días. El flete aéreo está disponible para envíos urgentes.",
+      "methodsTitle": "Métodos de envío",
+      "destinationsTitle": "Destinos populares",
+      "servicesTitle": "Servicios incluidos",
+      "processTitle": "Cómo funcionan las mudanzas internacionales",
+      "costsTitle": "Factores de costo",
+      "prohibitedTitle": "Artículos restringidos y prohibidos",
+      "finalCta": "¿Listo para mudarse a nivel mundial?",
       "shippingMethods": [
         {
-          "method": "Sea Freight (FCL)",
+          "method": "Flete marítimo (FCL)",
           "time": "30-60 days",
-          "cost": "Most economical",
-          "bestFor": "Full household moves",
-          "description": "Exclusive use of a 20 or 40-foot container. Ideal for large moves with flexibility on timing.",
+          "cost": "Más económico",
+          "bestFor": "Mudanzas completas del hogar",
+          "description": "Uso exclusivo de un contenedor de 20 o 40 pies. Ideal para mudanzas grandes con flexibilidad de fechas.",
           "features": [
-            "Door-to-door service",
-            "Most cost-effective",
-            "Secure container",
-            "Best for large volumes"
+            "Servicio puerta a puerta",
+            "Más rentable",
+            "Contenedor seguro",
+            "Ideal para grandes volúmenes"
           ]
         },
         {
-          "method": "Sea Freight (LCL)",
+          "method": "Flete marítimo (LCL)",
           "time": "35-70 days",
-          "cost": "Budget-friendly",
-          "bestFor": "Smaller shipments",
-          "description": "Share container space with other shipments. Perfect for 1-2 bedroom apartments.",
+          "cost": "Económico",
+          "bestFor": "Envíos más pequeños",
+          "description": "Comparta espacio de contenedor con otros envíos. Perfecto para apartamentos de 1-2 dormitorios.",
           "features": [
-            "Pay for space used",
-            "Flexible volume",
-            "Consolidated shipping",
-            "Cost-efficient"
+            "Pague por el espacio usado",
+            "Volumen flexible",
+            "Envío consolidado",
+            "Eficiente en costos"
           ]
         },
         {
-          "method": "Air Freight",
+          "method": "Flete aéreo",
           "time": "5-10 days",
-          "cost": "Premium pricing",
-          "bestFor": "Urgent/valuable items",
-          "description": "Fastest international shipping option. Recommended for time-sensitive or high-value shipments.",
+          "cost": "Precio premium",
+          "bestFor": "Artículos urgentes/de valor",
+          "description": "La opción internacional más rápida. Recomendada para envíos urgentes o de alto valor.",
           "features": [
-            "Express delivery",
-            "Climate controlled",
-            "Maximum security",
-            "Priority handling"
+            "Entrega exprés",
+            "Clima controlado",
+            "Máxima seguridad",
+            "Manejo prioritario"
           ]
         }
       ],
       "popularDestinations": [
         {
-          "continent": "Europe",
+          "continent": "Europa",
           "countries": [
             "UK",
             "Germany",
@@ -750,7 +778,7 @@
           "time": "25-45 days"
         },
         {
-          "continent": "Australia & Oceania",
+          "continent": "Australia y Oceanía",
           "countries": [
             "Australia",
             "New Zealand"
@@ -758,7 +786,7 @@
           "time": "40-60 days"
         },
         {
-          "continent": "South America",
+          "continent": "América del Sur",
           "countries": [
             "Brazil",
             "Argentina",
@@ -767,7 +795,7 @@
           "time": "35-55 days"
         },
         {
-          "continent": "Africa",
+          "continent": "África",
           "countries": [
             "South Africa",
             "Kenya",
@@ -776,7 +804,7 @@
           "time": "30-50 days"
         },
         {
-          "continent": "Middle East",
+          "continent": "Medio Oriente",
           "countries": [
             "UAE",
             "Saudi Arabia",
@@ -788,138 +816,138 @@
       ],
       "services": [
         {
-          "title": "Professional Packing",
-          "description": "Expert packing with international-grade materials",
+          "title": "Embalaje profesional",
+          "description": "Embalaje experto con materiales de grado internacional",
           "included": [
-            "Custom crating",
-            "Bubble wrap & padding",
-            "Labeled inventory",
-            "Fragile item handling"
+            "Embalaje personalizado",
+            "Plástico de burbujas y acolchado",
+            "Inventario etiquetado",
+            "Manejo de artículos frágiles"
           ]
         },
         {
-          "title": "Customs Clearance",
-          "description": "Full documentation and customs brokerage services",
+          "title": "Despacho aduanero",
+          "description": "Documentación completa y servicios de agencia aduanal",
           "included": [
-            "Customs forms",
-            "Import permits",
-            "Duty calculations",
-            "Broker coordination"
+            "Formularios aduaneros",
+            "Permisos de importación",
+            "Cálculo de aranceles",
+            "Coordinación con agentes"
           ]
         },
         {
-          "title": "Door-to-Door Service",
-          "description": "Complete pickup and delivery to your new address",
+          "title": "Servicio puerta a puerta",
+          "description": "Recogida y entrega completa en su nueva dirección",
           "included": [
-            "Home pickup",
-            "Port handling",
-            "Destination delivery",
-            "Unpacking options"
+            "Recogida en el hogar",
+            "Manejo en puerto",
+            "Entrega en destino",
+            "Opciones de desembalaje"
           ]
         },
         {
-          "title": "Comprehensive Insurance",
-          "description": "Full value protection for international moves",
+          "title": "Seguro integral",
+          "description": "Protección de valor completo para mudanzas internacionales",
           "included": [
-            "All-risk coverage",
-            "Marine insurance",
-            "Claims assistance",
-            "Peace of mind"
+            "Cobertura todo riesgo",
+            "Seguro marítimo",
+            "Asistencia con reclamos",
+            "Tranquilidad"
           ]
         }
       ],
       "processSteps": [
         {
-          "title": "Free Consultation",
-          "description": "Discuss your needs with our international move specialist"
+          "title": "Consulta gratuita",
+          "description": "Hable sobre sus necesidades con nuestro especialista en mudanzas internacionales"
         },
         {
-          "title": "Survey & Quote",
-          "description": "Virtual or in-home survey to assess volume and provide accurate quote"
+          "title": "Inspección y cotización",
+          "description": "Inspección virtual o en el hogar para evaluar el volumen y ofrecer una cotización precisa"
         },
         {
-          "title": "Documentation",
-          "description": "Prepare all necessary paperwork, customs forms, and permits"
+          "title": "Documentación",
+          "description": "Prepare todos los documentos, formularios aduaneros y permisos necesarios"
         },
         {
-          "title": "Professional Packing",
-          "description": "Expert team packs and labels all items with care"
+          "title": "Embalaje profesional",
+          "description": "Nuestro equipo experto embala y etiqueta todos los artículos con cuidado"
         },
         {
-          "title": "Export & Shipping",
-          "description": "Container loaded, sealed, and shipped to destination port"
+          "title": "Exportación y envío",
+          "description": "Contenedor cargado, sellado y enviado al puerto de destino"
         },
         {
-          "title": "Customs Clearance",
-          "description": "Our agents handle all customs procedures at destination"
+          "title": "Despacho aduanero",
+          "description": "Nuestros agentes gestionan todos los trámites aduaneros en destino"
         },
         {
-          "title": "Final Delivery",
-          "description": "Delivery to your new home with unpacking if requested"
+          "title": "Entrega final",
+          "description": "Entrega en su nuevo hogar con desembalaje si lo solicita"
         }
       ],
       "prohibitedItems": [
-        "Flammable liquids and explosives",
-        "Perishable foods",
-        "Plants and soil (many countries)",
-        "Weapons and ammunition",
-        "Illegal drugs and controlled substances"
+        "Líquidos inflamables y explosivos",
+        "Alimentos perecederos",
+        "Plantas y tierra (en muchos países)",
+        "Armas y munición",
+        "Drogas ilegales y sustancias controladas"
       ]
     },
     "interstateMoving": {
-      "title": "Interstate Moving Services",
-      "subtitle": "Reliable long-distance moves across all 50 US states",
-      "ctaQuote": "Get an interstate quote",
-      "ctaCall": "Call a coordinator",
-      "promoTitle": "Peak season tip",
-      "promoBody": "Book 4–8 weeks ahead for May–September to lock better rates and dates.",
-      "whyTitle": "Why choose VIP for interstate moves",
-      "servicesTitle": "Service options",
-      "routesTitle": "Popular routes",
-      "pricingTitle": "What affects price",
-      "tipsTitle": "Moving tips",
-      "howTitle": "How it works",
-      "includes": "Includes:",
-      "finalCta": "Ready for your interstate move?",
+      "title": "Servicios de mudanza interestatal",
+      "subtitle": "Mudanzas confiables de larga distancia en los 50 estados de EE. UU.",
+      "ctaQuote": "Obtener cotización interestatal",
+      "ctaCall": "Llamar a un coordinador",
+      "promoTitle": "Consejo de temporada alta",
+      "promoBody": "Reserve con 4–8 semanas de anticipación para mayo–septiembre y asegure mejores tarifas y fechas.",
+      "whyTitle": "Por qué elegir VIP para mudanzas interestatales",
+      "servicesTitle": "Opciones de servicio",
+      "routesTitle": "Rutas populares",
+      "pricingTitle": "Qué afecta el precio",
+      "tipsTitle": "Consejos de mudanza",
+      "howTitle": "Cómo funciona",
+      "includes": "Incluye:",
+      "finalCta": "¿Listo para su mudanza interestatal?",
       "services": [
         {
-          "title": "Full-Service Moving",
-          "description": "Complete door-to-door service with professional packing, loading, transport, and unpacking",
+          "title": "Mudanza de servicio completo",
+          "description": "Servicio puerta a puerta con embalaje, carga, transporte y desembalaje profesional",
           "features": [
-            "Professional packing",
-            "Loading & unloading",
-            "Furniture disassembly/assembly",
-            "Unpacking services"
+            "Embalaje profesional",
+            "Carga y descarga",
+            "Desmontaje/montaje de muebles",
+            "Servicios de desembalaje"
           ]
         },
         {
-          "title": "Partial/Shared Moving",
-          "description": "Cost-effective solution for smaller moves, sharing truck space with other shipments",
+          "title": "Mudanza parcial/compartida",
+          "description": "Solución económica para mudanzas más pequeñas, compartiendo espacio en camión",
           "features": [
-            "Lower cost option",
-            "Flexible scheduling",
-            "Same care and protection",
-            "Ideal for 1-2 bedroom moves"
+            "Menor costo",
+            "Programación flexible",
+            "Mismo cuidado y protección",
+            "Ideal para mudanzas de 1-2 dormitorios"
           ]
         },
         {
-          "title": "Express Moving",
-          "description": "Priority service with dedicated truck and expedited delivery for time-sensitive moves",
+          "title": "Mudanza exprés",
+          "description": "Servicio prioritario con camión dedicado y entrega acelerada",
           "features": [
-            "Dedicated truck",
-            "3-5 day delivery",
-            "Priority scheduling",
-            "Real-time tracking"
+            "Camión dedicado",
+            "Entrega en 3-5 días",
+            "Programación prioritaria",
+            "Seguimiento en tiempo real"
           ]
         },
         {
-          "title": "White Glove Service",
-          "description": "Premium moving experience with specialized handling for high-value and delicate items",
+          "title": "Servicio White Glove",
+          "description": "Experiencia premium con manejo especializado para artículos delicados y de alto valor",
           "features": [
-            "Custom crating",
-            "Climate-controlled transport",
-            "Installation services",
-            "Concierge support"
+            "Embalaje personalizado",
+            "Transporte con clima controlado",
+            "Servicios de instalación",
+            "Soporte concierge"
           ]
         }
       ],
@@ -963,186 +991,192 @@
       ],
       "movingTips": [
         {
-          "title": "Book Early",
-          "tip": "Reserve your moving date 4-8 weeks in advance, especially during peak season (May-September)"
+          "title": "Reserve con anticipación",
+          "tip": "Reserve su fecha 4-8 semanas antes, especialmente en temporada alta (mayo-septiembre)"
         },
         {
-          "title": "Declutter First",
-          "tip": "Reduce moving costs by selling or donating items you no longer need before packing"
+          "title": "Ordene primero",
+          "tip": "Reduzca costos vendiendo o donando artículos que ya no necesita antes de embalar"
         },
         {
-          "title": "Get Multiple Quotes",
-          "tip": "Compare at least 3 estimates to ensure competitive pricing and understand what's included"
+          "title": "Obtenga varias cotizaciones",
+          "tip": "Compare al menos 3 estimaciones para asegurar precios competitivos y entender qué incluye"
         },
         {
-          "title": "Read Reviews",
-          "tip": "Check BBB ratings, Google reviews, and FMCSA records before choosing a moving company"
+          "title": "Lea reseñas",
+          "tip": "Revise calificaciones BBB, reseñas de Google y registros FMCSA antes de elegir una empresa"
         }
       ],
       "pricingFactors": [
         {
-          "factor": "Distance",
-          "impact": "Primary cost driver",
-          "description": "Longer distances = higher costs"
+          "factor": "Distancia",
+          "impact": "Factor principal de costo",
+          "description": "Mayor distancia = mayores costos"
         },
         {
-          "factor": "Weight/Volume",
-          "impact": "Direct correlation",
-          "description": "Charged per pound or cubic foot"
+          "factor": "Peso/volumen",
+          "impact": "Correlación directa",
+          "description": "Se cobra por libra o pie cúbico"
         },
         {
-          "factor": "Season",
-          "impact": "Moderate effect",
-          "description": "Summer (peak) costs 20-30% more"
+          "factor": "Temporada",
+          "impact": "Efecto moderado",
+          "description": "Verano (alta) cuesta 20-30% más"
         },
         {
-          "factor": "Access",
-          "impact": "Additional fees",
-          "description": "Stairs, long carry, shuttle service"
+          "factor": "Acceso",
+          "impact": "Tarifas adicionales",
+          "description": "Escaleras, acarreo largo, servicio shuttle"
         },
         {
-          "factor": "Packing Services",
-          "impact": "Optional add-on",
-          "description": "Professional packing adds 15-25%"
+          "factor": "Servicios de embalaje",
+          "impact": "Complemento opcional",
+          "description": "Embalaje profesional agrega 15-25%"
         },
         {
-          "factor": "Insurance",
-          "impact": "Recommended",
-          "description": "Full value protection for peace of mind"
+          "factor": "Seguro",
+          "impact": "Recomendado",
+          "description": "Protección de valor completo para tranquilidad"
         }
       ]
     },
     "terms": {
-      "title": "Terms of Service",
-      "lastUpdated": "Last updated",
-      "intro": "Please read these Terms carefully before using VIP International Shipping services.",
+      "title": "Términos de servicio",
+      "lastUpdated": "Última actualización",
+      "intro": "Lea atentamente estos Términos antes de usar los servicios de VIP International Shipping.",
       "sections": [
         {
-          "title": "1. Acceptance of Terms",
+          "title": "1. Aceptación de los términos",
           "paragraphs": [
-            "By accessing or using our website and services, you agree to be bound by these Terms of Service."
+            "Al acceder o usar nuestro sitio web y servicios, acepta quedar vinculado por estos Términos de servicio."
           ]
         },
         {
-          "title": "2. Services",
+          "title": "2. Servicios",
           "paragraphs": [
-            "We provide international and domestic moving, packing, storage, and related logistics services subject to availability and applicable law."
+            "Ofrecemos mudanzas internacionales y nacionales, embalaje, almacenamiento y servicios logísticos relacionados, sujetos a disponibilidad y ley aplicable."
           ]
         },
         {
-          "title": "3. Quotes and Pricing",
+          "title": "3. Cotizaciones y precios",
           "paragraphs": [
-            "Quotes are estimates unless expressly stated as binding. Final pricing may change after survey, inventory, access conditions, or regulatory fees."
+            "Las cotizaciones son estimaciones salvo que se indique expresamente que son vinculantes. El precio final puede cambiar tras la inspección, el inventario, las condiciones de acceso o las tasas regulatorias."
           ]
         },
         {
-          "title": "4. Customer Responsibilities",
+          "title": "4. Responsabilidades del cliente",
           "paragraphs": [
-            "You are responsible for accurate inventory, access to premises, required permits, and compliance with customs and prohibited-item rules."
+            "Usted es responsable del inventario preciso, el acceso a las instalaciones, los permisos requeridos y el cumplimiento de las normas aduaneras y de artículos prohibidos."
           ]
         },
         {
-          "title": "5. Payments",
+          "title": "5. Pagos",
           "paragraphs": [
-            "Payment terms are stated on your invoice or booking confirmation. Late payments may incur fees or service delays."
+            "Los términos de pago figuran en su factura o confirmación de reserva. Los pagos tardíos pueden generar cargos o retrasos en el servicio."
           ]
         },
         {
-          "title": "6. Insurance and Liability",
+          "title": "6. Seguro y responsabilidad",
           "paragraphs": [
-            "Coverage options are offered at booking. Liability limits apply as disclosed in your contract and applicable carrier terms."
+            "Las opciones de cobertura se ofrecen al reservar. Se aplican límites de responsabilidad según lo indicado en su contrato y los términos del transportista."
           ]
         },
         {
-          "title": "7. Cancellations",
+          "title": "7. Cancelaciones",
           "paragraphs": [
-            "Cancellation and rescheduling policies are provided with your booking. Deposits may be non-refundable after certain deadlines."
+            "Las políticas de cancelación y reprogramación se proporcionan con su reserva. Los depósitos pueden no ser reembolsables después de ciertos plazos."
           ]
         },
         {
-          "title": "8. Privacy",
+          "title": "8. Privacidad",
           "paragraphs": [
-            "Personal data is handled according to our Privacy Policy."
+            "Los datos personales se tratan conforme a nuestra Política de privacidad."
           ]
         },
         {
-          "title": "9. Governing Law",
+          "title": "9. Ley aplicable",
           "paragraphs": [
-            "These Terms are governed by the laws of the applicable jurisdiction stated in your service agreement."
+            "Estos Términos se rigen por las leyes de la jurisdicción aplicable indicada en su acuerdo de servicio."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. Contacto",
           "paragraphs": [
-            "Questions about these Terms: support@vipshipping.com"
+            "Preguntas sobre estos Términos: support@vipshipping.com"
           ]
         }
-      ]
+      ],
+      "fmcsaTitle": "Divulgaciones obligatorias de protección al consumidor (mudanzas interestatales en EE. UU.)",
+      "fmcsaBody": "Según 49 CFR 375.213, los transportistas y corredores deben entregar a los clientes potenciales una copia o un enlace a las siguientes publicaciones oficiales de la FMCSA antes de una mudanza interestatal de bienes domésticos:",
+      "fmcsaRights": "Sus derechos y responsabilidades al mudarse (FMCSA)",
+      "fmcsaProtect": "Proteja su mudanza — recursos para consumidores (FMCSA)",
+      "fmcsaVerify": "Puede verificar el registro USDOT y el historial de seguridad de cualquier transportista interestatal en la base de datos oficial FMCSA SAFER",
+      "fmcsaOurUsdot": " (nuestro número USDOT: {{usdot}})."
     },
     "privacy": {
-      "title": "Privacy Policy",
-      "subtitle": "How we collect, use, and protect your information",
-      "lastUpdated": "Last updated",
-      "intro": "This Privacy Policy explains how VIP International Shipping handles personal information.",
+      "title": "Política de privacidad",
+      "subtitle": "Cómo recopilamos, usamos y protegemos su información",
+      "lastUpdated": "Última actualización",
+      "intro": "Esta Política de privacidad explica cómo VIP International Shipping trata la información personal.",
       "sections": [
         {
-          "title": "1. Information we collect",
+          "title": "1. Información que recopilamos",
           "paragraphs": [
-            "Contact details, move addresses, shipment details, payment references, and usage data needed to provide services."
+            "Datos de contacto, direcciones de mudanza, detalles del envío, referencias de pago y datos de uso necesarios para prestar servicios."
           ]
         },
         {
-          "title": "2. How we use information",
+          "title": "2. Cómo usamos la información",
           "paragraphs": [
-            "To prepare quotes, operate shipments, process payments, provide support, improve services, and meet legal obligations."
+            "Para preparar cotizaciones, gestionar envíos, procesar pagos, brindar soporte, mejorar servicios y cumplir obligaciones legales."
           ]
         },
         {
-          "title": "3. Sharing",
+          "title": "3. Compartición",
           "paragraphs": [
-            "We share data with carriers, customs brokers, payment processors, and service providers under contract, or when required by law."
+            "Compartimos datos con transportistas, agentes aduaneros, procesadores de pago y proveedores bajo contrato, o cuando la ley lo exija."
           ]
         },
         {
-          "title": "4. Security",
+          "title": "4. Seguridad",
           "paragraphs": [
-            "We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data."
+            "Utilizamos salvaguardas administrativas, técnicas y físicas acordes a la sensibilidad de los datos."
           ]
         },
         {
-          "title": "5. Your rights",
+          "title": "5. Sus derechos",
           "paragraphs": [
-            "Depending on your location, you may request access, correction, deletion, or restriction of personal data."
+            "Según su ubicación, puede solicitar acceso, corrección, eliminación o restricción de datos personales."
           ]
         },
         {
           "title": "6. Cookies",
           "paragraphs": [
-            "We use necessary cookies for authentication and optional analytics cookies where permitted."
+            "Usamos cookies necesarias para autenticación y cookies analíticas opcionales cuando esté permitido."
           ]
         },
         {
-          "title": "7. International transfers",
+          "title": "7. Transferencias internacionales",
           "paragraphs": [
-            "Data may be processed in countries where we or our partners operate, with appropriate safeguards."
+            "Los datos pueden procesarse en países donde operamos nosotros o nuestros socios, con salvaguardas adecuadas."
           ]
         },
         {
-          "title": "8. Children",
+          "title": "8. Menores",
           "paragraphs": [
-            "Our services are not directed to children under 16."
+            "Nuestros servicios no están dirigidos a menores de 16 años."
           ]
         },
         {
-          "title": "9. Changes",
+          "title": "9. Cambios",
           "paragraphs": [
-            "We may update this policy and will revise the last-updated date when changes are material."
+            "Podemos actualizar esta política y revisaremos la fecha de última actualización cuando los cambios sean significativos."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. Contacto",
           "paragraphs": [
-            "Privacy questions: privacy@vipshipping.com"
+            "Preguntas de privacidad: privacy@vipshipping.com"
           ]
         }
       ]
