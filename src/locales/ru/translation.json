@@ -76,7 +76,8 @@
     "go_home": "Go to homepage",
     "go_back": "Go back",
     "required": "Required",
-    "optional": "Optional"
+    "optional": "Optional",
+    "retry": "Повторить"
   },
   "forms": {
     "name": "Полное Имя",
@@ -204,7 +205,34 @@
   },
   "admin": {
     "unauthorized": "Admin access required",
-    "title": "Admin dashboard"
+    "title": "Admin dashboard",
+    "load_error": "Could not load dashboard data.",
+    "period": "Select time period",
+    "period_7": "Last 7 days",
+    "period_30": "Last 30 days",
+    "period_90": "Last 90 days",
+    "export": "Export data",
+    "revenue": "Total revenue",
+    "active_shipments": "Active shipments",
+    "customers": "Registered customers",
+    "avg_delivery": "Avg. delivery time",
+    "days": "days",
+    "ops_snapshot": "Operations snapshot",
+    "quotes_period": "Quotes in period",
+    "satisfaction": "Customer satisfaction",
+    "live_note": "Metrics are loaded from live Quote, Shipment, Invoice, and User data.",
+    "recent_orders": "Recent orders",
+    "no_orders": "No shipments yet.",
+    "col_order": "Order",
+    "col_customer": "Customer",
+    "col_destination": "Destination",
+    "col_value": "Value",
+    "col_status": "Status",
+    "col_actions": "Actions",
+    "status_pending": "Pending",
+    "status_approved": "Approved",
+    "status_in_transit": "In transit",
+    "status_delivered": "Delivered"
   },
   "pages": {
     "about": {
@@ -547,186 +575,186 @@
       ]
     },
     "freeMovingQuote": {
-      "title": "Get Your Free Moving Quote",
-      "subtitle": "Instant estimate in 3 easy steps | No obligation | Save up to 30%",
+      "title": "Получите бесплатный расчёт переезда",
+      "subtitle": "Мгновенная оценка в 3 шага | Без обязательств | Экономия до 30%",
       "badges": {
-        "free": "100% Free",
-        "noCard": "No Credit Card",
-        "response": "1-Hour Response",
-        "priceMatch": "Price Match Guarantee"
+        "free": "100% бесплатно",
+        "noCard": "Без кредитной карты",
+        "response": "Ответ за 1 час",
+        "priceMatch": "Гарантия лучшей цены"
       },
       "benefits": {
         "pricing": {
-          "title": "Transparent Pricing",
-          "desc": "No hidden fees or surprise charges"
+          "title": "Прозрачные цены",
+          "desc": "Без скрытых комиссий и сюрпризов"
         },
         "insured": {
-          "title": "Fully Insured",
-          "desc": "Comprehensive protection for your belongings"
+          "title": "Полная страховка",
+          "desc": "Комплексная защита ваших вещей"
         },
         "fast": {
-          "title": "Fast Response",
-          "desc": "Quote within 1 hour, 7 days a week"
+          "title": "Быстрый ответ",
+          "desc": "Расчёт за 1 час, 7 дней в неделю"
         },
         "guarantee": {
-          "title": "Best Price Guarantee",
-          "desc": "We'll match any competitor's quote"
+          "title": "Гарантия лучшей цены",
+          "desc": "Сопоставим с любым предложением конкурента"
         }
       },
-      "stepOf": "Step {{step}} of {{total}}",
-      "percentComplete": "{{percent}}% Complete",
+      "stepOf": "Шаг {{step}} из {{total}}",
+      "percentComplete": "{{percent}}% выполнено",
       "steps": {
-        "moveDetails": "Move Details",
-        "services": "Services",
-        "contact": "Contact Info"
+        "moveDetails": "Детали переезда",
+        "services": "Услуги",
+        "contact": "Контактные данные"
       },
-      "step1Title": "Tell Us About Your Move",
-      "moveTypeLabel": "Type of Move *",
+      "step1Title": "Расскажите о вашем переезде",
+      "moveTypeLabel": "Тип переезда *",
       "moveTypes": {
-        "local": "Local Move (Within 50 miles)",
-        "longDistance": "Long Distance (Interstate)",
-        "international": "International Move"
+        "local": "Местный переезд (до 50 миль)",
+        "longDistance": "Дальнее расстояние (межштатный)",
+        "international": "Международный переезд"
       },
-      "fromZip": "From Zip Code *",
-      "toZip": "To Zip Code *",
-      "zipPlaceholderFrom": "e.g. 10001",
-      "zipPlaceholderTo": "e.g. 90210",
-      "moveDate": "Preferred Move Date *",
-      "flexibleDates": "Flexible dates? We can offer better pricing!",
-      "homeSize": "Home Size *",
-      "homeSizeSelect": "Select home size...",
+      "fromZip": "Почтовый индекс отправления *",
+      "toZip": "Почтовый индекс назначения *",
+      "zipPlaceholderFrom": "напр. 10001",
+      "zipPlaceholderTo": "напр. 90210",
+      "moveDate": "Предпочтительная дата переезда *",
+      "flexibleDates": "Гибкие даты? Мы можем предложить лучшую цену!",
+      "homeSize": "Размер жилья *",
+      "homeSizeSelect": "Выберите размер...",
       "sizes": {
-        "studio": "Studio/Efficiency",
-        "one": "1 Bedroom",
-        "two": "2 Bedrooms",
-        "three": "3 Bedrooms",
-        "four": "4 Bedrooms",
-        "fivePlus": "5+ Bedrooms"
+        "studio": "Студия",
+        "one": "1 спальня",
+        "two": "2 спальни",
+        "three": "3 спальни",
+        "four": "4 спальни",
+        "fivePlus": "5+ спален"
       },
-      "step2Title": "Select Additional Services",
-      "servicesHint": "Check all services you're interested in. You can adjust later!",
+      "step2Title": "Выберите дополнительные услуги",
+      "servicesHint": "Отметьте все интересующие услуги. Вы сможете изменить позже!",
       "addonServices": [
         {
           "id": "packing",
-          "label": "Professional Packing",
-          "desc": "Full packing service with materials included",
+          "label": "Профессиональная упаковка",
+          "desc": "Полная упаковка с материалами",
           "cost": "+20%"
         },
         {
           "id": "storage",
-          "label": "Storage (30 days)",
-          "desc": "Climate-controlled storage facility",
+          "label": "Хранение (30 дней)",
+          "desc": "Склад с климат-контролем",
           "cost": "+10%"
         },
         {
           "id": "insurance",
-          "label": "Full Value Protection",
-          "desc": "Comprehensive insurance coverage",
+          "label": "Полная защита стоимости",
+          "desc": "Комплексное страховое покрытие",
           "cost": "+5%"
         },
         {
           "id": "unpacking",
-          "label": "Unpacking Services",
-          "desc": "We unpack and place items in your new home",
+          "label": "Распаковка",
+          "desc": "Распакуем и расставим вещи в новом доме",
           "cost": "+15%"
         },
         {
           "id": "furniture",
-          "label": "Furniture Assembly",
-          "desc": "Disassembly and reassembly of furniture",
+          "label": "Сборка мебели",
+          "desc": "Разборка и сборка мебели",
           "cost": "+8%"
         },
         {
           "id": "cleaning",
-          "label": "Post-Move Cleaning",
-          "desc": "Professional cleaning of your old home",
+          "label": "Уборка после переезда",
+          "desc": "Профессиональная уборка старого жилья",
           "cost": "+12%"
         }
       ],
-      "specialItems": "Special Items or Instructions",
-      "specialItemsPlaceholder": "e.g., Piano, pool table, fragile antiques, tight parking...",
-      "step3Title": "Contact Information",
-      "estimatedCost": "Your Estimated Cost",
-      "estimateNote": "Final price subject to in-home survey. This estimate includes your selected services.",
-      "phoneHint": "We'll call within 1 hour to confirm details",
-      "consentPrefix": "I agree to receive communications and understand the",
-      "consentAnd": "and",
-      "whatNext": "What happens next?",
+      "specialItems": "Особые предметы или инструкции",
+      "specialItemsPlaceholder": "напр., пианино, бильярдный стол, хрупкие антиквариаты, узкая парковка...",
+      "step3Title": "Контактная информация",
+      "estimatedCost": "Предварительная стоимость",
+      "estimateNote": "Итоговая цена зависит от осмотра на месте. Оценка включает выбранные услуги.",
+      "phoneHint": "Мы позвоним в течение часа для подтверждения деталей",
+      "consentPrefix": "Я согласен получать сообщения и понимаю",
+      "consentAnd": "и",
+      "whatNext": "Что дальше?",
       "nextSteps": [
-        "Our moving specialist will call you within 1 hour",
-        "Schedule a free in-home survey (virtual or in-person)",
-        "Receive your final binding quote",
-        "Book your move and relax!"
+        "Наш специалист позвонит вам в течение часа",
+        "Запланируйте бесплатный осмотр (онлайн или на месте)",
+        "Получите окончательное обязательное предложение",
+        "Забронируйте переезд и расслабьтесь!"
       ],
-      "back": "← Back",
-      "continue": "Continue →",
-      "submit": "Get My Free Quote",
-      "submitSuccess": "Thank you! Our team will contact you within 1 hour with a detailed quote.",
-      "trustedBy": "Trusted by 50,000+ happy customers",
+      "back": "← Назад",
+      "continue": "Продолжить →",
+      "submit": "Получить бесплатный расчёт",
+      "submitSuccess": "Спасибо! Наша команда свяжется с вами в течение часа с подробным расчётом.",
+      "trustedBy": "Нам доверяют более 50 000 довольных клиентов",
       "trust": {
-        "licensed": "Licensed & Insured",
-        "bbb": "A+ BBB Rating",
-        "reviews": "5,000+ 5-Star Reviews"
+        "licensed": "Лицензия и страховка",
+        "bbb": "Рейтинг A+ BBB",
+        "reviews": "Более 5 000 отзывов на 5 звёзд"
       }
     },
     "worldwideMoving": {
-      "title": "Worldwide International Moving",
-      "subtitle": "Door-to-door shipping across continents with customs expertise",
-      "ctaQuote": "Get a worldwide quote",
-      "ctaCall": "Talk to a specialist",
-      "alertTitle": "Plan lead times early",
-      "alertBody": "Ocean freight typically takes 30–60 days. Air freight is available for urgent shipments.",
-      "methodsTitle": "Shipping methods",
-      "destinationsTitle": "Popular destinations",
-      "servicesTitle": "Included services",
-      "processTitle": "How worldwide moves work",
-      "costsTitle": "Cost factors",
-      "prohibitedTitle": "Restricted & prohibited items",
-      "finalCta": "Ready to move worldwide?",
+      "title": "Международный переезд по всему миру",
+      "subtitle": "Доставка от двери до двери между континентами с таможенной экспертизой",
+      "ctaQuote": "Получить мировой расчёт",
+      "ctaCall": "Связаться со специалистом",
+      "alertTitle": "Планируйте сроки заранее",
+      "alertBody": "Морская перевозка обычно занимает 30–60 дней. Авиаперевозка доступна для срочных отправлений.",
+      "methodsTitle": "Способы доставки",
+      "destinationsTitle": "Популярные направления",
+      "servicesTitle": "Включённые услуги",
+      "processTitle": "Как проходит международный переезд",
+      "costsTitle": "Факторы стоимости",
+      "prohibitedTitle": "Ограниченные и запрещённые предметы",
+      "finalCta": "Готовы к переезду по всему миру?",
       "shippingMethods": [
         {
-          "method": "Sea Freight (FCL)",
+          "method": "Морская перевозка (FCL)",
           "time": "30-60 days",
-          "cost": "Most economical",
-          "bestFor": "Full household moves",
-          "description": "Exclusive use of a 20 or 40-foot container. Ideal for large moves with flexibility on timing.",
+          "cost": "Самый экономичный",
+          "bestFor": "Полный переезд дома",
+          "description": "Эксклюзивное использование 20- или 40-футового контейнера. Идеально для крупных переездов с гибким графиком.",
           "features": [
-            "Door-to-door service",
-            "Most cost-effective",
-            "Secure container",
-            "Best for large volumes"
+            "Доставка от двери до двери",
+            "Самый выгодный",
+            "Защищённый контейнер",
+            "Лучше для больших объёмов"
           ]
         },
         {
-          "method": "Sea Freight (LCL)",
+          "method": "Морская перевозка (LCL)",
           "time": "35-70 days",
-          "cost": "Budget-friendly",
-          "bestFor": "Smaller shipments",
-          "description": "Share container space with other shipments. Perfect for 1-2 bedroom apartments.",
+          "cost": "Бюджетный",
+          "bestFor": "Меньшие отправления",
+          "description": "Совместное использование контейнера с другими грузами. Подходит для квартир с 1-2 спальнями.",
           "features": [
-            "Pay for space used",
-            "Flexible volume",
-            "Consolidated shipping",
-            "Cost-efficient"
+            "Оплата за используемое место",
+            "Гибкий объём",
+            "Консолидированная доставка",
+            "Экономично"
           ]
         },
         {
-          "method": "Air Freight",
+          "method": "Авиаперевозка",
           "time": "5-10 days",
-          "cost": "Premium pricing",
-          "bestFor": "Urgent/valuable items",
-          "description": "Fastest international shipping option. Recommended for time-sensitive or high-value shipments.",
+          "cost": "Премиальная цена",
+          "bestFor": "Срочные/ценные предметы",
+          "description": "Самый быстрый международный вариант. Рекомендуется для срочных или ценных отправлений.",
           "features": [
-            "Express delivery",
-            "Climate controlled",
-            "Maximum security",
-            "Priority handling"
+            "Экспресс-доставка",
+            "Климат-контроль",
+            "Максимальная безопасность",
+            "Приоритетная обработка"
           ]
         }
       ],
       "popularDestinations": [
         {
-          "continent": "Europe",
+          "continent": "Европа",
           "countries": [
             "UK",
             "Germany",
@@ -738,7 +766,7 @@
           "time": "35-50 days"
         },
         {
-          "continent": "Asia",
+          "continent": "Азия",
           "countries": [
             "Israel",
             "Japan",
@@ -750,7 +778,7 @@
           "time": "25-45 days"
         },
         {
-          "continent": "Australia & Oceania",
+          "continent": "Австралия и Океания",
           "countries": [
             "Australia",
             "New Zealand"
@@ -758,7 +786,7 @@
           "time": "40-60 days"
         },
         {
-          "continent": "South America",
+          "continent": "Южная Америка",
           "countries": [
             "Brazil",
             "Argentina",
@@ -767,7 +795,7 @@
           "time": "35-55 days"
         },
         {
-          "continent": "Africa",
+          "continent": "Африка",
           "countries": [
             "South Africa",
             "Kenya",
@@ -776,7 +804,7 @@
           "time": "30-50 days"
         },
         {
-          "continent": "Middle East",
+          "continent": "Ближний Восток",
           "countries": [
             "UAE",
             "Saudi Arabia",
@@ -788,138 +816,138 @@
       ],
       "services": [
         {
-          "title": "Professional Packing",
-          "description": "Expert packing with international-grade materials",
+          "title": "Профессиональная упаковка",
+          "description": "Экспертная упаковка материалами международного класса",
           "included": [
-            "Custom crating",
-            "Bubble wrap & padding",
-            "Labeled inventory",
-            "Fragile item handling"
+            "Индивидуальная обрешётка",
+            "Пузырчатая плёнка и амортизация",
+            "Маркированный инвентарь",
+            "Обработка хрупких предметов"
           ]
         },
         {
-          "title": "Customs Clearance",
-          "description": "Full documentation and customs brokerage services",
+          "title": "Таможенное оформление",
+          "description": "Полная документация и брокерские услуги",
           "included": [
-            "Customs forms",
-            "Import permits",
-            "Duty calculations",
-            "Broker coordination"
+            "Таможенные формы",
+            "Разрешения на импорт",
+            "Расчёт пошлин",
+            "Координация с брокерами"
           ]
         },
         {
-          "title": "Door-to-Door Service",
-          "description": "Complete pickup and delivery to your new address",
+          "title": "Доставка от двери до двери",
+          "description": "Полный забор и доставка на новый адрес",
           "included": [
-            "Home pickup",
-            "Port handling",
-            "Destination delivery",
-            "Unpacking options"
+            "Забор из дома",
+            "Обработка в порту",
+            "Доставка в пункте назначения",
+            "Опции распаковки"
           ]
         },
         {
-          "title": "Comprehensive Insurance",
-          "description": "Full value protection for international moves",
+          "title": "Комплексное страхование",
+          "description": "Полная защита стоимости международного переезда",
           "included": [
-            "All-risk coverage",
-            "Marine insurance",
-            "Claims assistance",
-            "Peace of mind"
+            "Покрытие всех рисков",
+            "Морское страхование",
+            "Помощь с претензиями",
+            "Спокойствие"
           ]
         }
       ],
       "processSteps": [
         {
-          "title": "Free Consultation",
-          "description": "Discuss your needs with our international move specialist"
+          "title": "Бесплатная консультация",
+          "description": "Обсудите потребности со специалистом по международным переездам"
         },
         {
-          "title": "Survey & Quote",
-          "description": "Virtual or in-home survey to assess volume and provide accurate quote"
+          "title": "Осмотр и расчёт",
+          "description": "Виртуальный или очный осмотр для оценки объёма и точного расчёта"
         },
         {
-          "title": "Documentation",
-          "description": "Prepare all necessary paperwork, customs forms, and permits"
+          "title": "Документация",
+          "description": "Подготовка всех документов, таможенных форм и разрешений"
         },
         {
-          "title": "Professional Packing",
-          "description": "Expert team packs and labels all items with care"
+          "title": "Профессиональная упаковка",
+          "description": "Команда экспертов аккуратно упаковывает и маркирует все предметы"
         },
         {
-          "title": "Export & Shipping",
-          "description": "Container loaded, sealed, and shipped to destination port"
+          "title": "Экспорт и отправка",
+          "description": "Контейнер загружен, опломбирован и отправлен в порт назначения"
         },
         {
-          "title": "Customs Clearance",
-          "description": "Our agents handle all customs procedures at destination"
+          "title": "Таможенное оформление",
+          "description": "Наши агенты проводят все таможенные процедуры в пункте назначения"
         },
         {
-          "title": "Final Delivery",
-          "description": "Delivery to your new home with unpacking if requested"
+          "title": "Финальная доставка",
+          "description": "Доставка в новый дом с распаковкой по запросу"
         }
       ],
       "prohibitedItems": [
-        "Flammable liquids and explosives",
-        "Perishable foods",
-        "Plants and soil (many countries)",
-        "Weapons and ammunition",
-        "Illegal drugs and controlled substances"
+        "Легковоспламеняющиеся жидкости и взрывчатые вещества",
+        "Скоропортящиеся продукты",
+        "Растения и грунт (во многих странах)",
+        "Оружие и боеприпасы",
+        "Наркотики и контролируемые вещества"
       ]
     },
     "interstateMoving": {
-      "title": "Interstate Moving Services",
-      "subtitle": "Reliable long-distance moves across all 50 US states",
-      "ctaQuote": "Get an interstate quote",
-      "ctaCall": "Call a coordinator",
-      "promoTitle": "Peak season tip",
-      "promoBody": "Book 4–8 weeks ahead for May–September to lock better rates and dates.",
-      "whyTitle": "Why choose VIP for interstate moves",
-      "servicesTitle": "Service options",
-      "routesTitle": "Popular routes",
-      "pricingTitle": "What affects price",
-      "tipsTitle": "Moving tips",
-      "howTitle": "How it works",
-      "includes": "Includes:",
-      "finalCta": "Ready for your interstate move?",
+      "title": "Межштатные услуги переезда",
+      "subtitle": "Надёжные переезды на дальние расстояния по всем 50 штатам США",
+      "ctaQuote": "Получить межштатный расчёт",
+      "ctaCall": "Позвонить координатору",
+      "promoTitle": "Совет на пик сезона",
+      "promoBody": "Бронируйте за 4–8 недель до мая–сентября, чтобы зафиксировать лучшие тарифы и даты.",
+      "whyTitle": "Почему VIP для межштатных переездов",
+      "servicesTitle": "Варианты услуг",
+      "routesTitle": "Популярные маршруты",
+      "pricingTitle": "Что влияет на цену",
+      "tipsTitle": "Советы по переезду",
+      "howTitle": "Как это работает",
+      "includes": "Включает:",
+      "finalCta": "Готовы к межштатному переезду?",
       "services": [
         {
-          "title": "Full-Service Moving",
-          "description": "Complete door-to-door service with professional packing, loading, transport, and unpacking",
+          "title": "Переезд под ключ",
+          "description": "Полный сервис от двери до двери с упаковкой, погрузкой, перевозкой и распаковкой",
           "features": [
-            "Professional packing",
-            "Loading & unloading",
-            "Furniture disassembly/assembly",
-            "Unpacking services"
+            "Профессиональная упаковка",
+            "Погрузка и разгрузка",
+            "Разборка/сборка мебели",
+            "Услуги распаковки"
           ]
         },
         {
-          "title": "Partial/Shared Moving",
-          "description": "Cost-effective solution for smaller moves, sharing truck space with other shipments",
+          "title": "Частичный/совместный переезд",
+          "description": "Экономичное решение для небольших переездов с совместным использованием грузовика",
           "features": [
-            "Lower cost option",
-            "Flexible scheduling",
-            "Same care and protection",
-            "Ideal for 1-2 bedroom moves"
+            "Ниже стоимость",
+            "Гибкое планирование",
+            "Тот же уровень заботы",
+            "Идеально для 1-2 спален"
           ]
         },
         {
-          "title": "Express Moving",
-          "description": "Priority service with dedicated truck and expedited delivery for time-sensitive moves",
+          "title": "Экспресс-переезд",
+          "description": "Приоритетный сервис с выделенным грузовиком и ускоренной доставкой",
           "features": [
-            "Dedicated truck",
-            "3-5 day delivery",
-            "Priority scheduling",
-            "Real-time tracking"
+            "Выделенный грузовик",
+            "Доставка за 3-5 дней",
+            "Приоритетное планирование",
+            "Отслеживание в реальном времени"
           ]
         },
         {
-          "title": "White Glove Service",
-          "description": "Premium moving experience with specialized handling for high-value and delicate items",
+          "title": "Сервис White Glove",
+          "description": "Премиальный переезд со специальной обработкой ценных и хрупких предметов",
           "features": [
-            "Custom crating",
-            "Climate-controlled transport",
-            "Installation services",
-            "Concierge support"
+            "Индивидуальная обрешётка",
+            "Перевозка с климат-контролем",
+            "Услуги установки",
+            "Concierge-поддержка"
           ]
         }
       ],
@@ -963,186 +991,192 @@
       ],
       "movingTips": [
         {
-          "title": "Book Early",
-          "tip": "Reserve your moving date 4-8 weeks in advance, especially during peak season (May-September)"
+          "title": "Бронируйте заранее",
+          "tip": "Резервируйте дату за 4-8 недель, особенно в пик сезона (май–сентябрь)"
         },
         {
-          "title": "Declutter First",
-          "tip": "Reduce moving costs by selling or donating items you no longer need before packing"
+          "title": "Сначала разберитесь с вещами",
+          "tip": "Снижайте расходы, продав или отдав ненужные вещи до упаковки"
         },
         {
-          "title": "Get Multiple Quotes",
-          "tip": "Compare at least 3 estimates to ensure competitive pricing and understand what's included"
+          "title": "Получите несколько расчётов",
+          "tip": "Сравните минимум 3 предложения для конкурентной цены и понимания включённых услуг"
         },
         {
-          "title": "Read Reviews",
-          "tip": "Check BBB ratings, Google reviews, and FMCSA records before choosing a moving company"
+          "title": "Читайте отзывы",
+          "tip": "Проверьте рейтинги BBB, отзывы Google и записи FMCSA перед выбором компании"
         }
       ],
       "pricingFactors": [
         {
-          "factor": "Distance",
-          "impact": "Primary cost driver",
-          "description": "Longer distances = higher costs"
+          "factor": "Расстояние",
+          "impact": "Основной фактор стоимости",
+          "description": "Большее расстояние = выше стоимость"
         },
         {
-          "factor": "Weight/Volume",
-          "impact": "Direct correlation",
-          "description": "Charged per pound or cubic foot"
+          "factor": "Вес/объём",
+          "impact": "Прямая зависимость",
+          "description": "Оплата за фунт или кубический фут"
         },
         {
-          "factor": "Season",
-          "impact": "Moderate effect",
-          "description": "Summer (peak) costs 20-30% more"
+          "factor": "Сезон",
+          "impact": "Умеренное влияние",
+          "description": "Лето (пик) дороже на 20-30%"
         },
         {
-          "factor": "Access",
-          "impact": "Additional fees",
-          "description": "Stairs, long carry, shuttle service"
+          "factor": "Доступ",
+          "impact": "Дополнительные сборы",
+          "description": "Лестницы, длинная переноска, shuttle-сервис"
         },
         {
-          "factor": "Packing Services",
-          "impact": "Optional add-on",
-          "description": "Professional packing adds 15-25%"
+          "factor": "Услуги упаковки",
+          "impact": "Опциональная доплата",
+          "description": "Профессиональная упаковка добавляет 15-25%"
         },
         {
-          "factor": "Insurance",
-          "impact": "Recommended",
-          "description": "Full value protection for peace of mind"
+          "factor": "Страхование",
+          "impact": "Рекомендуется",
+          "description": "Полная защита стоимости для спокойствия"
         }
       ]
     },
     "terms": {
-      "title": "Terms of Service",
-      "lastUpdated": "Last updated",
-      "intro": "Please read these Terms carefully before using VIP International Shipping services.",
+      "title": "Условия обслуживания",
+      "lastUpdated": "Последнее обновление",
+      "intro": "Пожалуйста, внимательно прочитайте эти Условия перед использованием услуг VIP International Shipping.",
       "sections": [
         {
-          "title": "1. Acceptance of Terms",
+          "title": "1. Принятие условий",
           "paragraphs": [
-            "By accessing or using our website and services, you agree to be bound by these Terms of Service."
+            "Используя наш сайт и услуги, вы соглашаетесь соблюдать настоящие Условия обслуживания."
           ]
         },
         {
-          "title": "2. Services",
+          "title": "2. Услуги",
           "paragraphs": [
-            "We provide international and domestic moving, packing, storage, and related logistics services subject to availability and applicable law."
+            "Мы предоставляем международные и внутренние переезды, упаковку, хранение и связанные логистические услуги с учётом доступности и применимого законодательства."
           ]
         },
         {
-          "title": "3. Quotes and Pricing",
+          "title": "3. Расчёты и цены",
           "paragraphs": [
-            "Quotes are estimates unless expressly stated as binding. Final pricing may change after survey, inventory, access conditions, or regulatory fees."
+            "Расчёты являются оценками, если явно не указано иное. Итоговая цена может измениться после осмотра, инвентаризации, условий доступа или регуляторных сборов."
           ]
         },
         {
-          "title": "4. Customer Responsibilities",
+          "title": "4. Обязанности клиента",
           "paragraphs": [
-            "You are responsible for accurate inventory, access to premises, required permits, and compliance with customs and prohibited-item rules."
+            "Вы несёте ответственность за точный инвентарь, доступ к помещениям, необходимые разрешения и соблюдение таможенных правил и запретов на предметы."
           ]
         },
         {
-          "title": "5. Payments",
+          "title": "5. Платежи",
           "paragraphs": [
-            "Payment terms are stated on your invoice or booking confirmation. Late payments may incur fees or service delays."
+            "Условия оплаты указаны в счёте или подтверждении бронирования. Просроченные платежи могут повлечь сборы или задержку обслуживания."
           ]
         },
         {
-          "title": "6. Insurance and Liability",
+          "title": "6. Страхование и ответственность",
           "paragraphs": [
-            "Coverage options are offered at booking. Liability limits apply as disclosed in your contract and applicable carrier terms."
+            "Варианты покрытия предлагаются при бронировании. Применяются ограничения ответственности согласно договору и условиям перевозчика."
           ]
         },
         {
-          "title": "7. Cancellations",
+          "title": "7. Отмена",
           "paragraphs": [
-            "Cancellation and rescheduling policies are provided with your booking. Deposits may be non-refundable after certain deadlines."
+            "Политика отмены и переноса предоставляется при бронировании. Депозиты могут быть невозвратными после определённых сроков."
           ]
         },
         {
-          "title": "8. Privacy",
+          "title": "8. Конфиденциальность",
           "paragraphs": [
-            "Personal data is handled according to our Privacy Policy."
+            "Персональные данные обрабатываются в соответствии с нашей Политикой конфиденциальности."
           ]
         },
         {
-          "title": "9. Governing Law",
+          "title": "9. Применимое право",
           "paragraphs": [
-            "These Terms are governed by the laws of the applicable jurisdiction stated in your service agreement."
+            "Настоящие Условия регулируются законодательством юрисдикции, указанной в вашем договоре об обслуживании."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. Контакты",
           "paragraphs": [
-            "Questions about these Terms: support@vipshipping.com"
+            "Вопросы по этим Условиям: support@vipshipping.com"
           ]
         }
-      ]
+      ],
+      "fmcsaTitle": "Обязательные раскрытия защиты потребителей (межштатные переезды в США)",
+      "fmcsaBody": "Согласно 49 CFR 375.213, перевозчики и брокеры должны предоставить потенциальным клиентам копию или ссылку на следующие официальные публикации FMCSA до межштатного переезда домашних вещей:",
+      "fmcsaRights": "Ваши права и обязанности при переезде (FMCSA)",
+      "fmcsaProtect": "Защитите свой переезд — ресурсы для потребителей (FMCSA)",
+      "fmcsaVerify": "Вы можете проверить регистрацию USDOT и историю безопасности любого межштатного перевозчика в официальной базе FMCSA SAFER",
+      "fmcsaOurUsdot": " (наш номер USDOT: {{usdot}})."
     },
     "privacy": {
-      "title": "Privacy Policy",
-      "subtitle": "How we collect, use, and protect your information",
-      "lastUpdated": "Last updated",
-      "intro": "This Privacy Policy explains how VIP International Shipping handles personal information.",
+      "title": "Политика конфиденциальности",
+      "subtitle": "Как мы собираем, используем и защищаем вашу информацию",
+      "lastUpdated": "Последнее обновление",
+      "intro": "Настоящая Политика конфиденциальности объясняет, как VIP International Shipping обрабатывает персональные данные.",
       "sections": [
         {
-          "title": "1. Information we collect",
+          "title": "1. Информация, которую мы собираем",
           "paragraphs": [
-            "Contact details, move addresses, shipment details, payment references, and usage data needed to provide services."
+            "Контактные данные, адреса переезда, сведения об отправлении, платёжные реквизиты и данные об использовании, необходимые для оказания услуг."
           ]
         },
         {
-          "title": "2. How we use information",
+          "title": "2. Как мы используем информацию",
           "paragraphs": [
-            "To prepare quotes, operate shipments, process payments, provide support, improve services, and meet legal obligations."
+            "Для подготовки расчётов, организации перевозок, обработки платежей, поддержки, улучшения услуг и выполнения юридических обязательств."
           ]
         },
         {
-          "title": "3. Sharing",
+          "title": "3. Передача данных",
           "paragraphs": [
-            "We share data with carriers, customs brokers, payment processors, and service providers under contract, or when required by law."
+            "Мы передаём данные перевозчикам, таможенным брокерам, платёжным процессорам и поставщикам услуг по договору или когда это требуется законом."
           ]
         },
         {
-          "title": "4. Security",
+          "title": "4. Безопасность",
           "paragraphs": [
-            "We use administrative, technical, and physical safeguards appropriate to the sensitivity of the data."
+            "Мы применяем административные, технические и физические меры защиты, соответствующие чувствительности данных."
           ]
         },
         {
-          "title": "5. Your rights",
+          "title": "5. Ваши права",
           "paragraphs": [
-            "Depending on your location, you may request access, correction, deletion, or restriction of personal data."
+            "В зависимости от вашего местоположения вы можете запросить доступ, исправление, удаление или ограничение обработки персональных данных."
           ]
         },
         {
-          "title": "6. Cookies",
+          "title": "6. Файлы cookie",
           "paragraphs": [
-            "We use necessary cookies for authentication and optional analytics cookies where permitted."
+            "Мы используем необходимые cookie для аутентификации и необязательные аналитические cookie, где это разрешено."
           ]
         },
         {
-          "title": "7. International transfers",
+          "title": "7. Международная передача",
           "paragraphs": [
-            "Data may be processed in countries where we or our partners operate, with appropriate safeguards."
+            "Данные могут обрабатываться в странах, где работаем мы или наши партнёры, с надлежащими гарантиями."
           ]
         },
         {
-          "title": "8. Children",
+          "title": "8. Дети",
           "paragraphs": [
-            "Our services are not directed to children under 16."
+            "Наши услуги не предназначены для детей младше 16 лет."
           ]
         },
         {
-          "title": "9. Changes",
+          "title": "9. Изменения",
           "paragraphs": [
-            "We may update this policy and will revise the last-updated date when changes are material."
+            "Мы можем обновлять эту политику и изменим дату последнего обновления при существенных изменениях."
           ]
         },
         {
-          "title": "10. Contact",
+          "title": "10. Контакты",
           "paragraphs": [
-            "Privacy questions: privacy@vipshipping.com"
+            "Вопросы о конфиденциальности: privacy@vipshipping.com"
           ]
         }
       ]

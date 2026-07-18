@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { Send, Chat, X } from 'react-bootstrap-icons';
 import { useChat } from '@ai-sdk/react';
 import { trackAIInteraction } from '../../utils/analytics';
-import { tokenStorage } from '../../service/api';
 
 /**
  * ChatBot connected to real AI agent (streaming + tools).
+ * Auth via httpOnly cookies (credentials: include) — no JWT in JS.
  */
 const ChatBot: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -16,21 +16,22 @@ const ChatBot: React.FC = () => {
   const isRtl = i18n.dir() === 'rtl';
   const side = isRtl ? 'left' : 'right';
 
-  const chatHeaders: Record<string, string> = {
-    'Accept-Language': (i18n.language || 'en').split('-')[0],
-    'X-App-Language': (i18n.language || 'en').split('-')[0],
-  };
-  const accessToken = tokenStorage.getAccessToken();
-  if (accessToken) {
-    chatHeaders.Authorization = `Bearer ${accessToken}`;
-  }
+  const csrfMatch = typeof document !== 'undefined'
+    ? document.cookie.match(/(?:^|; )vip_csrf=([^;]*)/)
+    : null;
+  const csrfToken = csrfMatch ? decodeURIComponent(csrfMatch[1]) : '';
 
   const { messages, input, handleInputChange, handleSubmit, isLoading, append, setMessages } = useChat({
     api: '/api/ai/chat',
+    credentials: 'include',
     initialMessages: [
       { id: 'welcome', role: 'assistant', content: t('ai.welcome') }
     ],
-    headers: chatHeaders,
+    headers: {
+      'Accept-Language': (i18n.language || 'en').split('-')[0],
+      'X-App-Language': (i18n.language || 'en').split('-')[0],
+      ...(csrfToken ? { 'X-CSRF-Token': csrfToken } : {}),
+    },
     body: {
       language: (i18n.language || 'en').split('-')[0],
     },

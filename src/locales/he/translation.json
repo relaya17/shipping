@@ -103,7 +103,8 @@
     "go_back": "חזרה",
     "required": "חובה",
     "optional": "אופציונלי",
-    "close": "סגור"
+    "close": "סגור",
+    "retry": "נסה שוב"
   },
   "forms": {
     "name": "שם מלא",
@@ -317,7 +318,34 @@
   },
   "admin": {
     "unauthorized": "נדרשת הרשאת מנהל",
-    "title": "לוח בקרה למנהלים"
+    "title": "לוח בקרה למנהלים",
+    "load_error": "לא ניתן לטעון את נתוני לוח הבקרה.",
+    "period": "בחרו תקופת זמן",
+    "period_7": "7 הימים האחרונים",
+    "period_30": "30 הימים האחרונים",
+    "period_90": "90 הימים האחרונים",
+    "export": "ייצוא נתונים",
+    "revenue": "סה״כ הכנסות",
+    "active_shipments": "משלוחים פעילים",
+    "customers": "לקוחות רשומים",
+    "avg_delivery": "זמן מסירה ממוצע",
+    "days": "ימים",
+    "ops_snapshot": "תמונת מצב תפעולית",
+    "quotes_period": "הצעות מחיר בתקופה",
+    "satisfaction": "שביעות רצון לקוחות",
+    "live_note": "המדדים נטענים מנתוני הצעות מחיר, משלוחים, חשבוניות ומשתמשים בזמן אמת.",
+    "recent_orders": "הזמנות אחרונות",
+    "no_orders": "אין משלוחים עדיין.",
+    "col_order": "הזמנה",
+    "col_customer": "לקוח",
+    "col_destination": "יעד",
+    "col_value": "ערך",
+    "col_status": "סטטוס",
+    "col_actions": "פעולות",
+    "status_pending": "ממתין",
+    "status_approved": "מאושר",
+    "status_in_transit": "בדרך",
+    "status_delivered": "נמסר"
   },
   "volume": {
     "title": "מחשבון נפח AR",
